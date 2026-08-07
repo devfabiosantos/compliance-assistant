@@ -1,0 +1,59 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "compliance-assistant"
+version = "0.1.0"
+description = "Enterprise RAG Assistant for LGPD and Corporate Policy Knowledge Retrieval"
+readme = "README.md"
+requires-python = ">=3.12,<3.14"
+license = { text = "MIT" }
+authors = [
+    { name = "NovaData Solutions", email = "opensource@novadatatech.br" }
+]
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Information Technology",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: Portuguese (Brazilian)",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Office/Business :: Legal",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Text Processing :: Linguistic",
+]
+keywords = [
+    "lgpd",
+    "rag",
+    "compliance",
+    "cohere",
+    "faiss",
+    "langchain",
+    "retrieval-augmented-generation",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.23",
+]
+streamlit = [
+    "streamlit>=1.35",
+]
+
+[project.scripts]
+compliance-index = "scripts.index_documents:main"
+compliance-chat = "scripts.chat:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
+
+[tool.setuptools.package-data]
+"*" = ["*.md", "*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

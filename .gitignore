@@ -1,0 +1,55 @@
+# ============================================================
+# Python
+# ============================================================
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+.eggs/
+build/
+dist/
+*.egg
+.venv/
+venv/
+env/
+.env
+.env.local
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+noxfile.pyc
+
+# ============================================================
+# Editor / IDE
+# ============================================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ============================================================
+# Data & vector store (artefatos locais)
+# ============================================================
+data/vector_store/*
+!data/vector_store/.gitkeep
+!data/vector_store/version.json
+data/logs/
+
+# ============================================================
+# PDFs gerados a partir de markdown
+# ============================================================
+docs/empresa/*.pdf
+docs/oficiais/*.pdf
+!docs/oficiais/README.md
+!docs/empresa/README.md
+
+# ============================================================
+# Uploads temporarios
+# ============================================================
+uploads/
+tmp/
+temp/
