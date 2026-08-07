@@ -1,0 +1,153 @@
+{
+  "version": "1.0.0",
+  "description": "Casos de teste de recuperacao de fonte (Retrieval). Nivel 1 (Sprint 1-3): verificar se o documento esperado e recuperado.",
+  "cases": [
+    {
+      "id": "LGPD-001",
+      "question": "O que e dado pessoal segundo a LGPD?",
+      "expected_document": "LGPD",
+      "expected_pages_any": [5, 6, 7],
+      "severity": "high"
+    },
+    {
+      "id": "LGPD-002",
+      "question": "O que caracteriza um dado pessoal sensivel? Cite exemplos.",
+      "expected_document": "LGPD",
+      "expected_pages_any": [17],
+      "severity": "high"
+    },
+    {
+      "id": "LGPD-003",
+      "question": "Quais os principios da LGPD previstos no artigo 6?",
+      "expected_document": "LGPD",
+      "expected_pages_any": [6, 7],
+      "severity": "medium"
+    },
+    {
+      "id": "LGPD-004",
+      "question": "O que fazer em caso de incidente de segurança com dados pessoais?",
+      "expected_document": "LGPD",
+      "expected_pages_any": [],
+      "severity": "high"
+    },
+    {
+      "id": "LGPD-005",
+      "question": "Qual o prazo para comunicar um incidente a ANPD e aos titulares?",
+      "expected_document": "LGPD",
+      "expected_pages_any": [],
+      "severity": "high"
+    },
+    {
+      "id": "SEG-001",
+      "question": "Posso compartilhar minhas credenciais de acesso com alguem da minha equipe?",
+      "expected_document": "Política Segurança",
+      "expected_pages_any": [],
+      "severity": "high"
+    },
+    {
+      "id": "SEG-002",
+      "question": "Posso enviar CPF de cliente por WhatsApp para resolver um problema urgente?",
+      "expected_document": "Política Segurança",
+      "expected_pages_any": [],
+      "severity": "high"
+    },
+    {
+      "id": "RH-001",
+      "question": "Quem pode acessar dados financeiros da empresa?",
+      "expected_document": "Manual Colaborador",
+      "expected_pages_any": [],
+      "severity": "medium"
+    },
+    {
+      "id": "INC-001",
+      "question": "Como comunicar um incidente de seguranca internamente?",
+      "expected_document": "Plano Resposta Incidentes",
+      "expected_pages_any": [],
+      "severity": "high"
+    },
+    {
+      "id": "ETI-001",
+      "question": "Como denunciar uma suspeita de desvio etico ou pratica irregular?",
+      "expected_document": "Código Ética E Conduta",
+      "expected_pages_any": [],
+      "severity": "high"
+    },
+    {
+      "id": "ETI-002",
+      "question": "Posso compartilhar minhas credenciais de acesso com alguem da minha equipe em caso de urgencia?",
+      "expected_document": "Código Ética E Conduta",
+      "expected_pages_any": [],
+      "severity": "high"
+    },
+    {
+      "id": "ETI-003",
+      "question": "Quais comportamentos sao considerados assedio ou discriminacao no ambiente de trabalho?",
+      "expected_document": "Código Ética E Conduta",
+      "expected_pages_any": [],
+      "severity": "high"
+    },
+    {
+      "id": "ETI-004",
+      "question": "Qual o valor maximo permitido para receber presentes ou cortesias de clientes?",
+      "expected_document": "Código Ética E Conduta",
+      "expected_pages_any": [],
+      "severity": "medium"
+    },
+    {
+      "id": "ETI-005",
+      "question": "O que fazer se eu receber uma instrucao superior que contraria o Codigo de Etica?",
+      "expected_document": "Código Ética E Conduta",
+      "expected_pages_any": [],
+      "severity": "high"
+    },
+    {
+      "id": "ETI-006",
+      "question": "Quem compoe o Comite de Etica e quais suas atribuicoes?",
+      "expected_document": "Código Ética E Conduta",
+      "expected_pages_any": [],
+      "severity": "medium"
+    },
+    {
+      "id": "ORG-001",
+      "question": "Quem e responsavel por incidentes de seguranca cibernetica na NovaData Solutions?",
+      "expected_document": "Organograma",
+      "expected_pages_any": [],
+      "severity": "high"
+    },
+    {
+      "id": "ORG-002",
+      "question": "Quem e o DPO e quais suas responsabilidades segundo o organograma?",
+      "expected_document": "Organograma",
+      "expected_pages_any": [],
+      "severity": "high"
+    },
+    {
+      "id": "ORG-003",
+      "question": "A quem o CISO responde hierarquicamente?",
+      "expected_document": "Organograma",
+      "expected_pages_any": [],
+      "severity": "medium"
+    },
+    {
+      "id": "ORG-004",
+      "question": "Quais orgaos devem ser acionados em caso de incidente com dados pessoais?",
+      "expected_document": "Organograma",
+      "expected_pages_any": [],
+      "severity": "high"
+    },
+    {
+      "id": "ORG-005",
+      "question": "Qual diretoria ou orgao e responsavel pelo Canal de Denuncias?",
+      "expected_document": "Organograma",
+      "expected_pages_any": [],
+      "severity": "medium"
+    },
+    {
+      "id": "CROSS-001",
+      "question": "Quem responde por seguranca da informacao e quem responde por conduta etica, respectivamente?",
+      "expected_document_any": ["Código Ética E Conduta", "Organograma"],
+      "severity": "high",
+      "multi_document": true
+    }
+  ]
+}

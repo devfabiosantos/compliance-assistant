@@ -1,0 +1,1121 @@
+{
+  "level": 1,
+  "top_k": 5,
+  "embedding_model": "cohere/embed/embed-multilingual-v3.0",
+  "questions_file": "C:\\ComplianceGPT\\evaluation\\questions.json",
+  "vector_store_dir": "C:\\ComplianceGPT\\data\\vector_store",
+  "summary": {
+    "total": 21,
+    "passed": 6,
+    "failed": 15,
+    "document_accuracy": 0.2857,
+    "section_accuracy": 1.0,
+    "keyword_recall": 1.0
+  },
+  "cases": [
+    {
+      "id": "LGPD-001",
+      "category": "",
+      "question": "O que e dado pessoal segundo a LGPD?",
+      "expected_document": "LGPD",
+      "expected_section": null,
+      "expected_keywords": [],
+      "hit_document": false,
+      "hit_section": true,
+      "hit_keywords": true,
+      "passed": false,
+      "top_k_chunks": [
+        {
+          "rank": 1,
+          "score": 0.5898,
+          "doc_id": "readme.md/readme",
+          "doc_title": "Readme",
+          "page": null,
+          "section": "Documentos oficiais",
+          "snippet": "# Documentos oficiais\n\nPasta reservada para os documentos de referência oficiais relacionados à LGPD e ANPD.\n\n## Conteúdo esperado\n\n- `LGPD.pdf` — Lei Geral de Proteção de Dados (Lei nº 13.709/2018).\n- `Guia_ANPD.pdf` — guia(s) e cartilhas "
+        },
+        {
+          "rank": 2,
+          "score": 0.5873,
+          "doc_id": "organograma.md/organograma",
+          "doc_title": "Organograma",
+          "page": null,
+          "section": "3.2. DPO — Encarregado pelo Tratamento de Dados Pessoais",
+          "snippet": "### 3.2. DPO — Encarregado pelo Tratamento de Dados Pessoais\n\n- Papel conforme art. 41 da LGPD.\n- Responsabilidades principais:\n  - receber e orientar solicitações de titulares de dados;\n  - orientar colaboradores e fornecedores sobre boas "
+        },
+        {
+          "rank": 3,
+          "score": 0.5648,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": "6. Diversidade, Inclusão e Assédio",
+          "snippet": "**5.3. Sigilo em relação a dados de clientes.** Qualquer dado pessoal ou empresarial sob custódia da NovaData Solutions em razão de contratos de prestação de serviços deve ser tratado como confidencial. A sua coleta, armazenamento, acesso, "
+        },
+        {
+          "rank": 4,
+          "score": 0.5238,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": null,
+          "snippet": "**2.2. Legalidade.** Cumprir rigorosamente a legislação aplicável, em especial a Lei Geral de Proteção de Dados (Lei nº 13.709/2018), a Lei de Informática (Lei nº 12.965/2014), a Lei Anticorrupção (Lei nº 12.846/2013), as normas trabalhista"
+        },
+        {
+          "rank": 5,
+          "score": 0.523,
+          "doc_id": "organograma.md/organograma",
+          "doc_title": "Organograma",
+          "page": null,
+          "section": null,
+          "snippet": "| Tema | Responsável Primário | Co-responsáveis |\n| --- | --- | --- |\n| Segurança da Informação e incidentes cibernéticos | CISO | CTO, DPO, Diretor Jurídico |\n| Proteção de dados pessoais (LGPD) | DPO | Diretor Jurídico, Compliance, CISO |"
+        }
+      ]
+    },
+    {
+      "id": "LGPD-002",
+      "category": "",
+      "question": "O que caracteriza um dado pessoal sensivel? Cite exemplos.",
+      "expected_document": "LGPD",
+      "expected_section": null,
+      "expected_keywords": [],
+      "hit_document": false,
+      "hit_section": true,
+      "hit_keywords": true,
+      "passed": false,
+      "top_k_chunks": [
+        {
+          "rank": 1,
+          "score": 0.5165,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": "10. Gestão de Redes Sociais",
+          "snippet": "**9.3. Uso de mensageiros e ferramentas.** A troca de dados pessoais sensíveis, segredos de negócio, credenciais ou informações classificadas como Restritas ou Confidenciais por meio de aplicativos de mensagens pessoais (WhatsApp pessoal, T"
+        }
+      ]
+    },
+    {
+      "id": "LGPD-003",
+      "category": "",
+      "question": "Quais os principios da LGPD previstos no artigo 6?",
+      "expected_document": "LGPD",
+      "expected_section": null,
+      "expected_keywords": [],
+      "hit_document": false,
+      "hit_section": true,
+      "hit_keywords": true,
+      "passed": false,
+      "top_k_chunks": [
+        {
+          "rank": 1,
+          "score": 0.6272,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": null,
+          "snippet": "**2.2. Legalidade.** Cumprir rigorosamente a legislação aplicável, em especial a Lei Geral de Proteção de Dados (Lei nº 13.709/2018), a Lei de Informática (Lei nº 12.965/2014), a Lei Anticorrupção (Lei nº 12.846/2013), as normas trabalhista"
+        },
+        {
+          "rank": 2,
+          "score": 0.6048,
+          "doc_id": "organograma.md/organograma",
+          "doc_title": "Organograma",
+          "page": null,
+          "section": "3.2. DPO — Encarregado pelo Tratamento de Dados Pessoais",
+          "snippet": "### 3.2. DPO — Encarregado pelo Tratamento de Dados Pessoais\n\n- Papel conforme art. 41 da LGPD.\n- Responsabilidades principais:\n  - receber e orientar solicitações de titulares de dados;\n  - orientar colaboradores e fornecedores sobre boas "
+        },
+        {
+          "rank": 3,
+          "score": 0.6047,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": "6. Diversidade, Inclusão e Assédio",
+          "snippet": "**5.3. Sigilo em relação a dados de clientes.** Qualquer dado pessoal ou empresarial sob custódia da NovaData Solutions em razão de contratos de prestação de serviços deve ser tratado como confidencial. A sua coleta, armazenamento, acesso, "
+        },
+        {
+          "rank": 4,
+          "score": 0.5953,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": "13. Treinamento e Revisão",
+          "snippet": "---\n\n## 13. Treinamento e Revisão\n\n**13.1. Treinamentos.** Todos os colaboradores deverão participar, pelo menos anualmente, de treinamento presencial ou a distância sobre ética, conduta, segurança da informação e LGPD. Novos colaboradores "
+        },
+        {
+          "rank": 5,
+          "score": 0.5892,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": "2. Princípios Fundamentais",
+          "snippet": "Nenhuma das normas complementares prevalece sobre o espírito ético deste documento. Quando houver dúvida quanto à conduta correta, prevalece o princípio da **transparência, legalidade, imparcialidade e preservação da reputação da NovaData S"
+        }
+      ]
+    },
+    {
+      "id": "LGPD-004",
+      "category": "",
+      "question": "O que fazer em caso de incidente de segurança com dados pessoais?",
+      "expected_document": "LGPD",
+      "expected_section": null,
+      "expected_keywords": [],
+      "hit_document": false,
+      "hit_section": true,
+      "hit_keywords": true,
+      "passed": false,
+      "top_k_chunks": [
+        {
+          "rank": 1,
+          "score": 0.6394,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": null,
+          "snippet": "**9.2. Dever de comunicar incidentes.** Todo colaborador que tomar conhecimento de incidente de segurança, vazamento de dados, perda de credenciais, ataque cibernético, uso indevido de contas ou suspeita de fraude deve comunicar o fato imed"
+        },
+        {
+          "rank": 2,
+          "score": 0.5844,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": "9. Segurança da Informação e Proteção de Dados",
+          "snippet": "---\n\n## 9. Segurança da Informação e Proteção de Dados\n\n**9.1. Segurança como princípio ético.** A proteção das informações corporativas e de dados pessoais não é apenas obrigação jurídica, mas ética. Cada colaborador é corresponsável pela "
+        },
+        {
+          "rank": 3,
+          "score": 0.5826,
+          "doc_id": "organograma.md/organograma",
+          "doc_title": "Organograma",
+          "page": null,
+          "section": "3.2. DPO — Encarregado pelo Tratamento de Dados Pessoais",
+          "snippet": "### 3.2. DPO — Encarregado pelo Tratamento de Dados Pessoais\n\n- Papel conforme art. 41 da LGPD.\n- Responsabilidades principais:\n  - receber e orientar solicitações de titulares de dados;\n  - orientar colaboradores e fornecedores sobre boas "
+        },
+        {
+          "rank": 4,
+          "score": 0.5646,
+          "doc_id": "organograma.md/organograma",
+          "doc_title": "Organograma",
+          "page": null,
+          "section": null,
+          "snippet": "| Tema | Responsável Primário | Co-responsáveis |\n| --- | --- | --- |\n| Segurança da Informação e incidentes cibernéticos | CISO | CTO, DPO, Diretor Jurídico |\n| Proteção de dados pessoais (LGPD) | DPO | Diretor Jurídico, Compliance, CISO |"
+        },
+        {
+          "rank": 5,
+          "score": 0.557,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": "10. Gestão de Redes Sociais",
+          "snippet": "**9.3. Uso de mensageiros e ferramentas.** A troca de dados pessoais sensíveis, segredos de negócio, credenciais ou informações classificadas como Restritas ou Confidenciais por meio de aplicativos de mensagens pessoais (WhatsApp pessoal, T"
+        }
+      ]
+    },
+    {
+      "id": "LGPD-005",
+      "category": "",
+      "question": "Qual o prazo para comunicar um incidente a ANPD e aos titulares?",
+      "expected_document": "LGPD",
+      "expected_section": null,
+      "expected_keywords": [],
+      "hit_document": false,
+      "hit_section": true,
+      "hit_keywords": true,
+      "passed": false,
+      "top_k_chunks": [
+        {
+          "rank": 1,
+          "score": 0.6101,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": null,
+          "snippet": "**9.2. Dever de comunicar incidentes.** Todo colaborador que tomar conhecimento de incidente de segurança, vazamento de dados, perda de credenciais, ataque cibernético, uso indevido de contas ou suspeita de fraude deve comunicar o fato imed"
+        },
+        {
+          "rank": 2,
+          "score": 0.5494,
+          "doc_id": "organograma.md/organograma",
+          "doc_title": "Organograma",
+          "page": null,
+          "section": null,
+          "snippet": "| Tema | Responsável Primário | Co-responsáveis |\n| --- | --- | --- |\n| Segurança da Informação e incidentes cibernéticos | CISO | CTO, DPO, Diretor Jurídico |\n| Proteção de dados pessoais (LGPD) | DPO | Diretor Jurídico, Compliance, CISO |"
+        },
+        {
+          "rank": 3,
+          "score": 0.5117,
+          "doc_id": "readme.md/readme",
+          "doc_title": "Readme",
+          "page": null,
+          "section": "Documentos oficiais",
+          "snippet": "# Documentos oficiais\n\nPasta reservada para os documentos de referência oficiais relacionados à LGPD e ANPD.\n\n## Conteúdo esperado\n\n- `LGPD.pdf` — Lei Geral de Proteção de Dados (Lei nº 13.709/2018).\n- `Guia_ANPD.pdf` — guia(s) e cartilhas "
+        }
+      ]
+    },
+    {
+      "id": "SEG-001",
+      "category": "",
+      "question": "Posso compartilhar minhas credenciais de acesso com alguem da minha equipe?",
+      "expected_document": "Política Segurança",
+      "expected_section": null,
+      "expected_keywords": [],
+      "hit_document": false,
+      "hit_section": true,
+      "hit_keywords": true,
+      "passed": false,
+      "top_k_chunks": [
+        {
+          "rank": 1,
+          "score": 0.682,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": null,
+          "snippet": "- a finalidade corporativa;\n- a **Política de Uso Aceitável dos Recursos de TI**;\n- a **Política de Controle de Acesso**;\n- as regras de classificação da informação.\n\n**4.3. Proibição de compartilhamento de credenciais.** É expressamente pr"
+        },
+        {
+          "rank": 2,
+          "score": 0.5324,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": null,
+          "snippet": "**9.2. Dever de comunicar incidentes.** Todo colaborador que tomar conhecimento de incidente de segurança, vazamento de dados, perda de credenciais, ataque cibernético, uso indevido de contas ou suspeita de fraude deve comunicar o fato imed"
+        },
+        {
+          "rank": 3,
+          "score": 0.5247,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": "10. Gestão de Redes Sociais",
+          "snippet": "**9.3. Uso de mensageiros e ferramentas.** A troca de dados pessoais sensíveis, segredos de negócio, credenciais ou informações classificadas como Restritas ou Confidenciais por meio de aplicativos de mensagens pessoais (WhatsApp pessoal, T"
+        },
+        {
+          "rank": 4,
+          "score": 0.5197,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": "5. Relacionamento com Clientes, Parceiros e Fornecedores",
+          "snippet": "**4.4. Propriedade intelectual.** Todo conhecimento, código-fonte, documento, desenho, marca, domínio, roteiro, configuração de arquitetura, material de treinamento ou outro ativo desenvolvido no exercício das atividades da NovaData Solutio"
+        },
+        {
+          "rank": 5,
+          "score": 0.5166,
+          "doc_id": "readme.md/readme",
+          "doc_title": "Readme",
+          "page": null,
+          "section": null,
+          "snippet": "- Adote tom profissional, como em um documento corporativo real.\n- Prefira seções numeradas (`1.`, `1.1.`, `4.2.` etc.) — o splitter e o usuário aproveitam a estrutura.\n- Sempre que citar uma regra, justifique-a: *\"Conforme a Política de Co"
+        }
+      ]
+    },
+    {
+      "id": "SEG-002",
+      "category": "",
+      "question": "Posso enviar CPF de cliente por WhatsApp para resolver um problema urgente?",
+      "expected_document": "Política Segurança",
+      "expected_section": null,
+      "expected_keywords": [],
+      "hit_document": false,
+      "hit_section": true,
+      "hit_keywords": true,
+      "passed": false,
+      "top_k_chunks": [
+        {
+          "rank": 1,
+          "score": 0.5341,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": "10. Gestão de Redes Sociais",
+          "snippet": "**9.3. Uso de mensageiros e ferramentas.** A troca de dados pessoais sensíveis, segredos de negócio, credenciais ou informações classificadas como Restritas ou Confidenciais por meio de aplicativos de mensagens pessoais (WhatsApp pessoal, T"
+        }
+      ]
+    },
+    {
+      "id": "RH-001",
+      "category": "",
+      "question": "Quem pode acessar dados financeiros da empresa?",
+      "expected_document": "Manual Colaborador",
+      "expected_section": null,
+      "expected_keywords": [],
+      "hit_document": false,
+      "hit_section": true,
+      "hit_keywords": true,
+      "passed": false,
+      "top_k_chunks": [
+        {
+          "rank": 1,
+          "score": 0.5518,
+          "doc_id": "organograma.md/organograma",
+          "doc_title": "Organograma",
+          "page": null,
+          "section": "2.2. Diretoria Financeira (CFO)",
+          "snippet": "### 2.2. Diretoria Financeira (CFO)\n\n- Responsável pela integridade das demonstrações contábeis e pelo compliance fiscal e trabalhista.\n- Aprova orçamentos anuais e investimentos de capital.\n- Supervisiona Controladoria, Tesouraria, FP&A e "
+        },
+        {
+          "rank": 2,
+          "score": 0.5287,
+          "doc_id": "organograma.md/organograma",
+          "doc_title": "Organograma",
+          "page": null,
+          "section": "Organograma e Estrutura de Responsabilidades",
+          "snippet": "# Organograma e Estrutura de Responsabilidades\n\n**Empresa:** NovaData Solutions  \n**Natureza:** Sociedade Anônima Fechada (S.A.)  \n**Sede:** São Paulo / SP  \n**Atuação:** Nacional — soluções de gestão empresarial em nuvem, governança, segur"
+        },
+        {
+          "rank": 3,
+          "score": 0.5222,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": "10. Gestão de Redes Sociais",
+          "snippet": "**9.3. Uso de mensageiros e ferramentas.** A troca de dados pessoais sensíveis, segredos de negócio, credenciais ou informações classificadas como Restritas ou Confidenciais por meio de aplicativos de mensagens pessoais (WhatsApp pessoal, T"
+        },
+        {
+          "rank": 4,
+          "score": 0.5205,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": "5. Relacionamento com Clientes, Parceiros e Fornecedores",
+          "snippet": "**4.4. Propriedade intelectual.** Todo conhecimento, código-fonte, documento, desenho, marca, domínio, roteiro, configuração de arquitetura, material de treinamento ou outro ativo desenvolvido no exercício das atividades da NovaData Solutio"
+        },
+        {
+          "rank": 5,
+          "score": 0.5203,
+          "doc_id": "organograma.md/organograma",
+          "doc_title": "Organograma",
+          "page": null,
+          "section": null,
+          "snippet": "| Tema | Responsável Primário | Co-responsáveis |\n| --- | --- | --- |\n| Segurança da Informação e incidentes cibernéticos | CISO | CTO, DPO, Diretor Jurídico |\n| Proteção de dados pessoais (LGPD) | DPO | Diretor Jurídico, Compliance, CISO |"
+        }
+      ]
+    },
+    {
+      "id": "INC-001",
+      "category": "",
+      "question": "Como comunicar um incidente de seguranca internamente?",
+      "expected_document": "Plano Resposta Incidentes",
+      "expected_section": null,
+      "expected_keywords": [],
+      "hit_document": false,
+      "hit_section": true,
+      "hit_keywords": true,
+      "passed": false,
+      "top_k_chunks": [
+        {
+          "rank": 1,
+          "score": 0.6549,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": null,
+          "snippet": "**9.2. Dever de comunicar incidentes.** Todo colaborador que tomar conhecimento de incidente de segurança, vazamento de dados, perda de credenciais, ataque cibernético, uso indevido de contas ou suspeita de fraude deve comunicar o fato imed"
+        },
+        {
+          "rank": 2,
+          "score": 0.5204,
+          "doc_id": "organograma.md/organograma",
+          "doc_title": "Organograma",
+          "page": null,
+          "section": null,
+          "snippet": "| Tema | Responsável Primário | Co-responsáveis |\n| --- | --- | --- |\n| Segurança da Informação e incidentes cibernéticos | CISO | CTO, DPO, Diretor Jurídico |\n| Proteção de dados pessoais (LGPD) | DPO | Diretor Jurídico, Compliance, CISO |"
+        },
+        {
+          "rank": 3,
+          "score": 0.5018,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": null,
+          "snippet": "**11.2. Características:**\n\n1. acesso por meio de plataforma externa, de forma sigilosa;\n2. possibilidade de comunicação anônima;\n3. apuração conduzida pelo Comitê de Ética com apoio de Compliance, Jurídico, RH e, se necessário, auditoria i"
+        }
+      ]
+    },
+    {
+      "id": "ETI-001",
+      "category": "",
+      "question": "Como denunciar uma suspeita de desvio etico ou pratica irregular?",
+      "expected_document": "Código Ética E Conduta",
+      "expected_section": null,
+      "expected_keywords": [],
+      "hit_document": false,
+      "hit_section": true,
+      "hit_keywords": true,
+      "passed": false,
+      "top_k_chunks": [
+        {
+          "rank": 1,
+          "score": 0.642,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": "11. Canal de Denúncias",
+          "snippet": "**10.3. Uso corporativo.** Perfis institucionais e postagens oficiais são de responsabilidade do Comitê de Comunicação. A publicação de conteúdo em nome da empresa exige aprovação prévia.\n\n---\n\n## 11. Canal de Denúncias\n\n**11.1. Finalidade."
+        },
+        {
+          "rank": 2,
+          "score": 0.6163,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": null,
+          "snippet": "**11.2. Características:**\n\n1. acesso por meio de plataforma externa, de forma sigilosa;\n2. possibilidade de comunicação anônima;\n3. apuração conduzida pelo Comitê de Ética com apoio de Compliance, Jurídico, RH e, se necessário, auditoria i"
+        },
+        {
+          "rank": 3,
+          "score": 0.5917,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": null,
+          "snippet": "**6.3. Assédio moral e sexual.** Qualquer conduta que configure humilhação, ridículo, perseguição repetida, ameaça, coerção, pressão psicológica abusiva, exposição a situações degradantes ou qualquer forma de assédio sexual constitui **falt"
+        },
+        {
+          "rank": 4,
+          "score": 0.5817,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": null,
+          "snippet": "1. advertência verbal;\n2. advertência escrita;\n3. suspensão temporária, com ou sem remuneração, conforme a legislação trabalhista;\n4. término de vínculo contratual ou desligamento por justa causa;\n5. inelegibilidade para promoções ou partic"
+        },
+        {
+          "rank": 5,
+          "score": 0.5788,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": "8. Prevenção à Lavagem de Dinheiro e à Corrupção",
+          "snippet": "**7.3. Dever de comunicação.** Todo caso suspeito ou efetivo de conflito de interesses deve ser comunicado imediatamente ao Comitê de Ética ou à Diretoria Jurídica, que decidirá sobre o procedimento adequado (afastamento cautelar do process"
+        }
+      ]
+    },
+    {
+      "id": "ETI-002",
+      "category": "",
+      "question": "Posso compartilhar minhas credenciais de acesso com alguem da minha equipe em caso de urgencia?",
+      "expected_document": "Código Ética E Conduta",
+      "expected_section": null,
+      "expected_keywords": [],
+      "hit_document": false,
+      "hit_section": true,
+      "hit_keywords": true,
+      "passed": false,
+      "top_k_chunks": [
+        {
+          "rank": 1,
+          "score": 0.6418,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": null,
+          "snippet": "- a finalidade corporativa;\n- a **Política de Uso Aceitável dos Recursos de TI**;\n- a **Política de Controle de Acesso**;\n- as regras de classificação da informação.\n\n**4.3. Proibição de compartilhamento de credenciais.** É expressamente pr"
+        },
+        {
+          "rank": 2,
+          "score": 0.5864,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": null,
+          "snippet": "**9.2. Dever de comunicar incidentes.** Todo colaborador que tomar conhecimento de incidente de segurança, vazamento de dados, perda de credenciais, ataque cibernético, uso indevido de contas ou suspeita de fraude deve comunicar o fato imed"
+        },
+        {
+          "rank": 3,
+          "score": 0.5261,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": "10. Gestão de Redes Sociais",
+          "snippet": "**9.3. Uso de mensageiros e ferramentas.** A troca de dados pessoais sensíveis, segredos de negócio, credenciais ou informações classificadas como Restritas ou Confidenciais por meio de aplicativos de mensagens pessoais (WhatsApp pessoal, T"
+        },
+        {
+          "rank": 4,
+          "score": 0.5201,
+          "doc_id": "organograma.md/organograma",
+          "doc_title": "Organograma",
+          "page": null,
+          "section": null,
+          "snippet": "| Tema | Responsável Primário | Co-responsáveis |\n| --- | --- | --- |\n| Segurança da Informação e incidentes cibernéticos | CISO | CTO, DPO, Diretor Jurídico |\n| Proteção de dados pessoais (LGPD) | DPO | Diretor Jurídico, Compliance, CISO |"
+        },
+        {
+          "rank": 5,
+          "score": 0.5105,
+          "doc_id": "readme.md/readme",
+          "doc_title": "Readme",
+          "page": null,
+          "section": null,
+          "snippet": "- Adote tom profissional, como em um documento corporativo real.\n- Prefira seções numeradas (`1.`, `1.1.`, `4.2.` etc.) — o splitter e o usuário aproveitam a estrutura.\n- Sempre que citar uma regra, justifique-a: *\"Conforme a Política de Co"
+        }
+      ]
+    },
+    {
+      "id": "ETI-003",
+      "category": "",
+      "question": "Quais comportamentos sao considerados assedio ou discriminacao no ambiente de trabalho?",
+      "expected_document": "Código Ética E Conduta",
+      "expected_section": null,
+      "expected_keywords": [],
+      "hit_document": false,
+      "hit_section": true,
+      "hit_keywords": true,
+      "passed": false,
+      "top_k_chunks": [
+        {
+          "rank": 1,
+          "score": 0.6338,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": null,
+          "snippet": "**6.3. Assédio moral e sexual.** Qualquer conduta que configure humilhação, ridículo, perseguição repetida, ameaça, coerção, pressão psicológica abusiva, exposição a situações degradantes ou qualquer forma de assédio sexual constitui **falt"
+        },
+        {
+          "rank": 2,
+          "score": 0.6066,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": "6. Diversidade, Inclusão e Assédio",
+          "snippet": "---\n\n## 6. Diversidade, Inclusão e Assédio\n\n**6.1. Diversidade e inclusão.** A NovaData Solutions valoriza a diversidade de origem racial, étnica, de gênero, orientação sexual, identidade de gênero, geração, deficiência, religião, opinião p"
+        },
+        {
+          "rank": 3,
+          "score": 0.5649,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": "4. Relacionamento com o Trabalho e com a Empresa",
+          "snippet": "**3.3. Desobediência e contradição.** Nenhuma instrução superior, por si só, afasta a responsabilidade individual do colaborador por atos que contrariem este Código, a legislação vigente ou as normas internas. Quem receber instrução contrár"
+        },
+        {
+          "rank": 4,
+          "score": 0.5639,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": null,
+          "snippet": "**11.2. Características:**\n\n1. acesso por meio de plataforma externa, de forma sigilosa;\n2. possibilidade de comunicação anônima;\n3. apuração conduzida pelo Comitê de Ética com apoio de Compliance, Jurídico, RH e, se necessário, auditoria i"
+        },
+        {
+          "rank": 5,
+          "score": 0.5599,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": null,
+          "snippet": "1. advertência verbal;\n2. advertência escrita;\n3. suspensão temporária, com ou sem remuneração, conforme a legislação trabalhista;\n4. término de vínculo contratual ou desligamento por justa causa;\n5. inelegibilidade para promoções ou partic"
+        }
+      ]
+    },
+    {
+      "id": "ETI-004",
+      "category": "",
+      "question": "Qual o valor maximo permitido para receber presentes ou cortesias de clientes?",
+      "expected_document": "Código Ética E Conduta",
+      "expected_section": null,
+      "expected_keywords": [],
+      "hit_document": false,
+      "hit_section": true,
+      "hit_keywords": true,
+      "passed": false,
+      "top_k_chunks": [
+        {
+          "rank": 1,
+          "score": 0.7592,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": null,
+          "snippet": "**5.2. Presentes e cortesias.** Colaboradores podem receber brindes ou cortesias eventuais, desde que:\n\n1. sejam de valor simbólico (máximo de R$ 300,00 por item e R$ 1.200,00 anuais por mesmo cliente ou fornecedor);\n2. não configurem obrig"
+        },
+        {
+          "rank": 2,
+          "score": 0.5935,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": "5. Relacionamento com Clientes, Parceiros e Fornecedores",
+          "snippet": "---\n\n## 5. Relacionamento com Clientes, Parceiros e Fornecedores\n\n**5.1. Conduta comercial.** A NovaData Solutions veda qualquer prática que:\n\n- distorça a livre concorrência;\n- empregue artifícios enganosos de venda;\n- prometa funcionalida"
+        }
+      ]
+    },
+    {
+      "id": "ETI-005",
+      "category": "",
+      "question": "O que fazer se eu receber uma instrucao superior que contraria o Codigo de Etica?",
+      "expected_document": "Código Ética E Conduta",
+      "expected_section": null,
+      "expected_keywords": [],
+      "hit_document": false,
+      "hit_section": true,
+      "hit_keywords": true,
+      "passed": false,
+      "top_k_chunks": [
+        {
+          "rank": 1,
+          "score": 0.7139,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": "4. Relacionamento com o Trabalho e com a Empresa",
+          "snippet": "**3.3. Desobediência e contradição.** Nenhuma instrução superior, por si só, afasta a responsabilidade individual do colaborador por atos que contrariem este Código, a legislação vigente ou as normas internas. Quem receber instrução contrár"
+        },
+        {
+          "rank": 2,
+          "score": 0.6059,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": null,
+          "snippet": "1. advertência verbal;\n2. advertência escrita;\n3. suspensão temporária, com ou sem remuneração, conforme a legislação trabalhista;\n4. término de vínculo contratual ou desligamento por justa causa;\n5. inelegibilidade para promoções ou partic"
+        },
+        {
+          "rank": 3,
+          "score": 0.5843,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": "12. Disciplina e Medidas Corretivas",
+          "snippet": "---\n\n## 12. Disciplina e Medidas Corretivas\n\n**12.1. Apuração.** A apuração de infrações éticas segue o princípio do contraditório e da ampla defesa. O Comitê de Ética coordena o procedimento, garantindo imparcialidade e documentação consis"
+        },
+        {
+          "rank": 4,
+          "score": 0.5733,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": "11. Canal de Denúncias",
+          "snippet": "**10.3. Uso corporativo.** Perfis institucionais e postagens oficiais são de responsabilidade do Comitê de Comunicação. A publicação de conteúdo em nome da empresa exige aprovação prévia.\n\n---\n\n## 11. Canal de Denúncias\n\n**11.1. Finalidade."
+        },
+        {
+          "rank": 5,
+          "score": 0.5681,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": null,
+          "snippet": "**6.3. Assédio moral e sexual.** Qualquer conduta que configure humilhação, ridículo, perseguição repetida, ameaça, coerção, pressão psicológica abusiva, exposição a situações degradantes ou qualquer forma de assédio sexual constitui **falt"
+        }
+      ]
+    },
+    {
+      "id": "ETI-006",
+      "category": "",
+      "question": "Quem compoe o Comite de Etica e quais suas atribuicoes?",
+      "expected_document": "Código Ética E Conduta",
+      "expected_section": null,
+      "expected_keywords": [],
+      "hit_document": false,
+      "hit_section": true,
+      "hit_keywords": true,
+      "passed": false,
+      "top_k_chunks": [
+        {
+          "rank": 1,
+          "score": 0.6666,
+          "doc_id": "organograma.md/organograma",
+          "doc_title": "Organograma",
+          "page": null,
+          "section": "3. Instâncias de Governança e Papéis Especiais",
+          "snippet": "---\n\n## 3. Instâncias de Governança e Papéis Especiais\n\n### 3.1. Comitê de Ética\n\n- Composição mínima: representantes da Diretoria Jurídica, de RH, de TI e do Compliance, além de convidados, sempre em número ímpar.\n- Atribuições:\n  - interp"
+        },
+        {
+          "rank": 2,
+          "score": 0.6161,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": "14. Responsáveis e Contato",
+          "snippet": "---\n\n## 14. Responsáveis e Contato\n\n**14.1. Comitê de Ética:** órgão colegiado responsável pela aplicação, interpretação e promoção deste Código.  \n**14.2. Diretoria Jurídica:** fornece suporte normativo e assessoramento jurídico.  \n**14.3."
+        },
+        {
+          "rank": 3,
+          "score": 0.5942,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": "12. Disciplina e Medidas Corretivas",
+          "snippet": "---\n\n## 12. Disciplina e Medidas Corretivas\n\n**12.1. Apuração.** A apuração de infrações éticas segue o princípio do contraditório e da ampla defesa. O Comitê de Ética coordena o procedimento, garantindo imparcialidade e documentação consis"
+        },
+        {
+          "rank": 4,
+          "score": 0.5808,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": "11. Canal de Denúncias",
+          "snippet": "**10.3. Uso corporativo.** Perfis institucionais e postagens oficiais são de responsabilidade do Comitê de Comunicação. A publicação de conteúdo em nome da empresa exige aprovação prévia.\n\n---\n\n## 11. Canal de Denúncias\n\n**11.1. Finalidade."
+        },
+        {
+          "rank": 5,
+          "score": 0.568,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": "8. Prevenção à Lavagem de Dinheiro e à Corrupção",
+          "snippet": "**7.3. Dever de comunicação.** Todo caso suspeito ou efetivo de conflito de interesses deve ser comunicado imediatamente ao Comitê de Ética ou à Diretoria Jurídica, que decidirá sobre o procedimento adequado (afastamento cautelar do process"
+        }
+      ]
+    },
+    {
+      "id": "ORG-001",
+      "category": "",
+      "question": "Quem e responsavel por incidentes de seguranca cibernetica na NovaData Solutions?",
+      "expected_document": "Organograma",
+      "expected_section": null,
+      "expected_keywords": [],
+      "hit_document": true,
+      "hit_section": true,
+      "hit_keywords": true,
+      "passed": true,
+      "top_k_chunks": [
+        {
+          "rank": 1,
+          "score": 0.6618,
+          "doc_id": "organograma.md/organograma",
+          "doc_title": "Organograma",
+          "page": null,
+          "section": "2.4. Diretoria Comercial (CCO)",
+          "snippet": "### 2.4. Diretoria Comercial (CCO)\n\n- É responsável por vendas, pré-vendas, sucesso do cliente e relacionamento institucional com contas estratégicas.\n- Garante a consistência ética nas negociações, alinhada ao **Código de Ética e Conduta**"
+        },
+        {
+          "rank": 2,
+          "score": 0.652,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": null,
+          "snippet": "A NovaData Solutions atua nacionalmente com soluções em nuvem para gestão empresarial, governança, segurança da informação e inteligência artificial aplicada a negócios. Sua reputação é um de seus principais ativos. A confiança de clientes,"
+        },
+        {
+          "rank": 3,
+          "score": 0.6311,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": "14. Responsáveis e Contato",
+          "snippet": "---\n\n## 14. Responsáveis e Contato\n\n**14.1. Comitê de Ética:** órgão colegiado responsável pela aplicação, interpretação e promoção deste Código.  \n**14.2. Diretoria Jurídica:** fornece suporte normativo e assessoramento jurídico.  \n**14.3."
+        },
+        {
+          "rank": 4,
+          "score": 0.6211,
+          "doc_id": "organograma.md/organograma",
+          "doc_title": "Organograma",
+          "page": null,
+          "section": null,
+          "snippet": "| Tema | Responsável Primário | Co-responsáveis |\n| --- | --- | --- |\n| Segurança da Informação e incidentes cibernéticos | CISO | CTO, DPO, Diretor Jurídico |\n| Proteção de dados pessoais (LGPD) | DPO | Diretor Jurídico, Compliance, CISO |"
+        },
+        {
+          "rank": 5,
+          "score": 0.6111,
+          "doc_id": "organograma.md/organograma",
+          "doc_title": "Organograma",
+          "page": null,
+          "section": "Organograma e Estrutura de Responsabilidades",
+          "snippet": "# Organograma e Estrutura de Responsabilidades\n\n**Empresa:** NovaData Solutions  \n**Natureza:** Sociedade Anônima Fechada (S.A.)  \n**Sede:** São Paulo / SP  \n**Atuação:** Nacional — soluções de gestão empresarial em nuvem, governança, segur"
+        }
+      ]
+    },
+    {
+      "id": "ORG-002",
+      "category": "",
+      "question": "Quem e o DPO e quais suas responsabilidades segundo o organograma?",
+      "expected_document": "Organograma",
+      "expected_section": null,
+      "expected_keywords": [],
+      "hit_document": true,
+      "hit_section": true,
+      "hit_keywords": true,
+      "passed": true,
+      "top_k_chunks": [
+        {
+          "rank": 1,
+          "score": 0.6765,
+          "doc_id": "organograma.md/organograma",
+          "doc_title": "Organograma",
+          "page": null,
+          "section": "3.2. DPO — Encarregado pelo Tratamento de Dados Pessoais",
+          "snippet": "### 3.2. DPO — Encarregado pelo Tratamento de Dados Pessoais\n\n- Papel conforme art. 41 da LGPD.\n- Responsabilidades principais:\n  - receber e orientar solicitações de titulares de dados;\n  - orientar colaboradores e fornecedores sobre boas "
+        },
+        {
+          "rank": 2,
+          "score": 0.596,
+          "doc_id": "organograma.md/organograma",
+          "doc_title": "Organograma",
+          "page": null,
+          "section": null,
+          "snippet": "| Tema | Responsável Primário | Co-responsáveis |\n| --- | --- | --- |\n| Segurança da Informação e incidentes cibernéticos | CISO | CTO, DPO, Diretor Jurídico |\n| Proteção de dados pessoais (LGPD) | DPO | Diretor Jurídico, Compliance, CISO |"
+        },
+        {
+          "rank": 3,
+          "score": 0.5769,
+          "doc_id": "organograma.md/organograma",
+          "doc_title": "Organograma",
+          "page": null,
+          "section": "2.2. Diretoria Financeira (CFO)",
+          "snippet": "### 2.2. Diretoria Financeira (CFO)\n\n- Responsável pela integridade das demonstrações contábeis e pelo compliance fiscal e trabalhista.\n- Aprova orçamentos anuais e investimentos de capital.\n- Supervisiona Controladoria, Tesouraria, FP&A e "
+        },
+        {
+          "rank": 4,
+          "score": 0.5714,
+          "doc_id": "organograma.md/organograma",
+          "doc_title": "Organograma",
+          "page": null,
+          "section": "2. Cargos e Responsabilidades Diretas",
+          "snippet": "---\n\n## 2. Cargos e Responsabilidades Diretas\n\n### 2.1. Chief Executive Officer (CEO)\n\n- Representa a empresa perante o mercado, clientes, parceiros e autoridades.\n- Define, com o Conselho e as Diretorias, a estratégia corporativa, de inova"
+        },
+        {
+          "rank": 5,
+          "score": 0.5673,
+          "doc_id": "organograma.md/organograma",
+          "doc_title": "Organograma",
+          "page": null,
+          "section": "3. Instâncias de Governança e Papéis Especiais",
+          "snippet": "---\n\n## 3. Instâncias de Governança e Papéis Especiais\n\n### 3.1. Comitê de Ética\n\n- Composição mínima: representantes da Diretoria Jurídica, de RH, de TI e do Compliance, além de convidados, sempre em número ímpar.\n- Atribuições:\n  - interp"
+        }
+      ]
+    },
+    {
+      "id": "ORG-003",
+      "category": "",
+      "question": "A quem o CISO responde hierarquicamente?",
+      "expected_document": "Organograma",
+      "expected_section": null,
+      "expected_keywords": [],
+      "hit_document": true,
+      "hit_section": true,
+      "hit_keywords": true,
+      "passed": true,
+      "top_k_chunks": [
+        {
+          "rank": 1,
+          "score": 0.6546,
+          "doc_id": "organograma.md/organograma",
+          "doc_title": "Organograma",
+          "page": null,
+          "section": "2.6. Chief Information Security Officer (CISO)",
+          "snippet": "### 2.6. Chief Information Security Officer (CISO)\n\n- É o **executivo responsável pela segurança da informação** corporativa e de produtos.\n- Detém a **responsabilidade executiva** pelo gerenciamento de incidentes de segurança cibernética, "
+        },
+        {
+          "rank": 2,
+          "score": 0.6122,
+          "doc_id": "organograma.md/organograma",
+          "doc_title": "Organograma",
+          "page": null,
+          "section": null,
+          "snippet": "| Tema | Responsável Primário | Co-responsáveis |\n| --- | --- | --- |\n| Segurança da Informação e incidentes cibernéticos | CISO | CTO, DPO, Diretor Jurídico |\n| Proteção de dados pessoais (LGPD) | DPO | Diretor Jurídico, Compliance, CISO |"
+        },
+        {
+          "rank": 3,
+          "score": 0.5836,
+          "doc_id": "organograma.md/organograma",
+          "doc_title": "Organograma",
+          "page": null,
+          "section": "2.2. Diretoria Financeira (CFO)",
+          "snippet": "### 2.2. Diretoria Financeira (CFO)\n\n- Responsável pela integridade das demonstrações contábeis e pelo compliance fiscal e trabalhista.\n- Aprova orçamentos anuais e investimentos de capital.\n- Supervisiona Controladoria, Tesouraria, FP&A e "
+        },
+        {
+          "rank": 4,
+          "score": 0.5816,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": null,
+          "snippet": "**9.2. Dever de comunicar incidentes.** Todo colaborador que tomar conhecimento de incidente de segurança, vazamento de dados, perda de credenciais, ataque cibernético, uso indevido de contas ou suspeita de fraude deve comunicar o fato imed"
+        },
+        {
+          "rank": 5,
+          "score": 0.5758,
+          "doc_id": "organograma.md/organograma",
+          "doc_title": "Organograma",
+          "page": null,
+          "section": "2. Cargos e Responsabilidades Diretas",
+          "snippet": "---\n\n## 2. Cargos e Responsabilidades Diretas\n\n### 2.1. Chief Executive Officer (CEO)\n\n- Representa a empresa perante o mercado, clientes, parceiros e autoridades.\n- Define, com o Conselho e as Diretorias, a estratégia corporativa, de inova"
+        }
+      ]
+    },
+    {
+      "id": "ORG-004",
+      "category": "",
+      "question": "Quais orgaos devem ser acionados em caso de incidente com dados pessoais?",
+      "expected_document": "Organograma",
+      "expected_section": null,
+      "expected_keywords": [],
+      "hit_document": true,
+      "hit_section": true,
+      "hit_keywords": true,
+      "passed": true,
+      "top_k_chunks": [
+        {
+          "rank": 1,
+          "score": 0.6163,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": null,
+          "snippet": "**9.2. Dever de comunicar incidentes.** Todo colaborador que tomar conhecimento de incidente de segurança, vazamento de dados, perda de credenciais, ataque cibernético, uso indevido de contas ou suspeita de fraude deve comunicar o fato imed"
+        },
+        {
+          "rank": 2,
+          "score": 0.6027,
+          "doc_id": "organograma.md/organograma",
+          "doc_title": "Organograma",
+          "page": null,
+          "section": "3.2. DPO — Encarregado pelo Tratamento de Dados Pessoais",
+          "snippet": "### 3.2. DPO — Encarregado pelo Tratamento de Dados Pessoais\n\n- Papel conforme art. 41 da LGPD.\n- Responsabilidades principais:\n  - receber e orientar solicitações de titulares de dados;\n  - orientar colaboradores e fornecedores sobre boas "
+        },
+        {
+          "rank": 3,
+          "score": 0.5779,
+          "doc_id": "organograma.md/organograma",
+          "doc_title": "Organograma",
+          "page": null,
+          "section": null,
+          "snippet": "| Tema | Responsável Primário | Co-responsáveis |\n| --- | --- | --- |\n| Segurança da Informação e incidentes cibernéticos | CISO | CTO, DPO, Diretor Jurídico |\n| Proteção de dados pessoais (LGPD) | DPO | Diretor Jurídico, Compliance, CISO |"
+        },
+        {
+          "rank": 4,
+          "score": 0.5618,
+          "doc_id": "organograma.md/organograma",
+          "doc_title": "Organograma",
+          "page": null,
+          "section": "3. Instâncias de Governança e Papéis Especiais",
+          "snippet": "---\n\n## 3. Instâncias de Governança e Papéis Especiais\n\n### 3.1. Comitê de Ética\n\n- Composição mínima: representantes da Diretoria Jurídica, de RH, de TI e do Compliance, além de convidados, sempre em número ímpar.\n- Atribuições:\n  - interp"
+        },
+        {
+          "rank": 5,
+          "score": 0.5517,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": "9. Segurança da Informação e Proteção de Dados",
+          "snippet": "---\n\n## 9. Segurança da Informação e Proteção de Dados\n\n**9.1. Segurança como princípio ético.** A proteção das informações corporativas e de dados pessoais não é apenas obrigação jurídica, mas ética. Cada colaborador é corresponsável pela "
+        }
+      ]
+    },
+    {
+      "id": "ORG-005",
+      "category": "",
+      "question": "Qual diretoria ou orgao e responsavel pelo Canal de Denuncias?",
+      "expected_document": "Organograma",
+      "expected_section": null,
+      "expected_keywords": [],
+      "hit_document": true,
+      "hit_section": true,
+      "hit_keywords": true,
+      "passed": true,
+      "top_k_chunks": [
+        {
+          "rank": 1,
+          "score": 0.7135,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": "11. Canal de Denúncias",
+          "snippet": "**10.3. Uso corporativo.** Perfis institucionais e postagens oficiais são de responsabilidade do Comitê de Comunicação. A publicação de conteúdo em nome da empresa exige aprovação prévia.\n\n---\n\n## 11. Canal de Denúncias\n\n**11.1. Finalidade."
+        },
+        {
+          "rank": 2,
+          "score": 0.6046,
+          "doc_id": "organograma.md/organograma",
+          "doc_title": "Organograma",
+          "page": null,
+          "section": "3.3. Compliance",
+          "snippet": "### 3.3. Compliance\n\n- Executa programas de integridade, treinamentos éticos, anticorrupção e LGPD.\n- Mantém matrizes de risco e controles de conformidade.\n- Acompanha o registro e a evolução das denúncias recebidas pelo Canal de Denúncias."
+        },
+        {
+          "rank": 3,
+          "score": 0.5955,
+          "doc_id": "organograma.md/organograma",
+          "doc_title": "Organograma",
+          "page": null,
+          "section": "3. Instâncias de Governança e Papéis Especiais",
+          "snippet": "---\n\n## 3. Instâncias de Governança e Papéis Especiais\n\n### 3.1. Comitê de Ética\n\n- Composição mínima: representantes da Diretoria Jurídica, de RH, de TI e do Compliance, além de convidados, sempre em número ímpar.\n- Atribuições:\n  - interp"
+        },
+        {
+          "rank": 4,
+          "score": 0.5657,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": null,
+          "snippet": "**6.3. Assédio moral e sexual.** Qualquer conduta que configure humilhação, ridículo, perseguição repetida, ameaça, coerção, pressão psicológica abusiva, exposição a situações degradantes ou qualquer forma de assédio sexual constitui **falt"
+        },
+        {
+          "rank": 5,
+          "score": 0.5633,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": null,
+          "snippet": "**9.2. Dever de comunicar incidentes.** Todo colaborador que tomar conhecimento de incidente de segurança, vazamento de dados, perda de credenciais, ataque cibernético, uso indevido de contas ou suspeita de fraude deve comunicar o fato imed"
+        }
+      ]
+    },
+    {
+      "id": "CROSS-001",
+      "category": "",
+      "question": "Quem responde por seguranca da informacao e quem responde por conduta etica, respectivamente?",
+      "expected_document": null,
+      "expected_section": null,
+      "expected_keywords": [],
+      "hit_document": true,
+      "hit_section": true,
+      "hit_keywords": true,
+      "passed": true,
+      "top_k_chunks": [
+        {
+          "rank": 1,
+          "score": 0.6676,
+          "doc_id": "organograma.md/organograma",
+          "doc_title": "Organograma",
+          "page": null,
+          "section": null,
+          "snippet": "| Tema | Responsável Primário | Co-responsáveis |\n| --- | --- | --- |\n| Segurança da Informação e incidentes cibernéticos | CISO | CTO, DPO, Diretor Jurídico |\n| Proteção de dados pessoais (LGPD) | DPO | Diretor Jurídico, Compliance, CISO |"
+        },
+        {
+          "rank": 2,
+          "score": 0.6616,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": "9. Segurança da Informação e Proteção de Dados",
+          "snippet": "---\n\n## 9. Segurança da Informação e Proteção de Dados\n\n**9.1. Segurança como princípio ético.** A proteção das informações corporativas e de dados pessoais não é apenas obrigação jurídica, mas ética. Cada colaborador é corresponsável pela "
+        },
+        {
+          "rank": 3,
+          "score": 0.6455,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": "14. Responsáveis e Contato",
+          "snippet": "---\n\n## 14. Responsáveis e Contato\n\n**14.1. Comitê de Ética:** órgão colegiado responsável pela aplicação, interpretação e promoção deste Código.  \n**14.2. Diretoria Jurídica:** fornece suporte normativo e assessoramento jurídico.  \n**14.3."
+        },
+        {
+          "rank": 4,
+          "score": 0.6443,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": null,
+          "snippet": "**9.2. Dever de comunicar incidentes.** Todo colaborador que tomar conhecimento de incidente de segurança, vazamento de dados, perda de credenciais, ataque cibernético, uso indevido de contas ou suspeita de fraude deve comunicar o fato imed"
+        },
+        {
+          "rank": 5,
+          "score": 0.6232,
+          "doc_id": "organograma.md/organograma",
+          "doc_title": "Organograma",
+          "page": null,
+          "section": "3.3. Compliance",
+          "snippet": "### 3.3. Compliance\n\n- Executa programas de integridade, treinamentos éticos, anticorrupção e LGPD.\n- Mantém matrizes de risco e controles de conformidade.\n- Acompanha o registro e a evolução das denúncias recebidas pelo Canal de Denúncias."
+        }
+      ]
+    }
+  ]
+}
