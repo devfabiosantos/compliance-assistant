@@ -210,27 +210,27 @@ compliance-assistant/
 
 ---
 
-## Telas da aplicação (placeholders; substitua por prints reais antes da entrega)
+## Telas da aplicação
 
-> Para gerar prints reais: abra o Streamlit UI em `http://localhost:8501` e tire um screenshot de cada aba. Compacte em `assets/screenshots/*.png` (largura 1600px) e substitua os links abaixo.
+> Imagens reais da UI Streamlit. Todas com BUILD_TAG `v1.0.0` visível na sidebar.
 
 ### Figura 1 — 🏠 Home (BUILD_TAG + 8 diferenciais)
 
-![Figura 1 — Home do Compliance Assistant](assets/screenshots/placeholder_fig1_home.svg)
+![Figura 1 — Home do Compliance Assistant](assets/screenshots/fig1_home.PNG)
 
-> Descrição: tela inicial com título, tagline “Enterprise AI Assistant for LGPD Compliance and Corporate Knowledge Retrieval”, cartão com BUILD_TAG `v1.0.0-rc1` no canto superior direito, 8 cards de diferenciais (Rastreabilidade, 12 documentos indexados, LGPD + ANPD, Anti-hallucination, Avaliação 100% N1, 2 níveis de qualidade, Docker e OCI, 14 testes 14/14), tabela “Pronto para produção”, links para GitHub, site ANPD e licença MIT.
+> Descrição: tela inicial com título “NovaData Solutions · Compliance Assistant”, tagline “Enterprise AI Assistant for LGPD Compliance and Corporate Knowledge Retrieval”, BUILD_TAG `v1.0.0` visível na sidebar, coluna “Sobre o produto” + “Principais diferenciais” (Anti-hallucination, Resposta padrão de insuficiência, 2 níveis de avaliação, arquitetura provider-agnostic), coluna “Pronto para produção” (12 documentos indexados, 48 casos N1 100%, Runner Nível 2, Cohere command-r7b + embed-multilingual-v3.0, FAISS local, licença MIT, Entrega Challenge ONE 19/08 com buffer 10 dias), “Links úteis” (GitHub, ANPD LGPD, README ADRs).
 
 ### Figura 2 — 💬 Compliance Assistant (Pergunta 1: Incidente S0)
 
-![Figura 2 — Chat UI respondendo pergunta de Incidente S0](assets/screenshots/placeholder_fig2_chat_ui.svg)
+![Figura 2 — Chat UI respondendo pergunta de Incidente S0](assets/screenshots/fig2_chat_incidente_s0.PNG)
 
 > Descrição: aba de chat com histórico de 2 mensagens. Pergunta: “Em caso de incidente S0 na NovaData Solutions, quanto tempo de SLA e quem aciono?”. Resposta: “SLA de até 1 hora, responsáveis CISO e CTO, conforme o Plano de Resposta a Incidentes Seção 2 e Seção 3.1 Níveis de Severidade (S0–S4)”. Abaixo: `st.warning` desativado (resposta tem boas fontes), expander “📄 Fontes citadas (5)” aberto mostrando `dataframe` de 5 linhas com colunas Documento, Seção, Página, Score e Snippet — as 3 primeiras fontes são Plano Resposta Incidentes (Seção 2), Plano Resposta Incidentes (3.1), Política Privacidade LGPD — Seção 11 (Segurança e incidentes). Direita: 5 cards `st.metric` — Modelo: `cohere/chat/command-r7b-12-2024`, Embed: ~320ms, Busca: ~350ms, Geração: ~1.8s, Total: ~2.5s. Rodapé `st.info` com disclaimer “não substitui parecer jurídico”.
 
 ### Figura 3 — 📊 Qualidade do RAG (Nível 1 100% + Nível 2 resumo)
 
-![Figura 3 — Aba Qualidade do RAG](assets/screenshots/placeholder_fig3_qualidade.svg)
+![Figura 3 — Aba Qualidade do RAG](assets/screenshots/fig3_qualidade_n1_n2.PNG)
 
-> Descrição: 8 cards em 2 linhas (Nível 1 + Nível 2). Nível 1: Documento correto 100%, Seção correta 100%, Recall keywords 100%, Casos 48 / 48 PASS. Nível 2: Faithfulness médio (após rodar qa_level2 em 4 casos pilotos: LGPD-001, SEG-005, PRI-002, BKP-002) 86%, Context Recall 91%, Citation Precision 79%, Citation Recall 83%. Abaixo: tabela “Últimos 10 casos” com LGPD-001 (PASS) até USO-002 (PASS) com DOC=SEC=KW=100%.
+> Descrição: BUILD_TAG `v1.0.0` visível, 3 cards Nível 1: “Doc correto = 1.0”, “Seção correta = 1.0”, “Recall KW = 1.0” (meta ≥92% DOC ≥90% SEC ≥98% KW). Abaixo: card Nível 2 com instrução para rodar 4 casos piloto (LGPD-001 / SEG-005 / PRI-002 / BKP-002), quando gerado aparecerão 4 cards adicionais: Faithfulness, Context Recall, Citation Precision, Citation Recall.
 
 ---
 
@@ -516,7 +516,7 @@ O roteiro exato (4min55s ± 15s) com 9 telas, falas por segundo, dicas de grava�
 | `v0.5.0-rc1` | 5 | ✅ Entregue 08/08 | **Dockerfile + docker-compose**, deploy OCI passo a passo (`.sh` + `.ps1`), `.streamlit/config.toml`, **README final ONE com Mermaid**. |
 | `v0.6.0-rc1` | 6 (freeze) | ✅ Entregue 09/08 | Release notes em CHANGELOG seções `[0.6.0-rc1]` e `[1.0.0-rc1]`, 3 telas placeholders Fig.1/2/3 README, roteiro apresentação_one.md 5 minutos. |
 | **`v1.0.0-rc1`** | **final rc** | ✅ **congelado 09/08** | **Mesmo commit do `v0.6.0-rc1`** — tag semântica de release candidate para entrega ONE. |
-| `v1.0.0` | release final | 🎯 **meta 14/08** | Substituição dos 3 placeholders de screenshots por prints reais, ajustes cosméticos, tag `v1.0.0`. |
+| `v1.0.0` | release final | ✅ **entregue 08/08** | 3 telas reais Fig.1/2/3 substituindo placeholders, 2 hot-fixes (BUILD_TAG env + parser Qualidade N1 keys), bump `pyproject.toml` → `1.0.0`, tag final v1.0.0. |
 
 ### Futuro (pós-Challenge ONE, open source)
 
