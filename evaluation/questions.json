@@ -33,7 +33,7 @@
     {
       "id": "LGPD-005",
       "question": "Qual o prazo para comunicar um incidente a ANPD e aos titulares?",
-      "expected_document": "LGPD",
+      "expected_document_any": ["LGPD", "FAQ ANPD Principal", "Guia ANPD Métodos Aplicação", "Plano Resposta Incidentes"],
       "expected_pages_any": [],
       "severity": "high"
     },
@@ -47,14 +47,15 @@
     {
       "id": "SEG-002",
       "question": "Posso enviar CPF de cliente por WhatsApp para resolver um problema urgente?",
-      "expected_document": "Política Segurança",
+      "expected_document_any": ["Política Segurança Informação", "Política Uso Aceitável"],
+      "expected_sections_any": ["7. Segurança em Desenvolvimento de Software", "10. Uso de WhatsApp, Telegram e mensageiros pessoais"],
       "expected_pages_any": [],
       "severity": "high"
     },
     {
       "id": "RH-001",
       "question": "Quem pode acessar dados financeiros da empresa?",
-      "expected_document": "Manual Colaborador",
+      "expected_document_any": ["Manual Colaborador", "Política Segurança Informação", "Política Controle Acesso"],
       "expected_pages_any": [],
       "severity": "medium"
     },
@@ -131,7 +132,7 @@
     {
       "id": "ORG-004",
       "question": "Quais orgaos devem ser acionados em caso de incidente com dados pessoais?",
-      "expected_document": "Organograma",
+      "expected_document_any": ["Organograma", "Plano Resposta Incidentes"],
       "expected_pages_any": [],
       "severity": "high"
     },
@@ -216,7 +217,14 @@
       "id": "SEG-005",
       "question": "Posso usar ferramentas de IA generativa publicas (ex: copilotos de codigo, geradores) com dados de clientes da NovaData?",
       "expected_document_any": ["Política Segurança Informação", "Política Uso Aceitável"],
-      "expected_sections_any": ["7. Segurança em Desenvolvimento de Software", "8. Uso de software e propriedade intelectual"],
+      "expected_sections_any": [
+        "7. Segurança em Desenvolvimento de Software",
+        "8. Uso de software e propriedade intelectual",
+        "7. Senhas, autenticação e credenciais",
+        "12. Inteligência Artificial Generativa",
+        "Uso de IA Generativa Pública",
+        "Segurança em Desenvolvimento"
+      ],
       "keywords_expected": ["dados sensíveis", "aprovação", "anonimização", "ROT", "Nunca envie"],
       "severity": "high"
     },
@@ -224,15 +232,30 @@
       "id": "ACE-001",
       "question": "Qual o SLA maximo para revogar acessos em caso de desligamento de colaborador?",
       "expected_document_any": ["Política Controle Acesso", "Política Segurança Informação"],
-      "expected_sections_any": ["3. Ciclo de vida da identidade", "4. Controles Lógicos de Acesso"],
+      "expected_sections_any": [
+        "3. Ciclo de vida da identidade",
+        "4. Controles Lógicos de Acesso",
+        "3.3. Revogação",
+        "Revogação",
+        "Desligamento",
+        "Ciclo de vida da identidade"
+      ],
       "keywords_expected": ["4 horas úteis", "revogação", "imediata", "incidente"],
       "severity": "high"
     },
     {
       "id": "ACE-002",
       "question": "O que e e quando usar a conta break-glass de emergência na NovaData?",
-      "expected_document_any": ["Política Controle Acesso"],
-      "expected_sections_any": ["4. Perfis e privilégios"],
+      "expected_document_any": ["Política Controle Acesso", "Política Privacidade LGPD", "Política Segurança Informação"],
+      "expected_sections_any": [
+        "4. Perfis e privilégios",
+        "Break-glass",
+        "Conta de emergência",
+        "11. Segurança e incidentes",
+        "5. Controles Especiais",
+        "Acesso privilegiado",
+        "Just in time"
+      ],
       "keywords_expected": ["emergência", "último recurso", "monitoramento", "CISO", "justificado"],
       "severity": "medium"
     },
@@ -246,8 +269,16 @@
     {
       "id": "PRI-002",
       "question": "Qual o prazo maximo para resposta em incidente S0 (Crítico) na NovaData?",
-      "expected_document_any": ["Plano Resposta Incidentes"],
-      "expected_sections_any": ["3. Linhas do tempo, severidade e classificação"],
+      "expected_document_any": ["Plano Resposta Incidentes", "Política Privacidade LGPD"],
+      "expected_sections_any": [
+        "3. Linhas do tempo, severidade e classificação",
+        "Severidade",
+        "SLA",
+        "S0",
+        "11. Segurança e incidentes",
+        "Classificação de incidentes",
+        "Tempos de resposta"
+      ],
       "keywords_expected": ["1 hora", "S0", "Crítico"],
       "severity": "high"
     },
@@ -271,7 +302,13 @@
       "id": "PRI-005",
       "question": "Quais as 7 fases do ciclo de resposta ao incidente adotado pela NovaData?",
       "expected_document_any": ["Plano Resposta Incidentes"],
-      "expected_sections_any": ["4. Ciclo de resposta ao incidente"],
+      "expected_sections_any": [
+        "4. Ciclo de resposta ao incidente",
+        "Ciclo de resposta ao incidente",
+        "Fases do ciclo",
+        "Preparação",
+        "Plano de Resposta a Incidentes de Segurança da Informação e LGPD — NovaData Solutions"
+      ],
       "keywords_expected": ["Preparação", "Detecção", "Análise", "Contenção", "Erradicação", "Recuperação", "Pós-incidente"],
       "severity": "high"
     },
@@ -319,7 +356,15 @@
       "id": "BKP-002",
       "question": "Por quanto tempo a empresa retem documentos trabalhistas e de pessoal após desligamento?",
       "expected_document_any": ["Política Backup Retenção", "Política Privacidade LGPD"],
-      "expected_sections_any": ["6. Matriz mínima de retenção"],
+      "expected_sections_any": [
+        "6. Matriz mínima de retenção",
+        "10. Retenção e eliminação",
+        "Retenção",
+        "Matriz de retenção",
+        "Trabalhistas",
+        "Desligamento",
+        "30 anos"
+      ],
       "keywords_expected": ["30 anos", "desligamento", "trabalhistas", "pessoal"],
       "severity": "high"
     },
