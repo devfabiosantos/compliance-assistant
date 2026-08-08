@@ -26,7 +26,7 @@ COPY streamlit_app.py .streamlit ./
 
 RUN chmod +x /app/scripts/*.py /app/scripts/*.sh 2>/dev/null || true
 
-ARG BUILD_TAG=dev
+ARG BUILD_TAG=v1.0.0
 ENV COMPLIANCE_BUILD_TAG=${BUILD_TAG}
 
 HEALTHCHECK --interval=60s --timeout=10s --start-period=90s --retries=5 \

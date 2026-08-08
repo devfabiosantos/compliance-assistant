@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 import sys
 import time
 from dataclasses import dataclass
@@ -25,7 +26,18 @@ APP_TITLE = "Compliance Assistant"
 APP_SUBTITLE = "Enterprise AI Assistant for LGPD Compliance and Corporate Knowledge Retrieval"
 COMPANY = "NovaData Solutions"
 STACK = "Python · LangChain · Cohere · FAISS · Streamlit · Markdown"
-BUILD_TAG = "v0.4.0-rc1 · Sprint 4"
+DEFAULT_BUILD_TAG = "v1.0.0"
+
+
+def _resolve_build_tag() -> str:
+    for env_key in ("COMPLIANCE_BUILD_TAG", "BUILD_TAG"):
+        value = os.environ.get(env_key)
+        if value and value.strip():
+            return value.strip()
+    return DEFAULT_BUILD_TAG
+
+
+BUILD_TAG = _resolve_build_tag()
 
 
 @dataclass
@@ -271,10 +283,22 @@ def page_quality() -> None:
         )
     else:
         s = retrieval.get("summary") or retrieval.get("metrics") or {}
+        acc_doc = s.get(
+            "accuracy_document",
+            s.get("doc_accuracy", s.get("document_accuracy", "n/d")),
+        )
+        acc_sec = s.get(
+            "accuracy_section",
+            s.get("section_accuracy", "n/d"),
+        )
+        kw_rec = s.get(
+            "recall_keywords",
+            s.get("kw_recall", s.get("keyword_recall", "n/d")),
+        )
         c1, c2, c3 = st.columns(3)
-        c1.metric("Nível 1 · Doc correto", f"{s.get('accuracy_document', s.get('doc_accuracy', 'n/d'))}")
-        c2.metric("Nível 1 · Seção correta", f"{s.get('accuracy_section', s.get('section_accuracy', 'n/d'))}")
-        c3.metric("Nível 1 · Recall KW", f"{s.get('recall_keywords', s.get('kw_recall', 'n/d'))}")
+        c1.metric("Nível 1 · Doc correto", f"{acc_doc}")
+        c2.metric("Nível 1 · Seção correta", f"{acc_sec}")
+        c3.metric("Nível 1 · Recall KW", f"{kw_rec}")
         st.caption("Meta interna: ≥ 92% em Documento / ≥ 90% em Seção / ≥ 98% em KW.")
 
     st.markdown("---")
