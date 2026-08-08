@@ -63,46 +63,100 @@ Todas as respostas são acompanhadas de rastreabilidade, permitindo que colabora
 
 ---
 
-## Arquitetura
+## Arquitetura (Mermaid)
 
+```mermaid
+flowchart TB
+    subgraph Fontes["📚 Fontes (12 documentos indexados)"]
+        F1["LGPD (Lei 13.709/2018)"]
+        F2["Guia + FAQ ANPD"]
+        F3["Código de Ética + Organograma"]
+        F4["Políticas internas (7 docs)"]
+    end
+
+    subgraph Ingestao["🛠️ Pipeline de Ingestão (198 chunks)"]
+        L["loader.py (DocumentLoader com aliases)"]
+        S["splitter.py (outline H2+, last_section)"]
+        E["Cohere / embed-multilingual-v3.0 (batching 96)"]
+    end
+
+    subgraph Store["🗄️ Vector Store (FAISS Local)"]
+        V["index.faiss\n(docstore.pkl + version.json)"]
+    end
+
+    subgraph Retrieval["🔎 Rerieval Nível 1 (48 casos 100%)"]
+        R["RetrievalService (top_k=5, score threshold)"]
+        EV1["evaluate_retrieval.py\nDOC% / SEC% / KW%"]
+    end
+
+    subgraph Geracao["🧠 QA + Anti-hallucination"]
+        QA["QAService (_build_answer)"]
+        CH["Cohere chat / command-r7b-12-2024"]
+        EV2["evaluate_qa_level2.py\nF / CR / CP / CRec"]
+    end
+
+    subgraph UI["🌐 Interfaces (usuário humano)"]
+        CLI["scripts/chat.py (CLI)"]
+        WEB["streamlit_app.py (5 abas)"]
+    end
+
+    subgraph Deploy["☁️ Deploy (Oracle Cloud Infrastructure)"]
+        DOCK["Dockerfile + docker-compose.yml"]
+        SH["deploy_oci.sh + deploy_oci.ps1"]
+        RUN["VM A1 (AMPERE) → porta 8501"]
+    end
+
+    Fontes --> L --> S --> E --> V
+    V --> R --> QA --> CH
+    QA --> EV2
+    R  --> EV1
+    QA --> CLI & WEB
+    WEB & CLI --> DOCK --> RUN
+    SH -- "gera imagem + up" --> DOCK
+
+    classDef docs fill:#eef2ff,stroke:#4f46e5,stroke-width:1px,color:#1e1b4b
+    classDef app fill:#ecfeff,stroke:#0891b2,stroke-width:1px,color:#083344
+    classDef eval fill:#fef3c7,stroke:#d97706,stroke-width:1px,color:#78350f
+    classDef deploy fill:#dcfce7,stroke:#16a34a,stroke-width:1px,color:#14532d
+
+    class F1,F2,F3,F4 docs
+    class L,S,E,V,R,QA,CH,CLI,WEB app
+    class EV1,EV2 eval
+    class DOCK,SH,RUN deploy
 ```
- Documentos                           (fontes oficiais + políticas internas)
-        │
-        ▼
-  Carregamento (PyPDF / Markdown)
-        │
-        ▼
-  Normalização & Chunking             (tamanho controlado, com sobreposição)
-        │
-        ▼
-  Embeddings (Cohere)                 (embed-multilingual-v3.0)
-        │
-        ▼
-  FAISS Vector Store                  (índice local com versionamento)
-        │
-        ▼
-  Retriever Semântico                 (top-k + score threshold)
-        │
-        ▼
-  LLM Cohere (Command-R)             (RAG com prompt de auditoria)
-        │
-        ▼
-  Resposta + Fontes + Páginas        (rastreabilidade completa)
-```
+
+### Camadas do código
+
+| Camada | Diretório / Arquivo | Responsabilidade |
+| --- | --- | --- |
+| Config | `src/config/settings.py`, `.env.example` | Variáveis e defaults (chunk size, top_k, models Cohere) |
+| Domínio | `src/domain/` | `Question`, `Chunk`, `Document`, `Answer` (+ `LatencyBreakdown`) |
+| Ingestão | `src/ingestion/loader.py`, `splitter.py` | Carregamento, aliases por documento, chunking com seção herdada |
+| Providers | `src/providers/cohere_chat.py`, `cohere_embeddings.py` | Chat e embeddings Cohere (abstrai SDK v5, aliases descontinuados, batching) |
+| Retrieval | `src/retrieval/faiss_store.py` | FAISS local, persistência e busca top-k com score threshold |
+| Serviços | `src/services/index_service.py`, `qa_service.py` | Orquestração de indexação e QA anti-hallucination |
+| CLI | `scripts/index_documents.py`, `scripts/chat.py` | Entrada humana (indexação e consulta por terminal) |
+| Web | `streamlit_app.py`, `.streamlit/config.toml` | Interface 5 abas (Home, Chat, Base, Qualidade, Sobre) |
+| Avaliação | `evaluation/evaluate_retrieval.py`, `evaluate_qa_level2.py`, `questions.json` (48 casos) | Medição objetiva Nível 1 e Nível 2, com JSON reports |
+| Deploy | `Dockerfile`, `docker-compose.yml`, `scripts/deploy_oci.sh`, `deploy_oci.ps1` | Containerização e deploy OCI passo a passo |
+| Testes | `tests/test_qa_service.py` (9), `tests/test_streamlit_smoke.py` (5) | Smoke e unitários para CI (14/14 passando em v0.5.0-rc1) |
 
 ## Stack Tecnológico
 
 | Camada | Tecnologia |
 | --- | --- |
-| Linguagem | Python 3.12 |
-| Orquestração RAG | LangChain |
-| Provedor de IA | Cohere (Chat + Embeddings) |
-| Banco Vetorial | FAISS |
-| Carregamento PDF | PyPDF |
-| Interface MVP | CLI (Click) |
-| Interface Web | Streamlit (Sprint posterior) |
-| Deploy | Oracle Cloud Infrastructure (OCI) |
-| Versionamento | Git + Conventional Commits |
+| Linguagem | Python 3.12 / 3.13 |
+| Orquestração RAG | LangChain (community + core + text-splitters) |
+| Provedor de IA | Cohere (Chat `command-r7b-12-2024` + Embeddings `embed-multilingual-v3.0`) |
+| Banco Vetorial | FAISS 1.8 (local, com versionamento em `data/vector_store/.gitignore`) |
+| Carregamento PDF | PyPDF 5+ |
+| Interface MVP | CLI (Click 8.1) |
+| Interface Web | Streamlit 1.38+ (5 abas institucionais) |
+| Empacotamento | Dockerfile Python 3.13-slim + docker-compose v2 |
+| Deploy | Oracle Cloud Infrastructure (Always Free A1 ou Flex) |
+| Testes | pytest 8+ (14 testes: 9 QA + 5 Streamlit smoke) |
+| Versionamento | Git + Conventional Commits + tags SemVer (`v0.1.0`..`v0.5.0-rc1`) |
+| Licença | MIT |
 
 ---
 
@@ -117,24 +171,33 @@ compliance-assistant/
 │   ├── oficiais/                # LGPD, guias e FAQs da ANPD
 │   ├── empresa/                 # políticas e manuais internos (MD fonte)
 │   └── adr/                     # Architecture Decision Records
-├── evaluation/                  # casos de teste do RAG
+├── evaluation/
+│   ├── questions.json           # 48 casos N1/N2 (LGPD + 7 corporativos + cross)
+│   ├── evaluate_retrieval.py    # runner Nível 1 (DOC/SEC/KW)
+│   ├── evaluate_qa_level2.py    # runner Nível 2 (Faithfulness/CR/CP/CRec)
+│   └── reports/                 # JSON reports (versionados em releases)
 ├── scripts/
-│   ├── index_documents.py       # pipeline de ingestão
-│   └── chat.py                  # CLI de consulta
+│   ├── index_documents.py       # pipeline de ingestão (CLI)
+│   ├── chat.py                  # consulta via terminal
+│   ├── verify_cohere.py         # smoke de API (embed + chat)
+│   ├── deploy_oci.sh            # deploy VM OCI (Oracle Linux 8/9)
+│   └── deploy_oci.ps1           # envio Windows -> SSH -> OCI + deploy
 ├── src/
 │   ├── app/                     # entrypoints / wiring
 │   ├── cli/                     # comandos Click
 │   ├── config/                  # carregamento de settings
-│   ├── domain/                  # modelos centrais (Question, Answer, ...)
-│   ├── ingestion/               # load, split, normalização
+│   ├── domain/                  # modelos centrais (Question, Answer, LatencyBreakdown)
+│   ├── ingestion/               # load, split, normalização, aliases
 │   ├── providers/               # abstração LLM/embeddings
-│   │   ├── base.py
-│   │   ├── cohere_chat.py
-│   │   └── cohere_embeddings.py
 │   ├── retrieval/               # FAISS / retrievers
-│   ├── services/                # faixas de uso (QAService, IndexService)
-│   └── utils/                   # logging, formatação, textos
+│   ├── services/                # IndexService, QAService
+│   └── utils/                   # logging, textos
 ├── tests/
+│   ├── test_qa_service.py       # 9 unitários Answer/_build_answer
+│   └── test_streamlit_smoke.py  # 5 smoke de import/12 docs/pages
+├── .streamlit/config.toml       # tema NovaData + telemetria off
+├── Dockerfile                   # imagem multi-camada Python 3.13-slim
+├── docker-compose.yml           # serviço compliance-assistant porta 8501
 ├── .env.example
 ├── .gitignore
 ├── CHANGELOG.md
@@ -147,117 +210,248 @@ compliance-assistant/
 
 ---
 
-## Como executar localmente
+## Como executar localmente (3 minutos)
 
-### 1. Requisitos
+### 0. Pré-requisitos
 
-- Python 3.12+
-- Chave de API da Cohere (`COHERE_API_KEY`)
+- Python **3.12+** (testado em 3.13.7 Windows / Linux)
+- Chave de API da Cohere: `https://dashboard.cohere.com/api-keys` (free trial = 1.000 chamadas/mês, **100 chamadas de embed** por dia — suficiente para demo ONE)
+- (Opcional) Git e **Docker Desktop** 4.28+ para rodar via `docker compose`
 
-### 2. Instalação
+### 1. Clone + venv + dependências
 
-```bash
+```powershell
+# Windows PowerShell 5 (caminho que usamos neste Challenge ONE)
+cd C:\ComplianceGPT
 python -m venv .venv
-.venv\Scripts\activate        # Windows PowerShell
-# source .venv/bin/activate   # Linux/Mac
+.venv\Scripts\Activate.ps1
 
-pip install --upgrade pip
-pip install -r requirements.txt
-pip install -e .
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
 ```
 
-### 3. Configuração
+### 2. Variáveis de ambiente
 
-```bash
-cp .env.example .env
-# Edite .env e preencha COHERE_API_KEY
+```powershell
+Copy-Item .env.example .env
+# Abra o .env e preencha COHERE_API_KEY=<sua-chave>
+# Exemplo:
+#   COHERE_API_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+#   COHERE_CHAT_MODEL=command-r7b-12-2024
+#   COHERE_EMBED_MODEL=embed-multilingual-v3.0
 ```
 
-### 4. Indexar os documentos
+### 3. Indexar documentos + rodar avaliação N1 (garante 48/48 PASS)
 
-```bash
-python scripts/index_documents.py
+```powershell
+python scripts\index_documents.py
+python evaluation\evaluate_retrieval.py --fail-on-zero
 ```
 
-### 5. Consultar o assistente (CLI)
-
-```bash
-python scripts/chat.py "O que caracteriza um dado pessoal sensível?"
+Esperado:
 ```
+Acuracia (documento correto) : 100.0%
+Acuracia (secao correta)     : 100.0%
+Recall  (palavras-chave)     : 100.0%
+casos=48 pass=48 fail=0
+```
+
+### 4a. Consulta via CLI
+
+```powershell
+python scripts\chat.py "Posso compartilhar senha com colega em caso de urgencia?"
+```
+
+### 4b. Consulta via Streamlit (UI principal)
+
+```powershell
+streamlit run streamlit_app.py
+```
+
+Abre `http://localhost:8501` no navegador. 5 abas:
+
+- **🏠 Home** — BUILD_TAG, 8 diferenciais, 12 docs indexados.
+- **💬 Compliance Assistant** — chat com histórico, perguntas sugeridas, expander “Fontes citadas”, 5 métricas, warning `insufficient_information`.
+- **📚 Base** — cards 3 colunas dos 12 documentos.
+- **📊 Qualidade** — lê os JSON reports `retrieval_report.json` e `qa_level2_report.json`, mostra 8 cards + tabela de casos.
+- **📘 Sobre / Contato** — narrativa NovaData, arquitetura 10 camadas, 5 contatos por papel.
+
+### 5. (Opcional) Rodar todos os testes
+
+```powershell
+python -m pytest tests/test_qa_service.py tests/test_streamlit_smoke.py -v
+```
+
+Esperado: **14 passed, 9 warnings (datetime.utcnow)**.
 
 ---
 
-## Avaliação da qualidade do RAG
+## Como executar local via Docker (sem venv, com compose)
 
-A qualidade do sistema é medida em **níveis** para evitar retrabalho: primeiro valida-se a recuperação semântica, só depois a qualidade da resposta.
+```powershell
+# 1. Tenha o Docker Desktop ligado
+# 2. Copie .env.example -> .env (preencha COHERE_API_KEY)
+# 3. Builda a imagem, reindexa vetores, sobe servico:
+docker compose build --no-cache
 
-### Nível 1 — Retrieval (documento / seção / palavras-chave)
+# 4. (Uma vez, ou quando docs mudarem) Reindexa vetores na primeira vez:
+docker compose run --rm --no-deps compliance-assistant python scripts/index_documents.py
 
-O runner `evaluation/evaluate_retrieval.py` executa automaticamente os casos definidos em `evaluation/questions.json` e gera relatório em texto + JSON.
+# 5. Sobe em background:
+docker compose up -d
 
-**Como rodar:**
-
-```bash
-# 1) Garanta que o indice existe
-python scripts/index_documents.py
-
-# 2) Executa avaliacao Nivel 1 com top_k do .env
-python evaluation/evaluate_retrieval.py
-
-# 3) Sobrescrevendo k para comparar impactos
-python evaluation/evaluate_retrieval.py --k 3
-
-# 4) Falhar o processo se houver casos reprovados (ideal para CI)
-python evaluation/evaluate_retrieval.py --fail-on-zero
+# 6. Verifica:
+docker compose ps ; curl http://localhost:8501/_stcore/health
+# Abre http://localhost:8501
 ```
 
-O relatório JSON é salvo em `evaluation/reports/retrieval_report.json` e contém:
-- acurácia de **documento correto**
-- acurácia de **seção correta** (quando aplicável)
-- recall de **palavras-chave** esperadas
-- top-k chunks retornados por caso, com score, página e snippet
+Logs: `docker compose logs -f --tail=200`.
 
-### Nível 2 — Qualidade da resposta (Sprint posterior)
+---
 
-Depois do retrieval estável, avalia-se:
-- groundedness / faithfulness (resposta fiel aos chunks)
-- relevância semântica
-- completude vs. esperado
+## Deploy na Oracle Cloud Infrastructure (Always Free ou Flex)
+
+### Pré-requisitos OCI (Console Oracle)
+
+1. Compartimento OCI com uma VM:
+   - **Sempre grátis recomendada:** Shape **`VM.Standard.A1.Flex`** (AMPERE, 4 OCPU, 24 GB RAM), Oracle Linux 9, volume em bloco 200 GB (sempre grátis).
+   - OU Flex X86 padrão.
+2. **Security List (Ingress):**
+   - `0.0.0.0/0` TCP **22** (SSH, restrito ao seu IP idealmente)
+   - `0.0.0.0/0` TCP **8501** (Streamlit UI)
+3. **Chave SSH privada (.ppk / OpenSSH)**: o par foi gerado no momento da criação da VM.
+4. Saber **`IP_PUBLICO_OCI`** e usuário padrão (`opc` no Oracle Linux; `ubuntu` em imagens Ubuntu).
+
+### Passo A — Windows → envia código + .env via PowerShell
+
+Abra PowerShell normal em `c:\ComplianceGPT` e rode:
+
+```powershell
+# 1. Edite estes 3 valores perto do topo do arquivo scripts/deploy_oci.ps1
+#       $IpPublico    = "150.136.1.1"
+#       $Usuario      = "opc"
+#       $ChavePrivada = "$env:USERPROFILE\.ssh\oci_rsa"
+
+# 2. Rode:
+.\scripts\deploy_oci.ps1
+```
+
+Espera terminar (cerca de 10 minutos na primeira build Docker). Ao final imprime `DEPLOY CONCLUIDO` e a URL pública.
+
+### Passo B — Manualmente (se preferir comandos na mão)
+
+```bash
+# No seu notebook, envia arquivos para a VM:
+scp -i ~/.ssh/oci_rsa -r C:/ComplianceGPT          opc@150.136.1.1:/home/opc/compliance-assistant
+scp -i ~/.ssh/oci_rsa    C:/ComplianceGPT/.env     opc@150.136.1.1:/home/opc/compliance-assistant/.env
+
+# Na VM OCI (ssh opc@150.136.1.1):
+sudo bash /home/opc/compliance-assistant/scripts/deploy_oci.sh
+```
+
+Ao final:
+- A URL `http://SEU_IP_PUBLICO:8501` abre o Compliance Assistant no navegador.
+- `_stcore/health` retorna `ok` (healthcheck).
+- Ajuste a Security List / Network Security Group para aceitar 8501/TCP Ingress se houver timeout.
+
+### Troubleshooting OCI rápido
+
+| Sintoma | Causa provável | Correção |
+| --- | --- | --- |
+| Timeout ao abrir :8501 | Security List / NSG não tem porta 8501 Ingress | Console OCI → Network → Security List → Add Ingress 8501/TCP 0.0.0.0/0 |
+| `.env NAO ENCONTRADO` dentro do container | Você esqueceu `scp .env` antes de rodar deploy | Copie .env para VM e `cd /opt/compliance-assistant && sudo docker compose up -d` |
+| `BadRequestError 96 texts` no primeiro index | Erro antigo, corrigido v0.2.6+ | Pull da tag mais nova `v0.2.0-rc1` em diante |
+| `command-r descontinuado` | Modelo antigo no .env | Troque por `command-r7b-12-2024` (default hoje) |
+| Index não persiste após restart container | Volume `./data/vector_store` não está montado | Use `docker compose` default (monta volume corretamente) |
+
+---
+
+## Avaliação da qualidade do RAG (Nível 1 + Nível 2)
+
+A qualidade é medida em **dois níveis**, para debugarmos por componente (primeiro garante retrieval, depois mede qualidade da resposta).
+
+### Nível 1 — Retrieval (48/48 PASS em v0.5.0-rc1)
+
+```powershell
+python scripts\index_documents.py
+python evaluation\evaluate_retrieval.py --fail-on-zero --report evaluation\reports\retrieval_report.json
+```
+
+Relatório JSON em `evaluation/reports/retrieval_report.json`:
+- **Acurácia documento correto** (% casos em que o top-1 acertou o documento esperado ou cross-document esperado)
+- **Acurácia seção correta** (% casos em que o top-1 acertou a seção)
+- **Recall keywords** (% palavras-chave esperadas presentes no top-k)
+
+### Nível 2 — Qualidade da resposta final (Faithfulness / CR / CP / CRec)
+
+```powershell
+# 4 casos pilotos (economiza tokens Cohere trial)
+python evaluation\evaluate_qa_level2.py --cases LGPD-001,SEG-005,PRI-002,BKP-002 --fail-below 0.40
+
+# Todos os 48 casos (apenas em release, gasta tokens de chat)
+python evaluation\evaluate_qa_level2.py --report evaluation\reports\qa_level2_report.json
+```
+
+Métricas por caso (0–100%):
+- **Faithfulness (F):** tokens da resposta presentes nos chunks recuperados — anti-hallucination.
+- **Context Recall (CR):** keywords esperadas presentes na resposta.
+- **Citation Precision (CP):** % fontes citadas que são úteis (expected).
+- **Citation Recall (CRec):** % fontes esperadas citadas na resposta.
 
 ---
 
 ## Limitações e Uso Responsável
 
-- O **Compliance Assistant não substitui parecer jurídico** ou decisão de área competente.
-- Respostas são geradas exclusivamente a partir dos documentos indexados. Informação ausente na base resultará em respostas incompletas ou declaração de não conhecimento.
-- Não envie dados pessoais reais (CPF, e-mails, números de documentos) ao usar ambientes públicos ou de demonstração.
-- Índices locais gerados em `data/vector_store/` são artefatos transitórios e não devem ser versionados.
+- O **Compliance Assistant não substitui parecer jurídico** ou decisão de área competente. Sempre valide pontos críticos com Jurídico / DPO / CISO.
+- Respostas são geradas **exclusivamente a partir dos 12 documentos indexados** (3 oficiais LGPD/ANPD + 9 corporativos). Informação ausente na base retorna texto padrão de “informação insuficiente”.
+- Índices locais gerados em `data/vector_store/` são transitórios (`.gitignore`). Reindexe sempre que docs mudarem.
+- Não envie dados pessoais reais em ambientes públicos de demonstração. O produto respeita LGPD (base legal “legítimo interesse / execução de contrato” para consultas internas).
+- O trial gratuito da Cohere tem cotas diárias. Para produção, configure chave paga ou provider alternativo via `src/providers/` (arquitetura provider-agnostic).
 
 ---
 
-## Roadmap
+## FAQ rápido
 
-| Versão | Sprint | Conteúdo |
-| --- | --- | --- |
-| `v0.1.0` | 1 | Arquitetura, estrutura do repositório e documentação inicial |
-| `v0.2.0` | 2 | Base documental da NovaData Solutions (MDs corporativos) |
-| `v0.3.0` | 3 | Pipeline de ingestão completo e indexação FAISS |
-| `v0.4.0` | 4 | Motor de perguntas e respostas com rastreabilidade |
-| `v0.5.0` | 5 | Interface Web (Streamlit multipágina com site institucional) |
-| `v0.6.0` | 6 | Testes de qualidade e validação do RAG |
-| `v0.9.0` | 7 | Deploy na Oracle Cloud Infrastructure |
-| `v1.0.0` | 8 | README final, apresentação e ajustes de lançamento |
+**1. Posso trocar Cohere por OpenAI / Gemini / Llama 3.2 locais sem reescrever tudo?**
+Sim. Arquitetura é **provider-agnostic**: implemente uma subclasse de `ChatProvider` e `EmbeddingProvider` em `src/providers/base.py`, edite `settings.py` e `QAService` pega o novo provider automaticamente. Nenhuma linha de UI/CLI muda.
 
-Evoluções futuras pós `v1.0.0`:
+**2. O índice FAISS local escala para 10 mil páginas?**
+Razoavelmente (~5GB RAM). Para >100k chunks, substitua `src/retrieval/faiss_store.py` por Qdrant / pgvector (sem mudar `QAService`). ADR 0001 já justifica a escolha inicial por FAISS (MVP).
 
-- Upload de documentos com processamento assíncrono
-- pgvector / Qdrant como banco vetorial em produção
-- API REST (FastAPI) + frontend React
-- Autenticação JWT e controle de perfis
-- Auditoria com histórico completo de perguntas e respostas
-- RAG híbrido (semântico + palavras-chave)
-- Avaliação automática (faithfulness, groundedness, relevância)
-- Observabilidade (logs estruturados, métricas, tracing)
+**3. Como adicionar um documento novo?**
+Salve o `.md` em `docs/empresa/` (ou `.pdf` em `data/documents/`), acrescente 2–3 casos em `evaluation/questions.json`, rode `python scripts/index_documents.py` e depois `evaluate_retrieval.py`. Se documento correto <90%, adicione aliases em `src/ingestion/loader.py` (Sprint 2.6).
+
+**4. Como fazer deploy em outra cloud (AWS/GCP/Azure)?**
+Use o mesmo `Dockerfile` + `docker-compose.yml`. O passo `deploy_oci.sh` (10 passos) é o roteiro genérico:
+1. Instala docker na VM.
+2. Envia código + `.env` (**via SCP / never in Git**).
+3. `docker compose build ; docker compose up -d`.
+4. Libera porta 8501 no Security Group.
+
+---
+
+## Roadmap entregue (Challenge ONE até 19/08/2026)
+
+| Versão | Sprint | Status | Conteúdo |
+| --- | --- | --- | --- |
+| `v0.1.0` | 1 | ✅ Entregue 07/08 | Esqueleto, camadas, ADRs, documentos piloto (Ética + Organograma), runner Nível 1, anti-hallucination básico. |
+| `v0.2.0-rc1` | 2 + 2.6/2.7/2.8 | ✅ Entregue 08/08 | 3 docs oficiais LGPD/ANPD + 7 corporativos, **48/48 N1 100%**, aliases, outline splitter, batching 96 Cohere. |
+| `v0.3.0-rc1` | 3 | ✅ Entregue 08/08 | `Answer 2.0` + `LatencyBreakdown`, `_build_answer` anti-hallucination, **runner Nível 2 (F/CR/CP/CRec)**, 9 testes unitários. |
+| `v0.4.0-rc1` | 4 | ✅ Entregue 08/08 | `streamlit_app.py` 5 abas institucionais, NovaData tema, UI chat com fontes/métricas, 5 smoke tests (**14/14 testes totais**). |
+| `v0.5.0-rc1` | **5** | 🚀 **atual** | **Dockerfile + docker-compose**, deploy OCI passo a passo (`.sh` + `.ps1`), `.streamlit/config.toml`, **README final ONE com Mermaid**. |
+| `v0.6.0-rc1` | 6 (freeze) | 📌 próximo (10/08) | Release notes, CHANGELOG seção `[0.6.0]`, ajustes finos de UI, README com prints reais, CONTRIBUTING atualizado. |
+| `v1.0.0` | final | 🎯 **meta 14/08** | Tag de entrega, vídeo 5 min, apresentação ONE. |
+
+### Futuro (pós-Challenge ONE, open source)
+
+- Upload de documentos com processamento assíncrono (Celery / RQ).
+- pgvector / Qdrant em produção (FAISS como dev fallback).
+- API REST (FastAPI v1) + `ComplianceAssistantClient` Python / TS.
+- Autenticação JWT + controle de perfis (Admin, Compliance, Colaborador, Auditor).
+- Auditoria com tabela `interactions` (perguntas, respostas, tempo, usuário).
+- RAG híbrido (semântico + BM25).
+- Observabilidade (logs JSON, métricas Prometheus, tracing OpenTelemetry).
+- Avaliação GPT-4o como juiz (Faithfulness premium).
 
 ---
 
@@ -265,7 +459,7 @@ Evoluções futuras pós `v1.0.0`:
 
 Este projeto foi desenvolvido como desafio prático do programa **Oracle Next Education (ONE)**, combinando os requisitos do Challenge com uma arquitetura de produto real, boas práticas de engenharia e documentação profissional.
 
-O objetivo educacional é demonstrar a aplicação prática de IA Generativa (RAG) em um cenário realista de conformidade corporativa e LGPD, com controle sobre a arquitetura, governança, rastreabilidade e evolução incremental do produto.
+O objetivo educacional é demonstrar a aplicação prática de IA Generativa (RAG) em um cenário realista de conformidade corporativa e LGPD, com controle sobre a arquitetura, governança, rastreabilidade e evolução incremental do produto em **6 sprints atômicas** (06/08 → 10/08 de 2026), **5 versões taggeadas**, **48 casos de teste N1 100%**, **14 testes unitários passando** e deploy reproduzível em Oracle Cloud.
 
 ---
 
