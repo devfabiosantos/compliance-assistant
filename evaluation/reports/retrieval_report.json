@@ -5,10 +5,10 @@
   "questions_file": "C:\\ComplianceGPT\\evaluation\\questions.json",
   "vector_store_dir": "C:\\ComplianceGPT\\data\\vector_store",
   "summary": {
-    "total": 21,
-    "passed": 6,
-    "failed": 15,
-    "document_accuracy": 0.2857,
+    "total": 48,
+    "passed": 48,
+    "failed": 0,
+    "document_accuracy": 1.0,
     "section_accuracy": 1.0,
     "keyword_recall": 1.0
   },
@@ -20,55 +20,55 @@
       "expected_document": "LGPD",
       "expected_section": null,
       "expected_keywords": [],
-      "hit_document": false,
+      "hit_document": true,
       "hit_section": true,
       "hit_keywords": true,
-      "passed": false,
+      "passed": true,
       "top_k_chunks": [
         {
           "rank": 1,
-          "score": 0.5898,
-          "doc_id": "readme.md/readme",
-          "doc_title": "Readme",
+          "score": 0.7892,
+          "doc_id": "faq_anpd_principal.md/faq_anpd_principal",
+          "doc_title": "Faq Anpd Principal",
           "page": null,
-          "section": "Documentos oficiais",
-          "snippet": "# Documentos oficiais\n\nPasta reservada para os documentos de referência oficiais relacionados à LGPD e ANPD.\n\n## Conteúdo esperado\n\n- `LGPD.pdf` — Lei Geral de Proteção de Dados (Lei nº 13.709/2018).\n- `Guia_ANPD.pdf` — guia(s) e cartilhas "
+          "section": "1. Dados pessoais: conceitos básicos",
+          "snippet": "# FAQ — Perguntas Frequentes da ANPD sobre LGPD\n**Autoridade Nacional de Proteção de Dados (ANPD)**\n*Compilado atualizado em 01/2026 (versão de referência interna; íntegra oficial disponível em gov.br/anpd)*\n\n---\n\n## 1. Dados pessoais: conc"
         },
         {
           "rank": 2,
-          "score": 0.5873,
-          "doc_id": "organograma.md/organograma",
-          "doc_title": "Organograma",
+          "score": 0.6993,
+          "doc_id": "lgpd_leil_13709_2018.md/lgpd_leil_13709_2018",
+          "doc_title": "Lgpd Leil 13709 2018",
           "page": null,
-          "section": "3.2. DPO — Encarregado pelo Tratamento de Dados Pessoais",
-          "snippet": "### 3.2. DPO — Encarregado pelo Tratamento de Dados Pessoais\n\n- Papel conforme art. 41 da LGPD.\n- Responsabilidades principais:\n  - receber e orientar solicitações de titulares de dados;\n  - orientar colaboradores e fornecedores sobre boas "
+          "section": "Lei nº 13.709, de 14 de agosto de 2018",
+          "snippet": "# Lei Geral de Proteção de Dados Pessoais — LGPD\n## Lei nº 13.709, de 14 de agosto de 2018\n**Documento de referência — NovaData Solutions**\nVersão de referência: atualizada até 01/2026 (stub com artigos selecionados para consulta interna; v"
         },
         {
           "rank": 3,
-          "score": 0.5648,
-          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
-          "doc_title": "Codigo Etica Conduta",
+          "score": 0.6978,
+          "doc_id": "faq_anpd_principal.md/faq_anpd_principal",
+          "doc_title": "Faq Anpd Principal",
           "page": null,
-          "section": "6. Diversidade, Inclusão e Assédio",
-          "snippet": "**5.3. Sigilo em relação a dados de clientes.** Qualquer dado pessoal ou empresarial sob custódia da NovaData Solutions em razão de contratos de prestação de serviços deve ser tratado como confidencial. A sua coleta, armazenamento, acesso, "
+          "section": "2. Princípios e bases legais",
+          "snippet": "Vide art. 5º, II, LGPD.\n\n**Q03. O que é dado anonimizado?**\nÉ dado tratado com técnicas de anonimização adequadas e controladas, de forma que o titular **não possa ser reidentificado** com razoabilidade (inclusive cruzamento com outros banc"
         },
         {
           "rank": 4,
-          "score": 0.5238,
-          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
-          "doc_title": "Codigo Etica Conduta",
+          "score": 0.6793,
+          "doc_id": "lgpd_leil_13709_2018.md/lgpd_leil_13709_2018",
+          "doc_title": "Lgpd Leil 13709 2018",
           "page": null,
-          "section": null,
-          "snippet": "**2.2. Legalidade.** Cumprir rigorosamente a legislação aplicável, em especial a Lei Geral de Proteção de Dados (Lei nº 13.709/2018), a Lei de Informática (Lei nº 12.965/2014), a Lei Anticorrupção (Lei nº 12.846/2013), as normas trabalhista"
+          "section": "Apêndice — Artigos de referência para perguntas frequentes",
+          "snippet": "---\n\n## Apêndice — Artigos de referência para perguntas frequentes\n\nO que caracteriza dado pessoal? — Vide art. 5º, I.\nO que é dado pessoal sensível? — Vide art. 5º, II.\nQuais são os princípios da LGPD? — Vide art. 6º, I a X.\nQuais são as h"
         },
         {
           "rank": 5,
-          "score": 0.523,
-          "doc_id": "organograma.md/organograma",
-          "doc_title": "Organograma",
+          "score": 0.6557,
+          "doc_id": "politica_privacidade_lgpd.md/politica_privacidade_lgpd",
+          "doc_title": "Politica Privacidade Lgpd",
           "page": null,
-          "section": null,
-          "snippet": "| Tema | Responsável Primário | Co-responsáveis |\n| --- | --- | --- |\n| Segurança da Informação e incidentes cibernéticos | CISO | CTO, DPO, Diretor Jurídico |\n| Proteção de dados pessoais (LGPD) | DPO | Diretor Jurídico, Compliance, CISO |"
+          "section": "6. Bases legais invocadas",
+          "snippet": "**Dados pessoais sensíveis (art. 5º, II LGPD)** só são tratados mediante base legal expressa e com controles adicionais de criptografia, RBAC e AIPD, quando aplicável.\n\n---\n\n## 6. Bases legais invocadas\n\nPara cada operação de tratamento, a "
         }
       ]
     },
@@ -79,19 +79,55 @@
       "expected_document": "LGPD",
       "expected_section": null,
       "expected_keywords": [],
-      "hit_document": false,
+      "hit_document": true,
       "hit_section": true,
       "hit_keywords": true,
-      "passed": false,
+      "passed": true,
       "top_k_chunks": [
         {
           "rank": 1,
-          "score": 0.5165,
-          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
-          "doc_title": "Codigo Etica Conduta",
+          "score": 0.7059,
+          "doc_id": "faq_anpd_principal.md/faq_anpd_principal",
+          "doc_title": "Faq Anpd Principal",
           "page": null,
-          "section": "10. Gestão de Redes Sociais",
-          "snippet": "**9.3. Uso de mensageiros e ferramentas.** A troca de dados pessoais sensíveis, segredos de negócio, credenciais ou informações classificadas como Restritas ou Confidenciais por meio de aplicativos de mensagens pessoais (WhatsApp pessoal, T"
+          "section": "1. Dados pessoais: conceitos básicos",
+          "snippet": "**Q02. O que é dado pessoal sensível?**\nSão dados pessoais que, se revelados, podem colocar a pessoa em risco de discriminação ou dano grave. São classificados como sensíveis, entre outros:\n- origem racial ou étnica;\n- convicções religiosas"
+        },
+        {
+          "rank": 2,
+          "score": 0.633,
+          "doc_id": "lgpd_leil_13709_2018.md/lgpd_leil_13709_2018",
+          "doc_title": "Lgpd Leil 13709 2018",
+          "page": null,
+          "section": "Lei nº 13.709, de 14 de agosto de 2018",
+          "snippet": "**Art. 5º** Para os efeitos desta Lei, considera-se:\nI — dado pessoal: informação relacionada a pessoa natural identificada ou identificável;\nII — dado pessoal sensível: dado pessoal sobre origem racial ou étnica, convicção religiosa, opini"
+        },
+        {
+          "rank": 3,
+          "score": 0.5761,
+          "doc_id": "lgpd_leil_13709_2018.md/lgpd_leil_13709_2018",
+          "doc_title": "Lgpd Leil 13709 2018",
+          "page": null,
+          "section": "Apêndice — Artigos de referência para perguntas frequentes",
+          "snippet": "---\n\n## Apêndice — Artigos de referência para perguntas frequentes\n\nO que caracteriza dado pessoal? — Vide art. 5º, I.\nO que é dado pessoal sensível? — Vide art. 5º, II.\nQuais são os princípios da LGPD? — Vide art. 6º, I a X.\nQuais são as h"
+        },
+        {
+          "rank": 4,
+          "score": 0.5735,
+          "doc_id": "faq_anpd_principal.md/faq_anpd_principal",
+          "doc_title": "Faq Anpd Principal",
+          "page": null,
+          "section": "1. Dados pessoais: conceitos básicos",
+          "snippet": "# FAQ — Perguntas Frequentes da ANPD sobre LGPD\n**Autoridade Nacional de Proteção de Dados (ANPD)**\n*Compilado atualizado em 01/2026 (versão de referência interna; íntegra oficial disponível em gov.br/anpd)*\n\n---\n\n## 1. Dados pessoais: conc"
+        },
+        {
+          "rank": 5,
+          "score": 0.5638,
+          "doc_id": "lgpd_leil_13709_2018.md/lgpd_leil_13709_2018",
+          "doc_title": "Lgpd Leil 13709 2018",
+          "page": null,
+          "section": "Lei nº 13.709, de 14 de agosto de 2018",
+          "snippet": "**Art. 2º** A disciplina do uso dos dados pessoais tem como fundamentos:\nI — o respeito à privacidade;\nII — a autodeterminação informativa;\nIII — a liberdade de expressão, de informação, de comunicação e de opinião;\nIV — a inviolabilidade d"
         }
       ]
     },
@@ -102,55 +138,55 @@
       "expected_document": "LGPD",
       "expected_section": null,
       "expected_keywords": [],
-      "hit_document": false,
+      "hit_document": true,
       "hit_section": true,
       "hit_keywords": true,
-      "passed": false,
+      "passed": true,
       "top_k_chunks": [
         {
           "rank": 1,
-          "score": 0.6272,
-          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
-          "doc_title": "Codigo Etica Conduta",
+          "score": 0.7398,
+          "doc_id": "faq_anpd_principal.md/faq_anpd_principal",
+          "doc_title": "Faq Anpd Principal",
           "page": null,
-          "section": null,
-          "snippet": "**2.2. Legalidade.** Cumprir rigorosamente a legislação aplicável, em especial a Lei Geral de Proteção de Dados (Lei nº 13.709/2018), a Lei de Informática (Lei nº 12.965/2014), a Lei Anticorrupção (Lei nº 12.846/2013), as normas trabalhista"
+          "section": "2. Princípios e bases legais",
+          "snippet": "Vide art. 5º, II, LGPD.\n\n**Q03. O que é dado anonimizado?**\nÉ dado tratado com técnicas de anonimização adequadas e controladas, de forma que o titular **não possa ser reidentificado** com razoabilidade (inclusive cruzamento com outros banc"
         },
         {
           "rank": 2,
-          "score": 0.6048,
-          "doc_id": "organograma.md/organograma",
-          "doc_title": "Organograma",
+          "score": 0.7247,
+          "doc_id": "guia_anpd_metodos_aplicacao.md/guia_anpd_metodos_aplicacao",
+          "doc_title": "Guia Anpd Metodos Aplicacao",
           "page": null,
-          "section": "3.2. DPO — Encarregado pelo Tratamento de Dados Pessoais",
-          "snippet": "### 3.2. DPO — Encarregado pelo Tratamento de Dados Pessoais\n\n- Papel conforme art. 41 da LGPD.\n- Responsabilidades principais:\n  - receber e orientar solicitações de titulares de dados;\n  - orientar colaboradores e fornecedores sobre boas "
+          "section": "2.2. Princípios essenciais para implementação prática",
+          "snippet": "### 2.2. Princípios essenciais para implementação prática\n\nA ANPD recomenda adotar um framework de governança em LGPD que garanta, no mínimo, os dez princípios do art. 6º da LGPD. Na prática, o controlador deve demonstrar:"
         },
         {
           "rank": 3,
-          "score": 0.6047,
-          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
-          "doc_title": "Codigo Etica Conduta",
+          "score": 0.7009,
+          "doc_id": "lgpd_leil_13709_2018.md/lgpd_leil_13709_2018",
+          "doc_title": "Lgpd Leil 13709 2018",
           "page": null,
-          "section": "6. Diversidade, Inclusão e Assédio",
-          "snippet": "**5.3. Sigilo em relação a dados de clientes.** Qualquer dado pessoal ou empresarial sob custódia da NovaData Solutions em razão de contratos de prestação de serviços deve ser tratado como confidencial. A sua coleta, armazenamento, acesso, "
+          "section": "Lei nº 13.709, de 14 de agosto de 2018",
+          "snippet": "# Lei Geral de Proteção de Dados Pessoais — LGPD\n## Lei nº 13.709, de 14 de agosto de 2018\n**Documento de referência — NovaData Solutions**\nVersão de referência: atualizada até 01/2026 (stub com artigos selecionados para consulta interna; v"
         },
         {
           "rank": 4,
-          "score": 0.5953,
-          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
-          "doc_title": "Codigo Etica Conduta",
+          "score": 0.6947,
+          "doc_id": "faq_anpd_principal.md/faq_anpd_principal",
+          "doc_title": "Faq Anpd Principal",
           "page": null,
-          "section": "13. Treinamento e Revisão",
-          "snippet": "---\n\n## 13. Treinamento e Revisão\n\n**13.1. Treinamentos.** Todos os colaboradores deverão participar, pelo menos anualmente, de treinamento presencial ou a distância sobre ética, conduta, segurança da informação e LGPD. Novos colaboradores "
+          "section": "3. Direitos do titular",
+          "snippet": "**Q07. Quais são os principais direitos do titular na LGPD?**\nEntre outros:\n1. Confirmação da existência de tratamento (art. 17, I);\n2. Acesso aos dados (art. 17, II);\n3. Correção de dados incompletos, inexatos ou desatualizados (art. 17, I"
         },
         {
           "rank": 5,
-          "score": 0.5892,
-          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
-          "doc_title": "Codigo Etica Conduta",
+          "score": 0.6837,
+          "doc_id": "lgpd_leil_13709_2018.md/lgpd_leil_13709_2018",
+          "doc_title": "Lgpd Leil 13709 2018",
           "page": null,
-          "section": "2. Princípios Fundamentais",
-          "snippet": "Nenhuma das normas complementares prevalece sobre o espírito ético deste documento. Quando houver dúvida quanto à conduta correta, prevalece o princípio da **transparência, legalidade, imparcialidade e preservação da reputação da NovaData S"
+          "section": "Apêndice — Artigos de referência para perguntas frequentes",
+          "snippet": "---\n\n## Apêndice — Artigos de referência para perguntas frequentes\n\nO que caracteriza dado pessoal? — Vide art. 5º, I.\nO que é dado pessoal sensível? — Vide art. 5º, II.\nQuais são os princípios da LGPD? — Vide art. 6º, I a X.\nQuais são as h"
         }
       ]
     },
@@ -161,55 +197,55 @@
       "expected_document": "LGPD",
       "expected_section": null,
       "expected_keywords": [],
-      "hit_document": false,
+      "hit_document": true,
       "hit_section": true,
       "hit_keywords": true,
-      "passed": false,
+      "passed": true,
       "top_k_chunks": [
         {
           "rank": 1,
-          "score": 0.6394,
-          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
-          "doc_title": "Codigo Etica Conduta",
+          "score": 0.6837,
+          "doc_id": "faq_anpd_principal.md/faq_anpd_principal",
+          "doc_title": "Faq Anpd Principal",
           "page": null,
-          "section": null,
-          "snippet": "**9.2. Dever de comunicar incidentes.** Todo colaborador que tomar conhecimento de incidente de segurança, vazamento de dados, perda de credenciais, ataque cibernético, uso indevido de contas ou suspeita de fraude deve comunicar o fato imed"
+          "section": "6. Transferência internacional",
+          "snippet": "**Q12. Em caso de incidente de segurança com dados pessoais, preciso comunicar a ANPD e os titulares?**\nA comunicação à ANPD é obrigatória quando o incidente **puder acarretar risco ou dano relevante aos titulares**. A comunicação deve ocor"
         },
         {
           "rank": 2,
-          "score": 0.5844,
+          "score": 0.6696,
+          "doc_id": "plano_resposta_incidentes.md/plano_resposta_incidentes",
+          "doc_title": "Plano Resposta Incidentes",
+          "page": null,
+          "section": "1. Objetivo e âmbito",
+          "snippet": "O presente Plano de Resposta a Incidentes (PRI) define papéis, processos, fluxos e responsabilidades para a detecção, classificação, contenção, erradicação, recuperação e comunicação de incidentes de segurança da informação e incidentes com"
+        },
+        {
+          "rank": 3,
+          "score": 0.6614,
+          "doc_id": "politica_privacidade_lgpd.md/politica_privacidade_lgpd",
+          "doc_title": "Politica Privacidade Lgpd",
+          "page": null,
+          "section": "11. Segurança e incidentes",
+          "snippet": "Ao término da retenção, os dados são eliminados ou anonimizados com segurança (destruição física/mídia, exclusão segura em produção e backups, conforme Política de Backup e Retenção).\n\n---\n\n## 11. Segurança e incidentes\n\nA NovaData adota me"
+        },
+        {
+          "rank": 4,
+          "score": 0.6387,
           "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
           "doc_title": "Codigo Etica Conduta",
           "page": null,
           "section": "9. Segurança da Informação e Proteção de Dados",
-          "snippet": "---\n\n## 9. Segurança da Informação e Proteção de Dados\n\n**9.1. Segurança como princípio ético.** A proteção das informações corporativas e de dados pessoais não é apenas obrigação jurídica, mas ética. Cada colaborador é corresponsável pela "
-        },
-        {
-          "rank": 3,
-          "score": 0.5826,
-          "doc_id": "organograma.md/organograma",
-          "doc_title": "Organograma",
-          "page": null,
-          "section": "3.2. DPO — Encarregado pelo Tratamento de Dados Pessoais",
-          "snippet": "### 3.2. DPO — Encarregado pelo Tratamento de Dados Pessoais\n\n- Papel conforme art. 41 da LGPD.\n- Responsabilidades principais:\n  - receber e orientar solicitações de titulares de dados;\n  - orientar colaboradores e fornecedores sobre boas "
-        },
-        {
-          "rank": 4,
-          "score": 0.5646,
-          "doc_id": "organograma.md/organograma",
-          "doc_title": "Organograma",
-          "page": null,
-          "section": null,
-          "snippet": "| Tema | Responsável Primário | Co-responsáveis |\n| --- | --- | --- |\n| Segurança da Informação e incidentes cibernéticos | CISO | CTO, DPO, Diretor Jurídico |\n| Proteção de dados pessoais (LGPD) | DPO | Diretor Jurídico, Compliance, CISO |"
+          "snippet": "**9.2. Dever de comunicar incidentes.** Todo colaborador que tomar conhecimento de incidente de segurança, vazamento de dados, perda de credenciais, ataque cibernético, uso indevido de contas ou suspeita de fraude deve comunicar o fato imed"
         },
         {
           "rank": 5,
-          "score": 0.557,
-          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
-          "doc_title": "Codigo Etica Conduta",
+          "score": 0.6245,
+          "doc_id": "politica_seguranca_informacao.md/politica_seguranca_informacao",
+          "doc_title": "Politica Seguranca Informacao",
           "page": null,
-          "section": "10. Gestão de Redes Sociais",
-          "snippet": "**9.3. Uso de mensageiros e ferramentas.** A troca de dados pessoais sensíveis, segredos de negócio, credenciais ou informações classificadas como Restritas ou Confidenciais por meio de aplicativos de mensagens pessoais (WhatsApp pessoal, T"
+          "section": "9. Conscientização e Treinamento",
+          "snippet": "---\n\n## 9. Conscientização e Treinamento\n\nTodos os colaboradores participam de:\n- **Onboarding de Segurança:** obrigatório, com aproveitamento ≥ 80%;\n- **Refresh anual:** treinamento atualizado com foco em ameaças do período;\n- **Simulações"
         }
       ]
     },
@@ -217,40 +253,58 @@
       "id": "LGPD-005",
       "category": "",
       "question": "Qual o prazo para comunicar um incidente a ANPD e aos titulares?",
-      "expected_document": "LGPD",
+      "expected_document": null,
       "expected_section": null,
       "expected_keywords": [],
-      "hit_document": false,
+      "hit_document": true,
       "hit_section": true,
       "hit_keywords": true,
-      "passed": false,
+      "passed": true,
       "top_k_chunks": [
         {
           "rank": 1,
+          "score": 0.7948,
+          "doc_id": "faq_anpd_principal.md/faq_anpd_principal",
+          "doc_title": "Faq Anpd Principal",
+          "page": null,
+          "section": "6. Transferência internacional",
+          "snippet": "**Q12. Em caso de incidente de segurança com dados pessoais, preciso comunicar a ANPD e os titulares?**\nA comunicação à ANPD é obrigatória quando o incidente **puder acarretar risco ou dano relevante aos titulares**. A comunicação deve ocor"
+        },
+        {
+          "rank": 2,
+          "score": 0.7795,
+          "doc_id": "plano_resposta_incidentes.md/plano_resposta_incidentes",
+          "doc_title": "Plano Resposta Incidentes",
+          "page": null,
+          "section": "3.2. Prazo de comunicação à ANPD e aos titulares",
+          "snippet": "### 3.2. Prazo de comunicação à ANPD e aos titulares\nConforme critérios da ANPD e da LGPD:\n- **S0 e S1 com envolvimento de dados pessoais sensíveis ou massa crítica de titulares:** comunicação preliminar à ANPD em até **24 horas úteis** apó"
+        },
+        {
+          "rank": 3,
+          "score": 0.7129,
+          "doc_id": "guia_anpd_metodos_aplicacao.md/guia_anpd_metodos_aplicacao",
+          "doc_title": "Guia Anpd Metodos Aplicacao",
+          "page": null,
+          "section": "7. Perguntas frequentes no Guia ANPD",
+          "snippet": "**Prazos de comunicação à ANPD:** A ANPD recomenda a comunicação em até **24 a 72 horas úteis** após a ciência do incidente, dependendo da gravidade. Plano de Resposta a Incidentes documentado é obrigatório.\n\n---\n\n## 7. Perguntas frequentes"
+        },
+        {
+          "rank": 4,
+          "score": 0.6376,
+          "doc_id": "plano_resposta_incidentes.md/plano_resposta_incidentes",
+          "doc_title": "Plano Resposta Incidentes",
+          "page": null,
+          "section": "5. Comunicação com órgãos, titulares e mercado",
+          "snippet": "---\n\n## 5. Comunicação com órgãos, titulares e mercado\n\n- **Comunicação à ANPD:** de responsabilidade do DPO, com validado jurídico; segue prazos da LGPD.\n- **Comunicação a titulares:** decidida pelo CGI, considerando gravidade, risco e req"
+        },
+        {
+          "rank": 5,
           "score": 0.6101,
           "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
           "doc_title": "Codigo Etica Conduta",
           "page": null,
-          "section": null,
+          "section": "9. Segurança da Informação e Proteção de Dados",
           "snippet": "**9.2. Dever de comunicar incidentes.** Todo colaborador que tomar conhecimento de incidente de segurança, vazamento de dados, perda de credenciais, ataque cibernético, uso indevido de contas ou suspeita de fraude deve comunicar o fato imed"
-        },
-        {
-          "rank": 2,
-          "score": 0.5494,
-          "doc_id": "organograma.md/organograma",
-          "doc_title": "Organograma",
-          "page": null,
-          "section": null,
-          "snippet": "| Tema | Responsável Primário | Co-responsáveis |\n| --- | --- | --- |\n| Segurança da Informação e incidentes cibernéticos | CISO | CTO, DPO, Diretor Jurídico |\n| Proteção de dados pessoais (LGPD) | DPO | Diretor Jurídico, Compliance, CISO |"
-        },
-        {
-          "rank": 3,
-          "score": 0.5117,
-          "doc_id": "readme.md/readme",
-          "doc_title": "Readme",
-          "page": null,
-          "section": "Documentos oficiais",
-          "snippet": "# Documentos oficiais\n\nPasta reservada para os documentos de referência oficiais relacionados à LGPD e ANPD.\n\n## Conteúdo esperado\n\n- `LGPD.pdf` — Lei Geral de Proteção de Dados (Lei nº 13.709/2018).\n- `Guia_ANPD.pdf` — guia(s) e cartilhas "
         }
       ]
     },
@@ -261,55 +315,55 @@
       "expected_document": "Política Segurança",
       "expected_section": null,
       "expected_keywords": [],
-      "hit_document": false,
+      "hit_document": true,
       "hit_section": true,
       "hit_keywords": true,
-      "passed": false,
+      "passed": true,
       "top_k_chunks": [
         {
           "rank": 1,
-          "score": 0.682,
+          "score": 0.6818,
           "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
           "doc_title": "Codigo Etica Conduta",
           "page": null,
-          "section": null,
+          "section": "4. Relacionamento com o Trabalho e com a Empresa",
           "snippet": "- a finalidade corporativa;\n- a **Política de Uso Aceitável dos Recursos de TI**;\n- a **Política de Controle de Acesso**;\n- as regras de classificação da informação.\n\n**4.3. Proibição de compartilhamento de credenciais.** É expressamente pr"
         },
         {
           "rank": 2,
-          "score": 0.5324,
-          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
-          "doc_title": "Codigo Etica Conduta",
+          "score": 0.6137,
+          "doc_id": "politica_controle_acesso.md/politica_controle_acesso",
+          "doc_title": "Politica Controle Acesso",
           "page": null,
-          "section": null,
-          "snippet": "**9.2. Dever de comunicar incidentes.** Todo colaborador que tomar conhecimento de incidente de segurança, vazamento de dados, perda de credenciais, ataque cibernético, uso indevido de contas ou suspeita de fraude deve comunicar o fato imed"
+          "section": "1. Objetivo",
+          "snippet": "São princípios desta política:\n1. **Individualidade e intransferibilidade:** Toda conta de acesso é pessoal e intransferível. Nenhum colaborador pode compartilhar senhas, tokens, biometria ou qualquer credencial com terceiros, colegas ou pr"
         },
         {
           "rank": 3,
-          "score": 0.5247,
-          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
-          "doc_title": "Codigo Etica Conduta",
+          "score": 0.5906,
+          "doc_id": "politica_seguranca_informacao.md/politica_seguranca_informacao",
+          "doc_title": "Politica Seguranca Informacao",
           "page": null,
-          "section": "10. Gestão de Redes Sociais",
-          "snippet": "**9.3. Uso de mensageiros e ferramentas.** A troca de dados pessoais sensíveis, segredos de negócio, credenciais ou informações classificadas como Restritas ou Confidenciais por meio de aplicativos de mensagens pessoais (WhatsApp pessoal, T"
+          "section": "3.2. Segurança em home office",
+          "snippet": "Os controles lógicos de acesso são regidos em detalhe pela **Política de Controle de Acesso**. A presente Política estabelece os princípios:\n1. **Individualidade e intransferibilidade:** Toda credencial (usuário, senha, token, chave SSH) é "
         },
         {
           "rank": 4,
-          "score": 0.5197,
-          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
-          "doc_title": "Codigo Etica Conduta",
+          "score": 0.574,
+          "doc_id": "politica_privacidade_lgpd.md/politica_privacidade_lgpd",
+          "doc_title": "Politica Privacidade Lgpd",
           "page": null,
-          "section": "5. Relacionamento com Clientes, Parceiros e Fornecedores",
-          "snippet": "**4.4. Propriedade intelectual.** Todo conhecimento, código-fonte, documento, desenho, marca, domínio, roteiro, configuração de arquitetura, material de treinamento ou outro ativo desenvolvido no exercício das atividades da NovaData Solutio"
+          "section": "7. Compartilhamento interno e com terceiros",
+          "snippet": "---\n\n## 7. Compartilhamento interno e com terceiros\n\n### 7.1. Interno\nDados pessoais são compartilhados internamente apenas com colaboradores cujas funções exijam acesso, sempre observando o princípio da necessidade e a **Política de Contro"
         },
         {
           "rank": 5,
-          "score": 0.5166,
-          "doc_id": "readme.md/readme",
-          "doc_title": "Readme",
+          "score": 0.566,
+          "doc_id": "politica_seguranca_informacao.md/politica_seguranca_informacao",
+          "doc_title": "Politica Seguranca Informacao",
           "page": null,
-          "section": null,
-          "snippet": "- Adote tom profissional, como em um documento corporativo real.\n- Prefira seções numeradas (`1.`, `1.1.`, `4.2.` etc.) — o splitter e o usuário aproveitam a estrutura.\n- Sempre que citar uma regra, justifique-a: *\"Conforme a Política de Co"
+          "section": "1.2. Âmbito",
+          "snippet": "| Nível | Rótulo | Exemplos típicos | Acesso mínimo permitido |\n| --- | --- | --- | --- |\n| 4 | **Pública** | Conteúdo do site institucional, releases oficiais, vagas abertas | Qualquer pessoa, inclusive externos |\n| 3 | **Interna** | Manua"
         }
       ]
     },
@@ -317,58 +371,35 @@
       "id": "SEG-002",
       "category": "",
       "question": "Posso enviar CPF de cliente por WhatsApp para resolver um problema urgente?",
-      "expected_document": "Política Segurança",
+      "expected_document": null,
       "expected_section": null,
       "expected_keywords": [],
-      "hit_document": false,
+      "hit_document": true,
       "hit_section": true,
       "hit_keywords": true,
-      "passed": false,
+      "passed": true,
       "top_k_chunks": [
         {
           "rank": 1,
-          "score": 0.5341,
-          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
-          "doc_title": "Codigo Etica Conduta",
+          "score": 0.5422,
+          "doc_id": "politica_uso_aceitavel.md/politica_uso_aceitavel",
+          "doc_title": "Politica Uso Aceitavel",
           "page": null,
-          "section": "10. Gestão de Redes Sociais",
-          "snippet": "**9.3. Uso de mensageiros e ferramentas.** A troca de dados pessoais sensíveis, segredos de negócio, credenciais ou informações classificadas como Restritas ou Confidenciais por meio de aplicativos de mensagens pessoais (WhatsApp pessoal, T"
-        }
-      ]
-    },
-    {
-      "id": "RH-001",
-      "category": "",
-      "question": "Quem pode acessar dados financeiros da empresa?",
-      "expected_document": "Manual Colaborador",
-      "expected_section": null,
-      "expected_keywords": [],
-      "hit_document": false,
-      "hit_section": true,
-      "hit_keywords": true,
-      "passed": false,
-      "top_k_chunks": [
-        {
-          "rank": 1,
-          "score": 0.5518,
-          "doc_id": "organograma.md/organograma",
-          "doc_title": "Organograma",
-          "page": null,
-          "section": "2.2. Diretoria Financeira (CFO)",
-          "snippet": "### 2.2. Diretoria Financeira (CFO)\n\n- Responsável pela integridade das demonstrações contábeis e pelo compliance fiscal e trabalhista.\n- Aprova orçamentos anuais e investimentos de capital.\n- Supervisiona Controladoria, Tesouraria, FP&A e "
+          "section": "10. Uso de WhatsApp, Telegram e mensageiros pessoais",
+          "snippet": "---\n\n## 10. Uso de WhatsApp, Telegram e mensageiros pessoais\n\nDados corporativos sensíveis (documentos confidenciais, contratos, planilhas com dados pessoais ou financeiros, credenciais, dados de clientes, relatórios estratégicos) **não dev"
         },
         {
           "rank": 2,
-          "score": 0.5287,
-          "doc_id": "organograma.md/organograma",
-          "doc_title": "Organograma",
+          "score": 0.537,
+          "doc_id": "faq_anpd_principal.md/faq_anpd_principal",
+          "doc_title": "Faq Anpd Principal",
           "page": null,
-          "section": "Organograma e Estrutura de Responsabilidades",
-          "snippet": "# Organograma e Estrutura de Responsabilidades\n\n**Empresa:** NovaData Solutions  \n**Natureza:** Sociedade Anônima Fechada (S.A.)  \n**Sede:** São Paulo / SP  \n**Atuação:** Nacional — soluções de gestão empresarial em nuvem, governança, segur"
+          "section": "6. Transferência internacional",
+          "snippet": "**Q12. Em caso de incidente de segurança com dados pessoais, preciso comunicar a ANPD e os titulares?**\nA comunicação à ANPD é obrigatória quando o incidente **puder acarretar risco ou dano relevante aos titulares**. A comunicação deve ocor"
         },
         {
           "rank": 3,
-          "score": 0.5222,
+          "score": 0.5343,
           "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
           "doc_title": "Codigo Etica Conduta",
           "page": null,
@@ -377,21 +408,80 @@
         },
         {
           "rank": 4,
-          "score": 0.5205,
-          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
-          "doc_title": "Codigo Etica Conduta",
+          "score": 0.5261,
+          "doc_id": "politica_uso_aceitavel.md/politica_uso_aceitavel",
+          "doc_title": "Politica Uso Aceitavel",
           "page": null,
-          "section": "5. Relacionamento com Clientes, Parceiros e Fornecedores",
-          "snippet": "**4.4. Propriedade intelectual.** Todo conhecimento, código-fonte, documento, desenho, marca, domínio, roteiro, configuração de arquitetura, material de treinamento ou outro ativo desenvolvido no exercício das atividades da NovaData Solutio"
+          "section": "9. Repositórios Git e segredos",
+          "snippet": "---\n\n## 9. Repositórios Git e segredos\n\n- Repositórios públicos só são criados após autorização formal e análise de segurança.\n- É proibido versionar segredos (senhas, chaves de API, tokens, certificados, dados sensíveis de clientes ou cola"
         },
         {
           "rank": 5,
-          "score": 0.5203,
-          "doc_id": "organograma.md/organograma",
-          "doc_title": "Organograma",
+          "score": 0.5079,
+          "doc_id": "faq_anpd_principal.md/faq_anpd_principal",
+          "doc_title": "Faq Anpd Principal",
           "page": null,
-          "section": null,
-          "snippet": "| Tema | Responsável Primário | Co-responsáveis |\n| --- | --- | --- |\n| Segurança da Informação e incidentes cibernéticos | CISO | CTO, DPO, Diretor Jurídico |\n| Proteção de dados pessoais (LGPD) | DPO | Diretor Jurídico, Compliance, CISO |"
+          "section": "6. Transferência internacional",
+          "snippet": "---\n\n## 6. Transferência internacional\n\n**Q13. Posso enviar dados pessoais de titulares brasileiros para fora do país?**\nSim, desde que amparada por uma das hipóteses legais de transferência internacional. Exemplos comuns:\n- País com grau d"
+        }
+      ]
+    },
+    {
+      "id": "RH-001",
+      "category": "",
+      "question": "Quem pode acessar dados financeiros da empresa?",
+      "expected_document": null,
+      "expected_section": null,
+      "expected_keywords": [],
+      "hit_document": true,
+      "hit_section": true,
+      "hit_keywords": true,
+      "passed": true,
+      "top_k_chunks": [
+        {
+          "rank": 1,
+          "score": 0.5739,
+          "doc_id": "politica_seguranca_informacao.md/politica_seguranca_informacao",
+          "doc_title": "Politica Seguranca Informacao",
+          "page": null,
+          "section": "1.2. Âmbito",
+          "snippet": "| Nível | Rótulo | Exemplos típicos | Acesso mínimo permitido |\n| --- | --- | --- | --- |\n| 4 | **Pública** | Conteúdo do site institucional, releases oficiais, vagas abertas | Qualquer pessoa, inclusive externos |\n| 3 | **Interna** | Manua"
+        },
+        {
+          "rank": 2,
+          "score": 0.5599,
+          "doc_id": "politica_uso_aceitavel.md/politica_uso_aceitavel",
+          "doc_title": "Politica Uso Aceitavel",
+          "page": null,
+          "section": "3.2. Uso de dispositivo pessoal (BYOD)",
+          "snippet": "### 3.2. Uso de dispositivo pessoal (BYOD)\n- Acesso a sistemas corporativos em equipamentos pessoais só é permitido após aceite de termos específicos e apenas por meio de VPN, SSO aprovado e, quando aplicável, através de soluções de acesso "
+        },
+        {
+          "rank": 3,
+          "score": 0.5599,
+          "doc_id": "politica_privacidade_lgpd.md/politica_privacidade_lgpd",
+          "doc_title": "Politica Privacidade Lgpd",
+          "page": null,
+          "section": "7. Compartilhamento interno e com terceiros",
+          "snippet": "---\n\n## 7. Compartilhamento interno e com terceiros\n\n### 7.1. Interno\nDados pessoais são compartilhados internamente apenas com colaboradores cujas funções exijam acesso, sempre observando o princípio da necessidade e a **Política de Contro"
+        },
+        {
+          "rank": 4,
+          "score": 0.5563,
+          "doc_id": "politica_controle_acesso.md/politica_controle_acesso",
+          "doc_title": "Politica Controle Acesso",
+          "page": null,
+          "section": "9. Monitoramento, log e auditoria",
+          "snippet": "---\n\n## 9. Monitoramento, log e auditoria\n\nA auditoria dos acessos compreende:\n- logs centralizados e coletados diariamente;\n- revisão periódica pelo CISO e Compliance;\n- investigação de anomalias pelo SOC;\n- apresentação de relatórios à Di"
+        },
+        {
+          "rank": 5,
+          "score": 0.5532,
+          "doc_id": "politica_controle_acesso.md/politica_controle_acesso",
+          "doc_title": "Politica Controle Acesso",
+          "page": null,
+          "section": "7. Controles físicos",
+          "snippet": "---\n\n## 7. Controles físicos\n\nOs controles de acesso físico seguem a Política de Segurança (Seção 3) e incluem:\n- cadastro de biometria/crachá nominal;\n- revogação imediata de crachá em caso de desligamento;\n- registros de acessos a áreas r"
         }
       ]
     },
@@ -402,37 +492,55 @@
       "expected_document": "Plano Resposta Incidentes",
       "expected_section": null,
       "expected_keywords": [],
-      "hit_document": false,
+      "hit_document": true,
       "hit_section": true,
       "hit_keywords": true,
-      "passed": false,
+      "passed": true,
       "top_k_chunks": [
         {
           "rank": 1,
-          "score": 0.6549,
+          "score": 0.6545,
           "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
           "doc_title": "Codigo Etica Conduta",
           "page": null,
-          "section": null,
+          "section": "9. Segurança da Informação e Proteção de Dados",
           "snippet": "**9.2. Dever de comunicar incidentes.** Todo colaborador que tomar conhecimento de incidente de segurança, vazamento de dados, perda de credenciais, ataque cibernético, uso indevido de contas ou suspeita de fraude deve comunicar o fato imed"
         },
         {
           "rank": 2,
-          "score": 0.5204,
-          "doc_id": "organograma.md/organograma",
-          "doc_title": "Organograma",
+          "score": 0.6298,
+          "doc_id": "plano_resposta_incidentes.md/plano_resposta_incidentes",
+          "doc_title": "Plano Resposta Incidentes",
           "page": null,
-          "section": null,
-          "snippet": "| Tema | Responsável Primário | Co-responsáveis |\n| --- | --- | --- |\n| Segurança da Informação e incidentes cibernéticos | CISO | CTO, DPO, Diretor Jurídico |\n| Proteção de dados pessoais (LGPD) | DPO | Diretor Jurídico, Compliance, CISO |"
+          "section": "4.2. Fase 2 — Detecção e relato",
+          "snippet": "### 4.2. Fase 2 — Detecção e relato\nQualquer colaborador, prestador ou terceiro deve comunicar suspeita ou evidência de incidente por meio dos canais oficiais:\n- E-mail: incidentes@novadatatech.br (fictício)\n- Aplicativo interno do SOC / po"
         },
         {
           "rank": 3,
-          "score": 0.5018,
-          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
-          "doc_title": "Codigo Etica Conduta",
+          "score": 0.6112,
+          "doc_id": "faq_anpd_principal.md/faq_anpd_principal",
+          "doc_title": "Faq Anpd Principal",
           "page": null,
-          "section": null,
-          "snippet": "**11.2. Características:**\n\n1. acesso por meio de plataforma externa, de forma sigilosa;\n2. possibilidade de comunicação anônima;\n3. apuração conduzida pelo Comitê de Ética com apoio de Compliance, Jurídico, RH e, se necessário, auditoria i"
+          "section": "6. Transferência internacional",
+          "snippet": "**Q12. Em caso de incidente de segurança com dados pessoais, preciso comunicar a ANPD e os titulares?**\nA comunicação à ANPD é obrigatória quando o incidente **puder acarretar risco ou dano relevante aos titulares**. A comunicação deve ocor"
+        },
+        {
+          "rank": 4,
+          "score": 0.609,
+          "doc_id": "politica_seguranca_informacao.md/politica_seguranca_informacao",
+          "doc_title": "Politica Seguranca Informacao",
+          "page": null,
+          "section": "9. Conscientização e Treinamento",
+          "snippet": "---\n\n## 9. Conscientização e Treinamento\n\nTodos os colaboradores participam de:\n- **Onboarding de Segurança:** obrigatório, com aproveitamento ≥ 80%;\n- **Refresh anual:** treinamento atualizado com foco em ameaças do período;\n- **Simulações"
+        },
+        {
+          "rank": 5,
+          "score": 0.5807,
+          "doc_id": "plano_resposta_incidentes.md/plano_resposta_incidentes",
+          "doc_title": "Plano Resposta Incidentes",
+          "page": null,
+          "section": "5. Comunicação com órgãos, titulares e mercado",
+          "snippet": "---\n\n## 5. Comunicação com órgãos, titulares e mercado\n\n- **Comunicação à ANPD:** de responsabilidade do DPO, com validado jurídico; segue prazos da LGPD.\n- **Comunicação a titulares:** decidida pelo CGI, considerando gravidade, risco e req"
         }
       ]
     },
@@ -443,14 +551,23 @@
       "expected_document": "Código Ética E Conduta",
       "expected_section": null,
       "expected_keywords": [],
-      "hit_document": false,
+      "hit_document": true,
       "hit_section": true,
       "hit_keywords": true,
-      "passed": false,
+      "passed": true,
       "top_k_chunks": [
         {
           "rank": 1,
-          "score": 0.642,
+          "score": 0.6665,
+          "doc_id": "manual_colaborador.md/manual_colaborador",
+          "doc_title": "Manual Colaborador",
+          "page": null,
+          "section": "9. Canal de Denúncias",
+          "snippet": "---\n\n## 9. Canal de Denúncias\n\nViolações ou suspeitas de violação ao Código de Ética, à legislação ou a políticas internas devem ser comunicadas preferencialmente por meio do **Canal de Denúncias** da empresa, que é confidencial e admite an"
+        },
+        {
+          "rank": 2,
+          "score": 0.6421,
           "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
           "doc_title": "Codigo Etica Conduta",
           "page": null,
@@ -458,40 +575,31 @@
           "snippet": "**10.3. Uso corporativo.** Perfis institucionais e postagens oficiais são de responsabilidade do Comitê de Comunicação. A publicação de conteúdo em nome da empresa exige aprovação prévia.\n\n---\n\n## 11. Canal de Denúncias\n\n**11.1. Finalidade."
         },
         {
-          "rank": 2,
+          "rank": 3,
           "score": 0.6163,
           "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
           "doc_title": "Codigo Etica Conduta",
           "page": null,
-          "section": null,
+          "section": "11. Canal de Denúncias",
           "snippet": "**11.2. Características:**\n\n1. acesso por meio de plataforma externa, de forma sigilosa;\n2. possibilidade de comunicação anônima;\n3. apuração conduzida pelo Comitê de Ética com apoio de Compliance, Jurídico, RH e, se necessário, auditoria i"
         },
         {
-          "rank": 3,
-          "score": 0.5917,
+          "rank": 4,
+          "score": 0.5913,
           "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
           "doc_title": "Codigo Etica Conduta",
           "page": null,
-          "section": null,
+          "section": "6. Diversidade, Inclusão e Assédio",
           "snippet": "**6.3. Assédio moral e sexual.** Qualquer conduta que configure humilhação, ridículo, perseguição repetida, ameaça, coerção, pressão psicológica abusiva, exposição a situações degradantes ou qualquer forma de assédio sexual constitui **falt"
         },
         {
-          "rank": 4,
+          "rank": 5,
           "score": 0.5817,
           "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
           "doc_title": "Codigo Etica Conduta",
           "page": null,
-          "section": null,
+          "section": "12. Disciplina e Medidas Corretivas",
           "snippet": "1. advertência verbal;\n2. advertência escrita;\n3. suspensão temporária, com ou sem remuneração, conforme a legislação trabalhista;\n4. término de vínculo contratual ou desligamento por justa causa;\n5. inelegibilidade para promoções ou partic"
-        },
-        {
-          "rank": 5,
-          "score": 0.5788,
-          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
-          "doc_title": "Codigo Etica Conduta",
-          "page": null,
-          "section": "8. Prevenção à Lavagem de Dinheiro e à Corrupção",
-          "snippet": "**7.3. Dever de comunicação.** Todo caso suspeito ou efetivo de conflito de interesses deve ser comunicado imediatamente ao Comitê de Ética ou à Diretoria Jurídica, que decidirá sobre o procedimento adequado (afastamento cautelar do process"
         }
       ]
     },
@@ -502,10 +610,10 @@
       "expected_document": "Código Ética E Conduta",
       "expected_section": null,
       "expected_keywords": [],
-      "hit_document": false,
+      "hit_document": true,
       "hit_section": true,
       "hit_keywords": true,
-      "passed": false,
+      "passed": true,
       "top_k_chunks": [
         {
           "rank": 1,
@@ -513,44 +621,44 @@
           "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
           "doc_title": "Codigo Etica Conduta",
           "page": null,
-          "section": null,
+          "section": "4. Relacionamento com o Trabalho e com a Empresa",
           "snippet": "- a finalidade corporativa;\n- a **Política de Uso Aceitável dos Recursos de TI**;\n- a **Política de Controle de Acesso**;\n- as regras de classificação da informação.\n\n**4.3. Proibição de compartilhamento de credenciais.** É expressamente pr"
         },
         {
           "rank": 2,
-          "score": 0.5864,
-          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
-          "doc_title": "Codigo Etica Conduta",
+          "score": 0.597,
+          "doc_id": "politica_controle_acesso.md/politica_controle_acesso",
+          "doc_title": "Politica Controle Acesso",
           "page": null,
-          "section": null,
-          "snippet": "**9.2. Dever de comunicar incidentes.** Todo colaborador que tomar conhecimento de incidente de segurança, vazamento de dados, perda de credenciais, ataque cibernético, uso indevido de contas ou suspeita de fraude deve comunicar o fato imed"
+          "section": "1. Objetivo",
+          "snippet": "São princípios desta política:\n1. **Individualidade e intransferibilidade:** Toda conta de acesso é pessoal e intransferível. Nenhum colaborador pode compartilhar senhas, tokens, biometria ou qualquer credencial com terceiros, colegas ou pr"
         },
         {
           "rank": 3,
-          "score": 0.5261,
+          "score": 0.5863,
           "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
           "doc_title": "Codigo Etica Conduta",
           "page": null,
-          "section": "10. Gestão de Redes Sociais",
-          "snippet": "**9.3. Uso de mensageiros e ferramentas.** A troca de dados pessoais sensíveis, segredos de negócio, credenciais ou informações classificadas como Restritas ou Confidenciais por meio de aplicativos de mensagens pessoais (WhatsApp pessoal, T"
+          "section": "9. Segurança da Informação e Proteção de Dados",
+          "snippet": "**9.2. Dever de comunicar incidentes.** Todo colaborador que tomar conhecimento de incidente de segurança, vazamento de dados, perda de credenciais, ataque cibernético, uso indevido de contas ou suspeita de fraude deve comunicar o fato imed"
         },
         {
           "rank": 4,
-          "score": 0.5201,
-          "doc_id": "organograma.md/organograma",
-          "doc_title": "Organograma",
+          "score": 0.5793,
+          "doc_id": "politica_seguranca_informacao.md/politica_seguranca_informacao",
+          "doc_title": "Politica Seguranca Informacao",
           "page": null,
-          "section": null,
-          "snippet": "| Tema | Responsável Primário | Co-responsáveis |\n| --- | --- | --- |\n| Segurança da Informação e incidentes cibernéticos | CISO | CTO, DPO, Diretor Jurídico |\n| Proteção de dados pessoais (LGPD) | DPO | Diretor Jurídico, Compliance, CISO |"
+          "section": "3.2. Segurança em home office",
+          "snippet": "Os controles lógicos de acesso são regidos em detalhe pela **Política de Controle de Acesso**. A presente Política estabelece os princípios:\n1. **Individualidade e intransferibilidade:** Toda credencial (usuário, senha, token, chave SSH) é "
         },
         {
           "rank": 5,
-          "score": 0.5105,
-          "doc_id": "readme.md/readme",
-          "doc_title": "Readme",
+          "score": 0.5602,
+          "doc_id": "politica_uso_aceitavel.md/politica_uso_aceitavel",
+          "doc_title": "Politica Uso Aceitavel",
           "page": null,
-          "section": null,
-          "snippet": "- Adote tom profissional, como em um documento corporativo real.\n- Prefira seções numeradas (`1.`, `1.1.`, `4.2.` etc.) — o splitter e o usuário aproveitam a estrutura.\n- Sempre que citar uma regra, justifique-a: *\"Conforme a Política de Co"
+          "section": "7. Senhas, autenticação e credenciais",
+          "snippet": "---\n\n## 7. Senhas, autenticação e credenciais\n\nAplicam-se, com destaque, as regras das políticas de segurança e controle de acesso, repetindo-se:\n- Credenciais são individuais e intransferíveis;\n- MFA é obrigatória em todos os sistemas que "
         }
       ]
     },
@@ -561,22 +669,31 @@
       "expected_document": "Código Ética E Conduta",
       "expected_section": null,
       "expected_keywords": [],
-      "hit_document": false,
+      "hit_document": true,
       "hit_section": true,
       "hit_keywords": true,
-      "passed": false,
+      "passed": true,
       "top_k_chunks": [
         {
           "rank": 1,
-          "score": 0.6338,
-          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
-          "doc_title": "Codigo Etica Conduta",
+          "score": 0.6365,
+          "doc_id": "politica_uso_aceitavel.md/politica_uso_aceitavel",
+          "doc_title": "Politica Uso Aceitavel",
           "page": null,
-          "section": null,
-          "snippet": "**6.3. Assédio moral e sexual.** Qualquer conduta que configure humilhação, ridículo, perseguição repetida, ameaça, coerção, pressão psicológica abusiva, exposição a situações degradantes ou qualquer forma de assédio sexual constitui **falt"
+          "section": "6. Navegação na internet",
+          "snippet": "- Ferramentas de mensagem e videoconferência da empresa são canais corporativos; o colaborador deve manter civilidade, ética e respeito, como em qualquer ambiente presencial.\n- Mensagens de ódio, racismo, machismo, homofobia, transfobia, as"
         },
         {
           "rank": 2,
+          "score": 0.6336,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": "6. Diversidade, Inclusão e Assédio",
+          "snippet": "**6.3. Assédio moral e sexual.** Qualquer conduta que configure humilhação, ridículo, perseguição repetida, ameaça, coerção, pressão psicológica abusiva, exposição a situações degradantes ou qualquer forma de assédio sexual constitui **falt"
+        },
+        {
+          "rank": 3,
           "score": 0.6066,
           "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
           "doc_title": "Codigo Etica Conduta",
@@ -585,31 +702,22 @@
           "snippet": "---\n\n## 6. Diversidade, Inclusão e Assédio\n\n**6.1. Diversidade e inclusão.** A NovaData Solutions valoriza a diversidade de origem racial, étnica, de gênero, orientação sexual, identidade de gênero, geração, deficiência, religião, opinião p"
         },
         {
-          "rank": 3,
-          "score": 0.5649,
+          "rank": 4,
+          "score": 0.5726,
+          "doc_id": "manual_colaborador.md/manual_colaborador",
+          "doc_title": "Manual Colaborador",
+          "page": null,
+          "section": "6. Conduta e relacionamento",
+          "snippet": "---\n\n## 6. Conduta e relacionamento\n\nA NovaData prima por ambiente respeitoso, inclusivo, diverso e colaborativo. Em linha com o **Código de Ética e Conduta**, são proibidos:\n- qualquer forma de discriminação, assédio moral ou sexual;\n- con"
+        },
+        {
+          "rank": 5,
+          "score": 0.5643,
           "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
           "doc_title": "Codigo Etica Conduta",
           "page": null,
           "section": "4. Relacionamento com o Trabalho e com a Empresa",
           "snippet": "**3.3. Desobediência e contradição.** Nenhuma instrução superior, por si só, afasta a responsabilidade individual do colaborador por atos que contrariem este Código, a legislação vigente ou as normas internas. Quem receber instrução contrár"
-        },
-        {
-          "rank": 4,
-          "score": 0.5639,
-          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
-          "doc_title": "Codigo Etica Conduta",
-          "page": null,
-          "section": null,
-          "snippet": "**11.2. Características:**\n\n1. acesso por meio de plataforma externa, de forma sigilosa;\n2. possibilidade de comunicação anônima;\n3. apuração conduzida pelo Comitê de Ética com apoio de Compliance, Jurídico, RH e, se necessário, auditoria i"
-        },
-        {
-          "rank": 5,
-          "score": 0.5599,
-          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
-          "doc_title": "Codigo Etica Conduta",
-          "page": null,
-          "section": null,
-          "snippet": "1. advertência verbal;\n2. advertência escrita;\n3. suspensão temporária, com ou sem remuneração, conforme a legislação trabalhista;\n4. término de vínculo contratual ou desligamento por justa causa;\n5. inelegibilidade para promoções ou partic"
         }
       ]
     },
@@ -620,10 +728,10 @@
       "expected_document": "Código Ética E Conduta",
       "expected_section": null,
       "expected_keywords": [],
-      "hit_document": false,
+      "hit_document": true,
       "hit_section": true,
       "hit_keywords": true,
-      "passed": false,
+      "passed": true,
       "top_k_chunks": [
         {
           "rank": 1,
@@ -631,7 +739,7 @@
           "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
           "doc_title": "Codigo Etica Conduta",
           "page": null,
-          "section": null,
+          "section": "5. Relacionamento com Clientes, Parceiros e Fornecedores",
           "snippet": "**5.2. Presentes e cortesias.** Colaboradores podem receber brindes ou cortesias eventuais, desde que:\n\n1. sejam de valor simbólico (máximo de R$ 300,00 por item e R$ 1.200,00 anuais por mesmo cliente ou fornecedor);\n2. não configurem obrig"
         },
         {
@@ -642,6 +750,15 @@
           "page": null,
           "section": "5. Relacionamento com Clientes, Parceiros e Fornecedores",
           "snippet": "---\n\n## 5. Relacionamento com Clientes, Parceiros e Fornecedores\n\n**5.1. Conduta comercial.** A NovaData Solutions veda qualquer prática que:\n\n- distorça a livre concorrência;\n- empregue artifícios enganosos de venda;\n- prometa funcionalida"
+        },
+        {
+          "rank": 3,
+          "score": 0.5266,
+          "doc_id": "faq_anpd_principal.md/faq_anpd_principal",
+          "doc_title": "Faq Anpd Principal",
+          "page": null,
+          "section": "7. Sanções",
+          "snippet": "---\n\n## 7. Sanções\n\n**Q15. Qual o valor máximo de multa por infração à LGPD?**\nA multa simples pode chegar a **2% do faturamento da pessoa jurídica (grupo ou conglomerado) no Brasil no último exercício (excluídos impostos)**, com teto máxim"
         }
       ]
     },
@@ -652,14 +769,14 @@
       "expected_document": "Código Ética E Conduta",
       "expected_section": null,
       "expected_keywords": [],
-      "hit_document": false,
+      "hit_document": true,
       "hit_section": true,
       "hit_keywords": true,
-      "passed": false,
+      "passed": true,
       "top_k_chunks": [
         {
           "rank": 1,
-          "score": 0.7139,
+          "score": 0.7135,
           "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
           "doc_title": "Codigo Etica Conduta",
           "page": null,
@@ -668,16 +785,25 @@
         },
         {
           "rank": 2,
+          "score": 0.6321,
+          "doc_id": "manual_colaborador.md/manual_colaborador",
+          "doc_title": "Manual Colaborador",
+          "page": null,
+          "section": "9. Canal de Denúncias",
+          "snippet": "---\n\n## 9. Canal de Denúncias\n\nViolações ou suspeitas de violação ao Código de Ética, à legislação ou a políticas internas devem ser comunicadas preferencialmente por meio do **Canal de Denúncias** da empresa, que é confidencial e admite an"
+        },
+        {
+          "rank": 3,
           "score": 0.6059,
           "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
           "doc_title": "Codigo Etica Conduta",
           "page": null,
-          "section": null,
+          "section": "12. Disciplina e Medidas Corretivas",
           "snippet": "1. advertência verbal;\n2. advertência escrita;\n3. suspensão temporária, com ou sem remuneração, conforme a legislação trabalhista;\n4. término de vínculo contratual ou desligamento por justa causa;\n5. inelegibilidade para promoções ou partic"
         },
         {
-          "rank": 3,
-          "score": 0.5843,
+          "rank": 4,
+          "score": 0.5844,
           "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
           "doc_title": "Codigo Etica Conduta",
           "page": null,
@@ -685,22 +811,13 @@
           "snippet": "---\n\n## 12. Disciplina e Medidas Corretivas\n\n**12.1. Apuração.** A apuração de infrações éticas segue o princípio do contraditório e da ampla defesa. O Comitê de Ética coordena o procedimento, garantindo imparcialidade e documentação consis"
         },
         {
-          "rank": 4,
+          "rank": 5,
           "score": 0.5733,
           "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
           "doc_title": "Codigo Etica Conduta",
           "page": null,
           "section": "11. Canal de Denúncias",
           "snippet": "**10.3. Uso corporativo.** Perfis institucionais e postagens oficiais são de responsabilidade do Comitê de Comunicação. A publicação de conteúdo em nome da empresa exige aprovação prévia.\n\n---\n\n## 11. Canal de Denúncias\n\n**11.1. Finalidade."
-        },
-        {
-          "rank": 5,
-          "score": 0.5681,
-          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
-          "doc_title": "Codigo Etica Conduta",
-          "page": null,
-          "section": null,
-          "snippet": "**6.3. Assédio moral e sexual.** Qualquer conduta que configure humilhação, ridículo, perseguição repetida, ameaça, coerção, pressão psicológica abusiva, exposição a situações degradantes ou qualquer forma de assédio sexual constitui **falt"
         }
       ]
     },
@@ -711,14 +828,14 @@
       "expected_document": "Código Ética E Conduta",
       "expected_section": null,
       "expected_keywords": [],
-      "hit_document": false,
+      "hit_document": true,
       "hit_section": true,
       "hit_keywords": true,
-      "passed": false,
+      "passed": true,
       "top_k_chunks": [
         {
           "rank": 1,
-          "score": 0.6666,
+          "score": 0.6669,
           "doc_id": "organograma.md/organograma",
           "doc_title": "Organograma",
           "page": null,
@@ -727,7 +844,7 @@
         },
         {
           "rank": 2,
-          "score": 0.6161,
+          "score": 0.616,
           "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
           "doc_title": "Codigo Etica Conduta",
           "page": null,
@@ -736,7 +853,7 @@
         },
         {
           "rank": 3,
-          "score": 0.5942,
+          "score": 0.5937,
           "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
           "doc_title": "Codigo Etica Conduta",
           "page": null,
@@ -745,7 +862,7 @@
         },
         {
           "rank": 4,
-          "score": 0.5808,
+          "score": 0.5813,
           "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
           "doc_title": "Codigo Etica Conduta",
           "page": null,
@@ -754,12 +871,12 @@
         },
         {
           "rank": 5,
-          "score": 0.568,
-          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
-          "doc_title": "Codigo Etica Conduta",
+          "score": 0.5679,
+          "doc_id": "organograma.md/organograma",
+          "doc_title": "Organograma",
           "page": null,
-          "section": "8. Prevenção à Lavagem de Dinheiro e à Corrupção",
-          "snippet": "**7.3. Dever de comunicação.** Todo caso suspeito ou efetivo de conflito de interesses deve ser comunicado imediatamente ao Comitê de Ética ou à Diretoria Jurídica, que decidirá sobre o procedimento adequado (afastamento cautelar do process"
+          "section": "2.7. Diretoria Jurídica (Diretor Jurídico)",
+          "snippet": "### 2.7. Diretoria Jurídica (Diretor Jurídico)\n\n- Assessora juridicamente a empresa em contratos, litígios, propriedade intelectual, regulatório e societário.\n- Coordena o **Comitê de Ética**, o **Compliance** e a atuação do **DPO**.\n- Repr"
         }
       ]
     },
@@ -777,48 +894,48 @@
       "top_k_chunks": [
         {
           "rank": 1,
-          "score": 0.6618,
+          "score": 0.6993,
+          "doc_id": "politica_privacidade_lgpd.md/politica_privacidade_lgpd",
+          "doc_title": "Politica Privacidade Lgpd",
+          "page": null,
+          "section": "11. Segurança e incidentes",
+          "snippet": "Ao término da retenção, os dados são eliminados ou anonimizados com segurança (destruição física/mídia, exclusão segura em produção e backups, conforme Política de Backup e Retenção).\n\n---\n\n## 11. Segurança e incidentes\n\nA NovaData adota me"
+        },
+        {
+          "rank": 2,
+          "score": 0.6739,
+          "doc_id": "plano_resposta_incidentes.md/plano_resposta_incidentes",
+          "doc_title": "Plano Resposta Incidentes",
+          "page": null,
+          "section": "1. Objetivo e âmbito",
+          "snippet": "# Plano de Resposta a Incidentes de Segurança da Informação e LGPD — NovaData Solutions\nDocumento nº PRI-ND-2026-001 | Versão 1.0\nAprovação: CISO + DPO + CTO + Diretoria Executiva | Data: 01/08/2026 | Próxima revisão: 01/2027\n\n---\n\n## 1. Ob"
+        },
+        {
+          "rank": 3,
+          "score": 0.6714,
+          "doc_id": "politica_backup_retenção.md/politica_backup_retenção",
+          "doc_title": "Politica Backup Retenção",
+          "page": null,
+          "section": "10. Terceiros e subcontratados",
+          "snippet": "Toda eliminação relevante é registrada em log, com período de retenção do registro por, no mínimo, 5 anos.\n\n---\n\n## 10. Terceiros e subcontratados\n\nProvedores de nuvem, BaaS e backup terceirizado seguem:\n- due diligence pré-contratual;\n- cl"
+        },
+        {
+          "rank": 4,
+          "score": 0.6688,
+          "doc_id": "plano_resposta_incidentes.md/plano_resposta_incidentes",
+          "doc_title": "Plano Resposta Incidentes",
+          "page": null,
+          "section": "1. Objetivo e âmbito",
+          "snippet": "O presente Plano de Resposta a Incidentes (PRI) define papéis, processos, fluxos e responsabilidades para a detecção, classificação, contenção, erradicação, recuperação e comunicação de incidentes de segurança da informação e incidentes com"
+        },
+        {
+          "rank": 5,
+          "score": 0.6619,
           "doc_id": "organograma.md/organograma",
           "doc_title": "Organograma",
           "page": null,
           "section": "2.4. Diretoria Comercial (CCO)",
           "snippet": "### 2.4. Diretoria Comercial (CCO)\n\n- É responsável por vendas, pré-vendas, sucesso do cliente e relacionamento institucional com contas estratégicas.\n- Garante a consistência ética nas negociações, alinhada ao **Código de Ética e Conduta**"
-        },
-        {
-          "rank": 2,
-          "score": 0.652,
-          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
-          "doc_title": "Codigo Etica Conduta",
-          "page": null,
-          "section": null,
-          "snippet": "A NovaData Solutions atua nacionalmente com soluções em nuvem para gestão empresarial, governança, segurança da informação e inteligência artificial aplicada a negócios. Sua reputação é um de seus principais ativos. A confiança de clientes,"
-        },
-        {
-          "rank": 3,
-          "score": 0.6311,
-          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
-          "doc_title": "Codigo Etica Conduta",
-          "page": null,
-          "section": "14. Responsáveis e Contato",
-          "snippet": "---\n\n## 14. Responsáveis e Contato\n\n**14.1. Comitê de Ética:** órgão colegiado responsável pela aplicação, interpretação e promoção deste Código.  \n**14.2. Diretoria Jurídica:** fornece suporte normativo e assessoramento jurídico.  \n**14.3."
-        },
-        {
-          "rank": 4,
-          "score": 0.6211,
-          "doc_id": "organograma.md/organograma",
-          "doc_title": "Organograma",
-          "page": null,
-          "section": null,
-          "snippet": "| Tema | Responsável Primário | Co-responsáveis |\n| --- | --- | --- |\n| Segurança da Informação e incidentes cibernéticos | CISO | CTO, DPO, Diretor Jurídico |\n| Proteção de dados pessoais (LGPD) | DPO | Diretor Jurídico, Compliance, CISO |"
-        },
-        {
-          "rank": 5,
-          "score": 0.6111,
-          "doc_id": "organograma.md/organograma",
-          "doc_title": "Organograma",
-          "page": null,
-          "section": "Organograma e Estrutura de Responsabilidades",
-          "snippet": "# Organograma e Estrutura de Responsabilidades\n\n**Empresa:** NovaData Solutions  \n**Natureza:** Sociedade Anônima Fechada (S.A.)  \n**Sede:** São Paulo / SP  \n**Atuação:** Nacional — soluções de gestão empresarial em nuvem, governança, segur"
         }
       ]
     },
@@ -836,7 +953,7 @@
       "top_k_chunks": [
         {
           "rank": 1,
-          "score": 0.6765,
+          "score": 0.6768,
           "doc_id": "organograma.md/organograma",
           "doc_title": "Organograma",
           "page": null,
@@ -845,39 +962,39 @@
         },
         {
           "rank": 2,
-          "score": 0.596,
-          "doc_id": "organograma.md/organograma",
-          "doc_title": "Organograma",
+          "score": 0.6698,
+          "doc_id": "faq_anpd_principal.md/faq_anpd_principal",
+          "doc_title": "Faq Anpd Principal",
           "page": null,
-          "section": null,
-          "snippet": "| Tema | Responsável Primário | Co-responsáveis |\n| --- | --- | --- |\n| Segurança da Informação e incidentes cibernéticos | CISO | CTO, DPO, Diretor Jurídico |\n| Proteção de dados pessoais (LGPD) | DPO | Diretor Jurídico, Compliance, CISO |"
+          "section": "5. Segurança e incidentes",
+          "snippet": "**Q10. O que é DPO / Encarregado? É obrigatório?**\nEncarregado é a pessoa indicada pelo controlador e pelo operador como canal de comunicação entre os agentes, os titulares dos dados e a ANPD. Sua obrigatoriedade decorre da natureza e do po"
         },
         {
           "rank": 3,
-          "score": 0.5769,
+          "score": 0.5957,
           "doc_id": "organograma.md/organograma",
           "doc_title": "Organograma",
           "page": null,
-          "section": "2.2. Diretoria Financeira (CFO)",
-          "snippet": "### 2.2. Diretoria Financeira (CFO)\n\n- Responsável pela integridade das demonstrações contábeis e pelo compliance fiscal e trabalhista.\n- Aprova orçamentos anuais e investimentos de capital.\n- Supervisiona Controladoria, Tesouraria, FP&A e "
+          "section": "3.3. Compliance",
+          "snippet": "| Tema | Responsável Primário | Co-responsáveis |\n| --- | --- | --- |\n| Segurança da Informação e incidentes cibernéticos | CISO | CTO, DPO, Diretor Jurídico |\n| Proteção de dados pessoais (LGPD) | DPO | Diretor Jurídico, Compliance, CISO |"
         },
         {
           "rank": 4,
-          "score": 0.5714,
-          "doc_id": "organograma.md/organograma",
-          "doc_title": "Organograma",
+          "score": 0.5948,
+          "doc_id": "politica_backup_retenção.md/politica_backup_retenção",
+          "doc_title": "Politica Backup Retenção",
           "page": null,
-          "section": "2. Cargos e Responsabilidades Diretas",
-          "snippet": "---\n\n## 2. Cargos e Responsabilidades Diretas\n\n### 2.1. Chief Executive Officer (CEO)\n\n- Representa a empresa perante o mercado, clientes, parceiros e autoridades.\n- Define, com o Conselho e as Diretorias, a estratégia corporativa, de inova"
+          "section": "5. Responsabilidades",
+          "snippet": "---\n\n## 5. Responsabilidades\n\n| Papel | Responsabilidade |\n| --- | --- |\n| **CTO** | Aprova arquitetura e investimentos; valida prazos e BCDR; |\n| **CISO** | Garante segurança, criptografia, acesso least privilege, trilhas, imutabilidade e "
         },
         {
           "rank": 5,
-          "score": 0.5673,
-          "doc_id": "organograma.md/organograma",
-          "doc_title": "Organograma",
+          "score": 0.5903,
+          "doc_id": "faq_anpd_principal.md/faq_anpd_principal",
+          "doc_title": "Faq Anpd Principal",
           "page": null,
-          "section": "3. Instâncias de Governança e Papéis Especiais",
-          "snippet": "---\n\n## 3. Instâncias de Governança e Papéis Especiais\n\n### 3.1. Comitê de Ética\n\n- Composição mínima: representantes da Diretoria Jurídica, de RH, de TI e do Compliance, além de convidados, sempre em número ímpar.\n- Atribuições:\n  - interp"
+          "section": "4. Controlador, operador, DPO",
+          "snippet": "**Q08. O titular tem direito a portabilidade de dados mesmo quando o contrato já acabou?**\nSim. A portabilidade se aplica sempre que o tratamento tiver sido baseado em consentimento ou em contrato.\n\n---\n\n## 4. Controlador, operador, DPO\n\n**"
         }
       ]
     },
@@ -904,39 +1021,39 @@
         },
         {
           "rank": 2,
-          "score": 0.6122,
-          "doc_id": "organograma.md/organograma",
-          "doc_title": "Organograma",
+          "score": 0.6411,
+          "doc_id": "plano_resposta_incidentes.md/plano_resposta_incidentes",
+          "doc_title": "Plano Resposta Incidentes",
           "page": null,
-          "section": null,
-          "snippet": "| Tema | Responsável Primário | Co-responsáveis |\n| --- | --- | --- |\n| Segurança da Informação e incidentes cibernéticos | CISO | CTO, DPO, Diretor Jurídico |\n| Proteção de dados pessoais (LGPD) | DPO | Diretor Jurídico, Compliance, CISO |"
+          "section": "2.3. Equipe de Resposta a Incidentes (CSIRT)",
+          "snippet": "Sempre que relevante, integram o CGI os gestores das áreas envolvidas, o time de arquitetura e os proprietários dos ativos afetados.\n\n### 2.3. Equipe de Resposta a Incidentes (CSIRT)\nA CSIRT é operacionalmente liderada pelo CISO, com apoio "
         },
         {
           "rank": 3,
-          "score": 0.5836,
+          "score": 0.6116,
+          "doc_id": "organograma.md/organograma",
+          "doc_title": "Organograma",
+          "page": null,
+          "section": "3.3. Compliance",
+          "snippet": "| Tema | Responsável Primário | Co-responsáveis |\n| --- | --- | --- |\n| Segurança da Informação e incidentes cibernéticos | CISO | CTO, DPO, Diretor Jurídico |\n| Proteção de dados pessoais (LGPD) | DPO | Diretor Jurídico, Compliance, CISO |"
+        },
+        {
+          "rank": 4,
+          "score": 0.5899,
+          "doc_id": "politica_seguranca_informacao.md/politica_seguranca_informacao",
+          "doc_title": "Politica Seguranca Informacao",
+          "page": null,
+          "section": "3.2. Segurança em home office",
+          "snippet": "5. **Auditoria trimestral:** O CISO (via Equipe de Segurança) conduz revisão trimestral dos acessos aos ativos de classificação Confidencial e Restrita."
+        },
+        {
+          "rank": 5,
+          "score": 0.5834,
           "doc_id": "organograma.md/organograma",
           "doc_title": "Organograma",
           "page": null,
           "section": "2.2. Diretoria Financeira (CFO)",
           "snippet": "### 2.2. Diretoria Financeira (CFO)\n\n- Responsável pela integridade das demonstrações contábeis e pelo compliance fiscal e trabalhista.\n- Aprova orçamentos anuais e investimentos de capital.\n- Supervisiona Controladoria, Tesouraria, FP&A e "
-        },
-        {
-          "rank": 4,
-          "score": 0.5816,
-          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
-          "doc_title": "Codigo Etica Conduta",
-          "page": null,
-          "section": null,
-          "snippet": "**9.2. Dever de comunicar incidentes.** Todo colaborador que tomar conhecimento de incidente de segurança, vazamento de dados, perda de credenciais, ataque cibernético, uso indevido de contas ou suspeita de fraude deve comunicar o fato imed"
-        },
-        {
-          "rank": 5,
-          "score": 0.5758,
-          "doc_id": "organograma.md/organograma",
-          "doc_title": "Organograma",
-          "page": null,
-          "section": "2. Cargos e Responsabilidades Diretas",
-          "snippet": "---\n\n## 2. Cargos e Responsabilidades Diretas\n\n### 2.1. Chief Executive Officer (CEO)\n\n- Representa a empresa perante o mercado, clientes, parceiros e autoridades.\n- Define, com o Conselho e as Diretorias, a estratégia corporativa, de inova"
         }
       ]
     },
@@ -944,7 +1061,7 @@
       "id": "ORG-004",
       "category": "",
       "question": "Quais orgaos devem ser acionados em caso de incidente com dados pessoais?",
-      "expected_document": "Organograma",
+      "expected_document": null,
       "expected_section": null,
       "expected_keywords": [],
       "hit_document": true,
@@ -954,48 +1071,48 @@
       "top_k_chunks": [
         {
           "rank": 1,
-          "score": 0.6163,
-          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
-          "doc_title": "Codigo Etica Conduta",
+          "score": 0.639,
+          "doc_id": "plano_resposta_incidentes.md/plano_resposta_incidentes",
+          "doc_title": "Plano Resposta Incidentes",
           "page": null,
-          "section": null,
-          "snippet": "**9.2. Dever de comunicar incidentes.** Todo colaborador que tomar conhecimento de incidente de segurança, vazamento de dados, perda de credenciais, ataque cibernético, uso indevido de contas ou suspeita de fraude deve comunicar o fato imed"
+          "section": "1. Objetivo e âmbito",
+          "snippet": "O presente Plano de Resposta a Incidentes (PRI) define papéis, processos, fluxos e responsabilidades para a detecção, classificação, contenção, erradicação, recuperação e comunicação de incidentes de segurança da informação e incidentes com"
         },
         {
           "rank": 2,
-          "score": 0.6027,
-          "doc_id": "organograma.md/organograma",
-          "doc_title": "Organograma",
+          "score": 0.6313,
+          "doc_id": "faq_anpd_principal.md/faq_anpd_principal",
+          "doc_title": "Faq Anpd Principal",
           "page": null,
-          "section": "3.2. DPO — Encarregado pelo Tratamento de Dados Pessoais",
-          "snippet": "### 3.2. DPO — Encarregado pelo Tratamento de Dados Pessoais\n\n- Papel conforme art. 41 da LGPD.\n- Responsabilidades principais:\n  - receber e orientar solicitações de titulares de dados;\n  - orientar colaboradores e fornecedores sobre boas "
+          "section": "6. Transferência internacional",
+          "snippet": "**Q12. Em caso de incidente de segurança com dados pessoais, preciso comunicar a ANPD e os titulares?**\nA comunicação à ANPD é obrigatória quando o incidente **puder acarretar risco ou dano relevante aos titulares**. A comunicação deve ocor"
         },
         {
           "rank": 3,
-          "score": 0.5779,
-          "doc_id": "organograma.md/organograma",
-          "doc_title": "Organograma",
+          "score": 0.6166,
+          "doc_id": "politica_seguranca_informacao.md/politica_seguranca_informacao",
+          "doc_title": "Politica Seguranca Informacao",
           "page": null,
-          "section": null,
-          "snippet": "| Tema | Responsável Primário | Co-responsáveis |\n| --- | --- | --- |\n| Segurança da Informação e incidentes cibernéticos | CISO | CTO, DPO, Diretor Jurídico |\n| Proteção de dados pessoais (LGPD) | DPO | Diretor Jurídico, Compliance, CISO |"
+          "section": "9. Conscientização e Treinamento",
+          "snippet": "---\n\n## 9. Conscientização e Treinamento\n\nTodos os colaboradores participam de:\n- **Onboarding de Segurança:** obrigatório, com aproveitamento ≥ 80%;\n- **Refresh anual:** treinamento atualizado com foco em ameaças do período;\n- **Simulações"
         },
         {
           "rank": 4,
-          "score": 0.5618,
-          "doc_id": "organograma.md/organograma",
-          "doc_title": "Organograma",
-          "page": null,
-          "section": "3. Instâncias de Governança e Papéis Especiais",
-          "snippet": "---\n\n## 3. Instâncias de Governança e Papéis Especiais\n\n### 3.1. Comitê de Ética\n\n- Composição mínima: representantes da Diretoria Jurídica, de RH, de TI e do Compliance, além de convidados, sempre em número ímpar.\n- Atribuições:\n  - interp"
-        },
-        {
-          "rank": 5,
-          "score": 0.5517,
+          "score": 0.6157,
           "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
           "doc_title": "Codigo Etica Conduta",
           "page": null,
           "section": "9. Segurança da Informação e Proteção de Dados",
-          "snippet": "---\n\n## 9. Segurança da Informação e Proteção de Dados\n\n**9.1. Segurança como princípio ético.** A proteção das informações corporativas e de dados pessoais não é apenas obrigação jurídica, mas ética. Cada colaborador é corresponsável pela "
+          "snippet": "**9.2. Dever de comunicar incidentes.** Todo colaborador que tomar conhecimento de incidente de segurança, vazamento de dados, perda de credenciais, ataque cibernético, uso indevido de contas ou suspeita de fraude deve comunicar o fato imed"
+        },
+        {
+          "rank": 5,
+          "score": 0.6089,
+          "doc_id": "lgpd_leil_13709_2018.md/lgpd_leil_13709_2018",
+          "doc_title": "Lgpd Leil 13709 2018",
+          "page": null,
+          "section": "Lei nº 13.709, de 14 de agosto de 2018",
+          "snippet": "VII — segurança: utilização de medidas técnicas e administrativas aptas a proteger os dados pessoais de acessos não autorizados e de situações acidentais ou ilícitas de destruição, perda, alteração, comunicação ou difusão;\nVIII — prevenção:"
         }
       ]
     },
@@ -1022,7 +1139,16 @@
         },
         {
           "rank": 2,
-          "score": 0.6046,
+          "score": 0.6543,
+          "doc_id": "manual_colaborador.md/manual_colaborador",
+          "doc_title": "Manual Colaborador",
+          "page": null,
+          "section": "9. Canal de Denúncias",
+          "snippet": "---\n\n## 9. Canal de Denúncias\n\nViolações ou suspeitas de violação ao Código de Ética, à legislação ou a políticas internas devem ser comunicadas preferencialmente por meio do **Canal de Denúncias** da empresa, que é confidencial e admite an"
+        },
+        {
+          "rank": 3,
+          "score": 0.6047,
           "doc_id": "organograma.md/organograma",
           "doc_title": "Organograma",
           "page": null,
@@ -1030,8 +1156,8 @@
           "snippet": "### 3.3. Compliance\n\n- Executa programas de integridade, treinamentos éticos, anticorrupção e LGPD.\n- Mantém matrizes de risco e controles de conformidade.\n- Acompanha o registro e a evolução das denúncias recebidas pelo Canal de Denúncias."
         },
         {
-          "rank": 3,
-          "score": 0.5955,
+          "rank": 4,
+          "score": 0.5952,
           "doc_id": "organograma.md/organograma",
           "doc_title": "Organograma",
           "page": null,
@@ -1039,22 +1165,13 @@
           "snippet": "---\n\n## 3. Instâncias de Governança e Papéis Especiais\n\n### 3.1. Comitê de Ética\n\n- Composição mínima: representantes da Diretoria Jurídica, de RH, de TI e do Compliance, além de convidados, sempre em número ímpar.\n- Atribuições:\n  - interp"
         },
         {
-          "rank": 4,
-          "score": 0.5657,
-          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
-          "doc_title": "Codigo Etica Conduta",
-          "page": null,
-          "section": null,
-          "snippet": "**6.3. Assédio moral e sexual.** Qualquer conduta que configure humilhação, ridículo, perseguição repetida, ameaça, coerção, pressão psicológica abusiva, exposição a situações degradantes ou qualquer forma de assédio sexual constitui **falt"
-        },
-        {
           "rank": 5,
-          "score": 0.5633,
+          "score": 0.5656,
           "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
           "doc_title": "Codigo Etica Conduta",
           "page": null,
-          "section": null,
-          "snippet": "**9.2. Dever de comunicar incidentes.** Todo colaborador que tomar conhecimento de incidente de segurança, vazamento de dados, perda de credenciais, ataque cibernético, uso indevido de contas ou suspeita de fraude deve comunicar o fato imed"
+          "section": "6. Diversidade, Inclusão e Assédio",
+          "snippet": "**6.3. Assédio moral e sexual.** Qualquer conduta que configure humilhação, ridículo, perseguição repetida, ameaça, coerção, pressão psicológica abusiva, exposição a situações degradantes ou qualquer forma de assédio sexual constitui **falt"
         }
       ]
     },
@@ -1072,16 +1189,16 @@
       "top_k_chunks": [
         {
           "rank": 1,
-          "score": 0.6676,
+          "score": 0.6671,
           "doc_id": "organograma.md/organograma",
           "doc_title": "Organograma",
           "page": null,
-          "section": null,
+          "section": "3.3. Compliance",
           "snippet": "| Tema | Responsável Primário | Co-responsáveis |\n| --- | --- | --- |\n| Segurança da Informação e incidentes cibernéticos | CISO | CTO, DPO, Diretor Jurídico |\n| Proteção de dados pessoais (LGPD) | DPO | Diretor Jurídico, Compliance, CISO |"
         },
         {
           "rank": 2,
-          "score": 0.6616,
+          "score": 0.6607,
           "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
           "doc_title": "Codigo Etica Conduta",
           "page": null,
@@ -1090,7 +1207,7 @@
         },
         {
           "rank": 3,
-          "score": 0.6455,
+          "score": 0.6456,
           "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
           "doc_title": "Codigo Etica Conduta",
           "page": null,
@@ -1099,21 +1216,1614 @@
         },
         {
           "rank": 4,
-          "score": 0.6443,
+          "score": 0.6445,
           "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
           "doc_title": "Codigo Etica Conduta",
           "page": null,
-          "section": null,
+          "section": "9. Segurança da Informação e Proteção de Dados",
           "snippet": "**9.2. Dever de comunicar incidentes.** Todo colaborador que tomar conhecimento de incidente de segurança, vazamento de dados, perda de credenciais, ataque cibernético, uso indevido de contas ou suspeita de fraude deve comunicar o fato imed"
         },
         {
           "rank": 5,
-          "score": 0.6232,
+          "score": 0.6227,
           "doc_id": "organograma.md/organograma",
           "doc_title": "Organograma",
           "page": null,
           "section": "3.3. Compliance",
           "snippet": "### 3.3. Compliance\n\n- Executa programas de integridade, treinamentos éticos, anticorrupção e LGPD.\n- Mantém matrizes de risco e controles de conformidade.\n- Acompanha o registro e a evolução das denúncias recebidas pelo Canal de Denúncias."
+        }
+      ]
+    },
+    {
+      "id": "LGPD-006",
+      "category": "",
+      "question": "Quais sao as hipoteses legais para tratar dados pessoais previstas no art. 7 da LGPD?",
+      "expected_document": null,
+      "expected_section": null,
+      "expected_keywords": [],
+      "hit_document": true,
+      "hit_section": true,
+      "hit_keywords": true,
+      "passed": true,
+      "top_k_chunks": [
+        {
+          "rank": 1,
+          "score": 0.7632,
+          "doc_id": "faq_anpd_principal.md/faq_anpd_principal",
+          "doc_title": "Faq Anpd Principal",
+          "page": null,
+          "section": "2. Princípios e bases legais",
+          "snippet": "**Q05. Quais as hipóteses (bases legais) para tratar dados pessoais?**\nPrevistas no art. 7º LGPD. As mais usadas em ambiente corporativo são:\n- Consentimento (art. 7º, I);\n- Cumprimento de obrigação legal ou regulatória (art. 7º, II);\n- Exe"
+        },
+        {
+          "rank": 2,
+          "score": 0.7105,
+          "doc_id": "politica_privacidade_lgpd.md/politica_privacidade_lgpd",
+          "doc_title": "Politica Privacidade Lgpd",
+          "page": null,
+          "section": "6. Bases legais invocadas",
+          "snippet": "**Dados pessoais sensíveis (art. 5º, II LGPD)** só são tratados mediante base legal expressa e com controles adicionais de criptografia, RBAC e AIPD, quando aplicável.\n\n---\n\n## 6. Bases legais invocadas\n\nPara cada operação de tratamento, a "
+        },
+        {
+          "rank": 3,
+          "score": 0.7028,
+          "doc_id": "faq_anpd_principal.md/faq_anpd_principal",
+          "doc_title": "Faq Anpd Principal",
+          "page": null,
+          "section": "2. Princípios e bases legais",
+          "snippet": "Vide art. 5º, II, LGPD.\n\n**Q03. O que é dado anonimizado?**\nÉ dado tratado com técnicas de anonimização adequadas e controladas, de forma que o titular **não possa ser reidentificado** com razoabilidade (inclusive cruzamento com outros banc"
+        },
+        {
+          "rank": 4,
+          "score": 0.7006,
+          "doc_id": "faq_anpd_principal.md/faq_anpd_principal",
+          "doc_title": "Faq Anpd Principal",
+          "page": null,
+          "section": "3. Direitos do titular",
+          "snippet": "**Q07. Quais são os principais direitos do titular na LGPD?**\nEntre outros:\n1. Confirmação da existência de tratamento (art. 17, I);\n2. Acesso aos dados (art. 17, II);\n3. Correção de dados incompletos, inexatos ou desatualizados (art. 17, I"
+        },
+        {
+          "rank": 5,
+          "score": 0.6973,
+          "doc_id": "faq_anpd_principal.md/faq_anpd_principal",
+          "doc_title": "Faq Anpd Principal",
+          "page": null,
+          "section": "1. Dados pessoais: conceitos básicos",
+          "snippet": "# FAQ — Perguntas Frequentes da ANPD sobre LGPD\n**Autoridade Nacional de Proteção de Dados (ANPD)**\n*Compilado atualizado em 01/2026 (versão de referência interna; íntegra oficial disponível em gov.br/anpd)*\n\n---\n\n## 1. Dados pessoais: conc"
+        }
+      ]
+    },
+    {
+      "id": "LGPD-007",
+      "category": "",
+      "question": "A NovaData Solutions pode usar dados pessoais de clientes para campanhas de marketing após o fim do contrato? Sob que condicoes?",
+      "expected_document": null,
+      "expected_section": null,
+      "expected_keywords": [],
+      "hit_document": true,
+      "hit_section": true,
+      "hit_keywords": true,
+      "passed": true,
+      "top_k_chunks": [
+        {
+          "rank": 1,
+          "score": 0.7743,
+          "doc_id": "guia_anpd_metodos_aplicacao.md/guia_anpd_metodos_aplicacao",
+          "doc_title": "Guia Anpd Metodos Aplicacao",
+          "page": null,
+          "section": "7. Perguntas frequentes no Guia ANPD",
+          "snippet": "3. **É permitido usar dados de clientes para marketing após o fim do contrato?**\n   Apenas se houver base legal (consentimento específico e destacado ou interesse legítimo com mitigação de riscos).\n\n4. **Os dados devem ser eliminados quando"
+        },
+        {
+          "rank": 2,
+          "score": 0.696,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": "6. Diversidade, Inclusão e Assédio",
+          "snippet": "**5.3. Sigilo em relação a dados de clientes.** Qualquer dado pessoal ou empresarial sob custódia da NovaData Solutions em razão de contratos de prestação de serviços deve ser tratado como confidencial. A sua coleta, armazenamento, acesso, "
+        },
+        {
+          "rank": 3,
+          "score": 0.684,
+          "doc_id": "politica_privacidade_lgpd.md/politica_privacidade_lgpd",
+          "doc_title": "Politica Privacidade Lgpd",
+          "page": null,
+          "section": "4. Categorias de titulares tratadas",
+          "snippet": "---\n\n## 4. Categorias de titulares tratadas\n\nA NovaData trata dados pessoais referentes a:\n1. **Colaboradores, estagiários, aprendizes, consultores e prestadores de serviços** (folha de pagamento, benefícios, jornada, avaliações, acessos et"
+        },
+        {
+          "rank": 4,
+          "score": 0.6745,
+          "doc_id": "politica_privacidade_lgpd.md/politica_privacidade_lgpd",
+          "doc_title": "Politica Privacidade Lgpd",
+          "page": null,
+          "section": "11. Segurança e incidentes",
+          "snippet": "Ao término da retenção, os dados são eliminados ou anonimizados com segurança (destruição física/mídia, exclusão segura em produção e backups, conforme Política de Backup e Retenção).\n\n---\n\n## 11. Segurança e incidentes\n\nA NovaData adota me"
+        },
+        {
+          "rank": 5,
+          "score": 0.6632,
+          "doc_id": "politica_privacidade_lgpd.md/politica_privacidade_lgpd",
+          "doc_title": "Politica Privacidade Lgpd",
+          "page": null,
+          "section": "1. Apresentação e compromisso",
+          "snippet": "# Política de Privacidade e LGPD — NovaData Solutions\nDocumento nº PPL-ND-2026-001 | Versão 1.0\nAprovação: Diretor Jurídico + DPO + Diretoria Executiva | Data: 01/08/2026 | Próxima revisão: 01/2027\n\n---\n\n## 1. Apresentação e compromisso\n\nA "
+        }
+      ]
+    },
+    {
+      "id": "LGPD-008",
+      "category": "",
+      "question": "Quais os direitos do titular de dados pessoais segundo o art. 17 da LGPD?",
+      "expected_document": null,
+      "expected_section": null,
+      "expected_keywords": [],
+      "hit_document": true,
+      "hit_section": true,
+      "hit_keywords": true,
+      "passed": true,
+      "top_k_chunks": [
+        {
+          "rank": 1,
+          "score": 0.8406,
+          "doc_id": "faq_anpd_principal.md/faq_anpd_principal",
+          "doc_title": "Faq Anpd Principal",
+          "page": null,
+          "section": "3. Direitos do titular",
+          "snippet": "**Q07. Quais são os principais direitos do titular na LGPD?**\nEntre outros:\n1. Confirmação da existência de tratamento (art. 17, I);\n2. Acesso aos dados (art. 17, II);\n3. Correção de dados incompletos, inexatos ou desatualizados (art. 17, I"
+        },
+        {
+          "rank": 2,
+          "score": 0.7262,
+          "doc_id": "politica_privacidade_lgpd.md/politica_privacidade_lgpd",
+          "doc_title": "Politica Privacidade Lgpd",
+          "page": null,
+          "section": "8. Transferência internacional de dados pessoais",
+          "snippet": "Todo contrato com operador contém cláusulas de LGPD alinhadas à Seção 8 da Política de Segurança da Informação (due diligence, auditoria, notificação de incidentes em até 24h, retorno ou eliminação de dados ao término, etc.).\n\n---\n\n## 8. Tr"
+        },
+        {
+          "rank": 3,
+          "score": 0.7251,
+          "doc_id": "lgpd_leil_13709_2018.md/lgpd_leil_13709_2018",
+          "doc_title": "Lgpd Leil 13709 2018",
+          "page": null,
+          "section": "Lei nº 13.709, de 14 de agosto de 2018",
+          "snippet": "# Lei Geral de Proteção de Dados Pessoais — LGPD\n## Lei nº 13.709, de 14 de agosto de 2018\n**Documento de referência — NovaData Solutions**\nVersão de referência: atualizada até 01/2026 (stub com artigos selecionados para consulta interna; v"
+        },
+        {
+          "rank": 4,
+          "score": 0.7133,
+          "doc_id": "faq_anpd_principal.md/faq_anpd_principal",
+          "doc_title": "Faq Anpd Principal",
+          "page": null,
+          "section": "1. Dados pessoais: conceitos básicos",
+          "snippet": "# FAQ — Perguntas Frequentes da ANPD sobre LGPD\n**Autoridade Nacional de Proteção de Dados (ANPD)**\n*Compilado atualizado em 01/2026 (versão de referência interna; íntegra oficial disponível em gov.br/anpd)*\n\n---\n\n## 1. Dados pessoais: conc"
+        },
+        {
+          "rank": 5,
+          "score": 0.7033,
+          "doc_id": "lgpd_leil_13709_2018.md/lgpd_leil_13709_2018",
+          "doc_title": "Lgpd Leil 13709 2018",
+          "page": null,
+          "section": "Apêndice — Artigos de referência para perguntas frequentes",
+          "snippet": "---\n\n## Apêndice — Artigos de referência para perguntas frequentes\n\nO que caracteriza dado pessoal? — Vide art. 5º, I.\nO que é dado pessoal sensível? — Vide art. 5º, II.\nQuais são os princípios da LGPD? — Vide art. 6º, I a X.\nQuais são as h"
+        }
+      ]
+    },
+    {
+      "id": "LGPD-009",
+      "category": "",
+      "question": "Qual o valor maximo de multa simples por infração a LGPD?",
+      "expected_document": null,
+      "expected_section": null,
+      "expected_keywords": [],
+      "hit_document": true,
+      "hit_section": true,
+      "hit_keywords": true,
+      "passed": true,
+      "top_k_chunks": [
+        {
+          "rank": 1,
+          "score": 0.7897,
+          "doc_id": "faq_anpd_principal.md/faq_anpd_principal",
+          "doc_title": "Faq Anpd Principal",
+          "page": null,
+          "section": "7. Sanções",
+          "snippet": "---\n\n## 7. Sanções\n\n**Q15. Qual o valor máximo de multa por infração à LGPD?**\nA multa simples pode chegar a **2% do faturamento da pessoa jurídica (grupo ou conglomerado) no Brasil no último exercício (excluídos impostos)**, com teto máxim"
+        },
+        {
+          "rank": 2,
+          "score": 0.6468,
+          "doc_id": "lgpd_leil_13709_2018.md/lgpd_leil_13709_2018",
+          "doc_title": "Lgpd Leil 13709 2018",
+          "page": null,
+          "section": "Apêndice — Artigos de referência para perguntas frequentes",
+          "snippet": "---\n\n## Apêndice — Artigos de referência para perguntas frequentes\n\nO que caracteriza dado pessoal? — Vide art. 5º, I.\nO que é dado pessoal sensível? — Vide art. 5º, II.\nQuais são os princípios da LGPD? — Vide art. 6º, I a X.\nQuais são as h"
+        },
+        {
+          "rank": 3,
+          "score": 0.6273,
+          "doc_id": "faq_anpd_principal.md/faq_anpd_principal",
+          "doc_title": "Faq Anpd Principal",
+          "page": null,
+          "section": "5. Segurança e incidentes",
+          "snippet": "---\n\n## 5. Segurança e incidentes\n\n**Q11. Quais as medidas de segurança mínimas que a LGPD exige?**\nA LGPD não elenca exaustivamente, mas estabelece no art. 37 medidas de segurança, técnicas e administrativas aptas a proteger os dados contr"
+        },
+        {
+          "rank": 4,
+          "score": 0.6187,
+          "doc_id": "lgpd_leil_13709_2018.md/lgpd_leil_13709_2018",
+          "doc_title": "Lgpd Leil 13709 2018",
+          "page": null,
+          "section": "TÍTULO III — Do Tratamento de Dados Pessoais",
+          "snippet": "**Art. 48º** A Autoridade Nacional de Proteção de Dados (ANPD) poderá aplicar ao controlador ou ao operador, em caso de infração a esta Lei, as seguintes sanções administrativas, a serem aplicadas de forma individualizada e levadas em conta"
+        },
+        {
+          "rank": 5,
+          "score": 0.6038,
+          "doc_id": "lgpd_leil_13709_2018.md/lgpd_leil_13709_2018",
+          "doc_title": "Lgpd Leil 13709 2018",
+          "page": null,
+          "section": "Lei nº 13.709, de 14 de agosto de 2018",
+          "snippet": "# Lei Geral de Proteção de Dados Pessoais — LGPD\n## Lei nº 13.709, de 14 de agosto de 2018\n**Documento de referência — NovaData Solutions**\nVersão de referência: atualizada até 01/2026 (stub com artigos selecionados para consulta interna; v"
+        }
+      ]
+    },
+    {
+      "id": "ANPD-001",
+      "category": "",
+      "question": "Quando uma empresa deve realizar a Avaliação de Impacto à Proteção de Dados (AIPD / DPIA)?",
+      "expected_document": null,
+      "expected_section": null,
+      "expected_keywords": [],
+      "hit_document": true,
+      "hit_section": true,
+      "hit_keywords": true,
+      "passed": true,
+      "top_k_chunks": [
+        {
+          "rank": 1,
+          "score": 0.7481,
+          "doc_id": "guia_anpd_metodos_aplicacao.md/guia_anpd_metodos_aplicacao",
+          "doc_title": "Guia Anpd Metodos Aplicacao",
+          "page": null,
+          "section": "4. Avaliação de Impacto à Proteção de Dados (AIPD)",
+          "snippet": "---\n\n## 4. Avaliação de Impacto à Proteção de Dados (AIPD)\n\nA ANPD estabelece que o controlador deve realizar **AIPD** sempre que o tratamento:\n- envolver **dados pessoais sensíveis** em larga escala;\n- ocorrer em **novas tecnologias** (ex."
+        },
+        {
+          "rank": 2,
+          "score": 0.6718,
+          "doc_id": "guia_anpd_metodos_aplicacao.md/guia_anpd_metodos_aplicacao",
+          "doc_title": "Guia Anpd Metodos Aplicacao",
+          "page": null,
+          "section": "4.1. Etapas mínimas da AIPD",
+          "snippet": "### 4.1. Etapas mínimas da AIPD\n\n1. Descrição do contexto e do cenário de tratamento;\n2. Mapeamento de fluxos de dados (entrada, processamento, saída, armazenamento, exclusão);\n3. Identificação e classificação de riscos;\n4. Medidas de mitig"
+        },
+        {
+          "rank": 3,
+          "score": 0.6223,
+          "doc_id": "guia_anpd_metodos_aplicacao.md/guia_anpd_metodos_aplicacao",
+          "doc_title": "Guia Anpd Metodos Aplicacao",
+          "page": null,
+          "section": "5.2. Gestão de riscos",
+          "snippet": "### 5.2. Gestão de riscos\n\nA ANPD recomenda a aplicação de ISO/IEC 27001, 27005, 27701 e a metodologia NIST SP 800-30 para gestão de riscos corporativos.\n\n---\n\n## 6. Resposta a incidentes de segurança (com LGPD)\n\nA comunicação à ANPD e, eve"
+        },
+        {
+          "rank": 4,
+          "score": 0.6014,
+          "doc_id": "lgpd_leil_13709_2018.md/lgpd_leil_13709_2018",
+          "doc_title": "Lgpd Leil 13709 2018",
+          "page": null,
+          "section": "TÍTULO III — Do Tratamento de Dados Pessoais",
+          "snippet": "**Art. 48º** A Autoridade Nacional de Proteção de Dados (ANPD) poderá aplicar ao controlador ou ao operador, em caso de infração a esta Lei, as seguintes sanções administrativas, a serem aplicadas de forma individualizada e levadas em conta"
+        },
+        {
+          "rank": 5,
+          "score": 0.597,
+          "doc_id": "guia_anpd_metodos_aplicacao.md/guia_anpd_metodos_aplicacao",
+          "doc_title": "Guia Anpd Metodos Aplicacao",
+          "page": null,
+          "section": "3.2. Registro de Operações de Tratamento (ROT)",
+          "snippet": "### 3.2. Registro de Operações de Tratamento (ROT)\n\nO Registro de Operações de Tratamento é o documento que demonstra, em detalhe, cada atividade de tratamento realizada. A ANPD recomenda que o ROT contenha:\n\n1. Identificação do controlador"
+        }
+      ]
+    },
+    {
+      "id": "ANPD-002",
+      "category": "",
+      "question": "Quais controles de segurança a ANPD recomenda para dados pessoais?",
+      "expected_document": null,
+      "expected_section": null,
+      "expected_keywords": [],
+      "hit_document": true,
+      "hit_section": true,
+      "hit_keywords": true,
+      "passed": true,
+      "top_k_chunks": [
+        {
+          "rank": 1,
+          "score": 0.7026,
+          "doc_id": "guia_anpd_metodos_aplicacao.md/guia_anpd_metodos_aplicacao",
+          "doc_title": "Guia Anpd Metodos Aplicacao",
+          "page": null,
+          "section": "4.1. Etapas mínimas da AIPD",
+          "snippet": "### 4.1. Etapas mínimas da AIPD\n\n1. Descrição do contexto e do cenário de tratamento;\n2. Mapeamento de fluxos de dados (entrada, processamento, saída, armazenamento, exclusão);\n3. Identificação e classificação de riscos;\n4. Medidas de mitig"
+        },
+        {
+          "rank": 2,
+          "score": 0.692,
+          "doc_id": "guia_anpd_metodos_aplicacao.md/guia_anpd_metodos_aplicacao",
+          "doc_title": "Guia Anpd Metodos Aplicacao",
+          "page": null,
+          "section": "4. Avaliação de Impacto à Proteção de Dados (AIPD)",
+          "snippet": "---\n\n## 4. Avaliação de Impacto à Proteção de Dados (AIPD)\n\nA ANPD estabelece que o controlador deve realizar **AIPD** sempre que o tratamento:\n- envolver **dados pessoais sensíveis** em larga escala;\n- ocorrer em **novas tecnologias** (ex."
+        },
+        {
+          "rank": 3,
+          "score": 0.6884,
+          "doc_id": "faq_anpd_principal.md/faq_anpd_principal",
+          "doc_title": "Faq Anpd Principal",
+          "page": null,
+          "section": "1. Dados pessoais: conceitos básicos",
+          "snippet": "# FAQ — Perguntas Frequentes da ANPD sobre LGPD\n**Autoridade Nacional de Proteção de Dados (ANPD)**\n*Compilado atualizado em 01/2026 (versão de referência interna; íntegra oficial disponível em gov.br/anpd)*\n\n---\n\n## 1. Dados pessoais: conc"
+        },
+        {
+          "rank": 4,
+          "score": 0.685,
+          "doc_id": "guia_anpd_metodos_aplicacao.md/guia_anpd_metodos_aplicacao",
+          "doc_title": "Guia Anpd Metodos Aplicacao",
+          "page": null,
+          "section": "3. Governança de dados pessoais",
+          "snippet": "---\n\n## 3. Governança de dados pessoais\n\n### 3.1. Inventário de dados e mapeamento de fluxos\n\nA ANPD recomenda fortemente que os controladores mantenham um **Inventário de Ativos de Dados Pessoais (IADP)** contendo:\n\n- Finalidades de tratam"
+        },
+        {
+          "rank": 5,
+          "score": 0.6677,
+          "doc_id": "faq_anpd_principal.md/faq_anpd_principal",
+          "doc_title": "Faq Anpd Principal",
+          "page": null,
+          "section": "5. Segurança e incidentes",
+          "snippet": "---\n\n## 5. Segurança e incidentes\n\n**Q11. Quais as medidas de segurança mínimas que a LGPD exige?**\nA LGPD não elenca exaustivamente, mas estabelece no art. 37 medidas de segurança, técnicas e administrativas aptas a proteger os dados contr"
+        }
+      ]
+    },
+    {
+      "id": "SEG-003",
+      "category": "",
+      "question": "Como a NovaData Solutions classifica as informacoes? Quais os niveis?",
+      "expected_document": null,
+      "expected_section": null,
+      "expected_keywords": [],
+      "hit_document": true,
+      "hit_section": true,
+      "hit_keywords": true,
+      "passed": true,
+      "top_k_chunks": [
+        {
+          "rank": 1,
+          "score": 0.7569,
+          "doc_id": "politica_seguranca_informacao.md/politica_seguranca_informacao",
+          "doc_title": "Politica Seguranca Informacao",
+          "page": null,
+          "section": "1.2. Âmbito",
+          "snippet": "### 1.2. Âmbito\nAplica-se a todos os ativos de informação, físicos e lógicos, independentemente do suporte (papel, digital, nuvem, mídia removível), assim como a todos os ambientes corporativos (escritórios, home office, datacenters, nuvem "
+        },
+        {
+          "rank": 2,
+          "score": 0.6296,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": "2. Princípios Fundamentais",
+          "snippet": "**2.4. Confidencialidade.** Preservar o sigilo de informações confidenciais, dados pessoais, segredos de negócio, propriedade intelectual e quaisquer dados sob custódia da NovaData Solutions, conforme a **Política de Classificação da Inform"
+        },
+        {
+          "rank": 3,
+          "score": 0.6216,
+          "doc_id": "politica_privacidade_lgpd.md/politica_privacidade_lgpd",
+          "doc_title": "Politica Privacidade Lgpd",
+          "page": null,
+          "section": "4. Categorias de titulares tratadas",
+          "snippet": "---\n\n## 4. Categorias de titulares tratadas\n\nA NovaData trata dados pessoais referentes a:\n1. **Colaboradores, estagiários, aprendizes, consultores e prestadores de serviços** (folha de pagamento, benefícios, jornada, avaliações, acessos et"
+        },
+        {
+          "rank": 4,
+          "score": 0.616,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": "6. Diversidade, Inclusão e Assédio",
+          "snippet": "**5.3. Sigilo em relação a dados de clientes.** Qualquer dado pessoal ou empresarial sob custódia da NovaData Solutions em razão de contratos de prestação de serviços deve ser tratado como confidencial. A sua coleta, armazenamento, acesso, "
+        },
+        {
+          "rank": 5,
+          "score": 0.6126,
+          "doc_id": "politica_privacidade_lgpd.md/politica_privacidade_lgpd",
+          "doc_title": "Politica Privacidade Lgpd",
+          "page": null,
+          "section": "11. Segurança e incidentes",
+          "snippet": "Ao término da retenção, os dados são eliminados ou anonimizados com segurança (destruição física/mídia, exclusão segura em produção e backups, conforme Política de Backup e Retenção).\n\n---\n\n## 11. Segurança e incidentes\n\nA NovaData adota me"
+        }
+      ]
+    },
+    {
+      "id": "SEG-004",
+      "category": "",
+      "question": "Qual o padrao minimo de senhas na NovaData Solutions? E o uso de gerenciador de senhas?",
+      "expected_document": null,
+      "expected_section": null,
+      "expected_keywords": [],
+      "hit_document": true,
+      "hit_section": true,
+      "hit_keywords": true,
+      "passed": true,
+      "top_k_chunks": [
+        {
+          "rank": 1,
+          "score": 0.664,
+          "doc_id": "politica_seguranca_informacao.md/politica_seguranca_informacao",
+          "doc_title": "Politica Seguranca Informacao",
+          "page": null,
+          "section": "5. Senhas, Credenciais e Segredos",
+          "snippet": "---\n\n## 5. Senhas, Credenciais e Segredos\n\n### 5.1. Padrão de senhas\nAs senhas dos sistemas corporativos devem ter, no mínimo, 14 caracteres, com combinação de letras maiúsculas, minúsculas, números e símbolos. Alternativamente, são aceitas"
+        },
+        {
+          "rank": 2,
+          "score": 0.6537,
+          "doc_id": "politica_controle_acesso.md/politica_controle_acesso",
+          "doc_title": "Politica Controle Acesso",
+          "page": null,
+          "section": "1. Objetivo",
+          "snippet": "---\n\n## 1. Objetivo\n\nEstabelecer diretrizes e regras para gestão de identidades, credenciais e acessos aos ativos de informação, sistemas, aplicações, ambientes de nuvem, redes e instalações físicas da NovaData Solutions, em conformidade co"
+        },
+        {
+          "rank": 3,
+          "score": 0.6493,
+          "doc_id": "politica_privacidade_lgpd.md/politica_privacidade_lgpd",
+          "doc_title": "Politica Privacidade Lgpd",
+          "page": null,
+          "section": "11. Segurança e incidentes",
+          "snippet": "Ao término da retenção, os dados são eliminados ou anonimizados com segurança (destruição física/mídia, exclusão segura em produção e backups, conforme Política de Backup e Retenção).\n\n---\n\n## 11. Segurança e incidentes\n\nA NovaData adota me"
+        },
+        {
+          "rank": 4,
+          "score": 0.6468,
+          "doc_id": "manual_colaborador.md/manual_colaborador",
+          "doc_title": "Manual Colaborador",
+          "page": null,
+          "section": "1. Bem-vindo(a) à NovaData Solutions",
+          "snippet": "# Manual do Colaborador — NovaData Solutions\nDocumento nº MC-ND-2026-001 | Versão 1.0\nAprovação: Diretoria de Pessoas + Compliance | Data: 01/08/2026 | Próxima revisão: 01/2027\n\n---\n\n## 1. Bem-vindo(a) à NovaData Solutions\n\nSeja bem-vindo(a"
+        },
+        {
+          "rank": 5,
+          "score": 0.6351,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": null,
+          "snippet": "A NovaData Solutions atua nacionalmente com soluções em nuvem para gestão empresarial, governança, segurança da informação e inteligência artificial aplicada a negócios. Sua reputação é um de seus principais ativos. A confiança de clientes,"
+        }
+      ]
+    },
+    {
+      "id": "SEG-005",
+      "category": "",
+      "question": "Posso usar ferramentas de IA generativa publicas (ex: copilotos de codigo, geradores) com dados de clientes da NovaData?",
+      "expected_document": null,
+      "expected_section": null,
+      "expected_keywords": [],
+      "hit_document": true,
+      "hit_section": true,
+      "hit_keywords": true,
+      "passed": true,
+      "top_k_chunks": [
+        {
+          "rank": 1,
+          "score": 0.7145,
+          "doc_id": "politica_uso_aceitavel.md/politica_uso_aceitavel",
+          "doc_title": "Politica Uso Aceitavel",
+          "page": null,
+          "section": "7. Senhas, autenticação e credenciais",
+          "snippet": "1. Utilize apenas softwares licenciados e devidamente autorizados. É proibida a instalação de softwares piratas, cracks, keygens ou similares.\n2. Ferramentas de Inteligência Artificial (incluindo copilotos de código, geradores de texto, ima"
+        },
+        {
+          "rank": 2,
+          "score": 0.6246,
+          "doc_id": "politica_privacidade_lgpd.md/politica_privacidade_lgpd",
+          "doc_title": "Politica Privacidade Lgpd",
+          "page": null,
+          "section": "4. Categorias de titulares tratadas",
+          "snippet": "---\n\n## 4. Categorias de titulares tratadas\n\nA NovaData trata dados pessoais referentes a:\n1. **Colaboradores, estagiários, aprendizes, consultores e prestadores de serviços** (folha de pagamento, benefícios, jornada, avaliações, acessos et"
+        },
+        {
+          "rank": 3,
+          "score": 0.605,
+          "doc_id": "politica_uso_aceitavel.md/politica_uso_aceitavel",
+          "doc_title": "Politica Uso Aceitavel",
+          "page": null,
+          "section": "2. Regras gerais de uso",
+          "snippet": "1. Os recursos de TI da NovaData são fornecidos para o exercício profissional e para atividades relacionadas aos interesses da empresa. O uso pessoal incidental é permitido, desde que seja moderado, não prejudique a produtividade, não incor"
+        },
+        {
+          "rank": 4,
+          "score": 0.5965,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": "6. Diversidade, Inclusão e Assédio",
+          "snippet": "**5.3. Sigilo em relação a dados de clientes.** Qualquer dado pessoal ou empresarial sob custódia da NovaData Solutions em razão de contratos de prestação de serviços deve ser tratado como confidencial. A sua coleta, armazenamento, acesso, "
+        },
+        {
+          "rank": 5,
+          "score": 0.5891,
+          "doc_id": "politica_privacidade_lgpd.md/politica_privacidade_lgpd",
+          "doc_title": "Politica Privacidade Lgpd",
+          "page": null,
+          "section": "3. Princípios observados",
+          "snippet": "---\n\n## 3. Princípios observados\n\nAlém dos 10 princípios constantes do art. 6º da LGPD, a NovaData reitera:\n1. **Accountability:** Demonstrar conformidade de forma documentada, com inventário, ROT e AIPD quando aplicável;\n2. **Privacy by De"
+        }
+      ]
+    },
+    {
+      "id": "ACE-001",
+      "category": "",
+      "question": "Qual o SLA maximo para revogar acessos em caso de desligamento de colaborador?",
+      "expected_document": null,
+      "expected_section": null,
+      "expected_keywords": [],
+      "hit_document": true,
+      "hit_section": true,
+      "hit_keywords": true,
+      "passed": true,
+      "top_k_chunks": [
+        {
+          "rank": 1,
+          "score": 0.692,
+          "doc_id": "politica_controle_acesso.md/politica_controle_acesso",
+          "doc_title": "Politica Controle Acesso",
+          "page": null,
+          "section": "3.3. Revogação",
+          "snippet": "### 3.3. Revogação\nA revogação de acessos ocorre em, no máximo:\n- **4 horas úteis** em caso de desligamento voluntário, demissão, rescisão ou suspeita de desvio;\n- **Imediata** em caso de incidente de segurança ou suspeita de comprometiment"
+        },
+        {
+          "rank": 2,
+          "score": 0.6152,
+          "doc_id": "politica_seguranca_informacao.md/politica_seguranca_informacao",
+          "doc_title": "Politica Seguranca Informacao",
+          "page": null,
+          "section": "3.2. Segurança em home office",
+          "snippet": "Os controles lógicos de acesso são regidos em detalhe pela **Política de Controle de Acesso**. A presente Política estabelece os princípios:\n1. **Individualidade e intransferibilidade:** Toda credencial (usuário, senha, token, chave SSH) é "
+        },
+        {
+          "rank": 3,
+          "score": 0.5908,
+          "doc_id": "manual_colaborador.md/manual_colaborador",
+          "doc_title": "Manual Colaborador",
+          "page": null,
+          "section": "3.3. Desligamento",
+          "snippet": "### 3.3. Desligamento\nNo desligamento, são realizadas:\n- Entrega de equipamentos, mídias, crachás e chaves;\n- Revogação imediata de acessos (em até 4 horas úteis), conforme Política de Controle de Acesso;\n- Devolução de documentos e ativos "
+        },
+        {
+          "rank": 4,
+          "score": 0.5859,
+          "doc_id": "plano_resposta_incidentes.md/plano_resposta_incidentes",
+          "doc_title": "Plano Resposta Incidentes",
+          "page": null,
+          "section": "3.1. Níveis de severidade (S0–S4)",
+          "snippet": "### 3.1. Níveis de severidade (S0–S4)\n| Nível | Rótulo | Tempo de resposta SLA | Exemplos típicos |\n| --- | --- | --- | --- |\n| S0 | Crítico | Resposta em até 1h | Ransomware em produção, vazamento massivo de dados de clientes, ataque ativo"
+        },
+        {
+          "rank": 5,
+          "score": 0.5732,
+          "doc_id": "politica_controle_acesso.md/politica_controle_acesso",
+          "doc_title": "Politica Controle Acesso",
+          "page": null,
+          "section": "1. Objetivo",
+          "snippet": "5. **Rastreabilidade:** Toda ação relevante (criação de conta, concessão de privilégio, revogação, acesso a dados sensíveis) é registrada em log centralizado com retenção mínima de 12 meses (24 meses para eventos de segurança e dados pessoa"
+        }
+      ]
+    },
+    {
+      "id": "ACE-002",
+      "category": "",
+      "question": "O que e e quando usar a conta break-glass de emergência na NovaData?",
+      "expected_document": null,
+      "expected_section": null,
+      "expected_keywords": [],
+      "hit_document": true,
+      "hit_section": true,
+      "hit_keywords": true,
+      "passed": true,
+      "top_k_chunks": [
+        {
+          "rank": 1,
+          "score": 0.6081,
+          "doc_id": "politica_privacidade_lgpd.md/politica_privacidade_lgpd",
+          "doc_title": "Politica Privacidade Lgpd",
+          "page": null,
+          "section": "11. Segurança e incidentes",
+          "snippet": "Ao término da retenção, os dados são eliminados ou anonimizados com segurança (destruição física/mídia, exclusão segura em produção e backups, conforme Política de Backup e Retenção).\n\n---\n\n## 11. Segurança e incidentes\n\nA NovaData adota me"
+        },
+        {
+          "rank": 2,
+          "score": 0.5648,
+          "doc_id": "politica_backup_retenção.md/politica_backup_retenção",
+          "doc_title": "Politica Backup Retenção",
+          "page": null,
+          "section": "10. Terceiros e subcontratados",
+          "snippet": "Toda eliminação relevante é registrada em log, com período de retenção do registro por, no mínimo, 5 anos.\n\n---\n\n## 10. Terceiros e subcontratados\n\nProvedores de nuvem, BaaS e backup terceirizado seguem:\n- due diligence pré-contratual;\n- cl"
+        },
+        {
+          "rank": 3,
+          "score": 0.557,
+          "doc_id": "plano_resposta_incidentes.md/plano_resposta_incidentes",
+          "doc_title": "Plano Resposta Incidentes",
+          "page": null,
+          "section": "1. Objetivo e âmbito",
+          "snippet": "# Plano de Resposta a Incidentes de Segurança da Informação e LGPD — NovaData Solutions\nDocumento nº PRI-ND-2026-001 | Versão 1.0\nAprovação: CISO + DPO + CTO + Diretoria Executiva | Data: 01/08/2026 | Próxima revisão: 01/2027\n\n---\n\n## 1. Ob"
+        },
+        {
+          "rank": 4,
+          "score": 0.549,
+          "doc_id": "plano_resposta_incidentes.md/plano_resposta_incidentes",
+          "doc_title": "Plano Resposta Incidentes",
+          "page": null,
+          "section": "2. Definições, papéis e responsabilidades",
+          "snippet": "O PRI aplica-se a todos os ativos, instalações físicas, sistemas, aplicações, nuvem, dados e colaboradores da NovaData, inclusive em home office. Prestadores de serviços e parceiros observam, em seus contratos, obrigações de notificar a Nov"
+        },
+        {
+          "rank": 5,
+          "score": 0.5426,
+          "doc_id": "plano_resposta_incidentes.md/plano_resposta_incidentes",
+          "doc_title": "Plano Resposta Incidentes",
+          "page": null,
+          "section": "1. Objetivo e âmbito",
+          "snippet": "O presente Plano de Resposta a Incidentes (PRI) define papéis, processos, fluxos e responsabilidades para a detecção, classificação, contenção, erradicação, recuperação e comunicação de incidentes de segurança da informação e incidentes com"
+        }
+      ]
+    },
+    {
+      "id": "ACE-003",
+      "category": "",
+      "question": "Com que frequencia os acessos privilegiados sao revisados na empresa?",
+      "expected_document": null,
+      "expected_section": null,
+      "expected_keywords": [],
+      "hit_document": true,
+      "hit_section": true,
+      "hit_keywords": true,
+      "passed": true,
+      "top_k_chunks": [
+        {
+          "rank": 1,
+          "score": 0.6405,
+          "doc_id": "politica_controle_acesso.md/politica_controle_acesso",
+          "doc_title": "Politica Controle Acesso",
+          "page": null,
+          "section": "4.2. Privilégios de administração",
+          "snippet": "### 4.2. Privilégios de administração\nPrivilégios administrativos são concedidos a número mínimo e estritamente necessário de colaboradores. Todo acesso privilegiado utiliza MFA, é monitorado pelo SOC 24x7 e está sujeito a revisão trimestra"
+        },
+        {
+          "rank": 2,
+          "score": 0.6232,
+          "doc_id": "politica_controle_acesso.md/politica_controle_acesso",
+          "doc_title": "Politica Controle Acesso",
+          "page": null,
+          "section": "9. Monitoramento, log e auditoria",
+          "snippet": "---\n\n## 9. Monitoramento, log e auditoria\n\nA auditoria dos acessos compreende:\n- logs centralizados e coletados diariamente;\n- revisão periódica pelo CISO e Compliance;\n- investigação de anomalias pelo SOC;\n- apresentação de relatórios à Di"
+        },
+        {
+          "rank": 3,
+          "score": 0.6165,
+          "doc_id": "politica_controle_acesso.md/politica_controle_acesso",
+          "doc_title": "Politica Controle Acesso",
+          "page": null,
+          "section": "1. Objetivo",
+          "snippet": "5. **Rastreabilidade:** Toda ação relevante (criação de conta, concessão de privilégio, revogação, acesso a dados sensíveis) é registrada em log centralizado com retenção mínima de 12 meses (24 meses para eventos de segurança e dados pessoa"
+        },
+        {
+          "rank": 4,
+          "score": 0.5976,
+          "doc_id": "politica_seguranca_informacao.md/politica_seguranca_informacao",
+          "doc_title": "Politica Seguranca Informacao",
+          "page": null,
+          "section": "3.2. Segurança em home office",
+          "snippet": "5. **Auditoria trimestral:** O CISO (via Equipe de Segurança) conduz revisão trimestral dos acessos aos ativos de classificação Confidencial e Restrita."
+        },
+        {
+          "rank": 5,
+          "score": 0.5871,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": "13. Treinamento e Revisão",
+          "snippet": "---\n\n## 13. Treinamento e Revisão\n\n**13.1. Treinamentos.** Todos os colaboradores deverão participar, pelo menos anualmente, de treinamento presencial ou a distância sobre ética, conduta, segurança da informação e LGPD. Novos colaboradores "
+        }
+      ]
+    },
+    {
+      "id": "PRI-002",
+      "category": "",
+      "question": "Qual o prazo maximo para resposta em incidente S0 (Crítico) na NovaData?",
+      "expected_document": null,
+      "expected_section": null,
+      "expected_keywords": [],
+      "hit_document": true,
+      "hit_section": true,
+      "hit_keywords": true,
+      "passed": true,
+      "top_k_chunks": [
+        {
+          "rank": 1,
+          "score": 0.681,
+          "doc_id": "politica_privacidade_lgpd.md/politica_privacidade_lgpd",
+          "doc_title": "Politica Privacidade Lgpd",
+          "page": null,
+          "section": "11. Segurança e incidentes",
+          "snippet": "Ao término da retenção, os dados são eliminados ou anonimizados com segurança (destruição física/mídia, exclusão segura em produção e backups, conforme Política de Backup e Retenção).\n\n---\n\n## 11. Segurança e incidentes\n\nA NovaData adota me"
+        },
+        {
+          "rank": 2,
+          "score": 0.6669,
+          "doc_id": "plano_resposta_incidentes.md/plano_resposta_incidentes",
+          "doc_title": "Plano Resposta Incidentes",
+          "page": null,
+          "section": "3.1. Níveis de severidade (S0–S4)",
+          "snippet": "### 3.1. Níveis de severidade (S0–S4)\n| Nível | Rótulo | Tempo de resposta SLA | Exemplos típicos |\n| --- | --- | --- | --- |\n| S0 | Crítico | Resposta em até 1h | Ransomware em produção, vazamento massivo de dados de clientes, ataque ativo"
+        },
+        {
+          "rank": 3,
+          "score": 0.6649,
+          "doc_id": "plano_resposta_incidentes.md/plano_resposta_incidentes",
+          "doc_title": "Plano Resposta Incidentes",
+          "page": null,
+          "section": "2. Definições, papéis e responsabilidades",
+          "snippet": "O PRI aplica-se a todos os ativos, instalações físicas, sistemas, aplicações, nuvem, dados e colaboradores da NovaData, inclusive em home office. Prestadores de serviços e parceiros observam, em seus contratos, obrigações de notificar a Nov"
+        },
+        {
+          "rank": 4,
+          "score": 0.6616,
+          "doc_id": "politica_backup_retenção.md/politica_backup_retenção",
+          "doc_title": "Politica Backup Retenção",
+          "page": null,
+          "section": "10. Terceiros e subcontratados",
+          "snippet": "Toda eliminação relevante é registrada em log, com período de retenção do registro por, no mínimo, 5 anos.\n\n---\n\n## 10. Terceiros e subcontratados\n\nProvedores de nuvem, BaaS e backup terceirizado seguem:\n- due diligence pré-contratual;\n- cl"
+        },
+        {
+          "rank": 5,
+          "score": 0.654,
+          "doc_id": "plano_resposta_incidentes.md/plano_resposta_incidentes",
+          "doc_title": "Plano Resposta Incidentes",
+          "page": null,
+          "section": "1. Objetivo e âmbito",
+          "snippet": "# Plano de Resposta a Incidentes de Segurança da Informação e LGPD — NovaData Solutions\nDocumento nº PRI-ND-2026-001 | Versão 1.0\nAprovação: CISO + DPO + CTO + Diretoria Executiva | Data: 01/08/2026 | Próxima revisão: 01/2027\n\n---\n\n## 1. Ob"
+        }
+      ]
+    },
+    {
+      "id": "PRI-003",
+      "category": "",
+      "question": "Quem compõe o Comité Gestor de Incidentes (CGI) na NovaData Solutions?",
+      "expected_document": null,
+      "expected_section": null,
+      "expected_keywords": [],
+      "hit_document": true,
+      "hit_section": true,
+      "hit_keywords": true,
+      "passed": true,
+      "top_k_chunks": [
+        {
+          "rank": 1,
+          "score": 0.722,
+          "doc_id": "plano_resposta_incidentes.md/plano_resposta_incidentes",
+          "doc_title": "Plano Resposta Incidentes",
+          "page": null,
+          "section": "2.2. Comitê Gestor de Incidentes (CGI)",
+          "snippet": "### 2.2. Comitê Gestor de Incidentes (CGI)\nSão membros permanentes do CGI:\n| Papel (Organograma) | Responsabilidade no PRI |\n| --- | --- |\n| **CISO** | Executivo responsável pelo PRI; aciona os demais membros; valida decisões de contenção; "
+        },
+        {
+          "rank": 2,
+          "score": 0.6541,
+          "doc_id": "organograma.md/organograma",
+          "doc_title": "Organograma",
+          "page": null,
+          "section": "2.4. Diretoria Comercial (CCO)",
+          "snippet": "### 2.4. Diretoria Comercial (CCO)\n\n- É responsável por vendas, pré-vendas, sucesso do cliente e relacionamento institucional com contas estratégicas.\n- Garante a consistência ética nas negociações, alinhada ao **Código de Ética e Conduta**"
+        },
+        {
+          "rank": 3,
+          "score": 0.653,
+          "doc_id": "plano_resposta_incidentes.md/plano_resposta_incidentes",
+          "doc_title": "Plano Resposta Incidentes",
+          "page": null,
+          "section": "2.3. Equipe de Resposta a Incidentes (CSIRT)",
+          "snippet": "Sempre que relevante, integram o CGI os gestores das áreas envolvidas, o time de arquitetura e os proprietários dos ativos afetados.\n\n### 2.3. Equipe de Resposta a Incidentes (CSIRT)\nA CSIRT é operacionalmente liderada pelo CISO, com apoio "
+        },
+        {
+          "rank": 4,
+          "score": 0.6514,
+          "doc_id": "plano_resposta_incidentes.md/plano_resposta_incidentes",
+          "doc_title": "Plano Resposta Incidentes",
+          "page": null,
+          "section": "1. Objetivo e âmbito",
+          "snippet": "O presente Plano de Resposta a Incidentes (PRI) define papéis, processos, fluxos e responsabilidades para a detecção, classificação, contenção, erradicação, recuperação e comunicação de incidentes de segurança da informação e incidentes com"
+        },
+        {
+          "rank": 5,
+          "score": 0.6448,
+          "doc_id": "plano_resposta_incidentes.md/plano_resposta_incidentes",
+          "doc_title": "Plano Resposta Incidentes",
+          "page": null,
+          "section": "1. Objetivo e âmbito",
+          "snippet": "# Plano de Resposta a Incidentes de Segurança da Informação e LGPD — NovaData Solutions\nDocumento nº PRI-ND-2026-001 | Versão 1.0\nAprovação: CISO + DPO + CTO + Diretoria Executiva | Data: 01/08/2026 | Próxima revisão: 01/2027\n\n---\n\n## 1. Ob"
+        }
+      ]
+    },
+    {
+      "id": "PRI-004",
+      "category": "",
+      "question": "Em caso de incidente grave com dados pessoais, em quanto tempo a ANPD deve ser comunicada?",
+      "expected_document": null,
+      "expected_section": null,
+      "expected_keywords": [],
+      "hit_document": true,
+      "hit_section": true,
+      "hit_keywords": true,
+      "passed": true,
+      "top_k_chunks": [
+        {
+          "rank": 1,
+          "score": 0.8396,
+          "doc_id": "faq_anpd_principal.md/faq_anpd_principal",
+          "doc_title": "Faq Anpd Principal",
+          "page": null,
+          "section": "6. Transferência internacional",
+          "snippet": "**Q12. Em caso de incidente de segurança com dados pessoais, preciso comunicar a ANPD e os titulares?**\nA comunicação à ANPD é obrigatória quando o incidente **puder acarretar risco ou dano relevante aos titulares**. A comunicação deve ocor"
+        },
+        {
+          "rank": 2,
+          "score": 0.795,
+          "doc_id": "plano_resposta_incidentes.md/plano_resposta_incidentes",
+          "doc_title": "Plano Resposta Incidentes",
+          "page": null,
+          "section": "3.2. Prazo de comunicação à ANPD e aos titulares",
+          "snippet": "### 3.2. Prazo de comunicação à ANPD e aos titulares\nConforme critérios da ANPD e da LGPD:\n- **S0 e S1 com envolvimento de dados pessoais sensíveis ou massa crítica de titulares:** comunicação preliminar à ANPD em até **24 horas úteis** apó"
+        },
+        {
+          "rank": 3,
+          "score": 0.7195,
+          "doc_id": "guia_anpd_metodos_aplicacao.md/guia_anpd_metodos_aplicacao",
+          "doc_title": "Guia Anpd Metodos Aplicacao",
+          "page": null,
+          "section": "7. Perguntas frequentes no Guia ANPD",
+          "snippet": "**Prazos de comunicação à ANPD:** A ANPD recomenda a comunicação em até **24 a 72 horas úteis** após a ciência do incidente, dependendo da gravidade. Plano de Resposta a Incidentes documentado é obrigatório.\n\n---\n\n## 7. Perguntas frequentes"
+        },
+        {
+          "rank": 4,
+          "score": 0.6456,
+          "doc_id": "guia_anpd_metodos_aplicacao.md/guia_anpd_metodos_aplicacao",
+          "doc_title": "Guia Anpd Metodos Aplicacao",
+          "page": null,
+          "section": "5.2. Gestão de riscos",
+          "snippet": "### 5.2. Gestão de riscos\n\nA ANPD recomenda a aplicação de ISO/IEC 27001, 27005, 27701 e a metodologia NIST SP 800-30 para gestão de riscos corporativos.\n\n---\n\n## 6. Resposta a incidentes de segurança (com LGPD)\n\nA comunicação à ANPD e, eve"
+        },
+        {
+          "rank": 5,
+          "score": 0.6388,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": "9. Segurança da Informação e Proteção de Dados",
+          "snippet": "**9.2. Dever de comunicar incidentes.** Todo colaborador que tomar conhecimento de incidente de segurança, vazamento de dados, perda de credenciais, ataque cibernético, uso indevido de contas ou suspeita de fraude deve comunicar o fato imed"
+        }
+      ]
+    },
+    {
+      "id": "PRI-005",
+      "category": "",
+      "question": "Quais as 7 fases do ciclo de resposta ao incidente adotado pela NovaData?",
+      "expected_document": null,
+      "expected_section": null,
+      "expected_keywords": [],
+      "hit_document": true,
+      "hit_section": true,
+      "hit_keywords": true,
+      "passed": true,
+      "top_k_chunks": [
+        {
+          "rank": 1,
+          "score": 0.7052,
+          "doc_id": "plano_resposta_incidentes.md/plano_resposta_incidentes",
+          "doc_title": "Plano Resposta Incidentes",
+          "page": null,
+          "section": "1. Objetivo e âmbito",
+          "snippet": "O presente Plano de Resposta a Incidentes (PRI) define papéis, processos, fluxos e responsabilidades para a detecção, classificação, contenção, erradicação, recuperação e comunicação de incidentes de segurança da informação e incidentes com"
+        },
+        {
+          "rank": 2,
+          "score": 0.6922,
+          "doc_id": "plano_resposta_incidentes.md/plano_resposta_incidentes",
+          "doc_title": "Plano Resposta Incidentes",
+          "page": null,
+          "section": "1. Objetivo e âmbito",
+          "snippet": "# Plano de Resposta a Incidentes de Segurança da Informação e LGPD — NovaData Solutions\nDocumento nº PRI-ND-2026-001 | Versão 1.0\nAprovação: CISO + DPO + CTO + Diretoria Executiva | Data: 01/08/2026 | Próxima revisão: 01/2027\n\n---\n\n## 1. Ob"
+        },
+        {
+          "rank": 3,
+          "score": 0.684,
+          "doc_id": "politica_privacidade_lgpd.md/politica_privacidade_lgpd",
+          "doc_title": "Politica Privacidade Lgpd",
+          "page": null,
+          "section": "11. Segurança e incidentes",
+          "snippet": "Ao término da retenção, os dados são eliminados ou anonimizados com segurança (destruição física/mídia, exclusão segura em produção e backups, conforme Política de Backup e Retenção).\n\n---\n\n## 11. Segurança e incidentes\n\nA NovaData adota me"
+        },
+        {
+          "rank": 4,
+          "score": 0.6818,
+          "doc_id": "plano_resposta_incidentes.md/plano_resposta_incidentes",
+          "doc_title": "Plano Resposta Incidentes",
+          "page": null,
+          "section": "4.7. Fase 7 — Pós-incidente, análise e lições aprendidas",
+          "snippet": "### 4.7. Fase 7 — Pós-incidente, análise e lições aprendidas\n- **Análise de Causa Raiz (RCA):** documentada e apresentada em até 10 dias úteis após o fechamento do incidente;\n- **Plano de Ação Corretiva (PAC):** com responsáveis e prazos;\n-"
+        },
+        {
+          "rank": 5,
+          "score": 0.672,
+          "doc_id": "plano_resposta_incidentes.md/plano_resposta_incidentes",
+          "doc_title": "Plano Resposta Incidentes",
+          "page": null,
+          "section": "4.1. Fase 1 — Preparação",
+          "snippet": "O ciclo segue 7 fases, podendo ser executadas de forma concorrente quando necessário:\n\n### 4.1. Fase 1 — Preparação\nControles permanentes:\n- SOC 24x7 com SIEM, EDR/XDR, SOAR e feeds de inteligência de ameaças;\n- Simulações (table-top) semes"
+        }
+      ]
+    },
+    {
+      "id": "PRI-006",
+      "category": "",
+      "question": "Como e com que frequencia a empresa realiza simulacros de incidentes e ransomware?",
+      "expected_document": null,
+      "expected_section": null,
+      "expected_keywords": [],
+      "hit_document": true,
+      "hit_section": true,
+      "hit_keywords": true,
+      "passed": true,
+      "top_k_chunks": [
+        {
+          "rank": 1,
+          "score": 0.6563,
+          "doc_id": "plano_resposta_incidentes.md/plano_resposta_incidentes",
+          "doc_title": "Plano Resposta Incidentes",
+          "page": null,
+          "section": "6. Evidências, cadeia de custódia e preservação",
+          "snippet": "---\n\n## 6. Evidências, cadeia de custódia e preservação\n\nA coleta e preservação de evidências seguem rigorosa cadeia de custódia, com registro de horários, responsáveis e ações realizadas. Equipes de resposta não realizam alterações em arte"
+        },
+        {
+          "rank": 2,
+          "score": 0.6537,
+          "doc_id": "politica_seguranca_informacao.md/politica_seguranca_informacao",
+          "doc_title": "Politica Seguranca Informacao",
+          "page": null,
+          "section": "9. Conscientização e Treinamento",
+          "snippet": "---\n\n## 9. Conscientização e Treinamento\n\nTodos os colaboradores participam de:\n- **Onboarding de Segurança:** obrigatório, com aproveitamento ≥ 80%;\n- **Refresh anual:** treinamento atualizado com foco em ameaças do período;\n- **Simulações"
+        },
+        {
+          "rank": 3,
+          "score": 0.6314,
+          "doc_id": "plano_resposta_incidentes.md/plano_resposta_incidentes",
+          "doc_title": "Plano Resposta Incidentes",
+          "page": null,
+          "section": "4.1. Fase 1 — Preparação",
+          "snippet": "O ciclo segue 7 fases, podendo ser executadas de forma concorrente quando necessário:\n\n### 4.1. Fase 1 — Preparação\nControles permanentes:\n- SOC 24x7 com SIEM, EDR/XDR, SOAR e feeds de inteligência de ameaças;\n- Simulações (table-top) semes"
+        },
+        {
+          "rank": 4,
+          "score": 0.6145,
+          "doc_id": "politica_backup_retenção.md/politica_backup_retenção",
+          "doc_title": "Politica Backup Retenção",
+          "page": null,
+          "section": "7. Monitoramento e alertas",
+          "snippet": "Quando houver conflito entre prazos, prevalece o prazo maior.\n\n---\n\n## 7. Monitoramento e alertas\n\nSão monitorados de forma contínua:\n- Taxa de sucesso de jobs de backup (meta ≥ 99,5% ao mês);\n- Conclusão no tempo, tamanho, crescimento e la"
+        },
+        {
+          "rank": 5,
+          "score": 0.5702,
+          "doc_id": "plano_resposta_incidentes.md/plano_resposta_incidentes",
+          "doc_title": "Plano Resposta Incidentes",
+          "page": null,
+          "section": "3.1. Níveis de severidade (S0–S4)",
+          "snippet": "### 3.1. Níveis de severidade (S0–S4)\n| Nível | Rótulo | Tempo de resposta SLA | Exemplos típicos |\n| --- | --- | --- | --- |\n| S0 | Crítico | Resposta em até 1h | Ransomware em produção, vazamento massivo de dados de clientes, ataque ativo"
+        }
+      ]
+    },
+    {
+      "id": "RH-002",
+      "category": "",
+      "question": "Quais documentos um colaborador deve assinar no onboarding da NovaData?",
+      "expected_document": null,
+      "expected_section": null,
+      "expected_keywords": [],
+      "hit_document": true,
+      "hit_section": true,
+      "hit_keywords": true,
+      "passed": true,
+      "top_k_chunks": [
+        {
+          "rank": 1,
+          "score": 0.7009,
+          "doc_id": "manual_colaborador.md/manual_colaborador",
+          "doc_title": "Manual Colaborador",
+          "page": null,
+          "section": "1. Bem-vindo(a) à NovaData Solutions",
+          "snippet": "# Manual do Colaborador — NovaData Solutions\nDocumento nº MC-ND-2026-001 | Versão 1.0\nAprovação: Diretoria de Pessoas + Compliance | Data: 01/08/2026 | Próxima revisão: 01/2027\n\n---\n\n## 1. Bem-vindo(a) à NovaData Solutions\n\nSeja bem-vindo(a"
+        },
+        {
+          "rank": 2,
+          "score": 0.6305,
+          "doc_id": "politica_privacidade_lgpd.md/politica_privacidade_lgpd",
+          "doc_title": "Politica Privacidade Lgpd",
+          "page": null,
+          "section": "4. Categorias de titulares tratadas",
+          "snippet": "---\n\n## 4. Categorias de titulares tratadas\n\nA NovaData trata dados pessoais referentes a:\n1. **Colaboradores, estagiários, aprendizes, consultores e prestadores de serviços** (folha de pagamento, benefícios, jornada, avaliações, acessos et"
+        },
+        {
+          "rank": 3,
+          "score": 0.6235,
+          "doc_id": "manual_colaborador.md/manual_colaborador",
+          "doc_title": "Manual Colaborador",
+          "page": null,
+          "section": "3.3. Desligamento",
+          "snippet": "### 3.3. Desligamento\nNo desligamento, são realizadas:\n- Entrega de equipamentos, mídias, crachás e chaves;\n- Revogação imediata de acessos (em até 4 horas úteis), conforme Política de Controle de Acesso;\n- Devolução de documentos e ativos "
+        },
+        {
+          "rank": 4,
+          "score": 0.6109,
+          "doc_id": "manual_colaborador.md/manual_colaborador",
+          "doc_title": "Manual Colaborador",
+          "page": null,
+          "section": "3. Jornada de admissão, integração e desligamento",
+          "snippet": "---\n\n## 3. Jornada de admissão, integração e desligamento\n\n### 3.1. Admissão\nA admissão formaliza-se mediante entrega completa da documentação trabalhista, assinatura do contrato e de instrumentos como:\n- Termo de confidencialidade;\n- Termo"
+        },
+        {
+          "rank": 5,
+          "score": 0.607,
+          "doc_id": "politica_privacidade_lgpd.md/politica_privacidade_lgpd",
+          "doc_title": "Politica Privacidade Lgpd",
+          "page": null,
+          "section": "1. Apresentação e compromisso",
+          "snippet": "# Política de Privacidade e LGPD — NovaData Solutions\nDocumento nº PPL-ND-2026-001 | Versão 1.0\nAprovação: Diretor Jurídico + DPO + Diretoria Executiva | Data: 01/08/2026 | Próxima revisão: 01/2027\n\n---\n\n## 1. Apresentação e compromisso\n\nA "
+        }
+      ]
+    },
+    {
+      "id": "RH-003",
+      "category": "",
+      "question": "Como denunciar assedio, discriminacao ou conduta inadequada? E a protecao contra retaliaçao?",
+      "expected_document": null,
+      "expected_section": null,
+      "expected_keywords": [],
+      "hit_document": true,
+      "hit_section": true,
+      "hit_keywords": true,
+      "passed": true,
+      "top_k_chunks": [
+        {
+          "rank": 1,
+          "score": 0.6368,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": "11. Canal de Denúncias",
+          "snippet": "**11.2. Características:**\n\n1. acesso por meio de plataforma externa, de forma sigilosa;\n2. possibilidade de comunicação anônima;\n3. apuração conduzida pelo Comitê de Ética com apoio de Compliance, Jurídico, RH e, se necessário, auditoria i"
+        },
+        {
+          "rank": 2,
+          "score": 0.6332,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": "6. Diversidade, Inclusão e Assédio",
+          "snippet": "**6.3. Assédio moral e sexual.** Qualquer conduta que configure humilhação, ridículo, perseguição repetida, ameaça, coerção, pressão psicológica abusiva, exposição a situações degradantes ou qualquer forma de assédio sexual constitui **falt"
+        },
+        {
+          "rank": 3,
+          "score": 0.6193,
+          "doc_id": "manual_colaborador.md/manual_colaborador",
+          "doc_title": "Manual Colaborador",
+          "page": null,
+          "section": "9. Canal de Denúncias",
+          "snippet": "---\n\n## 9. Canal de Denúncias\n\nViolações ou suspeitas de violação ao Código de Ética, à legislação ou a políticas internas devem ser comunicadas preferencialmente por meio do **Canal de Denúncias** da empresa, que é confidencial e admite an"
+        },
+        {
+          "rank": 4,
+          "score": 0.5773,
+          "doc_id": "lgpd_leil_13709_2018.md/lgpd_leil_13709_2018",
+          "doc_title": "Lgpd Leil 13709 2018",
+          "page": null,
+          "section": "Lei nº 13.709, de 14 de agosto de 2018",
+          "snippet": "VII — segurança: utilização de medidas técnicas e administrativas aptas a proteger os dados pessoais de acessos não autorizados e de situações acidentais ou ilícitas de destruição, perda, alteração, comunicação ou difusão;\nVIII — prevenção:"
+        },
+        {
+          "rank": 5,
+          "score": 0.5753,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": "12. Disciplina e Medidas Corretivas",
+          "snippet": "1. advertência verbal;\n2. advertência escrita;\n3. suspensão temporária, com ou sem remuneração, conforme a legislação trabalhista;\n4. término de vínculo contratual ou desligamento por justa causa;\n5. inelegibilidade para promoções ou partic"
+        }
+      ]
+    },
+    {
+      "id": "RH-004",
+      "category": "",
+      "question": "Como o colaborador exerce seus direitos de titular de dados pessoais na empresa?",
+      "expected_document": null,
+      "expected_section": null,
+      "expected_keywords": [],
+      "hit_document": true,
+      "hit_section": true,
+      "hit_keywords": true,
+      "passed": true,
+      "top_k_chunks": [
+        {
+          "rank": 1,
+          "score": 0.6474,
+          "doc_id": "politica_privacidade_lgpd.md/politica_privacidade_lgpd",
+          "doc_title": "Politica Privacidade Lgpd",
+          "page": null,
+          "section": "9. Direitos do titular e como exercê-los",
+          "snippet": "---\n\n## 9. Direitos do titular e como exercê-los\n\nOs titulares podem exercer seus direitos (art. 17 a 22 LGPD) pelo canal:\n- E-mail: dpo@novadatatech.br\n- Formulário privado disponível em https://novadatatech.br/privacidade (fictício)\n\nA re"
+        },
+        {
+          "rank": 2,
+          "score": 0.6452,
+          "doc_id": "politica_privacidade_lgpd.md/politica_privacidade_lgpd",
+          "doc_title": "Politica Privacidade Lgpd",
+          "page": null,
+          "section": "8. Transferência internacional de dados pessoais",
+          "snippet": "Todo contrato com operador contém cláusulas de LGPD alinhadas à Seção 8 da Política de Segurança da Informação (due diligence, auditoria, notificação de incidentes em até 24h, retorno ou eliminação de dados ao término, etc.).\n\n---\n\n## 8. Tr"
+        },
+        {
+          "rank": 3,
+          "score": 0.6383,
+          "doc_id": "faq_anpd_principal.md/faq_anpd_principal",
+          "doc_title": "Faq Anpd Principal",
+          "page": null,
+          "section": "3. Direitos do titular",
+          "snippet": "**Q07. Quais são os principais direitos do titular na LGPD?**\nEntre outros:\n1. Confirmação da existência de tratamento (art. 17, I);\n2. Acesso aos dados (art. 17, II);\n3. Correção de dados incompletos, inexatos ou desatualizados (art. 17, I"
+        },
+        {
+          "rank": 4,
+          "score": 0.6147,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": "9. Segurança da Informação e Proteção de Dados",
+          "snippet": "---\n\n## 9. Segurança da Informação e Proteção de Dados\n\n**9.1. Segurança como princípio ético.** A proteção das informações corporativas e de dados pessoais não é apenas obrigação jurídica, mas ética. Cada colaborador é corresponsável pela "
+        },
+        {
+          "rank": 5,
+          "score": 0.6078,
+          "doc_id": "manual_colaborador.md/manual_colaborador",
+          "doc_title": "Manual Colaborador",
+          "page": null,
+          "section": "7. Confidencialidade, propriedade intelectual e uso da informação",
+          "snippet": "Comunicações ofensivas e inadequadas em ferramentas corporativas (e-mail, Slack/Teams, videoconferências) estão sujeitas a medidas disciplinares e a comunicação ao Comitê de Ética, quando cabível.\n\n---\n\n## 7. Confidencialidade, propriedade "
+        }
+      ]
+    },
+    {
+      "id": "BKP-001",
+      "category": "",
+      "question": "Quais os RTO e RPO alvo para sistemas SaaS críticos e bases de clientes na NovaData?",
+      "expected_document": null,
+      "expected_section": null,
+      "expected_keywords": [],
+      "hit_document": true,
+      "hit_section": true,
+      "hit_keywords": true,
+      "passed": true,
+      "top_k_chunks": [
+        {
+          "rank": 1,
+          "score": 0.7042,
+          "doc_id": "politica_backup_retenção.md/politica_backup_retenção",
+          "doc_title": "Politica Backup Retenção",
+          "page": null,
+          "section": "3.2. RTO e RPO alvo",
+          "snippet": "### 3.2. RTO e RPO alvo\n\n| Categoria de ativo | RTO alvo | RPO alvo |\n| --- | --- | --- |\n| Sistemas SaaS críticos, faturamento, autenticação, bases de dados de clientes | ≤ 4h | ≤ 1h |\n| Sistemas administrativos (RH, finanças, ERP interno)"
+        },
+        {
+          "rank": 2,
+          "score": 0.636,
+          "doc_id": "politica_privacidade_lgpd.md/politica_privacidade_lgpd",
+          "doc_title": "Politica Privacidade Lgpd",
+          "page": null,
+          "section": "11. Segurança e incidentes",
+          "snippet": "Ao término da retenção, os dados são eliminados ou anonimizados com segurança (destruição física/mídia, exclusão segura em produção e backups, conforme Política de Backup e Retenção).\n\n---\n\n## 11. Segurança e incidentes\n\nA NovaData adota me"
+        },
+        {
+          "rank": 3,
+          "score": 0.6247,
+          "doc_id": "politica_backup_retenção.md/politica_backup_retenção",
+          "doc_title": "Politica Backup Retenção",
+          "page": null,
+          "section": "10. Terceiros e subcontratados",
+          "snippet": "Toda eliminação relevante é registrada em log, com período de retenção do registro por, no mínimo, 5 anos.\n\n---\n\n## 10. Terceiros e subcontratados\n\nProvedores de nuvem, BaaS e backup terceirizado seguem:\n- due diligence pré-contratual;\n- cl"
+        },
+        {
+          "rank": 4,
+          "score": 0.6239,
+          "doc_id": "politica_privacidade_lgpd.md/politica_privacidade_lgpd",
+          "doc_title": "Politica Privacidade Lgpd",
+          "page": null,
+          "section": "3. Princípios observados",
+          "snippet": "---\n\n## 3. Princípios observados\n\nAlém dos 10 princípios constantes do art. 6º da LGPD, a NovaData reitera:\n1. **Accountability:** Demonstrar conformidade de forma documentada, com inventário, ROT e AIPD quando aplicável;\n2. **Privacy by De"
+        },
+        {
+          "rank": 5,
+          "score": 0.6175,
+          "doc_id": "politica_controle_acesso.md/politica_controle_acesso",
+          "doc_title": "Politica Controle Acesso",
+          "page": null,
+          "section": "1. Objetivo",
+          "snippet": "---\n\n## 1. Objetivo\n\nEstabelecer diretrizes e regras para gestão de identidades, credenciais e acessos aos ativos de informação, sistemas, aplicações, ambientes de nuvem, redes e instalações físicas da NovaData Solutions, em conformidade co"
+        }
+      ]
+    },
+    {
+      "id": "BKP-002",
+      "category": "",
+      "question": "Por quanto tempo a empresa retem documentos trabalhistas e de pessoal após desligamento?",
+      "expected_document": null,
+      "expected_section": null,
+      "expected_keywords": [],
+      "hit_document": true,
+      "hit_section": true,
+      "hit_keywords": true,
+      "passed": true,
+      "top_k_chunks": [
+        {
+          "rank": 1,
+          "score": 0.6883,
+          "doc_id": "politica_privacidade_lgpd.md/politica_privacidade_lgpd",
+          "doc_title": "Politica Privacidade Lgpd",
+          "page": null,
+          "section": "10. Retenção e eliminação",
+          "snippet": "---\n\n## 10. Retenção e eliminação\n\nOs prazos de retenção seguem o critério do “mínimo necessário”:\n- Obrigações legais/regulatórias: cumprida a obrigação, com retenção mínima exigida por lei (ex.: documentos fiscais por 5 anos, documentos t"
+        },
+        {
+          "rank": 2,
+          "score": 0.6861,
+          "doc_id": "politica_backup_retenção.md/politica_backup_retenção",
+          "doc_title": "Politica Backup Retenção",
+          "page": null,
+          "section": "5. Responsabilidades",
+          "snippet": "| Categoria de dado | Prazo mínimo de retenção | Base legal / razão |\n| --- | --- | --- |\n| Documentos fiscais e contábeis | 5 anos + adicional prescricional | Lei do Imposto de Renda, CPC, Código Tributário |\n| Documentos trabalhistas e de"
+        },
+        {
+          "rank": 3,
+          "score": 0.6202,
+          "doc_id": "politica_backup_retenção.md/politica_backup_retenção",
+          "doc_title": "Politica Backup Retenção",
+          "page": null,
+          "section": "5. Responsabilidades",
+          "snippet": "| Currículos de não selecionados | 2 anos, salvo banco de talentos com manifestação explícita | LGPD, minimização |\n| Logs de segurança e de acesso a dados pessoais sensíveis | 24 meses | Política de Segurança, ANPD e auditoria |\n| Logs ger"
+        },
+        {
+          "rank": 4,
+          "score": 0.5886,
+          "doc_id": "politica_controle_acesso.md/politica_controle_acesso",
+          "doc_title": "Politica Controle Acesso",
+          "page": null,
+          "section": "3.3. Revogação",
+          "snippet": "### 3.3. Revogação\nA revogação de acessos ocorre em, no máximo:\n- **4 horas úteis** em caso de desligamento voluntário, demissão, rescisão ou suspeita de desvio;\n- **Imediata** em caso de incidente de segurança ou suspeita de comprometiment"
+        },
+        {
+          "rank": 5,
+          "score": 0.5775,
+          "doc_id": "manual_colaborador.md/manual_colaborador",
+          "doc_title": "Manual Colaborador",
+          "page": null,
+          "section": "3. Jornada de admissão, integração e desligamento",
+          "snippet": "---\n\n## 3. Jornada de admissão, integração e desligamento\n\n### 3.1. Admissão\nA admissão formaliza-se mediante entrega completa da documentação trabalhista, assinatura do contrato e de instrumentos como:\n- Termo de confidencialidade;\n- Termo"
+        }
+      ]
+    },
+    {
+      "id": "BKP-003",
+      "category": "",
+      "question": "Com que frequencia sao testadas as restauracoes de backup e simulacoes de ransomware?",
+      "expected_document": null,
+      "expected_section": null,
+      "expected_keywords": [],
+      "hit_document": true,
+      "hit_section": true,
+      "hit_keywords": true,
+      "passed": true,
+      "top_k_chunks": [
+        {
+          "rank": 1,
+          "score": 0.6929,
+          "doc_id": "politica_backup_retenção.md/politica_backup_retenção",
+          "doc_title": "Politica Backup Retenção",
+          "page": null,
+          "section": "7. Monitoramento e alertas",
+          "snippet": "Quando houver conflito entre prazos, prevalece o prazo maior.\n\n---\n\n## 7. Monitoramento e alertas\n\nSão monitorados de forma contínua:\n- Taxa de sucesso de jobs de backup (meta ≥ 99,5% ao mês);\n- Conclusão no tempo, tamanho, crescimento e la"
+        },
+        {
+          "rank": 2,
+          "score": 0.6566,
+          "doc_id": "plano_resposta_incidentes.md/plano_resposta_incidentes",
+          "doc_title": "Plano Resposta Incidentes",
+          "page": null,
+          "section": "6. Evidências, cadeia de custódia e preservação",
+          "snippet": "---\n\n## 6. Evidências, cadeia de custódia e preservação\n\nA coleta e preservação de evidências seguem rigorosa cadeia de custódia, com registro de horários, responsáveis e ações realizadas. Equipes de resposta não realizam alterações em arte"
+        },
+        {
+          "rank": 3,
+          "score": 0.6273,
+          "doc_id": "politica_backup_retenção.md/politica_backup_retenção",
+          "doc_title": "Politica Backup Retenção",
+          "page": null,
+          "section": "2. Princípios",
+          "snippet": "---\n\n## 2. Princípios\n\n1. **3-2-1-1-0 como padrão:** 3 cópias, em 2 mídias distintas, 1 cópia off-site, 1 cópia imutável (ou air-gapped, quando aplicável) e 0 erros em restaurações testadas.\n2. **Criptografia em repouso e trânsito:** sempre"
+        },
+        {
+          "rank": 4,
+          "score": 0.6047,
+          "doc_id": "plano_resposta_incidentes.md/plano_resposta_incidentes",
+          "doc_title": "Plano Resposta Incidentes",
+          "page": null,
+          "section": "4.6. Fase 6 — Recuperação e retorno à normalidade",
+          "snippet": "### 4.6. Fase 6 — Recuperação e retorno à normalidade\nRestauração dos sistemas e dados a partir de backups validados, em ordem de criticidade definida no BCDR. Testes de integridade e segurança são executados antes de cada sistema retornar "
+        },
+        {
+          "rank": 5,
+          "score": 0.5983,
+          "doc_id": "plano_resposta_incidentes.md/plano_resposta_incidentes",
+          "doc_title": "Plano Resposta Incidentes",
+          "page": null,
+          "section": "4.1. Fase 1 — Preparação",
+          "snippet": "O ciclo segue 7 fases, podendo ser executadas de forma concorrente quando necessário:\n\n### 4.1. Fase 1 — Preparação\nControles permanentes:\n- SOC 24x7 com SIEM, EDR/XDR, SOAR e feeds de inteligência de ameaças;\n- Simulações (table-top) semes"
+        }
+      ]
+    },
+    {
+      "id": "USO-001",
+      "category": "",
+      "question": "Posso compartilhar documentos confidenciais ou planilhas com dados financeiros/clientes por WhatsApp pessoal em caso de urgencia?",
+      "expected_document": null,
+      "expected_section": null,
+      "expected_keywords": [],
+      "hit_document": true,
+      "hit_section": true,
+      "hit_keywords": true,
+      "passed": true,
+      "top_k_chunks": [
+        {
+          "rank": 1,
+          "score": 0.6675,
+          "doc_id": "politica_uso_aceitavel.md/politica_uso_aceitavel",
+          "doc_title": "Politica Uso Aceitavel",
+          "page": null,
+          "section": "10. Uso de WhatsApp, Telegram e mensageiros pessoais",
+          "snippet": "---\n\n## 10. Uso de WhatsApp, Telegram e mensageiros pessoais\n\nDados corporativos sensíveis (documentos confidenciais, contratos, planilhas com dados pessoais ou financeiros, credenciais, dados de clientes, relatórios estratégicos) **não dev"
+        },
+        {
+          "rank": 2,
+          "score": 0.6386,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": "10. Gestão de Redes Sociais",
+          "snippet": "**9.3. Uso de mensageiros e ferramentas.** A troca de dados pessoais sensíveis, segredos de negócio, credenciais ou informações classificadas como Restritas ou Confidenciais por meio de aplicativos de mensagens pessoais (WhatsApp pessoal, T"
+        },
+        {
+          "rank": 3,
+          "score": 0.5935,
+          "doc_id": "politica_uso_aceitavel.md/politica_uso_aceitavel",
+          "doc_title": "Politica Uso Aceitavel",
+          "page": null,
+          "section": "9. Repositórios Git e segredos",
+          "snippet": "---\n\n## 9. Repositórios Git e segredos\n\n- Repositórios públicos só são criados após autorização formal e análise de segurança.\n- É proibido versionar segredos (senhas, chaves de API, tokens, certificados, dados sensíveis de clientes ou cola"
+        },
+        {
+          "rank": 4,
+          "score": 0.5742,
+          "doc_id": "politica_privacidade_lgpd.md/politica_privacidade_lgpd",
+          "doc_title": "Politica Privacidade Lgpd",
+          "page": null,
+          "section": "7. Compartilhamento interno e com terceiros",
+          "snippet": "---\n\n## 7. Compartilhamento interno e com terceiros\n\n### 7.1. Interno\nDados pessoais são compartilhados internamente apenas com colaboradores cujas funções exijam acesso, sempre observando o princípio da necessidade e a **Política de Contro"
+        },
+        {
+          "rank": 5,
+          "score": 0.572,
+          "doc_id": "politica_uso_aceitavel.md/politica_uso_aceitavel",
+          "doc_title": "Politica Uso Aceitavel",
+          "page": null,
+          "section": "3.3. Home office e redes não confiáveis",
+          "snippet": "### 3.3. Home office e redes não confiáveis\n- Use VPN corporativa obrigatoriamente ao acessar sistemas internos e dados sensíveis de redes públicas ou não confiáveis.\n- Evite o uso de redes Wi-Fi públicas sem VPN.\n- Dados sensíveis não deve"
+        }
+      ]
+    },
+    {
+      "id": "USO-002",
+      "category": "",
+      "question": "Quais regras para instalacao de softwares e uso de IA generativa publica em notebooks corporativos?",
+      "expected_document": null,
+      "expected_section": null,
+      "expected_keywords": [],
+      "hit_document": true,
+      "hit_section": true,
+      "hit_keywords": true,
+      "passed": true,
+      "top_k_chunks": [
+        {
+          "rank": 1,
+          "score": 0.6829,
+          "doc_id": "politica_uso_aceitavel.md/politica_uso_aceitavel",
+          "doc_title": "Politica Uso Aceitavel",
+          "page": null,
+          "section": "7. Senhas, autenticação e credenciais",
+          "snippet": "1. Utilize apenas softwares licenciados e devidamente autorizados. É proibida a instalação de softwares piratas, cracks, keygens ou similares.\n2. Ferramentas de Inteligência Artificial (incluindo copilotos de código, geradores de texto, ima"
+        },
+        {
+          "rank": 2,
+          "score": 0.6475,
+          "doc_id": "politica_uso_aceitavel.md/politica_uso_aceitavel",
+          "doc_title": "Politica Uso Aceitavel",
+          "page": null,
+          "section": "3. Dispositivos corporativos, home office e BYOD",
+          "snippet": "---\n\n## 3. Dispositivos corporativos, home office e BYOD\n\n### 3.1. Dispositivos corporativos (notebooks, desktops, tablets, celulares)\n- Devem ser utilizados, preferencialmente, para atividades de trabalho.\n- Software de gestão, antivírus/E"
+        },
+        {
+          "rank": 3,
+          "score": 0.5933,
+          "doc_id": "politica_uso_aceitavel.md/politica_uso_aceitavel",
+          "doc_title": "Politica Uso Aceitavel",
+          "page": null,
+          "section": "7. Senhas, autenticação e credenciais",
+          "snippet": "---\n\n## 7. Senhas, autenticação e credenciais\n\nAplicam-se, com destaque, as regras das políticas de segurança e controle de acesso, repetindo-se:\n- Credenciais são individuais e intransferíveis;\n- MFA é obrigatória em todos os sistemas que "
+        },
+        {
+          "rank": 4,
+          "score": 0.586,
+          "doc_id": "politica_uso_aceitavel.md/politica_uso_aceitavel",
+          "doc_title": "Politica Uso Aceitavel",
+          "page": null,
+          "section": "2. Regras gerais de uso",
+          "snippet": "1. Os recursos de TI da NovaData são fornecidos para o exercício profissional e para atividades relacionadas aos interesses da empresa. O uso pessoal incidental é permitido, desde que seja moderado, não prejudique a produtividade, não incor"
+        },
+        {
+          "rank": 5,
+          "score": 0.5799,
+          "doc_id": "politica_uso_aceitavel.md/politica_uso_aceitavel",
+          "doc_title": "Politica Uso Aceitavel",
+          "page": null,
+          "section": "6. Navegação na internet",
+          "snippet": "- Ferramentas de mensagem e videoconferência da empresa são canais corporativos; o colaborador deve manter civilidade, ética e respeito, como em qualquer ambiente presencial.\n- Mensagens de ódio, racismo, machismo, homofobia, transfobia, as"
+        }
+      ]
+    },
+    {
+      "id": "CROSS-002",
+      "category": "",
+      "question": "Se eu descobrir uma vulnerabilidade grave em producao e suspeitar de vazamento de dados de clientes, quais documentos da empresa me dizem quem acionar e qual SLA?",
+      "expected_document": null,
+      "expected_section": null,
+      "expected_keywords": [],
+      "hit_document": true,
+      "hit_section": true,
+      "hit_keywords": true,
+      "passed": true,
+      "top_k_chunks": [
+        {
+          "rank": 1,
+          "score": 0.6309,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": "9. Segurança da Informação e Proteção de Dados",
+          "snippet": "**9.2. Dever de comunicar incidentes.** Todo colaborador que tomar conhecimento de incidente de segurança, vazamento de dados, perda de credenciais, ataque cibernético, uso indevido de contas ou suspeita de fraude deve comunicar o fato imed"
+        },
+        {
+          "rank": 2,
+          "score": 0.6181,
+          "doc_id": "plano_resposta_incidentes.md/plano_resposta_incidentes",
+          "doc_title": "Plano Resposta Incidentes",
+          "page": null,
+          "section": "4.2. Fase 2 — Detecção e relato",
+          "snippet": "### 4.2. Fase 2 — Detecção e relato\nQualquer colaborador, prestador ou terceiro deve comunicar suspeita ou evidência de incidente por meio dos canais oficiais:\n- E-mail: incidentes@novadatatech.br (fictício)\n- Aplicativo interno do SOC / po"
+        },
+        {
+          "rank": 3,
+          "score": 0.6156,
+          "doc_id": "plano_resposta_incidentes.md/plano_resposta_incidentes",
+          "doc_title": "Plano Resposta Incidentes",
+          "page": null,
+          "section": "3.1. Níveis de severidade (S0–S4)",
+          "snippet": "### 3.1. Níveis de severidade (S0–S4)\n| Nível | Rótulo | Tempo de resposta SLA | Exemplos típicos |\n| --- | --- | --- | --- |\n| S0 | Crítico | Resposta em até 1h | Ransomware em produção, vazamento massivo de dados de clientes, ataque ativo"
+        },
+        {
+          "rank": 4,
+          "score": 0.6093,
+          "doc_id": "politica_backup_retenção.md/politica_backup_retenção",
+          "doc_title": "Politica Backup Retenção",
+          "page": null,
+          "section": "10. Terceiros e subcontratados",
+          "snippet": "Toda eliminação relevante é registrada em log, com período de retenção do registro por, no mínimo, 5 anos.\n\n---\n\n## 10. Terceiros e subcontratados\n\nProvedores de nuvem, BaaS e backup terceirizado seguem:\n- due diligence pré-contratual;\n- cl"
+        },
+        {
+          "rank": 5,
+          "score": 0.5994,
+          "doc_id": "politica_seguranca_informacao.md/politica_seguranca_informacao",
+          "doc_title": "Politica Seguranca Informacao",
+          "page": null,
+          "section": "9. Conscientização e Treinamento",
+          "snippet": "---\n\n## 9. Conscientização e Treinamento\n\nTodos os colaboradores participam de:\n- **Onboarding de Segurança:** obrigatório, com aproveitamento ≥ 80%;\n- **Refresh anual:** treinamento atualizado com foco em ameaças do período;\n- **Simulações"
+        }
+      ]
+    },
+    {
+      "id": "CROSS-003",
+      "category": "",
+      "question": "Um colaborador novo nao sabe como acessar o sistema, um colega oferece 'emprestar a senha para ele se virar rapido'. Quais documentos proibem explicitamente esse compartilhamento?",
+      "expected_document": null,
+      "expected_section": null,
+      "expected_keywords": [],
+      "hit_document": true,
+      "hit_section": true,
+      "hit_keywords": true,
+      "passed": true,
+      "top_k_chunks": [
+        {
+          "rank": 1,
+          "score": 0.6751,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
+          "page": null,
+          "section": "4. Relacionamento com o Trabalho e com a Empresa",
+          "snippet": "- a finalidade corporativa;\n- a **Política de Uso Aceitável dos Recursos de TI**;\n- a **Política de Controle de Acesso**;\n- as regras de classificação da informação.\n\n**4.3. Proibição de compartilhamento de credenciais.** É expressamente pr"
+        },
+        {
+          "rank": 2,
+          "score": 0.644,
+          "doc_id": "politica_controle_acesso.md/politica_controle_acesso",
+          "doc_title": "Politica Controle Acesso",
+          "page": null,
+          "section": "1. Objetivo",
+          "snippet": "São princípios desta política:\n1. **Individualidade e intransferibilidade:** Toda conta de acesso é pessoal e intransferível. Nenhum colaborador pode compartilhar senhas, tokens, biometria ou qualquer credencial com terceiros, colegas ou pr"
+        },
+        {
+          "rank": 3,
+          "score": 0.6242,
+          "doc_id": "politica_uso_aceitavel.md/politica_uso_aceitavel",
+          "doc_title": "Politica Uso Aceitavel",
+          "page": null,
+          "section": "7. Senhas, autenticação e credenciais",
+          "snippet": "---\n\n## 7. Senhas, autenticação e credenciais\n\nAplicam-se, com destaque, as regras das políticas de segurança e controle de acesso, repetindo-se:\n- Credenciais são individuais e intransferíveis;\n- MFA é obrigatória em todos os sistemas que "
+        },
+        {
+          "rank": 4,
+          "score": 0.618,
+          "doc_id": "politica_controle_acesso.md/politica_controle_acesso",
+          "doc_title": "Politica Controle Acesso",
+          "page": null,
+          "section": "5. Gestão de senhas, tokens e segredos",
+          "snippet": "---\n\n## 5. Gestão de senhas, tokens e segredos\n\nRegras complementares à Política de Segurança (Seção 5):\n1. As senhas não podem ser compartilhadas, armazenadas em papel ou em arquivos sem criptografia;\n2. Use gerenciador de senhas corporati"
+        },
+        {
+          "rank": 5,
+          "score": 0.615,
+          "doc_id": "politica_seguranca_informacao.md/politica_seguranca_informacao",
+          "doc_title": "Politica Seguranca Informacao",
+          "page": null,
+          "section": "1.2. Âmbito",
+          "snippet": "| Nível | Rótulo | Exemplos típicos | Acesso mínimo permitido |\n| --- | --- | --- | --- |\n| 4 | **Pública** | Conteúdo do site institucional, releases oficiais, vagas abertas | Qualquer pessoa, inclusive externos |\n| 3 | **Interna** | Manua"
         }
       ]
     }
