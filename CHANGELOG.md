@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/lang/pt-BR/
 
 ## [Unreleased]
 
+### Added (Sprint 5 - Deploy OCI, Dockerfile e README final ONE)
+
+- `Dockerfile` (NOVO): imagem multi-camada `python:3.13-slim-bookworm` com healthcheck Streamlit, `BUILD_TAG` build-arg, entrypoint `streamlit run :8501` em 0.0.0.0.
+- `docker-compose.yml` (NOVO): serviço `compliance-assistant` com `mem_limit=4g`, volumes persistentes para `data/vector_store` / `evaluation/reports` / `logs`, env-file `.env`, healthcheck `/health` a 60s, rede `compliance-net` e `security_opt=no-new-privileges`.
+- `scripts/deploy_oci.sh` (NOVO): deploy passo a passo para Oracle Linux 8/9 (10 passos). Instala Docker Engine + Compose v2 oficial, ajusta firewalld para 8501/TCP, roda build imagem, reindexa FAISS na primeira inicialização e exibe URL final com IP público.
+- `scripts/deploy_oci.ps1` (NOVO): deploy do lado Windows (PowerShell 5.1) — envia código + `.env` via `tar` + `scp` (nunca commita segredos) e roda `deploy_oci.sh` via SSH. Parâmetros `IpPublico`, `Usuario`, `ChavePrivada` editáveis no topo do script.
+- `.streamlit/config.toml` (NOVO): configuração global Streamlit identidade NovaData Solutions — tema `primaryColor="#4F46E5"` (roxo corporativo), `gatherUsageStats=false`, `showErrorDetails=false`, `fileWatcherType=poll`.
+- `README.md` (atualizado Sprint 5): novas seções **Arquitetura (Mermaid)** com diagrama 10 camadas, **Camadas do código** (tabela 11 responsabilidades), **Como executar localmente (3 minutos)** passo a passo Windows, **Como executar local via Docker**, **Deploy OCI** completo (pré-requisitos Console + Passo A PowerShell + Passo B manual + tabela troubleshooting 5 sintomas), **FAQ rápido 4 perguntas**, **Roadmap entregue ONE (Sprints 1–6 até v1.0.0)** e **Futuro pós-Challenge**.
+- `pyproject.toml`: bump versão `0.4.0-rc1` → `0.5.0-rc1`.
+
 ### Added (Sprint 4 - Interface Streamlit e UI Chat institucional)
 
 - `streamlit_app.py` (NOVO): aplicação Streamlit 5 abas (Home, Compliance Assistant, Base de Conhecimento, Qualidade do RAG, Sobre/Contato) com identidade NovaData Solutions. Destaques:
