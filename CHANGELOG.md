@@ -7,6 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/lang/pt-BR/
 
 ## [Unreleased]
 
+### Added (Sprint 4 - Interface Streamlit e UI Chat institucional)
+
+- `streamlit_app.py` (NOVO): aplicação Streamlit 5 abas (Home, Compliance Assistant, Base de Conhecimento, Qualidade do RAG, Sobre/Contato) com identidade NovaData Solutions. Destaques:
+  - **Home**: hero institucional, 8 diferenciais do produto, tabela “Pronto para produção”, links GitHub/ANPD.
+  - **Compliance Assistant**: histórico de chat (20 mensagens), botões de 4 perguntas sugeridas, renderização de respostas com:
+    - `st.warning` quando `insufficient_information=True`;
+    - `st.expander` “📄 Fontes citadas (n)” com `dataframe` (Documento | Seção | Página | Score | Snippet);
+    - 5 `st.metric` de métricas (Modelo, Embed ms, Busca ms, Geração ms, Total ms);
+    - `st.info` com disclaimer obrigatório.
+  - **Base de Conhecimento**: grid 12 cards (3 oficiais + 9 empresa) com categoria, versão, responsáveis e data.
+  - **Qualidade do RAG**: lê JSONs `evaluation/reports/retrieval_report.json` e `qa_level2_report.json` e renderiza métricas N1/N2 com cards + tabela de últimos casos.
+  - **Sobre / Contato**: narrativa NovaData Solutions, arquitetura em 10 camadas, 5 contatos por papel (CTO, CISO, DPO, CCO, CHRO) e citação oficial do produto.
+- `requirements.txt`: adicionados `streamlit>=1.38,<2` e `pytest>=8.0` (novo padrão ONE/mercado).
+- `tests/test_streamlit_smoke.py` (NOVO): 5 testes smoke (existência do arquivo, import sem crash, 12 documentos no grid, funções de página callable, `main` callable) — válido para CI de UI sem precisar rodar navegador.
+- `pyproject.toml`: versão bump `0.3.0-rc1` → `0.4.0-rc1`.
+
 ### Added (Sprint 3 - QA profissionalizado e avaliação Nível 2)
 
 - `src/domain/answer.py`: novas classes `LatencyBreakdown`, constantes `DEFAULT_DISCLAIMER` e `INSUFFICIENT_INFORMATION_TEXT`, e campos `insufficient_information`, `latency` e `metadata` no `Answer`. Novos helpers: `citation_titles()`, `citation_sections()` e `pretty_metrics()`.
