@@ -6,6 +6,112 @@ from typing import Iterable, List, Optional, Sequence
 from src.domain.document import Document
 
 
+DOCUMENT_ALIASES: dict[str, list[str]] = {
+    "lgpd_leil_13709_2018": [
+        "LGPD",
+        "Lei 13.709",
+        "Lei Geral de Proteção de Dados",
+        "Lei Geral Protecao Dados",
+    ],
+    "guia_anpd_metodos_aplicacao": [
+        "Guia ANPD",
+        "Guia Metodos Aplicacao",
+        "ANPD Guia",
+    ],
+    "faq_anpd_principal": [
+        "FAQ ANPD",
+        "FAQ Principal",
+        "Perguntas Frequentes ANPD",
+    ],
+    "codigo_etica_conduta": [
+        "Código de Ética",
+        "Codigo de Etica",
+        "Código Ética e Conduta",
+        "Codigo Etica Conduta",
+        "Ética",
+        "Etica",
+    ],
+    "organograma_novadata_solutions": [
+        "Organograma",
+        "Estrutura Organizacional",
+        "Hierarquia",
+    ],
+    "politica_seguranca_informacao": [
+        "Política Segurança da Informação",
+        "Política Segurança Informação",
+        "Política Segurança",
+        "Politica Seguranca",
+        "PSI",
+        "Segurança Informação",
+        "Seguranca da Informacao",
+        "Seguranca",
+    ],
+    "politica_privacidade_lgpd": [
+        "Política Privacidade",
+        "Politica Privacidade",
+        "Política Privacidade e LGPD",
+        "Privacidade",
+        "Privacidade LGPD",
+    ],
+    "manual_colaborador": [
+        "Manual do Colaborador",
+        "Manual Colaborador",
+        "RH",
+        "Recursos Humanos",
+    ],
+    "politica_controle_acesso": [
+        "Política Controle Acesso",
+        "Politica Controle Acesso",
+        "Política Acesso",
+        "Controle de Acesso",
+        "Controle Acesso",
+        "PCA",
+        "Acesso",
+    ],
+    "plano_resposta_incidentes": [
+        "Plano Resposta Incidentes",
+        "Plano de Resposta a Incidentes",
+        "Plano Resposta Incidente",
+        "PRI",
+        "Incidentes",
+        "Resposta Incidentes",
+    ],
+    "politica_backup_retenção": [
+        "Política Backup",
+        "Politica Backup",
+        "Política Backup e Retenção",
+        "Backup Retenção",
+        "Backup",
+        "Retenção",
+        "Retencao",
+        "PBR",
+    ],
+    "politica_uso_aceitavel": [
+        "Política Uso Aceitável",
+        "Politica Uso Aceitavel",
+        "Política Uso Aceitavel",
+        "Uso Aceitável",
+        "Uso Aceitavel",
+        "PUA",
+        "AUP",
+    ],
+}
+
+
+def _resolve_aliases(stem: str) -> list[str]:
+    aliases = []
+    for key, value in DOCUMENT_ALIASES.items():
+        if key in stem.lower():
+            aliases.extend(value)
+    seen = set()
+    uniq = []
+    for alias in aliases:
+        if alias.lower() not in seen:
+            uniq.append(alias)
+            seen.add(alias.lower())
+    return uniq
+
+
 class DocumentLoader:
     def __init__(
         self,
@@ -46,6 +152,13 @@ class DocumentLoader:
             all_docs.extend(self.load_directory(directory, category=category))
         return all_docs
 
+    def _enrich_metadata(self, file_path: Path, base_meta: dict | None) -> dict:
+        meta = dict(base_meta or {})
+        aliases = _resolve_aliases(file_path.stem)
+        if aliases:
+            meta["document_aliases"] = aliases
+        return meta
+
     def _load_pdf(self, file_path: Path, *, category: str) -> Document:
         try:
             from pypdf import PdfReader
@@ -60,13 +173,14 @@ class DocumentLoader:
                 text = ""
             pages.append(f"[Pagina {i}]\n{text}")
         content = "\n\n".join(pages)
+        base_meta = {"page_count": len(reader.pages)}
         return Document.from_text(
             title=file_path.stem.replace("_", " ").title(),
             content=content,
             source=file_path.name,
             category=category,
             file_path=file_path,
-            metadata={"page_count": len(reader.pages)},
+            metadata=self._enrich_metadata(file_path, base_meta),
         )
 
     def _load_markdown(self, file_path: Path, *, category: str) -> Document:
@@ -77,4 +191,5 @@ class DocumentLoader:
             source=file_path.name,
             category=category,
             file_path=file_path,
+            metadata=self._enrich_metadata(file_path, None),
         )
