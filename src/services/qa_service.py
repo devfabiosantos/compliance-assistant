@@ -5,7 +5,12 @@ import time
 from typing import List
 
 from src.config.settings import Settings
-from src.domain.answer import Answer
+from src.domain.answer import (
+    DEFAULT_DISCLAIMER,
+    INSUFFICIENT_INFORMATION_TEXT,
+    Answer,
+    LatencyBreakdown,
+)
 from src.domain.question import Question
 from src.domain.source import SourceCitation
 from src.providers.base import ChatProvider
@@ -14,6 +19,58 @@ from src.retrieval.retriever import Retriever, RetrievedChunk
 from src.retrieval.vector_store import VectorStore
 
 logger = logging.getLogger(__name__)
+
+
+_MIN_USEFUL_SCORE = 0.35
+_MIN_USEFUL_CHUNKS = 1
+
+
+def _is_useful(citation: SourceCitation) -> bool:
+    if citation.score is None:
+        return True
+    return citation.score >= _MIN_USEFUL_SCORE
+
+
+def _build_answer(
+    *,
+    answer_text: str,
+    citations: List[SourceCitation],
+    model: str,
+    embed_ms: float,
+    retrieval_ms: float,
+    generation_ms: float,
+    total_ms: float,
+    metadata: dict | None = None,
+) -> Answer:
+    useful = [c for c in citations if _is_useful(c)]
+    insufficient = (
+        len(useful) < _MIN_USEFUL_CHUNKS
+        or not answer_text.strip()
+        or "INSUFFICIENT_INFORMATION" in answer_text
+    )
+
+    if insufficient:
+        final_text = INSUFFICIENT_INFORMATION_TEXT
+    else:
+        final_text = answer_text.strip()
+
+    return Answer(
+        text=final_text,
+        citations=citations,
+        model=model,
+        retrieval_time_ms=round(retrieval_ms, 1),
+        generation_time_ms=round(generation_ms, 1),
+        total_time_ms=round(total_ms, 1),
+        disclaimer=DEFAULT_DISCLAIMER,
+        insufficient_information=insufficient,
+        latency=LatencyBreakdown(
+            embedding_ms=round(embed_ms, 1),
+            retrieval_ms=round(retrieval_ms, 1),
+            generation_ms=round(generation_ms, 1),
+            total_ms=round(total_ms, 1),
+        ),
+        metadata=dict(metadata or {}),
+    )
 
 
 class QAService:
@@ -48,10 +105,13 @@ class QAService:
         start = time.perf_counter()
         q = Question(text=question)
 
-        t0 = time.perf_counter()
+        t_embed = time.perf_counter()
         query_vector = self._embedding_provider.embed_query(q.text)
+        embed_ms = (time.perf_counter() - t_embed) * 1000
+
+        t_ret = time.perf_counter()
         retrieved: List[RetrievedChunk] = self._retriever.retrieve(query_vector)
-        retrieval_time_ms = (time.perf_counter() - t0) * 1000
+        retrieval_ms = (time.perf_counter() - t_ret) * 1000
 
         citations: List[SourceCitation] = [r.to_citation() for r in retrieved]
         context_chunks = [r.chunk.content for r in retrieved]
@@ -61,33 +121,40 @@ class QAService:
             extra={
                 "question": q.text,
                 "chunks": len(retrieved),
-                "retrieval_time_ms": round(retrieval_time_ms, 1),
+                "embedding_ms": round(embed_ms, 1),
+                "retrieval_ms": round(retrieval_ms, 1),
             },
         )
 
-        t1 = time.perf_counter()
+        t_gen = time.perf_counter()
         answer_text = self._chat_provider.answer_with_context(
             question=q.text,
             context_chunks=context_chunks,
             citations=citations,
         )
-        generation_time_ms = (time.perf_counter() - t1) * 1000
-        total_time_ms = (time.perf_counter() - start) * 1000
+        generation_ms = (time.perf_counter() - t_gen) * 1000
+        total_ms = (time.perf_counter() - start) * 1000
 
         logger.info(
             "resposta gerada",
             extra={
                 "model": self._chat_provider.name,
-                "generation_time_ms": round(generation_time_ms, 1),
-                "total_time_ms": round(total_time_ms, 1),
+                "generation_ms": round(generation_ms, 1),
+                "total_ms": round(total_ms, 1),
             },
         )
 
-        return Answer(
-            text=answer_text,
+        return _build_answer(
+            answer_text=answer_text,
             citations=citations,
             model=self._chat_provider.name,
-            retrieval_time_ms=round(retrieval_time_ms, 1),
-            generation_time_ms=round(generation_time_ms, 1),
-            total_time_ms=round(total_time_ms, 1),
+            embed_ms=embed_ms,
+            retrieval_ms=retrieval_ms,
+            generation_ms=generation_ms,
+            total_ms=total_ms,
+            metadata={
+                "question": q.text,
+                "useful_citations": len([c for c in citations if _is_useful(c)]),
+                "total_citations": len(citations),
+            },
         )
