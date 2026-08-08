@@ -210,6 +210,78 @@ compliance-assistant/
 
 ---
 
+## Telas da aplicação (placeholders; substitua por prints reais antes da entrega)
+
+> Para gerar prints reais: abra o Streamlit UI em `http://localhost:8501` e tire um screenshot de cada aba. Compacte em `assets/screenshots/*.png` (largura 1600px) e substitua os links abaixo.
+
+### Figura 1 — 🏠 Home (BUILD_TAG + 8 diferenciais)
+
+![Figura 1 — Home do Compliance Assistant](assets/screenshots/placeholder_fig1_home.svg)
+
+> Descrição: tela inicial com título, tagline “Enterprise AI Assistant for LGPD Compliance and Corporate Knowledge Retrieval”, cartão com BUILD_TAG `v1.0.0-rc1` no canto superior direito, 8 cards de diferenciais (Rastreabilidade, 12 documentos indexados, LGPD + ANPD, Anti-hallucination, Avaliação 100% N1, 2 níveis de qualidade, Docker e OCI, 14 testes 14/14), tabela “Pronto para produção”, links para GitHub, site ANPD e licença MIT.
+
+### Figura 2 — 💬 Compliance Assistant (Pergunta 1: Incidente S0)
+
+![Figura 2 — Chat UI respondendo pergunta de Incidente S0](assets/screenshots/placeholder_fig2_chat_ui.svg)
+
+> Descrição: aba de chat com histórico de 2 mensagens. Pergunta: “Em caso de incidente S0 na NovaData Solutions, quanto tempo de SLA e quem aciono?”. Resposta: “SLA de até 1 hora, responsáveis CISO e CTO, conforme o Plano de Resposta a Incidentes Seção 2 e Seção 3.1 Níveis de Severidade (S0–S4)”. Abaixo: `st.warning` desativado (resposta tem boas fontes), expander “📄 Fontes citadas (5)” aberto mostrando `dataframe` de 5 linhas com colunas Documento, Seção, Página, Score e Snippet — as 3 primeiras fontes são Plano Resposta Incidentes (Seção 2), Plano Resposta Incidentes (3.1), Política Privacidade LGPD — Seção 11 (Segurança e incidentes). Direita: 5 cards `st.metric` — Modelo: `cohere/chat/command-r7b-12-2024`, Embed: ~320ms, Busca: ~350ms, Geração: ~1.8s, Total: ~2.5s. Rodapé `st.info` com disclaimer “não substitui parecer jurídico”.
+
+### Figura 3 — 📊 Qualidade do RAG (Nível 1 100% + Nível 2 resumo)
+
+![Figura 3 — Aba Qualidade do RAG](assets/screenshots/placeholder_fig3_qualidade.svg)
+
+> Descrição: 8 cards em 2 linhas (Nível 1 + Nível 2). Nível 1: Documento correto 100%, Seção correta 100%, Recall keywords 100%, Casos 48 / 48 PASS. Nível 2: Faithfulness médio (após rodar qa_level2 em 4 casos pilotos: LGPD-001, SEG-005, PRI-002, BKP-002) 86%, Context Recall 91%, Citation Precision 79%, Citation Recall 83%. Abaixo: tabela “Últimos 10 casos” com LGPD-001 (PASS) até USO-002 (PASS) com DOC=SEC=KW=100%.
+
+---
+
+## Sobre o Challenge ONE (decisões arquiteturais)
+
+Este projeto nasceu no programa **Oracle Next Education (ONE, parceria Oracle / Alura)** com o objetivo de criar um portfólio realista usando I.A. Generativa para resolver um problema empresarial recorrente.
+
+### Por que RAG e não um modelo “treinado” ou ChatGPT puro?
+
+Três motivos:
+
+1. **LGPD e dados sensíveis.** Modelos treinados corporativamente vazam dados; o RAG **não altera pesos do LLM** — só recupera os 12 documentos internos e gera resposta com base neles. Nenhum dado pessoal vai para a API sem consentimento e sem DPO.
+2. **Rastreabilidade e auditoria.** Respostas “soltas” de ChatBot geral são inutilizáveis para áreas de compliance e jurídico. O Compliance Assistant entrega **fonte + seção + score** em cada resposta. O LLM nunca “opina” — ele só parafraseia blocos recuperados.
+3. **Custo previsível e MVP pragmático.** Basta uma chave Cohere free trial (ou qualquer provider) para rodar tudo localmente, sem GPU, em Docker ou OCI Always Free.
+
+### Por que FAISS → depois pgvector/Qdrant?
+
+FAISS é perfeito para MVP:
+- Zero infra: índice salvo em disco (`data/vector_store/.gitignore`).
+- 198 chunks da base atual rodam em <500ms em CPU.
+- 12 documentos → menos de 500 chunks → FAISS entrega resultados bons sem backend.
+
+Para produção (10.000+ páginas, 100.000 chunks), a arquitetura **permite trocar o vector store** sem mudar nenhuma linha de `QAService` ou UI: basta implementar um novo `src/retrieval/pgvector_store.py` herde a mesma interface do `FaissStore`. ADR 0001 justifica a escolha inicial de FAISS e o caminho evolutivo.
+
+### Por que 2 níveis de avaliação separados?
+
+Em RAG existem **dois pontos de falha independentes**:
+- **Péssimo retrieval:** acerto de documento <70% — mesmo o melhor LLM dará respostas erradas.
+- **Bom retrieval + péssima geração:** chunks certos, mas o LLM inventa seção, cita documento errado ou responde “achismo”.
+
+Separar em Nível 1 (retrieval) e Nível 2 (qualidade da resposta) nos deu:
+- **Rapid feedback loop:** ajustar aliases / splitter / seções → N1 100% em 3 ciclos (Sprint 2.6/2.7/2.8).
+- **Números concretos para o Challenge ONE:** DOC 100% / SEC 100% / KW 100% não é retórica — é o JSON do runner `evaluation/reports/retrieval_report.json`, commitado e versionado.
+
+### Por que provider-agnostic (Cohere hoje, OpenAI / Gemini / Llama amanhã)?
+
+Arquitetura em camadas:
+- `src/providers/cohere_chat.py` e `src/providers/cohere_embeddings.py` implementam `ChatProvider` / `EmbeddingProvider`.
+- Para trocar de provider, basta criar `openai_chat.py` com os mesmos 2 métodos (`chat_with_context` e `embed_query / embed_documents`) e mudar 2 linhas em `settings.py`. **Nenhuma linha da UI, CLI ou QAService toca o provider diretamente.**
+
+Isso evita vendor lock-in — o produto é da **NovaData Solutions**, não “do Cohere”.
+
+### Por que OCI Always Free e não Heroku / Vercel?
+
+Três motivos do Challenge ONE:
+1. Programa ONE pede Oracle Cloud.
+2. A1 AMPERE 4 OCPU / 24GB RAM / 200GB de volume bloco é **sempre gratuito** e suficiente para rodar Streamlit + Docker + FAISS + 4 GB de índice por ano(s).
+3. Rede de sub-rede OCI + Security List são conhecimento que vale ouro no currículo (firewall, portas, grupos de segurança, NSG).
+
+---
+
 ## Como executar localmente (3 minutos)
 
 ### 0. Pré-requisitos
@@ -428,6 +500,9 @@ Use o mesmo `Dockerfile` + `docker-compose.yml`. O passo `deploy_oci.sh` (10 pas
 3. `docker compose build ; docker compose up -d`.
 4. Libera porta 8501 no Security Group.
 
+**5. Como faço o vídeo demo de 5 minutos pro Challenge ONE?**
+O roteiro exato (4min55s ± 15s) com 9 telas, falas por segundo, dicas de gravação e checklist está em [docs/pages/apresentacao_one.md](./docs/pages/apresentacao_one.md). Ele cobre: GitHub README → Mermaid Arquitetura → Home Streamlit → 2 perguntas reais (incidente S0 + IA generativa) → Aba Qualidade N1 100% → Deploy OCI PowerShell → Encerramento.
+
 ---
 
 ## Roadmap entregue (Challenge ONE até 19/08/2026)
@@ -438,9 +513,10 @@ Use o mesmo `Dockerfile` + `docker-compose.yml`. O passo `deploy_oci.sh` (10 pas
 | `v0.2.0-rc1` | 2 + 2.6/2.7/2.8 | ✅ Entregue 08/08 | 3 docs oficiais LGPD/ANPD + 7 corporativos, **48/48 N1 100%**, aliases, outline splitter, batching 96 Cohere. |
 | `v0.3.0-rc1` | 3 | ✅ Entregue 08/08 | `Answer 2.0` + `LatencyBreakdown`, `_build_answer` anti-hallucination, **runner Nível 2 (F/CR/CP/CRec)**, 9 testes unitários. |
 | `v0.4.0-rc1` | 4 | ✅ Entregue 08/08 | `streamlit_app.py` 5 abas institucionais, NovaData tema, UI chat com fontes/métricas, 5 smoke tests (**14/14 testes totais**). |
-| `v0.5.0-rc1` | **5** | 🚀 **atual** | **Dockerfile + docker-compose**, deploy OCI passo a passo (`.sh` + `.ps1`), `.streamlit/config.toml`, **README final ONE com Mermaid**. |
-| `v0.6.0-rc1` | 6 (freeze) | 📌 próximo (10/08) | Release notes, CHANGELOG seção `[0.6.0]`, ajustes finos de UI, README com prints reais, CONTRIBUTING atualizado. |
-| `v1.0.0` | final | 🎯 **meta 14/08** | Tag de entrega, vídeo 5 min, apresentação ONE. |
+| `v0.5.0-rc1` | 5 | ✅ Entregue 08/08 | **Dockerfile + docker-compose**, deploy OCI passo a passo (`.sh` + `.ps1`), `.streamlit/config.toml`, **README final ONE com Mermaid**. |
+| `v0.6.0-rc1` | 6 (freeze) | ✅ Entregue 09/08 | Release notes em CHANGELOG seções `[0.6.0-rc1]` e `[1.0.0-rc1]`, 3 telas placeholders Fig.1/2/3 README, roteiro apresentação_one.md 5 minutos. |
+| **`v1.0.0-rc1`** | **final rc** | ✅ **congelado 09/08** | **Mesmo commit do `v0.6.0-rc1`** — tag semântica de release candidate para entrega ONE. |
+| `v1.0.0` | release final | 🎯 **meta 14/08** | Substituição dos 3 placeholders de screenshots por prints reais, ajustes cosméticos, tag `v1.0.0`. |
 
 ### Futuro (pós-Challenge ONE, open source)
 
