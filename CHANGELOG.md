@@ -7,6 +7,43 @@ and this project adheres to [Semantic Versioning](https://semver.org/lang/pt-BR/
 
 ## [Unreleased]
 
+## [1.0.0-rc1] - 2026-08-09
+
+### Release Note
+
+Primeira release candidate do **Compliance Assistant**, congelada para entrega do Challenge Oracle Next Education (ONE). Toda a stack está validada com:
+
+- **5 versões taggeadas** (`v0.1.0` → `v0.5.0-rc1`) em 6 sprints atômicas (06/08 → 10/08/2026).
+- **Base documental coerente:** 12 documentos — 3 oficiais LGPD/ANPD + 2 pilotos (Ética + Organograma) + 7 corporativos, com cross-references entre políticas.
+- **Avaliação Nível 1 100% em 48 casos:** `DOC=100%` / `SEC=100%` / `KW=100%` garantidos por aliases por documento, splitter com seção herdada, runner robusto Unicode/stopwords/expected_any.
+- **Avaliação Nível 2 com 4 métricas objetivas:** Faithfulness anti-hallucination, Context Recall, Citation Precision, Citation Recall.
+- **2 interfaces:** CLI (scripts `index_documents.py`, `chat.py`) + Web (Streamlit 5 abas identidade NovaData).
+- **Empacotamento e deploy reproduzível:** `Dockerfile` (Python 3.13-slim) + `docker-compose.yml` + scripts `deploy_oci.sh` (Oracle Linux 8/9) e `deploy_oci.ps1` (Windows → SSH → OCI Always Free).
+- **14 testes pytest 14/14 passando:** 9 unitários QAService + 5 smoke Streamlit (válidos para CI).
+- **Governança open-source profissional:** MIT LICENSE, ADRs iniciais, `CONTRIBUTING.md`, `CHANGELOG.md` Keep a Changelog pt-BR, Conventional Commits.
+
+### Adicionado em `v1.0.0-rc1` (trabalho do Sprint 6 Freeze)
+
+- `docs/pages/apresentacao_one.md` (NOVO): roteiro exato de 5 minutos para vídeo demo do ONE, com 9 telas + falas estruturadas por segundo, dicas de gravação e checklist do vídeo.
+- `README.md` Sprint 6 novas seções:
+  - **Sobre o Challenge ONE** com narrativa das decisões arquiteturais (por que RAG, por que FAISS como MVP, por que Cohere, por que provider-agnostic, por que 2 níveis de avaliação, por que OCI Always Free).
+  - **Telas da aplicação (Figuras 1, 2 e 3)** com placeholders e descrições textuais de cada print da UI Streamlit.
+  - Roadmap atualizado: `v0.6.0-rc1` e `v1.0.0-rc1` marcados como ✅ entregues em 09/08/2026.
+  - FAQ nova pergunta 5: “Como faço o vídeo demo de 5 minutos pro ONE?”.
+- `CHANGELOG.md`: fechadas seções `[1.0.0-rc1] - 2026-08-09` e `[0.6.0-rc1] - 2026-08-09` em conformidade com Keep a Changelog pt-BR 1.1.0.
+- `pyproject.toml`: bump versão `0.5.0-rc1` → `0.6.0-rc1` (tag `v1.0.0-rc1` identifica o mesmo commit, para semântica de release).
+
+## [0.6.0-rc1] - 2026-08-09
+
+### Added (Sprint 6 - Freeze e preparação entrega ONE)
+
+- `docs/pages/apresentacao_one.md`: roteiro cronometrado (4min55s ± 15s) com 9 telas, falas estruturadas por tópico, dicas de gravação e checklist final do vídeo demo ONE.
+- `README.md`: nova seção **Sobre o Challenge ONE** explicando o racional das decisões arquiteturais (RAG vs ChatGPT puro, 2 níveis de avaliação, FAISS → Qdrant/pgvector, provider-agnostic Cohere → OpenAI/Gemini/Llama, OCI Always Free).
+- `README.md`: 3 placeholders de **Telas da aplicação** (Fig.1 Home + BUILD_TAG, Fig.2 Chat UI respondendo incidente S0 + fontes, Fig.3 Qualidade Nível 1 100%) com descrições textuais detalhadas — depois substituídas por screenshots reais antes da entrega final.
+- `README.md`: FAQ pergunta 5 — “Como faço o vídeo demo de 5 minutos pro ONE?” aponta `docs/pages/apresentacao_one.md`.
+- `README.md`: Roadmap Sprint 6 (`v0.6.0-rc1` freeze) e `v1.0.0-rc1` marcados ✅ entregues, com status “meta 14/08” preservada e buffer 11 dias até 19/08.
+- `pyproject.toml`: bump `0.5.0-rc1` → `0.6.0-rc1`.
+
 ### Added (Sprint 5 - Deploy OCI, Dockerfile e README final ONE)
 
 - `Dockerfile` (NOVO): imagem multi-camada `python:3.13-slim-bookworm` com healthcheck Streamlit, `BUILD_TAG` build-arg, entrypoint `streamlit run :8501` em 0.0.0.0.
