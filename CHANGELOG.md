@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/lang/pt-BR/
 
 ## [Unreleased]
 
+### Added (Sprint 3 - QA profissionalizado e avaliação Nível 2)
+
+- `src/domain/answer.py`: novas classes `LatencyBreakdown`, constantes `DEFAULT_DISCLAIMER` e `INSUFFICIENT_INFORMATION_TEXT`, e campos `insufficient_information`, `latency` e `metadata` no `Answer`. Novos helpers: `citation_titles()`, `citation_sections()` e `pretty_metrics()`.
+- `src/services/qa_service.py`: nova função `_build_answer` com heurísticas anti-hallucination (pelo menos 1 chunk útil com score ≥ 0.35 ou resposta cai no texto padrão `INSUFFICIENT_INFORMATION`). `answer()` agora mede 4 tempos distintos (embed, retrieval, generation, total) e injeta em `latency`.
+- `evaluation/evaluate_qa_level2.py` (NOVO): runner Nível 2 que executa todos os 48 casos do `questions.json` e mede por caso 4 métricas:
+  - **Faithfulness** (%) = tokens da resposta que aparecem em títulos/seções/snippets dos chunks úteis (anti-hallucination).
+  - **Context Recall** (%) = keywords esperadas que aparecem na resposta.
+  - **Citation Precision** (%) = das citações recuperadas, quantas são úteis.
+  - **Citation Recall** (%) = dos documentos/seções esperados, quantos foram citados.
+  - Salva relatório JSON em `evaluation/reports/qa_level2_report.json`. Flags: `--cases`, `--fail-below`, `--report`.
+- `tests/test_qa_service.py` (NOVO): 14 testes unitários cobrindo estrutura `Answer`, dedup de `citation_titles()`, build_answer válido vs insuficiente, threshold 0.35 de utilidade, anti-hallucination flag, `pretty_metrics()` e resposta vazia.
+- `pyproject.toml`: versão bump `0.2.0-rc1` → `0.3.0-rc1`.
+
 ### Added (Sprint 2 - documentação e avaliação)
 
 - `docs/oficiais/`: stubs Markdown de referência da LGPD (Lei 13.709/2018), Guia ANPD e FAQ ANPD com artigos e seções reais, prontos para complementar com PDFs oficiais quando disponíveis.
