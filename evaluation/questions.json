@@ -148,6 +148,218 @@
       "expected_document_any": ["Código Ética E Conduta", "Organograma"],
       "severity": "high",
       "multi_document": true
+    },
+    {
+      "id": "LGPD-006",
+      "question": "Quais sao as hipoteses legais para tratar dados pessoais previstas no art. 7 da LGPD?",
+      "expected_document_any": ["LGPD Lei 13.709/2018", "FAQ ANPD Principal"],
+      "expected_sections_any": ["TÍTULO III — Do Tratamento de Dados Pessoais", "2. Princípios e bases legais"],
+      "keywords_expected": ["consentimento", "obrigação legal", "execução de contrato", "interesse legítimo", "exercício regular de direito"],
+      "severity": "high"
+    },
+    {
+      "id": "LGPD-007",
+      "question": "A NovaData Solutions pode usar dados pessoais de clientes para campanhas de marketing após o fim do contrato? Sob que condicoes?",
+      "expected_document_any": ["FAQ ANPD Principal", "Política Privacidade LGPD"],
+      "expected_sections_any": ["2. Princípios e bases legais", "6. Bases legais invocadas", "7. Perguntas frequentes no Guia ANPD"],
+      "keywords_expected": ["consentimento específico", "interesse legítimo", "marketing", "revogação"],
+      "severity": "high"
+    },
+    {
+      "id": "LGPD-008",
+      "question": "Quais os direitos do titular de dados pessoais segundo o art. 17 da LGPD?",
+      "expected_document_any": ["LGPD Lei 13.709/2018", "FAQ ANPD Principal"],
+      "keywords_expected": ["confirmação", "acesso", "correção", "anonimização", "bloqueio", "eliminação", "portabilidade"],
+      "severity": "high"
+    },
+    {
+      "id": "LGPD-009",
+      "question": "Qual o valor maximo de multa simples por infração a LGPD?",
+      "expected_document_any": ["LGPD Lei 13.709/2018", "FAQ ANPD Principal"],
+      "expected_sections_any": ["7. Sanções"],
+      "keywords_expected": ["2%", "faturamento", "50.000.000", "cinquenta milhões"],
+      "severity": "medium"
+    },
+    {
+      "id": "ANPD-001",
+      "question": "Quando uma empresa deve realizar a Avaliação de Impacto à Proteção de Dados (AIPD / DPIA)?",
+      "expected_document_any": ["Guia ANPD Métodos Aplicação"],
+      "expected_sections_any": ["4. Avaliação de Impacto à Proteção de Dados (AIPD)"],
+      "keywords_expected": ["dados pessoais sensíveis", "larga escala", "novas tecnologias", "risco elevado", "crianças"],
+      "severity": "high"
+    },
+    {
+      "id": "ANPD-002",
+      "question": "Quais controles de segurança a ANPD recomenda para dados pessoais?",
+      "expected_document_any": ["Guia ANPD Métodos Aplicação", "FAQ ANPD Principal"],
+      "expected_sections_any": ["5. Segurança de dados pessoais", "5. Segurança e incidentes"],
+      "keywords_expected": ["MFA", "RBAC", "criptografia", "SOC", "SBOM", "TLS", "AES-256"],
+      "severity": "high"
+    },
+    {
+      "id": "SEG-003",
+      "question": "Como a NovaData Solutions classifica as informacoes? Quais os niveis?",
+      "expected_document_any": ["Política Segurança Informação"],
+      "expected_sections_any": ["2. Classificação da Informação"],
+      "keywords_expected": ["Pública", "Interna", "Confidencial", "Restrita", "Crítica"],
+      "severity": "high"
+    },
+    {
+      "id": "SEG-004",
+      "question": "Qual o padrao minimo de senhas na NovaData Solutions? E o uso de gerenciador de senhas?",
+      "expected_document_any": ["Política Segurança Informação", "Política Controle Acesso"],
+      "expected_sections_any": ["5. Senhas, Credenciais e Segredos", "5. Gestão de senhas, tokens e segredos"],
+      "keywords_expected": ["14 caracteres", "gerenciador de senhas", "criptografia", "papéis", "não em bloco de notas"],
+      "severity": "high"
+    },
+    {
+      "id": "SEG-005",
+      "question": "Posso usar ferramentas de IA generativa publicas (ex: copilotos de codigo, geradores) com dados de clientes da NovaData?",
+      "expected_document_any": ["Política Segurança Informação", "Política Uso Aceitável"],
+      "expected_sections_any": ["7. Segurança em Desenvolvimento de Software", "8. Uso de software e propriedade intelectual"],
+      "keywords_expected": ["dados sensíveis", "aprovação", "anonimização", "ROT", "Nunca envie"],
+      "severity": "high"
+    },
+    {
+      "id": "ACE-001",
+      "question": "Qual o SLA maximo para revogar acessos em caso de desligamento de colaborador?",
+      "expected_document_any": ["Política Controle Acesso", "Política Segurança Informação"],
+      "expected_sections_any": ["3. Ciclo de vida da identidade", "4. Controles Lógicos de Acesso"],
+      "keywords_expected": ["4 horas úteis", "revogação", "imediata", "incidente"],
+      "severity": "high"
+    },
+    {
+      "id": "ACE-002",
+      "question": "O que e e quando usar a conta break-glass de emergência na NovaData?",
+      "expected_document_any": ["Política Controle Acesso"],
+      "expected_sections_any": ["4. Perfis e privilégios"],
+      "keywords_expected": ["emergência", "último recurso", "monitoramento", "CISO", "justificado"],
+      "severity": "medium"
+    },
+    {
+      "id": "ACE-003",
+      "question": "Com que frequencia os acessos privilegiados sao revisados na empresa?",
+      "expected_document_any": ["Política Controle Acesso", "Política Segurança Informação"],
+      "keywords_expected": ["trimestral", "revisão periódica", "privilegiados", "CISO", "gestores"],
+      "severity": "medium"
+    },
+    {
+      "id": "PRI-002",
+      "question": "Qual o prazo maximo para resposta em incidente S0 (Crítico) na NovaData?",
+      "expected_document_any": ["Plano Resposta Incidentes"],
+      "expected_sections_any": ["3. Linhas do tempo, severidade e classificação"],
+      "keywords_expected": ["1 hora", "S0", "Crítico"],
+      "severity": "high"
+    },
+    {
+      "id": "PRI-003",
+      "question": "Quem compõe o Comité Gestor de Incidentes (CGI) na NovaData Solutions?",
+      "expected_document_any": ["Plano Resposta Incidentes", "Organograma"],
+      "expected_sections_any": ["2.2. Comitê Gestor de Incidentes (CGI)"],
+      "keywords_expected": ["CISO", "DPO", "CTO", "Diretor Jurídico", "CCO", "Líder do SOC", "RH"],
+      "severity": "high"
+    },
+    {
+      "id": "PRI-004",
+      "question": "Em caso de incidente grave com dados pessoais, em quanto tempo a ANPD deve ser comunicada?",
+      "expected_document_any": ["Plano Resposta Incidentes", "Guia ANPD Métodos Aplicação", "FAQ ANPD Principal"],
+      "expected_sections_any": ["6. Comunicação com órgãos, titulares e mercado", "6. Resposta a incidentes"],
+      "keywords_expected": ["24", "72", "horas úteis", "ANPD", "ciência do incidente"],
+      "severity": "high"
+    },
+    {
+      "id": "PRI-005",
+      "question": "Quais as 7 fases do ciclo de resposta ao incidente adotado pela NovaData?",
+      "expected_document_any": ["Plano Resposta Incidentes"],
+      "expected_sections_any": ["4. Ciclo de resposta ao incidente"],
+      "keywords_expected": ["Preparação", "Detecção", "Análise", "Contenção", "Erradicação", "Recuperação", "Pós-incidente"],
+      "severity": "high"
+    },
+    {
+      "id": "PRI-006",
+      "question": "Como e com que frequencia a empresa realiza simulacros de incidentes e ransomware?",
+      "expected_document_any": ["Plano Resposta Incidentes"],
+      "expected_sections_any": ["7. Simulações, testes e exercícios"],
+      "keywords_expected": ["table-top", "semestral", "ransomware", "trimestre", "Red Team", "anual"],
+      "severity": "medium"
+    },
+    {
+      "id": "RH-002",
+      "question": "Quais documentos um colaborador deve assinar no onboarding da NovaData?",
+      "expected_document_any": ["Manual Colaborador"],
+      "expected_sections_any": ["3. Jornada de admissão, integração e desligamento"],
+      "keywords_expected": ["confidencialidade", "Código de Ética", "equipamentos", "segurança", "LGPD", "Uso Aceitável"],
+      "severity": "medium"
+    },
+    {
+      "id": "RH-003",
+      "question": "Como denunciar assedio, discriminacao ou conduta inadequada? E a protecao contra retaliaçao?",
+      "expected_document_any": ["Manual Colaborador", "Código Ética E Conduta"],
+      "expected_sections_any": ["6. Conduta e relacionamento", "9. Canal de Denúncias"],
+      "keywords_expected": ["Canal de Denúncias", "anonimato", "Comitê de Ética", "retaliações proibidas"],
+      "severity": "high"
+    },
+    {
+      "id": "RH-004",
+      "question": "Como o colaborador exerce seus direitos de titular de dados pessoais na empresa?",
+      "expected_document_any": ["Política Privacidade LGPD", "Manual Colaborador"],
+      "expected_sections_any": ["9. Direitos do titular e como exercê-los"],
+      "keywords_expected": ["dpo@novadatatech.br", "15 dias úteis", "LGPD", "formulário de privacidade"],
+      "severity": "high"
+    },
+    {
+      "id": "BKP-001",
+      "question": "Quais os RTO e RPO alvo para sistemas SaaS críticos e bases de clientes na NovaData?",
+      "expected_document_any": ["Política Backup Retenção"],
+      "expected_sections_any": ["3.2. RTO e RPO alvo"],
+      "keywords_expected": ["RTO ≤ 4h", "RPO ≤ 1h", "SaaS críticos"],
+      "severity": "high"
+    },
+    {
+      "id": "BKP-002",
+      "question": "Por quanto tempo a empresa retem documentos trabalhistas e de pessoal após desligamento?",
+      "expected_document_any": ["Política Backup Retenção", "Política Privacidade LGPD"],
+      "expected_sections_any": ["6. Matriz mínima de retenção"],
+      "keywords_expected": ["30 anos", "desligamento", "trabalhistas", "pessoal"],
+      "severity": "high"
+    },
+    {
+      "id": "BKP-003",
+      "question": "Com que frequencia sao testadas as restauracoes de backup e simulacoes de ransomware?",
+      "expected_document_any": ["Política Backup Retenção", "Plano Resposta Incidentes"],
+      "expected_sections_any": ["8. Testes de recuperação", "7. Simulações, testes e exercícios"],
+      "keywords_expected": ["semanal", "mensal", "trimestre", "2x por ano", "simulação ransomware"],
+      "severity": "high"
+    },
+    {
+      "id": "USO-001",
+      "question": "Posso compartilhar documentos confidenciais ou planilhas com dados financeiros/clientes por WhatsApp pessoal em caso de urgencia?",
+      "expected_document_any": ["Política Uso Aceitável", "Política Segurança Informação"],
+      "expected_sections_any": ["10. Uso de WhatsApp, Telegram e mensageiros pessoais"],
+      "keywords_expected": ["não devem ser compartilhados", "mensageiros pessoais não autorizados", "canais oficiais"],
+      "severity": "high"
+    },
+    {
+      "id": "USO-002",
+      "question": "Quais regras para instalacao de softwares e uso de IA generativa publica em notebooks corporativos?",
+      "expected_document_any": ["Política Uso Aceitável"],
+      "expected_sections_any": ["8. Uso de software e propriedade intelectual", "3. Dispositivos corporativos, home office e BYOD"],
+      "keywords_expected": ["catálogos aprovados", "validação TI", "ferramentas de IA", "aprovação gestor", "Segurança", "nunca envie dados sensíveis"],
+      "severity": "high"
+    },
+    {
+      "id": "CROSS-002",
+      "question": "Se eu descobrir uma vulnerabilidade grave em producao e suspeitar de vazamento de dados de clientes, quais documentos da empresa me dizem quem acionar e qual SLA?",
+      "expected_document_any": ["Plano Resposta Incidentes", "Política Segurança Informação", "Política Privacidade LGPD"],
+      "multi_document": true,
+      "severity": "high"
+    },
+    {
+      "id": "CROSS-003",
+      "question": "Um colaborador novo nao sabe como acessar o sistema, um colega oferece 'emprestar a senha para ele se virar rapido'. Quais documentos proibem explicitamente esse compartilhamento?",
+      "expected_document_any": ["Código Ética E Conduta", "Política Segurança Informação", "Política Controle Acesso"],
+      "multi_document": true,
+      "severity": "high"
     }
   ]
 }
