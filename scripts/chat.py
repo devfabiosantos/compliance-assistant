@@ -97,6 +97,13 @@ def main(question: str | None, env_file: str | None) -> None:
 
 
 def _print_answer_patched(answer, question: str) -> None:
+    lat = getattr(answer, "latency", None)
+    embed_ms = getattr(lat, "embedding_ms", None) if lat is not None else None
+    ret_ms = getattr(lat, "retrieval_ms", None) if lat is not None else None
+    busca_total_ms = None
+    if ret_ms is not None or embed_ms is not None:
+        busca_total_ms = (ret_ms or 0.0) + (embed_ms or 0.0)
+
     click.echo("=" * 72)
     click.echo("PERGUNTA")
     click.echo("-" * 72)
@@ -105,6 +112,9 @@ def _print_answer_patched(answer, question: str) -> None:
     click.echo("RESPOSTA")
     click.echo("-" * 72)
     click.echo(answer.text)
+    if getattr(answer, "insufficient_information", False):
+        click.echo("")
+        click.echo("[ATENCAO] Nao houve recuperacao suficiente nos documentos; esta e a resposta padrao.")
     click.echo("")
     click.echo("FONTES CONSULTADAS")
     click.echo("-" * 72)
@@ -113,7 +123,12 @@ def _print_answer_patched(answer, question: str) -> None:
     click.echo("METRICAS")
     click.echo("-" * 72)
     click.echo(f"  Modelo               : {answer.model}")
-    click.echo(f"  Tempo de busca  (ms) : {answer.retrieval_time_ms}")
+    if embed_ms is not None:
+        click.echo(f"  Tempo embed    (ms)  : {embed_ms:.1f}")
+    if busca_total_ms is not None:
+        click.echo(f"  Tempo de busca  (ms) : {busca_total_ms:.1f}")
+    else:
+        click.echo(f"  Tempo de busca  (ms) : {answer.retrieval_time_ms}")
     click.echo(f"  Tempo de geracao(ms) : {answer.generation_time_ms}")
     click.echo(f"  Tempo total    (ms)  : {answer.total_time_ms}")
     click.echo("")
