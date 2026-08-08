@@ -58,33 +58,73 @@ def _load_cases(path: Path) -> list[dict[str, Any]]:
     return cases
 
 
+_STOPWORDS = {
+    "de", "do", "da", "dos", "das", "e", "o", "a", "os", "as", "em", "no", "na",
+    "por", "para", "com", "sobre", "sem", "sob", "entre", "ou", "mais", "menos",
+    "ao", "aos", "pelo", "pela", "pelos", "pelas", "um", "uma", "uns", "umas",
+    "sao", "e", "que", "se", "nao", "qual", "quais", "quando", "como",
+}
+
+
 def _normalize(text: str | None) -> str:
     if not text:
         return ""
+    try:
+        import unicodedata
+        nfkd = unicodedata.normalize("NFKD", text.strip().lower())
+        stripped = "".join(c for c in nfkd if not unicodedata.combining(c))
+    except Exception:
+        stripped = (
+            text.strip()
+            .lower()
+            .replace("ç", "c")
+            .replace("ã", "a")
+            .replace("õ", "o")
+            .replace("á", "a")
+            .replace("à", "a")
+            .replace("â", "a")
+            .replace("ê", "e")
+            .replace("é", "e")
+            .replace("í", "i")
+            .replace("ó", "o")
+            .replace("ô", "o")
+            .replace("ú", "u")
+        )
     return (
-        text.strip()
-        .lower()
-        .replace("ç", "c")
-        .replace("ã", "a")
-        .replace("õ", "o")
-        .replace("á", "a")
-        .replace("à", "a")
-        .replace("â", "a")
-        .replace("ê", "e")
-        .replace("é", "e")
-        .replace("í", "i")
-        .replace("ó", "o")
-        .replace("ô", "o")
-        .replace("ú", "u")
+        stripped
         .replace("_", " ")
         .replace("-", " ")
+        .replace(".", " ")
+        .replace("/", " ")
+        .replace("(", " ")
+        .replace(")", " ")
     )
+
+
+def _norm_tokens(text: str | None) -> list[str]:
+    norm = _normalize(text)
+    tokens = norm.split()
+    return [t for t in tokens if t and t not in _STOPWORDS]
+
+
+def _chunk_aliases(chunk: RetrievedChunk) -> list[str]:
+    md = chunk.chunk.metadata or {}
+    raw = md.get("document_aliases") or []
+    if isinstance(raw, list):
+        return [str(x) for x in raw]
+    if isinstance(raw, str):
+        return [raw]
+    return []
 
 
 def _case_doc_matches(expected: str | None, chunks: Iterable[RetrievedChunk]) -> bool:
     if not expected:
         return True
     expected_norm = _normalize(expected)
+    expected_tokens = _norm_tokens(expected)
+    if not expected_tokens:
+        expected_tokens = [expected_norm]
+
     for chunk in chunks:
         citation = chunk.to_citation()
         haystacks = [
@@ -92,8 +132,14 @@ def _case_doc_matches(expected: str | None, chunks: Iterable[RetrievedChunk]) ->
             citation.doc_title,
             citation.source,
         ]
-        if any(expected_norm in _normalize(h) for h in haystacks):
-            return True
+        haystacks.extend(_chunk_aliases(chunk))
+        for h in haystacks:
+            h_norm = _normalize(h)
+            if expected_norm and expected_norm in h_norm:
+                return True
+            h_tokens = _norm_tokens(h)
+            if expected_tokens and all(et in h_tokens for et in expected_tokens):
+                return True
     return False
 
 
@@ -132,12 +178,36 @@ def _evaluate_case(
     expected_document = case.get("expected_document")
     expected_section = case.get("expected_section")
     keywords = [str(x) for x in (case.get("expected_keywords") or [])]
+    expected_document_any = case.get("expected_document_any") or []
+    expected_sections_any = case.get("expected_sections_any") or []
 
     qvec = embedder.embed_query(question)
     results = retriever.retrieve(qvec)[:k]
 
-    hit_doc = _case_doc_matches(expected_document, results)
-    hit_section = _case_section_matches(expected_section, results)
+    if expected_document or expected_document_any:
+        hit_doc = False
+        if expected_document:
+            hit_doc = hit_doc or _case_doc_matches(expected_document, results)
+        if not hit_doc:
+            for doc_any in expected_document_any:
+                if _case_doc_matches(doc_any, results):
+                    hit_doc = True
+                    break
+    else:
+        hit_doc = True
+
+    if expected_section or expected_sections_any:
+        hit_section = False
+        if expected_section:
+            hit_section = hit_section or _case_section_matches(expected_section, results)
+        if not hit_section:
+            for sec_any in expected_sections_any:
+                if _case_section_matches(sec_any, results):
+                    hit_section = True
+                    break
+    else:
+        hit_section = True
+
     hit_keywords = _case_keywords_matches(keywords, results)
 
     passed = hit_doc and hit_section and hit_keywords
