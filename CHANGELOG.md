@@ -7,6 +7,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/lang/pt-BR/
 
 ## [Unreleased]
 
+## [1.0.0] - 2026-08-08
+
+### Release Note Final — Entrega Challenge ONE (Oracle Next Education)
+
+Versão final do **Compliance Assistant** congelada para apresentação do Challenge ONE. Todas as funcionalidades planejadas em 6 sprints foram entregues:
+- **8 tags SemVer** (`v0.1.0` → `v1.0.0`) publicadas no repositório GitHub.
+- **3 prints reais (Figuras 1, 2, 3)** substituindo placeholders no README, com BUILD_TAG `v1.0.0` visível, chat com Incidente S0 respondido (SLA 1 hora / CISO + CTO) e Qualidade N1 100% DOC / SEC / KW em 48 casos.
+- **2 hot-fixes do Sprint 6.5:** `BUILD_TAG` agora resolvido por `env COMPLIANCE_BUILD_TAG` (fallback `v1.0.0` + Docker `ARG BUILD_TAG=v1.0.0`); parser do summary Nível 1 compatível com chaves antigas/novas (`document_accuracy` / `section_accuracy` / `keyword_recall`).
+- **19 testes pytest 19/19 PASS (QA 9 + 5 smoke Streamlit + casos extras).**
+- **Pipeline de deploy reproduzível 10 passos OCI Always Free (A1 Ampere 4 OCPU 24 GB).**
+- **Roteiro vídeo demo ONE de 5 minutos exato (9 blocos / 4min55s).**
+
+### Adicionado em `1.0.0`
+
+- `assets/screenshots/fig1_home.PNG`, `fig2_chat_incidente_s0.PNG`, `fig3_qualidade_n1_n2.PNG`: 3 telas reais da UI Streamlit BUILD_TAG v1.0.0.
+
+### Corrigido em `1.0.0`
+
+- **Hot-fix BUILD_TAG hard-coded:** `streamlit_app.py` linha 28 — removido valor `v0.4.0-rc1 · Sprint 4`, substituído por `_resolve_build_tag()` (env vars `COMPLIANCE_BUILD_TAG` / `BUILD_TAG`, fallback `v1.0.0`).
+- **Hot-fix parser Qualidade Nível 1:** chaves do summary `retrieval_report.json` — agora compatível com ambos formatos (`accuracy_document` legado e `document_accuracy` atual; idem Section e KW Recall).
+- **Dockerfile:** `ARG BUILD_TAG` default de `dev` → `v1.0.0` para `docker build` sem parâmetros já gerar imagem de release.
+
 ## [1.0.0-rc1] - 2026-08-09
 
 ### Release Note
