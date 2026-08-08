@@ -19,19 +19,19 @@ Documentos piloto para validar chunking, embeddings, indexação e recuperação
 
 ### Sprint 2 — Base documental completa
 
-Após validar a qualidade do RAG, produzir os demais documentos mantendo a mesma voz corporativa:
+Estes documentos compõem a base corporativa da NovaData Solutions, com cross-references consistentes entre si e com o Código de Ética e o Organograma:
 
-| Arquivo | Área | Páginas aproximadas |
-| --- | --- | --- |
-| `politica_seguranca_informacao.md` | TI / Segurança | ~12 |
-| `politica_privacidade_lgpd.md` | Jurídico / Compliance | ~12 |
-| `manual_colaborador.md` | RH | ~12 |
-| `politica_controle_acesso.md` | TI | ~10 |
-| `plano_resposta_incidentes.md` | Segurança / Operações | ~12 |
-| `politica_backup_retenção.md` | Infraestrutura | ~10 |
-| `politica_uso_aceitavel.md` | Governança / TI | ~10 |
+| Arquivo | Área | Versão | Aprovação | Próxima revisão |
+| --- | --- | --- | --- | --- |
+| `politica_seguranca_informacao.md` | TI / Segurança | 1.0 | CISO / Diretoria | 01/2027 |
+| `politica_privacidade_lgpd.md` | Jurídico / Compliance | 1.0 | Diretor Jurídico / DPO | 01/2027 |
+| `manual_colaborador.md` | RH | 1.0 | Diretor de Pessoas | 01/2027 |
+| `politica_controle_acesso.md` | TI | 1.0 | CTO / CISO | 01/2027 |
+| `plano_resposta_incidentes.md` | Segurança / Operações | 1.0 | CISO / CTO / DPO | 01/2027 |
+| `politica_backup_retenção.md` | Infraestrutura | 1.0 | CTO / Diretoria | 01/2027 |
+| `politica_uso_aceitavel.md` | Governança / TI | 1.0 | CISO / Compliance | 01/2027 |
 
-Total alvo (Sprint 1.5 + Sprint 2): **8 documentos + organograma** (~80–90 páginas, com qualidade e conectividade entre si).
+Total alvo (Sprint 1.5 + Sprint 2): **8 documentos corporativos + organograma** (~80–90 páginas de conteúdo denso, conectado e com rastreabilidade de regras).
 
 ## Diretrizes de escrita
 
