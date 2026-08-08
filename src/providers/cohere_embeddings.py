@@ -1,8 +1,17 @@
 from __future__ import annotations
 
-from typing import List, Optional, Sequence
+from typing import Iterable, List, Optional, Sequence
 
 from src.providers.base import EmbeddingProvider
+
+COHERE_EMBED_MAX_BATCH = 96
+
+
+def _iter_batches(items: Sequence[str], batch_size: int) -> Iterable[List[str]]:
+    total = len(items)
+    for start in range(0, total, batch_size):
+        end = min(start + batch_size, total)
+        yield list(items[start:end])
 
 
 def _extract_float_embeddings(response) -> List[List[float]]:
@@ -46,12 +55,15 @@ class CohereEmbeddingProvider(EmbeddingProvider):
     def embed_documents(self, texts: Sequence[str]) -> List[List[float]]:
         if not texts:
             return []
-        response = self._client.embed(
-            texts=list(texts),
-            model=self._model,
-            input_type="search_document",
-        )
-        return _extract_float_embeddings(response)
+        all_vecs: List[List[float]] = []
+        for batch in _iter_batches(texts, COHERE_EMBED_MAX_BATCH):
+            response = self._client.embed(
+                texts=batch,
+                model=self._model,
+                input_type="search_document",
+            )
+            all_vecs.extend(_extract_float_embeddings(response))
+        return all_vecs
 
     def embed_query(self, text: str) -> List[float]:
         response = self._client.embed(
