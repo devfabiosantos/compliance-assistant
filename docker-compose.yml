@@ -1,0 +1,41 @@
+services:
+  compliance-assistant:
+    container_name: compliance-assistant
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        BUILD_TAG: ${BUILD_TAG:-v0.5.0-rc1}
+    image: novadatatech/compliance-assistant:${BUILD_TAG:-v0.5.0-rc1}
+    restart: unless-stopped
+    ports:
+      - "8501:8501"
+    env_file:
+      - .env
+    environment:
+      - COMPLIANCE_BUILD_TAG=${BUILD_TAG:-v0.5.0-rc1}
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./data/vector_store:/app/data/vector_store:rw
+      - ./data/documents:/app/data/documents:ro
+      - ./evaluation/reports:/app/evaluation/reports:rw
+      - ./logs:/app/logs:rw
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://127.0.0.1:8501/_stcore/health"]
+      interval: 60s
+      timeout: 10s
+      start_period: 120s
+      retries: 5
+    mem_limit: 4g
+    mem_reservation: 2g
+    cpus: "2.0"
+    security_opt:
+      - no-new-privileges:true
+    read_only: false
+    networks:
+      - compliance-net
+
+networks:
+  compliance-net:
+    driver: bridge
+    name: compliance-net
