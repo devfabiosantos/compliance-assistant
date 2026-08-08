@@ -27,7 +27,7 @@
       "top_k_chunks": [
         {
           "rank": 1,
-          "score": 0.7892,
+          "score": 0.7893,
           "doc_id": "faq_anpd_principal.md/faq_anpd_principal",
           "doc_title": "Faq Anpd Principal",
           "page": null,
@@ -36,7 +36,7 @@
         },
         {
           "rank": 2,
-          "score": 0.6993,
+          "score": 0.6995,
           "doc_id": "lgpd_leil_13709_2018.md/lgpd_leil_13709_2018",
           "doc_title": "Lgpd Leil 13709 2018",
           "page": null,
@@ -45,7 +45,7 @@
         },
         {
           "rank": 3,
-          "score": 0.6978,
+          "score": 0.6979,
           "doc_id": "faq_anpd_principal.md/faq_anpd_principal",
           "doc_title": "Faq Anpd Principal",
           "page": null,
@@ -54,7 +54,7 @@
         },
         {
           "rank": 4,
-          "score": 0.6793,
+          "score": 0.6794,
           "doc_id": "lgpd_leil_13709_2018.md/lgpd_leil_13709_2018",
           "doc_title": "Lgpd Leil 13709 2018",
           "page": null,
@@ -63,7 +63,7 @@
         },
         {
           "rank": 5,
-          "score": 0.6557,
+          "score": 0.6558,
           "doc_id": "politica_privacidade_lgpd.md/politica_privacidade_lgpd",
           "doc_title": "Politica Privacidade Lgpd",
           "page": null,
@@ -86,7 +86,7 @@
       "top_k_chunks": [
         {
           "rank": 1,
-          "score": 0.7059,
+          "score": 0.7058,
           "doc_id": "faq_anpd_principal.md/faq_anpd_principal",
           "doc_title": "Faq Anpd Principal",
           "page": null,
@@ -95,7 +95,7 @@
         },
         {
           "rank": 2,
-          "score": 0.633,
+          "score": 0.6329,
           "doc_id": "lgpd_leil_13709_2018.md/lgpd_leil_13709_2018",
           "doc_title": "Lgpd Leil 13709 2018",
           "page": null,
@@ -113,7 +113,7 @@
         },
         {
           "rank": 4,
-          "score": 0.5735,
+          "score": 0.5733,
           "doc_id": "faq_anpd_principal.md/faq_anpd_principal",
           "doc_title": "Faq Anpd Principal",
           "page": null,
@@ -122,7 +122,7 @@
         },
         {
           "rank": 5,
-          "score": 0.5638,
+          "score": 0.5636,
           "doc_id": "lgpd_leil_13709_2018.md/lgpd_leil_13709_2018",
           "doc_title": "Lgpd Leil 13709 2018",
           "page": null,
@@ -263,7 +263,7 @@
       "top_k_chunks": [
         {
           "rank": 1,
-          "score": 0.7948,
+          "score": 0.7947,
           "doc_id": "faq_anpd_principal.md/faq_anpd_principal",
           "doc_title": "Faq Anpd Principal",
           "page": null,
@@ -272,7 +272,7 @@
         },
         {
           "rank": 2,
-          "score": 0.7795,
+          "score": 0.7796,
           "doc_id": "plano_resposta_incidentes.md/plano_resposta_incidentes",
           "doc_title": "Plano Resposta Incidentes",
           "page": null,
@@ -281,7 +281,7 @@
         },
         {
           "rank": 3,
-          "score": 0.7129,
+          "score": 0.7132,
           "doc_id": "guia_anpd_metodos_aplicacao.md/guia_anpd_metodos_aplicacao",
           "doc_title": "Guia Anpd Metodos Aplicacao",
           "page": null,
@@ -299,7 +299,7 @@
         },
         {
           "rank": 5,
-          "score": 0.6101,
+          "score": 0.6104,
           "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
           "doc_title": "Codigo Etica Conduta",
           "page": null,
@@ -322,7 +322,7 @@
       "top_k_chunks": [
         {
           "rank": 1,
-          "score": 0.6818,
+          "score": 0.682,
           "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
           "doc_title": "Codigo Etica Conduta",
           "page": null,
@@ -331,7 +331,7 @@
         },
         {
           "rank": 2,
-          "score": 0.6137,
+          "score": 0.6139,
           "doc_id": "politica_controle_acesso.md/politica_controle_acesso",
           "doc_title": "Politica Controle Acesso",
           "page": null,
@@ -340,7 +340,7 @@
         },
         {
           "rank": 3,
-          "score": 0.5906,
+          "score": 0.5909,
           "doc_id": "politica_seguranca_informacao.md/politica_seguranca_informacao",
           "doc_title": "Politica Seguranca Informacao",
           "page": null,
@@ -349,7 +349,7 @@
         },
         {
           "rank": 4,
-          "score": 0.574,
+          "score": 0.5742,
           "doc_id": "politica_privacidade_lgpd.md/politica_privacidade_lgpd",
           "doc_title": "Politica Privacidade Lgpd",
           "page": null,
@@ -440,7 +440,7 @@
       "top_k_chunks": [
         {
           "rank": 1,
-          "score": 0.5739,
+          "score": 0.5736,
           "doc_id": "politica_seguranca_informacao.md/politica_seguranca_informacao",
           "doc_title": "Politica Seguranca Informacao",
           "page": null,
@@ -449,16 +449,7 @@
         },
         {
           "rank": 2,
-          "score": 0.5599,
-          "doc_id": "politica_uso_aceitavel.md/politica_uso_aceitavel",
-          "doc_title": "Politica Uso Aceitavel",
-          "page": null,
-          "section": "3.2. Uso de dispositivo pessoal (BYOD)",
-          "snippet": "### 3.2. Uso de dispositivo pessoal (BYOD)\n- Acesso a sistemas corporativos em equipamentos pessoais só é permitido após aceite de termos específicos e apenas por meio de VPN, SSO aprovado e, quando aplicável, através de soluções de acesso "
-        },
-        {
-          "rank": 3,
-          "score": 0.5599,
+          "score": 0.5602,
           "doc_id": "politica_privacidade_lgpd.md/politica_privacidade_lgpd",
           "doc_title": "Politica Privacidade Lgpd",
           "page": null,
@@ -466,8 +457,17 @@
           "snippet": "---\n\n## 7. Compartilhamento interno e com terceiros\n\n### 7.1. Interno\nDados pessoais são compartilhados internamente apenas com colaboradores cujas funções exijam acesso, sempre observando o princípio da necessidade e a **Política de Contro"
         },
         {
+          "rank": 3,
+          "score": 0.5598,
+          "doc_id": "politica_uso_aceitavel.md/politica_uso_aceitavel",
+          "doc_title": "Politica Uso Aceitavel",
+          "page": null,
+          "section": "3.2. Uso de dispositivo pessoal (BYOD)",
+          "snippet": "### 3.2. Uso de dispositivo pessoal (BYOD)\n- Acesso a sistemas corporativos em equipamentos pessoais só é permitido após aceite de termos específicos e apenas por meio de VPN, SSO aprovado e, quando aplicável, através de soluções de acesso "
+        },
+        {
           "rank": 4,
-          "score": 0.5563,
+          "score": 0.556,
           "doc_id": "politica_controle_acesso.md/politica_controle_acesso",
           "doc_title": "Politica Controle Acesso",
           "page": null,
@@ -476,7 +476,7 @@
         },
         {
           "rank": 5,
-          "score": 0.5532,
+          "score": 0.5533,
           "doc_id": "politica_controle_acesso.md/politica_controle_acesso",
           "doc_title": "Politica Controle Acesso",
           "page": null,
@@ -835,7 +835,7 @@
       "top_k_chunks": [
         {
           "rank": 1,
-          "score": 0.6669,
+          "score": 0.6668,
           "doc_id": "organograma.md/organograma",
           "doc_title": "Organograma",
           "page": null,
@@ -844,7 +844,7 @@
         },
         {
           "rank": 2,
-          "score": 0.616,
+          "score": 0.6161,
           "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
           "doc_title": "Codigo Etica Conduta",
           "page": null,
@@ -853,7 +853,7 @@
         },
         {
           "rank": 3,
-          "score": 0.5937,
+          "score": 0.5939,
           "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
           "doc_title": "Codigo Etica Conduta",
           "page": null,
@@ -862,7 +862,7 @@
         },
         {
           "rank": 4,
-          "score": 0.5813,
+          "score": 0.5814,
           "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
           "doc_title": "Codigo Etica Conduta",
           "page": null,
@@ -871,12 +871,12 @@
         },
         {
           "rank": 5,
-          "score": 0.5679,
-          "doc_id": "organograma.md/organograma",
-          "doc_title": "Organograma",
+          "score": 0.568,
+          "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
+          "doc_title": "Codigo Etica Conduta",
           "page": null,
-          "section": "2.7. Diretoria Jurídica (Diretor Jurídico)",
-          "snippet": "### 2.7. Diretoria Jurídica (Diretor Jurídico)\n\n- Assessora juridicamente a empresa em contratos, litígios, propriedade intelectual, regulatório e societário.\n- Coordena o **Comitê de Ética**, o **Compliance** e a atuação do **DPO**.\n- Repr"
+          "section": "8. Prevenção à Lavagem de Dinheiro e à Corrupção",
+          "snippet": "**7.3. Dever de comunicação.** Todo caso suspeito ou efetivo de conflito de interesses deve ser comunicado imediatamente ao Comitê de Ética ou à Diretoria Jurídica, que decidirá sobre o procedimento adequado (afastamento cautelar do process"
         }
       ]
     },
@@ -894,7 +894,7 @@
       "top_k_chunks": [
         {
           "rank": 1,
-          "score": 0.6993,
+          "score": 0.6997,
           "doc_id": "politica_privacidade_lgpd.md/politica_privacidade_lgpd",
           "doc_title": "Politica Privacidade Lgpd",
           "page": null,
@@ -903,7 +903,7 @@
         },
         {
           "rank": 2,
-          "score": 0.6739,
+          "score": 0.6743,
           "doc_id": "plano_resposta_incidentes.md/plano_resposta_incidentes",
           "doc_title": "Plano Resposta Incidentes",
           "page": null,
@@ -912,7 +912,7 @@
         },
         {
           "rank": 3,
-          "score": 0.6714,
+          "score": 0.6715,
           "doc_id": "politica_backup_retenção.md/politica_backup_retenção",
           "doc_title": "Politica Backup Retenção",
           "page": null,
@@ -921,7 +921,7 @@
         },
         {
           "rank": 4,
-          "score": 0.6688,
+          "score": 0.6694,
           "doc_id": "plano_resposta_incidentes.md/plano_resposta_incidentes",
           "doc_title": "Plano Resposta Incidentes",
           "page": null,
@@ -930,7 +930,7 @@
         },
         {
           "rank": 5,
-          "score": 0.6619,
+          "score": 0.6621,
           "doc_id": "organograma.md/organograma",
           "doc_title": "Organograma",
           "page": null,
@@ -953,7 +953,7 @@
       "top_k_chunks": [
         {
           "rank": 1,
-          "score": 0.6768,
+          "score": 0.6767,
           "doc_id": "organograma.md/organograma",
           "doc_title": "Organograma",
           "page": null,
@@ -962,7 +962,7 @@
         },
         {
           "rank": 2,
-          "score": 0.6698,
+          "score": 0.6696,
           "doc_id": "faq_anpd_principal.md/faq_anpd_principal",
           "doc_title": "Faq Anpd Principal",
           "page": null,
@@ -971,7 +971,7 @@
         },
         {
           "rank": 3,
-          "score": 0.5957,
+          "score": 0.5956,
           "doc_id": "organograma.md/organograma",
           "doc_title": "Organograma",
           "page": null,
@@ -980,7 +980,7 @@
         },
         {
           "rank": 4,
-          "score": 0.5948,
+          "score": 0.5949,
           "doc_id": "politica_backup_retenção.md/politica_backup_retenção",
           "doc_title": "Politica Backup Retenção",
           "page": null,
@@ -989,7 +989,7 @@
         },
         {
           "rank": 5,
-          "score": 0.5903,
+          "score": 0.5902,
           "doc_id": "faq_anpd_principal.md/faq_anpd_principal",
           "doc_title": "Faq Anpd Principal",
           "page": null,
@@ -1071,7 +1071,7 @@
       "top_k_chunks": [
         {
           "rank": 1,
-          "score": 0.639,
+          "score": 0.6394,
           "doc_id": "plano_resposta_incidentes.md/plano_resposta_incidentes",
           "doc_title": "Plano Resposta Incidentes",
           "page": null,
@@ -1080,7 +1080,7 @@
         },
         {
           "rank": 2,
-          "score": 0.6313,
+          "score": 0.6317,
           "doc_id": "faq_anpd_principal.md/faq_anpd_principal",
           "doc_title": "Faq Anpd Principal",
           "page": null,
@@ -1089,7 +1089,7 @@
         },
         {
           "rank": 3,
-          "score": 0.6166,
+          "score": 0.6169,
           "doc_id": "politica_seguranca_informacao.md/politica_seguranca_informacao",
           "doc_title": "Politica Seguranca Informacao",
           "page": null,
@@ -1098,7 +1098,7 @@
         },
         {
           "rank": 4,
-          "score": 0.6157,
+          "score": 0.616,
           "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
           "doc_title": "Codigo Etica Conduta",
           "page": null,
@@ -1107,7 +1107,7 @@
         },
         {
           "rank": 5,
-          "score": 0.6089,
+          "score": 0.6092,
           "doc_id": "lgpd_leil_13709_2018.md/lgpd_leil_13709_2018",
           "doc_title": "Lgpd Leil 13709 2018",
           "page": null,
@@ -1484,7 +1484,7 @@
       "top_k_chunks": [
         {
           "rank": 1,
-          "score": 0.7481,
+          "score": 0.7477,
           "doc_id": "guia_anpd_metodos_aplicacao.md/guia_anpd_metodos_aplicacao",
           "doc_title": "Guia Anpd Metodos Aplicacao",
           "page": null,
@@ -1493,7 +1493,7 @@
         },
         {
           "rank": 2,
-          "score": 0.6718,
+          "score": 0.6716,
           "doc_id": "guia_anpd_metodos_aplicacao.md/guia_anpd_metodos_aplicacao",
           "doc_title": "Guia Anpd Metodos Aplicacao",
           "page": null,
@@ -1502,7 +1502,7 @@
         },
         {
           "rank": 3,
-          "score": 0.6223,
+          "score": 0.6222,
           "doc_id": "guia_anpd_metodos_aplicacao.md/guia_anpd_metodos_aplicacao",
           "doc_title": "Guia Anpd Metodos Aplicacao",
           "page": null,
@@ -1520,7 +1520,7 @@
         },
         {
           "rank": 5,
-          "score": 0.597,
+          "score": 0.5967,
           "doc_id": "guia_anpd_metodos_aplicacao.md/guia_anpd_metodos_aplicacao",
           "doc_title": "Guia Anpd Metodos Aplicacao",
           "page": null,
@@ -1611,7 +1611,7 @@
         },
         {
           "rank": 2,
-          "score": 0.6296,
+          "score": 0.6297,
           "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
           "doc_title": "Codigo Etica Conduta",
           "page": null,
@@ -1620,7 +1620,7 @@
         },
         {
           "rank": 3,
-          "score": 0.6216,
+          "score": 0.6215,
           "doc_id": "politica_privacidade_lgpd.md/politica_privacidade_lgpd",
           "doc_title": "Politica Privacidade Lgpd",
           "page": null,
@@ -1638,7 +1638,7 @@
         },
         {
           "rank": 5,
-          "score": 0.6126,
+          "score": 0.6125,
           "doc_id": "politica_privacidade_lgpd.md/politica_privacidade_lgpd",
           "doc_title": "Politica Privacidade Lgpd",
           "page": null,
@@ -1661,7 +1661,7 @@
       "top_k_chunks": [
         {
           "rank": 1,
-          "score": 0.664,
+          "score": 0.6635,
           "doc_id": "politica_seguranca_informacao.md/politica_seguranca_informacao",
           "doc_title": "Politica Seguranca Informacao",
           "page": null,
@@ -1670,7 +1670,7 @@
         },
         {
           "rank": 2,
-          "score": 0.6537,
+          "score": 0.6545,
           "doc_id": "politica_controle_acesso.md/politica_controle_acesso",
           "doc_title": "Politica Controle Acesso",
           "page": null,
@@ -1679,7 +1679,7 @@
         },
         {
           "rank": 3,
-          "score": 0.6493,
+          "score": 0.6502,
           "doc_id": "politica_privacidade_lgpd.md/politica_privacidade_lgpd",
           "doc_title": "Politica Privacidade Lgpd",
           "page": null,
@@ -1688,7 +1688,7 @@
         },
         {
           "rank": 4,
-          "score": 0.6468,
+          "score": 0.6473,
           "doc_id": "manual_colaborador.md/manual_colaborador",
           "doc_title": "Manual Colaborador",
           "page": null,
@@ -1697,7 +1697,7 @@
         },
         {
           "rank": 5,
-          "score": 0.6351,
+          "score": 0.6357,
           "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
           "doc_title": "Codigo Etica Conduta",
           "page": null,
@@ -1779,7 +1779,7 @@
       "top_k_chunks": [
         {
           "rank": 1,
-          "score": 0.692,
+          "score": 0.6923,
           "doc_id": "politica_controle_acesso.md/politica_controle_acesso",
           "doc_title": "Politica Controle Acesso",
           "page": null,
@@ -1788,7 +1788,7 @@
         },
         {
           "rank": 2,
-          "score": 0.6152,
+          "score": 0.6154,
           "doc_id": "politica_seguranca_informacao.md/politica_seguranca_informacao",
           "doc_title": "Politica Seguranca Informacao",
           "page": null,
@@ -1797,7 +1797,7 @@
         },
         {
           "rank": 3,
-          "score": 0.5908,
+          "score": 0.5911,
           "doc_id": "manual_colaborador.md/manual_colaborador",
           "doc_title": "Manual Colaborador",
           "page": null,
@@ -1806,7 +1806,7 @@
         },
         {
           "rank": 4,
-          "score": 0.5859,
+          "score": 0.586,
           "doc_id": "plano_resposta_incidentes.md/plano_resposta_incidentes",
           "doc_title": "Plano Resposta Incidentes",
           "page": null,
@@ -1815,7 +1815,7 @@
         },
         {
           "rank": 5,
-          "score": 0.5732,
+          "score": 0.5731,
           "doc_id": "politica_controle_acesso.md/politica_controle_acesso",
           "doc_title": "Politica Controle Acesso",
           "page": null,
@@ -2074,7 +2074,7 @@
       "top_k_chunks": [
         {
           "rank": 1,
-          "score": 0.8396,
+          "score": 0.8394,
           "doc_id": "faq_anpd_principal.md/faq_anpd_principal",
           "doc_title": "Faq Anpd Principal",
           "page": null,
@@ -2083,7 +2083,7 @@
         },
         {
           "rank": 2,
-          "score": 0.795,
+          "score": 0.7948,
           "doc_id": "plano_resposta_incidentes.md/plano_resposta_incidentes",
           "doc_title": "Plano Resposta Incidentes",
           "page": null,
@@ -2092,7 +2092,7 @@
         },
         {
           "rank": 3,
-          "score": 0.7195,
+          "score": 0.7191,
           "doc_id": "guia_anpd_metodos_aplicacao.md/guia_anpd_metodos_aplicacao",
           "doc_title": "Guia Anpd Metodos Aplicacao",
           "page": null,
@@ -2101,7 +2101,7 @@
         },
         {
           "rank": 4,
-          "score": 0.6456,
+          "score": 0.6459,
           "doc_id": "guia_anpd_metodos_aplicacao.md/guia_anpd_metodos_aplicacao",
           "doc_title": "Guia Anpd Metodos Aplicacao",
           "page": null,
@@ -2110,7 +2110,7 @@
         },
         {
           "rank": 5,
-          "score": 0.6388,
+          "score": 0.6389,
           "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
           "doc_title": "Codigo Etica Conduta",
           "page": null,
@@ -2151,7 +2151,7 @@
         },
         {
           "rank": 3,
-          "score": 0.684,
+          "score": 0.6838,
           "doc_id": "politica_privacidade_lgpd.md/politica_privacidade_lgpd",
           "doc_title": "Politica Privacidade Lgpd",
           "page": null,
@@ -2428,7 +2428,7 @@
       "top_k_chunks": [
         {
           "rank": 1,
-          "score": 0.7042,
+          "score": 0.7036,
           "doc_id": "politica_backup_retenção.md/politica_backup_retenção",
           "doc_title": "Politica Backup Retenção",
           "page": null,
@@ -2437,7 +2437,7 @@
         },
         {
           "rank": 2,
-          "score": 0.636,
+          "score": 0.6373,
           "doc_id": "politica_privacidade_lgpd.md/politica_privacidade_lgpd",
           "doc_title": "Politica Privacidade Lgpd",
           "page": null,
@@ -2446,7 +2446,7 @@
         },
         {
           "rank": 3,
-          "score": 0.6247,
+          "score": 0.6253,
           "doc_id": "politica_backup_retenção.md/politica_backup_retenção",
           "doc_title": "Politica Backup Retenção",
           "page": null,
@@ -2455,7 +2455,7 @@
         },
         {
           "rank": 4,
-          "score": 0.6239,
+          "score": 0.6246,
           "doc_id": "politica_privacidade_lgpd.md/politica_privacidade_lgpd",
           "doc_title": "Politica Privacidade Lgpd",
           "page": null,
@@ -2464,7 +2464,7 @@
         },
         {
           "rank": 5,
-          "score": 0.6175,
+          "score": 0.6183,
           "doc_id": "politica_controle_acesso.md/politica_controle_acesso",
           "doc_title": "Politica Controle Acesso",
           "page": null,
@@ -2605,7 +2605,7 @@
       "top_k_chunks": [
         {
           "rank": 1,
-          "score": 0.6675,
+          "score": 0.6678,
           "doc_id": "politica_uso_aceitavel.md/politica_uso_aceitavel",
           "doc_title": "Politica Uso Aceitavel",
           "page": null,
@@ -2614,7 +2614,7 @@
         },
         {
           "rank": 2,
-          "score": 0.6386,
+          "score": 0.6391,
           "doc_id": "codigo_etica_conduta.md/codigo_etica_conduta",
           "doc_title": "Codigo Etica Conduta",
           "page": null,
@@ -2623,7 +2623,7 @@
         },
         {
           "rank": 3,
-          "score": 0.5935,
+          "score": 0.5934,
           "doc_id": "politica_uso_aceitavel.md/politica_uso_aceitavel",
           "doc_title": "Politica Uso Aceitavel",
           "page": null,
@@ -2641,7 +2641,7 @@
         },
         {
           "rank": 5,
-          "score": 0.572,
+          "score": 0.5722,
           "doc_id": "politica_uso_aceitavel.md/politica_uso_aceitavel",
           "doc_title": "Politica Uso Aceitavel",
           "page": null,
@@ -2732,7 +2732,7 @@
         },
         {
           "rank": 2,
-          "score": 0.6181,
+          "score": 0.6179,
           "doc_id": "plano_resposta_incidentes.md/plano_resposta_incidentes",
           "doc_title": "Plano Resposta Incidentes",
           "page": null,
@@ -2741,7 +2741,7 @@
         },
         {
           "rank": 3,
-          "score": 0.6156,
+          "score": 0.6158,
           "doc_id": "plano_resposta_incidentes.md/plano_resposta_incidentes",
           "doc_title": "Plano Resposta Incidentes",
           "page": null,
@@ -2750,7 +2750,7 @@
         },
         {
           "rank": 4,
-          "score": 0.6093,
+          "score": 0.6091,
           "doc_id": "politica_backup_retenção.md/politica_backup_retenção",
           "doc_title": "Politica Backup Retenção",
           "page": null,
@@ -2759,7 +2759,7 @@
         },
         {
           "rank": 5,
-          "score": 0.5994,
+          "score": 0.5996,
           "doc_id": "politica_seguranca_informacao.md/politica_seguranca_informacao",
           "doc_title": "Politica Seguranca Informacao",
           "page": null,
