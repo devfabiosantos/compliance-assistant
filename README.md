@@ -1,8 +1,20 @@
-# Compliance Assistant
+<div align="center">
+  <h1>Compliance Assistant</h1>
+  <p><strong>Enterprise AI Assistant for LGPD Compliance and Corporate Knowledge Retrieval</strong></p>
 
-> Enterprise AI Assistant for LGPD Compliance and Corporate Knowledge Retrieval
+  <a href="https://compliance-assistant-novadata.onrender.com" target="_blank">
+    <img src="https://img.shields.io/badge/%F0%9F%9A%80_Deploy_AO_VIVO_-_Clique_Aqui_para_Testar_%28Banca_ONE%29-46E3B7?style=for-the-badge&logo=render&logoColor=white&labelColor=0f172a" alt="Link Público ONE - Aplicação Live">
+  </a>
+  <br>
+  <a href="https://github.com/devfabiosantos/compliance-assistant/releases/tag/v1.0.1">
+    <img src="https://img.shields.io/badge/Release-v1.0.1-%236366f1?style=for-the-badge&logo=semver&logoColor=white" alt="Release v1.0.1 ONE">
+  </a>
+  <img src="https://img.shields.io/badge/Tests-19%2F19_PASS-brightgreen?style=for-the-badge&logo=pytest&logoColor=white" alt="Testes pytest">
+  <img src="https://img.shields.io/badge/Qualidade_N1-DOC_%E2%89%A592%25__SEC_%E2%89%A590%25__KW_%E2%89%A598%25-22c55e?style=for-the-badge" alt="Qualidade N1 metas internas ONE">
+  <img src="https://img.shields.io/badge/License-MIT-3b82f6?style=for-the-badge&logo=opensourceinitiative&logoColor=white" alt="Licença MIT">
+</div>
 
-Produto corporativo da **NovaData Solutions** que capacita colaboradores a consultar políticas internas, normas de segurança e documentos oficiais da LGPD por meio de linguagem natural, com rastreabilidade completa sobre a origem de cada resposta.
+> Produto corporativo da **NovaData Solutions** que capacita colaboradores a consultar políticas internas, normas de segurança e documentos oficiais da LGPD por meio de linguagem natural, com rastreabilidade completa sobre a origem de cada resposta.
 
 ---
 
@@ -157,6 +169,25 @@ flowchart TB
 | Testes | pytest 8+ (14 testes: 9 QA + 5 Streamlit smoke) |
 | Versionamento | Git + Conventional Commits + tags SemVer (`v0.1.0`..`v0.5.0-rc1`) |
 | Licença | MIT |
+
+---
+
+## 🧪 Perguntas recomendadas para demonstração (Banca ONE)
+
+Abaixo 10 perguntas preparadas para explorar toda a base documental (12 documentos: 3 oficiais LGPD/ANPD + 9 corporativos NovaData Solutions). Clique no link público acima e cole diretamente na aba **💬 Compliance Assistant**:
+
+| # | Pergunta (copie e cole) | Categoria | Fontes esperadas |
+|---|---|---|---|
+| 1 | O que a LGPD considera dado pessoal sensível? Cite 2 exemplos práticos. | 📜 Oficial LGPD | Lei 13.709/2018 (LGPD) Art. 5º, XXXIX |
+| 2 | Posso compartilhar o CPF de um cliente pelo WhatsApp corporativo do setor comercial? Justifique. | ⚖️ Ética + LGPD | Código de Ética NovaData + LGPD Art. 7º + Política de Segurança |
+| 3 | Quem na NovaData Solutions tem **permissão** para acessar dados financeiros confidenciais da empresa? | 🏢 Governança Interna | Política de Controle de Acesso + Organograma (CFO / DFO / Diretoria Financeira) |
+| 4 | O que devo fazer em caso de **incidente de segurança S0 (crítico)** com dados pessoais? Qual o SLA máximo e quem aciono primeiro? | 🚨 Playbook Segurança | Plano de Resposta a Incidentes (PRI) — SLA 1 hora → CISO + CTO + DPO |
+| 5 | Explique o que é a ANPD e qual sua função principal no ecossistema LGPD. | 🏛️ Órgão Regulador | Guia ANPD — Métodos de Aplicação + FAQ ANPD oficial |
+| 6 | Quais são os **4 pilares** do Código de Ética e Conduta da NovaData Solutions? | 💼 Cultura / RH | Código de Ética e Conduta (interno) |
+| 7 | Como um titular de dados pode solicitar **acesso aos seus dados pessoais** (direito do titular LGPD) na NovaData? Quem é o ponto de contato? | 🛡️ Direitos Titular | LGPD Capítulo III (Arts. 17–22) + DPO + Processo Interno RH/Compliance |
+| 8 | Quais os **3 tipos principais** de tratamento de dados pessoais que a NovaData Solutions realiza? Cite 1 exemplo de cada. | 📊 Inventário DPIA | Política de Privacidade Interna + Inventário de Ativos de Dados |
+| 9 | O que é DPIA (Avaliação de Impacto de Privacidade) e **quando ela é obrigatória** segundo a ANPD? | 🔍 Governança ANPD | FAQ ANPD + Política de Privacidade + LGPD Art. 38. |
+| 10 | Me explique em 3 frases a **arquitetura de IA RAG** utilizada neste produto Compliance Assistant (provedores, vector store, avaliação 2 níveis). | 🤖 Arquitetura Produto | Documentação `docs/adr/` + README Arquitetura Mermaid |
 
 ---
 
@@ -441,6 +472,20 @@ Ao final:
 ## Avaliação da qualidade do RAG (Nível 1 + Nível 2)
 
 A qualidade é medida em **dois níveis**, para debugarmos por componente (primeiro garante retrieval, depois mede qualidade da resposta).
+
+### 🧮 Significado das métricas de avaliação (para avaliador ONE)
+
+| Nível | Sigla | Nome completo | Meta | Explicação simples para a banca |
+|---|---|---|---|---|
+| **N1 Retrieval** | **DOC%** | Document Accuracy (%) | **≥ 92%** | Quantos % das respostas apontam o **documento correto** (ex: LGPD, ANPD, Código de Ética, etc). 100% = sempre acerta a fonte ideal. |
+| **N1 Retrieval** | **SEC%** | Section Accuracy (%) | **≥ 90%** | Dentro do documento correto, quantos % apontam a **seção / chunk exato** onde está a resposta (prova de que o RAG não pegou documento aleatório). |
+| **N1 Retrieval** | **KW%** | Keyword Recall (%) | **≥ 98%** | Das palavras-chave obrigatórias esperadas na resposta (ex: “consentimento”, “controlador”, “ANPD”), quantas % o sistema realmente recuperou dos documentos. |
+| **N2 QA Anti-Hallucination** | **F** | Faithfulness (%) | ≥ 90% | A resposta gerada pelo LLM é **100% baseada nos chunks recuperados**? 100% = o assistente **NUNCA inventa fatos (anti-hallucination)**. |
+| **N2 QA Recall** | **CR** | Context Recall (%) | ≥ 85% | De toda a informação relevante que existia nos documentos para responder, quanto % o LLM realmente **utilizou** na resposta final. |
+| **N2 QA Citations** | **CP** | Citation Precision (%) | ≥ 85% | Das citações (números de fontes no final da resposta), quantas % são **verdadeiramente relevantes** para o que foi respondido. |
+| **N2 QA Citations** | **CRec** | Citation Recall (%) | ≥ 80% | De TODAS as fontes que deveriam ser mencionadas para aquela pergunta, quantas % o sistema **realmente citou**. |
+
+> **Fonte técnica:** runners em `evaluation/evaluate_retrieval.py` (N1) e `evaluation/evaluate_qa_level2.py` (N2), com reports JSON em `evaluation/reports/`.
 
 ### Nível 1 — Retrieval (48/48 PASS em v0.5.0-rc1)
 
