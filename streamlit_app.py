@@ -99,6 +99,30 @@ def _load_json_report(path: Path) -> dict:
 
 
 def page_home() -> None:
+    st.markdown(
+        """
+        <div style="margin-bottom: 24px; padding: 16px 24px; border-radius: 12px; background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #059669 100%); color: white; display: flex; align-items: center; gap: 20px;">
+          <div style="width: 56px; height: 56px; border-radius: 12px; background: rgba(255,255,255,0.1); display: grid; place-items: center; flex-shrink: 0;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <path d="m9 12 2 2 4-4"/>
+            </svg>
+          </div>
+          <div>
+            <h2 style="margin: 0; font-size: 22px; font-weight: 800; color: white; letter-spacing: 0.3px;">
+              NovaData Solutions
+            </h2>
+            <p style="margin: 4px 0 0; font-size: 13px; color: #cbd5e1; opacity: 0.95;">
+              Governanca de Dados · Privacidade LGPD · IA Corporativa Auditavel
+            </p>
+          </div>
+          <div style="margin-left: auto; font-size: 12px; color: #e2e8f0; background: rgba(255,255,255,0.12); padding: 6px 14px; border-radius: 999px; font-weight: 600;">
+            🔒 100% Baseado em Fontes
+          </div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
     st.title(f"{COMPANY} · {APP_TITLE}")
     st.caption(APP_SUBTITLE)
     st.caption(f"Versão: **{BUILD_TAG}**  ·  Stack: **{STACK}**")

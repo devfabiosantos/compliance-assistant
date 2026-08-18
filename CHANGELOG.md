@@ -7,6 +7,32 @@ and this project adheres to [Semantic Versioning](https://semver.org/lang/pt-BR/
 
 ## [Unreleased]
 
+## [1.0.1] - 2026-08-18
+
+### Hot-fix de Deploy para Render.com (Entrega Banca ONE)
+
+Deploy de produção real para link público HTTPS (`https://compliance-assistant-novadata.onrender.com`)
+para a banca avaliadora do Challenge ONE, após bloqueios de egress na OCI Always Free.
+
+### Adicionado em `1.0.1`
+
+- `scripts/entrypoint.sh` (NOVO): Entrypoint Docker robusto que **cria o índice FAISS automaticamente**
+  na primeira inicialização do container, caso `data/vector_store/index.faiss` não exista.
+  Valida `COHERE_API_KEY` antes de indexar, evitando erro "Índice vetorial não encontrado" em plataformas
+  PaaS como Render (onde o .gitignore remove os artefatos locais de vector store).
+- Header de marca **NovaData Solutions** na Home da UI Streamlit: banner SVG inline com gradiente azul/verde
+  (cores LGPD/compliance) e texto "Governança de Dados · Privacidade LGPD · IA Corporativa Auditável",
+  criando identidade visual profissional antes mesmo do título (antes só aparecia o nome da empresa
+  como string em st.title).
+
+### Alterado em `1.0.1`
+
+- `Dockerfile`:
+  - `CMD` de `streamlit run ...` → agora usa `/app/scripts/entrypoint.sh` para garantir indexação automática.
+  - `HEALTHCHECK --start-period`: aumentado de `90s` → `180s` para acomodar a primeira indexação de 198 chunks (~30-60s).
+  - Adicionado `RUN mkdir -p /app/data/vector_store /app/data/logs` + `chmod 777` para plataformas com filesystem somente escrita em pastas específicas.
+- `pyproject.toml`: bump versão `1.0.0` → `1.0.1` (hotfix semântico de deploy, sem mudanças de API).
+
 ## [1.0.0] - 2026-08-08
 
 ### Release Note Final — Entrega Challenge ONE (Oracle Next Education)

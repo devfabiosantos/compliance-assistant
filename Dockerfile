@@ -24,18 +24,16 @@ COPY docs ./docs
 COPY data ./data
 COPY streamlit_app.py .streamlit ./
 
-RUN chmod +x /app/scripts/*.py /app/scripts/*.sh 2>/dev/null || true
+RUN mkdir -p /app/data/vector_store /app/data/logs && \
+    chmod -R 777 /app/data /app/data/vector_store /app/data/logs && \
+    chmod +x /app/scripts/*.py /app/scripts/*.sh 2>/dev/null || true
 
 ARG BUILD_TAG=v1.0.0
 ENV COMPLIANCE_BUILD_TAG=${BUILD_TAG}
 
-HEALTHCHECK --interval=60s --timeout=10s --start-period=90s --retries=5 \
+HEALTHCHECK --interval=60s --timeout=10s --start-period=180s --retries=5 \
     CMD curl -f http://127.0.0.1:8501/_stcore/health || exit 1
 
 EXPOSE 8501
 
-CMD ["streamlit", "run", "streamlit_app.py", \
-     "--server.port=8501", \
-     "--server.address=0.0.0.0", \
-     "--server.enableCORS=true", \
-     "--server.enableXsrfProtection=true"]
+CMD ["/app/scripts/entrypoint.sh"]
