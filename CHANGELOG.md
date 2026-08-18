@@ -7,6 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/lang/pt-BR/
 
 ## [Unreleased]
 
+## [1.0.2] - 2026-08-18
+
+### Hot-fix final de entrega (Checklist Oficial Alura ONE)
+
+Atualizações de documentação para atender 100% aos 4 entregáveis do Challenge Alura Agente (One Oracle Next Education), conforme roteiro oficial de submissão: Repositório GitHub · README · Agente Funcional · Evidência de Deploy.
+
+### Adicionado em `1.0.2`
+
+- **README seção `💬 Exemplos de perguntas e respostas geradas pelo agente`**: 2 casos textuais completos (Caso 1: Incidente S0 / SLA 1h → CISO+CTO+DPO; Caso 2: Dado sensível LGPD Art. 5º, XXXIX + 2 exemplos práticos RH/processo seletivo). Atende o item "Exemplos de respostas geradas pelo agente" do checklist oficial Alura.
+- **README seção `☁️ Evidência de Deploy em Produção (Nuvem)`**:
+  - Link público HTTPS live `https://compliance-assistant-novadata.onrender.com` (clicável).
+  - Histórico completo OCI Always Free (VM A1.Flex ARM 137.131.156.249 / VCN / Security List / Console Serial GRUB reset / scripts deploy `.sh` + `.ps1`).
+  - Justificativa estratégia híbrida (mesmo Dockerfile OCI + PaaS para garantir entrega no prazo 19/08).
+  - Tabela 4 evidências visuais (Fig.1 Home / Fig.2 Chat / Fig.3 Qualidade / Fig.4 Healthcheck `/_stcore/health`).
+- **README Roadmap Sprint**: adicionadas linhas `v1.0.1` (Deploy Render + Hotfix FAISS) e `v1.0.2` (Entrega final checklist Alura ONE) marcados ✅ entregues em 18/08.
+
 ## [1.0.1] - 2026-08-18
 
 ### Hot-fix de Deploy para Render.com (Entrega Banca ONE)

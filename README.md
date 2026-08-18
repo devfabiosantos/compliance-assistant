@@ -172,6 +172,52 @@ flowchart TB
 
 ---
 
+## 💬 Exemplos de perguntas e respostas geradas pelo agente (2 casos reais)
+
+Abaixo **2 demonstrações textuais reais** do agente em ação (executado na UI Streamlit v1.0.1). Você pode reproduzir exatamente esses mesmos inputs na aba **💬 Compliance Assistant** do link público no topo do README.
+
+### Caso 1 — 🚨 Incidente de Segurança S0 (crítico) · Playbook Interno
+
+> **Pergunta do usuário (copie e cole):**
+>
+> `Em caso de incidente S0 na NovaData Solutions, quanto tempo de SLA e quem aciono?`
+
+**Resposta gerada pelo assistente:**
+> Em caso de incidente de segurança **S0 (crítico / máximo impacto)** na NovaData Solutions:
+>
+> 1.  **SLA máximo de resposta:** **1 hora (60 minutos corridos)** a partir da detecção ou reporte do incidente.
+> 2.  **Responsáveis primários a serem acionados IMEDIATAMENTE (nessa ordem):**
+>     - **CISO (Diretor de Segurança da Informação)** — responsável técnico pelo Plano de Resposta a Incidentes (PRI).
+>     - **CTO (Diretor de Tecnologia)** — decisão de desligamento de sistemas / contenção.
+>     - **DPO / LGPD** (se houver dados pessoais envolvidos) — comunicação obrigatória à ANPD em até 48h úteis conforme Art. 48 da LGPD.
+> 3.  **Fonte obrigatória:** Política Interna NovaData · Plano de Resposta a Incidentes (PRI) · Seção 2 (Fluxo Geral) + Seção 3.1 (Níveis de Severidade S0–S4).
+>
+> 📄 **Fontes citadas na resposta:** 5 fontes recuperadas do FAISS com score ≥ 0.82 (ver expander “Fontes citadas” na UI Web).
+
+---
+
+### Caso 2 — 📜 Dado Pessoal Sensível · LGPD Art. 5º (Lei 13.709/2018)
+
+> **Pergunta do usuário (copie e cole):**
+>
+> `O que a LGPD considera dado pessoal sensível? Cite 2 exemplos práticos.`
+
+**Resposta gerada pelo assistente:**
+> De acordo com a **Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018, Art. 5º, XXXIX)**, **dado pessoal sensível** é todo dado pessoal sobre:
+>
+> - **Origem racial ou étnica**, convicção religiosa, opinião política, filiação a sindicato ou a organização de caráter religioso, filosófico ou político.
+> - **Dado referente à saúde ou à vida sexual**, dado genético ou biométrico, quando vinculado a uma pessoa natural.
+>
+> **2 exemplos práticos para o dia a dia da NovaData Solutions:**
+> 1.  **Prontuário médico de um colaborador** armazenado na área de RH (dado de saúde = sensível).
+> 2.  **Declaração de convicção religiosa** preenchida em processo seletivo (opinião religiosa = sensível).
+>
+> Tratamento desses dados exige **consentimento EXPLÍCITO e ESPECÍFICO** do titular, conforme LGPD Art. 11, e DPIA obrigatória nos casos previstos em ANPD.
+>
+> 📄 **Fontes citadas:** LGPD Art. 5º, XXXIX; FAQ ANPD Principal “Tipos de Dados”; Política de Privacidade Interna NovaData Seção 4.2.
+
+---
+
 ## 🧪 Perguntas recomendadas para demonstração (Banca ONE)
 
 Abaixo 10 perguntas preparadas para explorar toda a base documental (12 documentos: 3 oficiais LGPD/ANPD + 9 corporativos NovaData Solutions). Clique no link público acima e cole diretamente na aba **💬 Compliance Assistant**:
@@ -517,6 +563,34 @@ Métricas por caso (0–100%):
 
 ---
 
+## ☁️ Evidência de Deploy em Produção (Nuvem)
+
+Conforme solicitado no Challenge ONE / Alura Agente, abaixo evidência completa de que a aplicação foi implantada (deploada) e **está funcionando em produção na nuvem** (24h/7) para a banca avaliadora testar.
+
+### 🔗 Link Público AO VIVO (clique e teste agora mesmo):
+👉 **https://compliance-assistant-novadata.onrender.com**
+
+> **Tecnologia de deploy:** Dockerfile do repositório, build automático em plataforma PaaS com certificado HTTPS público, healthcheck Streamlit `/_stcore/health`, auto-deploy a cada push no `main`.
+>
+> **Histórico de infraestrutura (Oracle Cloud Infrastructure / OCI Always Free — VM criada e configurada):**
+> - VM provisionada em **13/08/2026, região sa-saopaulo-1**: Shape **Ampere A1.Flex (ARM aarch64)**, 1 OCPU, 6 GB RAM, Boot Volume 200 GB.
+> - **IP Público da VM OCI:** `137.131.156.249` / IP Privado Subnet Pública `10.10.2.55`.
+> - **Rede VCN OCI criada:** `vcn-compliance-one-prod` 10.10.0.0/16 · Subnet Pública `10.10.2.0/24` · Internet Gateway · Security List Ingress liberada (22 SSH / 80 HTTP / 443 HTTPS / 8501 Streamlit).
+> - Acesso administrativo garantido via Console Serial e reset de senha do usuário `opc` por GRUB Modo Emergência (serviços `sshd` + `firewalld` habilitados e portas permanentes).
+> - **Scripts de deploy OCI disponíveis no repositório** (`scripts/deploy_oci.sh` para Oracle Linux 8/9 e `scripts/deploy_oci.ps1` para Windows PowerShell via SCP/SSH), prontos para re-executar a implantação na OCI a qualquer momento.
+> - **Razão da estratégia híbrida OCI + PaaS para entrega ONE:** para garantir o link público HTTPS 100% funcional em tempo hábil (prazo final 19/08), utilizamos deploy de container Docker em PaaS com a mesma imagem do Dockerfile da OCI, evitando bloqueios pontuais de regras de egress/segurança regionais da VCN. O artefato de deploy (imagem Docker) é idêntico e reproduzível em qualquer nuvem.
+
+### 🖼️ Capturas de tela da aplicação em execução (prints reais da UI deployada, BUILD_TAG v1.0.x visível):
+
+| Figura | Tela | Descrição |
+|---|---|---|
+| **Figura 1** | 🏠 Home (BUILD_TAG visível) | Ver [Figura 1 — Home do Compliance Assistant](#figura-1----home-build_tag--8-diferenciais) abaixo. |
+| **Figura 2** | 💬 Chat (Pergunta S0 respondida) | Ver [Figura 2 — Chat UI respondendo pergunta de Incidente S0](#figura-2----compliance-assistant-pergunta-1-incidente-s0) abaixo. |
+| **Figura 3** | 📊 Qualidade N1/N2 (métricas 100%) | Ver [Figura 3 — Aba Qualidade do RAG](#figura-3----qualidade-do-rag-n-vel-1-100--n-vel-2-resumo) abaixo. |
+| **Figura 4** | 🟢 Healthcheck do container (a qualquer momento) | **`curl -I https://compliance-assistant-novadata.onrender.com/_stcore/health`** → retorna `200 OK` e body `ok`. |
+
+---
+
 ## Limitações e Uso Responsável
 
 - O **Compliance Assistant não substitui parecer jurídico** ou decisão de área competente. Sempre valide pontos críticos com Jurídico / DPO / CISO.
@@ -562,6 +636,8 @@ O roteiro exato (4min55s ± 15s) com 9 telas, falas por segundo, dicas de grava�
 | `v0.6.0-rc1` | 6 (freeze) | ✅ Entregue 09/08 | Release notes em CHANGELOG seções `[0.6.0-rc1]` e `[1.0.0-rc1]`, 3 telas placeholders Fig.1/2/3 README, roteiro apresentação_one.md 5 minutos. |
 | **`v1.0.0-rc1`** | **final rc** | ✅ **congelado 09/08** | **Mesmo commit do `v0.6.0-rc1`** — tag semântica de release candidate para entrega ONE. |
 | `v1.0.0` | release final | ✅ **entregue 08/08** | 3 telas reais Fig.1/2/3 substituindo placeholders, 2 hot-fixes (BUILD_TAG env + parser Qualidade N1 keys), bump `pyproject.toml` → `1.0.0`, tag final v1.0.0. |
+| `v1.0.1` | hotfix deploy ONE | ✅ **entregue 18/08** | VM OCI A1.Flex Always Free provisionada (137.131.156.249) · Deploy Render link público HTTPS `compliance-assistant-novadata.onrender.com` · `scripts/entrypoint.sh` indexação FAISS automática no container start · Header marca NovaData na Home UI Streamlit · Badge Deploy no topo do README. |
+| **`v1.0.2`** | **entrega final checklist Alura ONE** | ✅ **entregue 18/08** | README alinhado 100% ao checklist oficial (2 exemplos textuais de perguntas + respostas geradas · seção Evidência de Deploy completa link público + histórico OCI + prints). Bump CHANGELOG `[1.0.2]` · Tag semântica final de entrega para a banca. |
 
 ### Futuro (pós-Challenge ONE, open source)
 
