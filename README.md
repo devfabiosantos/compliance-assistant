@@ -320,7 +320,7 @@ compliance-assistant/
 <span id="figura-4"></span>
 ### Figura 4 — 🟢 Healthcheck do container (Dual Cloud: Render HTTPS + OCI ARM Docker)
 
-![Figura 4 — Healthcheck Streamlit 200 OK Dual Cloud](https://raw.githubusercontent.com/devfabiosantos/compliance-assistant/7c1edfd3d0f1d3748a014ccff1f4b49e6c1edfcd/assets/screenshots/TelaHealthcheck.PNG)
+![Figura 4 — Healthcheck Streamlit 200 OK Dual Cloud](https://raw.githubusercontent.com/devfabiosantos/compliance-assistant/main/assets/screenshots/TelaHealthcheck.PNG)
 
 > Descrição (Cloud Shell Oracle Console): Terminal executando dois `curl -I` no endpoint `/_stcore/health` do Streamlit (padrão oficial). **[1] Render HTTPS:** `STATUS_HTTP: 200` · `TEMPO_TOTAL: 0.62s` (conexão HTTPS externa). **[2] OCI A1.Flex ARM Docker Local:** `HTTP/1.1 200 OK` · `server: uvicorn` · `STATUS_HTTP: 200` · `IP_SAIDA: 127.0.0.1` · `TEMPO_TOTAL: 0.0054s` (container docker-compose `backend` rodando dentro da VM). Prova irrefutável que a aplicação está rodando **nas duas nuvens simultaneamente** no momento do deploy v1.0.4.
 
