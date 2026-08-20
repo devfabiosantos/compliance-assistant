@@ -7,6 +7,31 @@ and this project adheres to [Semantic Versioning](https://semver.org/lang/pt-BR/
 
 ## [Unreleased]
 
+## [1.0.7] - 2026-08-20
+
+### Hot-fix Dual: Troca Figura 5 OCI (nova imagem) + Resolve Render Deploy Failed (remoção PNGs binários pesados do clone)
+
+Dois ajustes ao mesmo tempo: (1) Atualiza print da tela do Deploy OCI com nova imagem `TeladaaplicacaoOCI2.PNG` enviada pelo usuário. (2) Resolve falha de build do Render Free Tier ao clonar repositório com arquivos PNG binários grandes (Fig4 + Fig5 ~260KB) causando timeout / unexpected EOF no git clone, substituindo paths locais de imagem por URLs públicas permanentes `raw.githubusercontent.com` via commit hash e branch main — navegador baixa direto do CDN GitHub, build Render não baixa mais imagens binárias no clone.
+
+### Corrigido em `1.0.7`
+
+- **[README Figura 5 Deploy OCI]** Imagem substituída para a nova captura `TeladaaplicacaoOCI2.PNG` enviada pelo usuário em 20/08. Path trocado de arquivo local para URL pública permanente `https://raw.githubusercontent.com/devfabiosantos/compliance-assistant/main/assets/screenshots/TeladaaplicacaoOCI2.PNG`, extensão `.PNG` maiúscula mantida para compatibilidade GitHub Linux.
+- **[README Figura 4 Healthcheck Dual Cloud]** Path trocado de arquivo local para URL pública permanente commitada `https://raw.githubusercontent.com/devfabiosantos/compliance-assistant/7c1edfd3d0f1d3748a014ccff1f4b49e6c1edfcd/assets/screenshots/TelaHealthcheck.PNG`. Imagem continua a mesma (print real do usuário), só muda a referência para não baixar no build Render.
+- **[Arquivos PNG binários]** Imagens `TelaHealthcheck.PNG` e `TeladaaplicacaoOCI.PNG` antigas removidas do controle de versão (git rm --cached, mantidas em disco apenas localmente). Nova imagem `TeladaaplicacaoOCI2.PNG` adicionada única vez para URL pública, não adicionaremos novos arquivos binários em commits futuros (mantém clone pequeno para Render Free).
+- **[Resiliência Render Build]** Reduz drasticamente tamanho do pack git do clone, evitando “Ocorreu um erro durante o processo de implantação” / “unexpected EOF” / timeout de rede no Render Free Tier ao pullar última tag.
+- **[pyproject.toml]** Bump versão projeto SemVer de `1.0.5` para `1.0.7`.
+
+## [1.0.6] - 2026-08-20
+
+### Hot-fix rápido Case-Sensitive Linux para Figuras 4 e 5 carregarem no GitHub (erro 404 "Error loading page")
+
+Ajuste trivial de path: Windows trata `.PNG` e `.png` como iguais, mas GitHub Linux / `raw.githubusercontent.com` trata diferente → arquivos gravados no disco com extensão maiúscula `.PNG` precisam ser referenciados no README com `.PNG` maiúsculo para não dar 404.
+
+### Corrigido em `1.0.6`
+
+- **[README Figura 4 Path]** Corrigido extensão de `TelaHealthcheck.png` → `TelaHealthcheck.PNG` (exatamente igual nome do arquivo no disco / git).
+- **[README Figura 5 Path]** Corrigido extensão de `TeladaaplicacaoOCI.png` → `TeladaaplicacaoOCI.PNG` (exatamente igual nome do arquivo no disco / git).
+
 ## [1.0.5] - 2026-08-20
 
 ### Hot-fix de apresentação README: âncoras das Figuras + prints reais Healthcheck e Deploy OCI
