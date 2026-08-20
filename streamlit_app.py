@@ -419,10 +419,37 @@ def main() -> None:
         layout="wide",
         initial_sidebar_state="expanded",
     )
+    deploy_falta_chave = os.getenv("DEPLOY_FALTA_CHAVE_COHERE", "0") == "1"
+    deploy_falta_indice = os.getenv("DEPLOY_FALTA_INDICE_FAISS", "0") == "1"
+
     with st.sidebar:
         st.title(APP_TITLE)
         st.caption(APP_SUBTITLE)
         st.caption(BUILD_TAG)
+
+        if deploy_falta_chave or deploy_falta_indice:
+            st.markdown("---")
+            st.markdown("### ⚠️ Aviso de Deploy (Container)")
+            if deploy_falta_chave:
+                st.error(
+                    "❌ **Variavel `COHERE_API_KEY` NAO configurada no ambiente.**\n\n"
+                    "O Entrypoint detectou ausencia da chave Cohere no startup do container.\n"
+                    "A UI Streamlit esta rodando (para nao quebrar healthcheck do Render/OCI), "
+                    "mas a indexacao automatica FAISS de 198 chunks NAO foi executada.\n\n"
+                    "**Como resolver:**\n"
+                    "1. Render Dashboard → Compliance Assistant → Environment → Add Environment Variable\n"
+                    "2. Chave = `COHERE_API_KEY` · Valor = sua chave real Cohere (comeca com `cohere_`)\n"
+                    "3. Botao azul superior direito → Manual Deploy → Deploy latest commit.\n\n"
+                    "Apos o deploy, os cards de qualidade abaixo voltarao para 48/48 PASS 100% e 12 docs indexados."
+                )
+            if deploy_falta_indice and not deploy_falta_chave:
+                st.warning(
+                    "⚠️ **Indice vetorial FAISS ainda nao foi criado no container.**\n"
+                    "Aguarde ~20 segundos e recarregue a pagina (F5). Se persistir, "
+                    "verifique o log do container no Render/OCI: `python scripts/index_documents.py`."
+                )
+            st.markdown("---")
+
         choice = st.radio(
             "Navegação",
             [

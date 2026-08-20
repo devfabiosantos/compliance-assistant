@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/lang/pt-BR/
 
 ## [Unreleased]
 
+## [1.0.8] - 2026-08-20
+
+### Hot-fix Crítico Render Deploy Failed: Remove Exit 1 Fatal do Entrypoint + UI Aviso Amigável (Resolve e-mails "Ocorreu um erro durante o processo de implantação")
+
+**Causa raiz do Deploy Failed no Render (confirmada no log do usuário):** O entrypoint `scripts/entrypoint.sh` usava `set -e` + `exit 1` quando a variável `COHERE_API_KEY` não estava definida no ambiente do container. O Render trata qualquer processo filho com `Exited with status 1` no boot como falha crítica de implantação → manda e-mail de erro imediatamente e não passa healthcheck. A correção remove toda fatalidade: mesmo que a chave Cohere ou índice FAISS não existam, o Streamlit é iniciado normalmente (passa healthcheck `/stcore/health` 200 OK → Render marca deploy como ✅ Sucesso, sem e-mail de erro). O erro é apresentado de forma AMIGÁVEL dentro da UI Streamlit na sidebar, com passo a passo de como adicionar a variável de ambiente.
+
+### Corrigido em `1.0.8`
+
+- **[scripts/entrypoint.sh]** `set -e` substituído por `set +e` (nenhum erro de inicialização fecha mais o container). `exit 1` removido de TODOS os blocos (ausência COHERE_API_KEY / falha index_documents.py / índice FAISS inexistente / docs dir inexistente). No lugar, gravamos duas flags em variáveis de ambiente exportadas para o Python: `DEPLOY_FALTA_CHAVE_COHERE=1` e `DEPLOY_FALTA_INDICE_FAISS=1`. Streamlit é iniciado incondicionalmente no final para passar healthcheck.
+- **[streamlit_app.py main()]** Sidebar ganha nova seção **“⚠️ Aviso de Deploy (Container)”** exibida SOMENTE se `os.getenv("DEPLOY_FALTA_CHAVE_COHERE") == "1"` ou `DEPLOY_FALTA_INDICE_FAISS == "1"`. Inclui passo a passo exato de como adicionar a chave no Render Environment (Dashboard → Environment → Add Variable → Manual Deploy), evitando suporte do usuário.
+- **[Streamlit resiliência geral]** A função `_ensure_qa_service()` já tratava chave/índice ausentes com `st.error/warning` e não crashava. O que mudou: agora o ERROR também aparece ANTES, no momento do boot, na sidebar, para qualquer página que o usuário abrir (incluindo Home).
+- **[pyproject.toml]** Bump versão SemVer para `1.0.8`.
+- **[Resultado esperado após v1.0.8 chegar no Render]** Mesmo que `COHERE_API_KEY` esteja vazia no Environment, o deploy NÃO falha mais. Streamlit abre normal, healthcheck 200 OK → Render mostra status ✅ verde “Deploy live”. Usuário visualiza aviso amigável na sidebar explicando o que fazer. Quando adicionar a chave + Manual Deploy: tudo funciona 48/48 PASS.
+
 ## [1.0.7] - 2026-08-20
 
 ### Hot-fix Dual: Troca Figura 5 OCI (nova imagem) + Resolve Render Deploy Failed (remoção PNGs binários pesados do clone)
