@@ -294,25 +294,42 @@ compliance-assistant/
 
 ## Telas da aplicação
 
-> Imagens reais da UI Streamlit. Todas com BUILD_TAG `v1.0.0` visível na sidebar.
+> Imagens reais da UI Streamlit. Todas com BUILD_TAG visível na sidebar.
 
+<span id="figura-1"></span>
 ### Figura 1 — 🏠 Home (BUILD_TAG + 8 diferenciais)
 
 ![Figura 1 — Home do Compliance Assistant](assets/screenshots/fig1_home.PNG)
 
 > Descrição: tela inicial com título “NovaData Solutions · Compliance Assistant”, tagline “Enterprise AI Assistant for LGPD Compliance and Corporate Knowledge Retrieval”, BUILD_TAG `v1.0.0` visível na sidebar, coluna “Sobre o produto” + “Principais diferenciais” (Anti-hallucination, Resposta padrão de insuficiência, 2 níveis de avaliação, arquitetura provider-agnostic), coluna “Pronto para produção” (12 documentos indexados, 48 casos N1 100%, Runner Nível 2, Cohere command-r7b + embed-multilingual-v3.0, FAISS local, licença MIT, Entrega Challenge ONE 19/08 com buffer 10 dias), “Links úteis” (GitHub, ANPD LGPD, README ADRs).
 
+<span id="figura-2"></span>
 ### Figura 2 — 💬 Compliance Assistant (Pergunta 1: Incidente S0)
 
 ![Figura 2 — Chat UI respondendo pergunta de Incidente S0](assets/screenshots/fig2_chat_incidente_s0.PNG)
 
 > Descrição: aba de chat com histórico de 2 mensagens. Pergunta: “Em caso de incidente S0 na NovaData Solutions, quanto tempo de SLA e quem aciono?”. Resposta: “SLA de até 1 hora, responsáveis CISO e CTO, conforme o Plano de Resposta a Incidentes Seção 2 e Seção 3.1 Níveis de Severidade (S0–S4)”. Abaixo: `st.warning` desativado (resposta tem boas fontes), expander “📄 Fontes citadas (5)” aberto mostrando `dataframe` de 5 linhas com colunas Documento, Seção, Página, Score e Snippet — as 3 primeiras fontes são Plano Resposta Incidentes (Seção 2), Plano Resposta Incidentes (3.1), Política Privacidade LGPD — Seção 11 (Segurança e incidentes). Direita: 5 cards `st.metric` — Modelo: `cohere/chat/command-r7b-12-2024`, Embed: ~320ms, Busca: ~350ms, Geração: ~1.8s, Total: ~2.5s. Rodapé `st.info` com disclaimer “não substitui parecer jurídico”.
 
+<span id="figura-3"></span>
 ### Figura 3 — 📊 Qualidade do RAG (Nível 1 100% + Nível 2 resumo)
 
 ![Figura 3 — Aba Qualidade do RAG](assets/screenshots/fig3_qualidade_n1_n2.PNG)
 
 > Descrição: BUILD_TAG `v1.0.0` visível, 3 cards Nível 1: “Doc correto = 1.0”, “Seção correta = 1.0”, “Recall KW = 1.0” (meta ≥92% DOC ≥90% SEC ≥98% KW). Abaixo: card Nível 2 com instrução para rodar 4 casos piloto (LGPD-001 / SEG-005 / PRI-002 / BKP-002), quando gerado aparecerão 4 cards adicionais: Faithfulness, Context Recall, Citation Precision, Citation Recall.
+
+<span id="figura-4"></span>
+### Figura 4 — 🟢 Healthcheck do container (Dual Cloud: Render HTTPS + OCI ARM Docker)
+
+![Figura 4 — Healthcheck Streamlit 200 OK Dual Cloud](assets/screenshots/TelaHealthcheck.png)
+
+> Descrição (Cloud Shell Oracle Console): Terminal executando dois `curl -I` no endpoint `/_stcore/health` do Streamlit (padrão oficial). **[1] Render HTTPS:** `STATUS_HTTP: 200` · `TEMPO_TOTAL: 0.62s` (conexão HTTPS externa). **[2] OCI A1.Flex ARM Docker Local:** `HTTP/1.1 200 OK` · `server: uvicorn` · `STATUS_HTTP: 200` · `IP_SAIDA: 127.0.0.1` · `TEMPO_TOTAL: 0.0054s` (container docker-compose `backend` rodando dentro da VM). Prova irrefutável que a aplicação está rodando **nas duas nuvens simultaneamente** no momento do deploy v1.0.4.
+
+<span id="figura-5"></span>
+### Figura 5 — 🧡🏠 Deploy Oracle Cloud Infrastructure (A1.Flex ARM Always Free · IP Público 137.131.156.249:8501)
+
+![Figura 5 — Deploy OCI IP Público (A1.Flex ARM 22GB RAM, BUILD_TAG v1.0.4-oci-arm)](assets/screenshots/TeladaaplicacaoOCI.png)
+
+> Descrição (navegador Chrome Windows Anônimo, acesso externo fora da VCN): Aplicação Compliance Assistant aberta diretamente no IP Público permanente da Oracle Cloud **http://137.131.156.249:8501**. Confirmado visualmente: (1) Header marca NovaData Solutions gradiente azul/verde SVG com shield + “100% Baseado em Fontes”; (2) Sidebar esquerda BUILD_TAG **`v1.0.4-oci-arm`** (build exclusivo ARM nativo aarch64); (3) Home “NovaData Solutions · Compliance Assistant”; (4) Cards “Pronto para produção” → Documentos indexados 12 (3 oficiais LGPD/ANPD + 9 empresa) + **Casos Nível 1: 48/48 PASS (100%)**; (5) Aviso “⚠️ Este assistente não substitui parecer jurídico” visível. Prova 100% funcional de deploy público em IaaS Oracle Cloud, conforme sugestão do Challenge ONE.
 
 ---
 
@@ -595,13 +612,13 @@ Conforme solicitado no Challenge ONE / Alura Agente, abaixo evidência completa 
 
 ### 🖼️ Capturas de tela da aplicação em execução (prints reais da UI deployada, BUILD_TAG visível):
 
-| Figura | Tela | Descrição |
+| Figura | Tela | Descrição (clique no link para rolar automaticamente) |
 |---|---|---|
-| **Figura 1** | 🏠 Home (BUILD_TAG visível) | Ver [Figura 1 — Home do Compliance Assistant](#figura-1----home-build_tag--8-diferenciais) abaixo. |
-| **Figura 2** | 💬 Chat (Pergunta S0 respondida) | Ver [Figura 2 — Chat UI respondendo pergunta de Incidente S0](#figura-2----compliance-assistant-pergunta-1-incidente-s0) abaixo. |
-| **Figura 3** | 📊 Qualidade N1/N2 (métricas 100%) | Ver [Figura 3 — Aba Qualidade do RAG](#figura-3----qualidade-do-rag-n-vel-1-100--n-vel-2-resumo) abaixo. |
-| **Figura 4** | 🟢 Healthcheck do container (a qualquer momento) | **`curl -I https://compliance-assistant-novadata.onrender.com/_stcore/health`** → retorna `200 OK` e body `ok`. |
-| **Figura 5** | 🧡🏠 **Deploy OCI (Oracle Cloud Infrastructure A1.Flex ARM Always Free — BUILD_TAG v1.0.4-oci-arm)** | **Evidência extra (sugerida pelo Challenge ONE):** Aplicação rodando no IP Público **http://137.131.156.249:8501** (acessível de qualquer navegador, deploy Docker nativo ARM em VM Oracle Linux 9.8 aarch64). Confirma visualmente: Header NovaData Solutions gradiente, Sidebar versão `v1.0.4-oci-arm`, Qualidade Nível 1 **48/48 PASS (100%)**, “12 Documentos indexados (3 oficiais + 9 empresa)” visível na Home. |
+| **Figura 1** | 🏠 Home (BUILD_TAG visível) | [🔗 Ver Figura 1 — Home do Compliance Assistant](#figura-1) |
+| **Figura 2** | 💬 Chat (Pergunta S0 respondida) | [🔗 Ver Figura 2 — Chat UI respondendo pergunta de Incidente S0](#figura-2) |
+| **Figura 3** | 📊 Qualidade N1/N2 (métricas 100%) | [🔗 Ver Figura 3 — Aba Qualidade do RAG](#figura-3) |
+| **Figura 4** | 🟢 Healthcheck do container (a qualquer momento) | [🔗 Ver Figura 4 — Healthcheck Dual Cloud 200 OK (Render + OCI ARM)](#figura-4) |
+| **Figura 5** | 🧡🏠 **Deploy OCI (Oracle Cloud Infrastructure A1.Flex ARM Always Free)** | [🔗 Ver Figura 5 — Deploy OCI IP Público 137.131.156.249 (BUILD_TAG v1.0.4-oci-arm)](#figura-5) |
 
 ---
 
@@ -653,6 +670,7 @@ O roteiro exato (4min55s ± 15s) com 9 telas, falas por segundo, dicas de grava�
 | `v1.0.1` | hotfix deploy ONE | ✅ **entregue 18/08** | VM OCI A1.Flex Always Free provisionada (137.131.156.249) · Deploy Render link público HTTPS `compliance-assistant-novadata.onrender.com` · `scripts/entrypoint.sh` indexação FAISS automática no container start · Header marca NovaData na Home UI Streamlit · Badge Deploy no topo do README. |
 | `v1.0.3` | entrega final checklist Alura ONE | ✅ **entregue 18/08** | README alinhado 100% ao checklist oficial (2 exemplos textuais de perguntas + respostas geradas · seção Evidência de Deploy completa link público + histórico OCI + prints). Bump CHANGELOG `[1.0.3]` · hotfix .gitignore credenciais SSH · Tag semântica final de entrega. |
 | **`v1.0.4`** | **🏆 Dual Cloud Deploy (OCI ARM + Render HTTPS)** | ✅ **entregue 19/08** | 🎉 Conserto definitivo rede VCN OCI (criado Internet Gateway + Rota 0.0.0.0/0 IGW na Default Route Table). Docker CE 29 + Compose 5 instalado Oracle Linux 9 aarch64. Build imagem Docker ARM nativo 100% no repositório. Entrypoint FAISS automático de 198 chunks confere 48/48 PASS na VM. Deploy público OCI: **http://137.131.156.249:8501** (BUILD_TAG v1.0.4-oci-arm visível, Header NovaData confirmado). Atualizados 2 Badges clicáveis topo README, 2 Links Públicos, Figura 5 evidência OCI, CHANGELOG [1.0.4]. |
+| **`v1.0.5`** | **Hotfix README âncoras + prints reais Fig4/Fig5** | ✅ **entregue 20/08** | Corrigidos links de âncora quebrados Figuras 1–5 (rolam para imagem, não mais topo). Figura 4 agora é print real Healthcheck dual cloud `STATUS_HTTP: 200` (Render + OCI). Figura 5 agora é print real Deploy OCI navegador Windows `137.131.156.249:8501` com BUILD_TAG v1.0.4-oci-arm visível. Atualizada tabela Evidência Deploy com links 🔗 clicáveis, CHANGELOG [1.0.5], pyproject.toml bump v1.0.5. |
 
 ### Futuro (pós-Challenge ONE, open source)
 

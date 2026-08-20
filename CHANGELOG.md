@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/lang/pt-BR/
 
 ## [Unreleased]
 
+## [1.0.5] - 2026-08-20
+
+### Hot-fix de apresentação README: âncoras das Figuras + prints reais Healthcheck e Deploy OCI
+
+Ajustes finos no README para melhorar a experiência de navegação da banca avaliadora, garantindo que os links das Figuras 1–5 no sumário "Capturas de tela" realmente rolem a página até a imagem correspondente, e substituindo textos por prints reais (evidências visuais do deploy dual cloud).
+
+### Corrigido em `1.0.5`
+
+- **[README âncoras Figuras 1–5]** Criados IDs HTML reais (`<span id="figura-N">`) diretamente acima de cada título de Figura na seção `## Telas da aplicação` (corrigia bug em que clicar em [Figura 1] no sumário rolava para o topo ao invés da imagem).
+- **[README Tabela Capturas de tela]** Substituídos textos longos por **links azuis curtos `🔗 Ver Figura X`** apontando para as âncoras `#figura-1..5`, com coluna nova "clique no link para rolar automaticamente".
+- **[README Figura 4 (antes era só texto curl)]** Agora é **PRINT REAL** `assets/screenshots/TelaHealthcheck.png` — tela Cloud Shell Console Oracle mostrando `STATUS_HTTP: 200` nos dois endpoints simultaneamente (Render HTTPS 0.62s + OCI ARM Docker 127.0.0.1 0.0054s, `server: uvicorn`), provando deploy dual cloud ativo.
+- **[README Figura 5 (antes era só descrição)]** Agora é **PRINT REAL** `assets/screenshots/TeladaaplicacaoOCI.png` — navegador Chrome Anônimo Windows aberto em `http://137.131.156.249:8501`, mostrando Header NovaData, sidebar BUILD_TAG `v1.0.4-oci-arm`, cards "48/48 PASS N1" e "12 Documentos indexados" (prova visual do deploy OCI público).
+- **[README Figura 4/5 Descrições]** Adicionados blocos `> Descrição:` textuais abaixo de cada imagem nova, com bullet points confirmando cada item visual (para acessibilidade e robôs de leitura/SEO).
+
 ## [1.0.4] - 2026-08-19
 
 ### Release ONE - Dual Cloud Deployed (Render HTTPS + Oracle Cloud Infrastructure A1.Flex ARM Always Free)
