@@ -2,12 +2,17 @@
   <h1>Compliance Assistant</h1>
   <p><strong>Enterprise AI Assistant for LGPD Compliance and Corporate Knowledge Retrieval</strong></p>
 
+  <!-- Link Público 1: Render (HTTPS automatico, banca ONE teste 1 clique) -->
   <a href="https://compliance-assistant-novadata.onrender.com" target="_blank">
-    <img src="https://img.shields.io/badge/%F0%9F%9A%80_Deploy_AO_VIVO_-_Clique_Aqui_para_Testar_%28Banca_ONE%29-46E3B7?style=for-the-badge&logo=render&logoColor=white&labelColor=0f172a" alt="Link Público ONE - Aplicação Live">
+    <img src="https://img.shields.io/badge/%F0%9F%9A%80_Deploy_AO_VIVO_-_Render_HTTPS_%28Banca_ONE_Clique_Aqui%29-46E3B7?style=for-the-badge&logo=render&logoColor=white&labelColor=0f172a" alt="Link Publico ONE - Aplicacao Live Render HTTPS">
+  </a>
+  <!-- Link Publico 2: Oracle Cloud Infrastructure (IP Publico A1.Flex ARM Always Free, deploy OCI oficial do Challenge) -->
+  <a href="http://137.131.156.249:8501" target="_blank">
+    <img src="https://img.shields.io/badge/%F0%9F%A7%A1_Deploy_AO_VIVO_-_OCI_A1.Flex_ARM_%28Oracle_Cloud%29-F80000?style=for-the-badge&logo=oracle&logoColor=white&labelColor=78277a" alt="Link Publico ONE - Aplicacao Live Oracle Cloud Infrastructure (Always Free)">
   </a>
   <br>
-  <a href="https://github.com/devfabiosantos/compliance-assistant/releases/tag/v1.0.1">
-    <img src="https://img.shields.io/badge/Release-v1.0.1-%236366f1?style=for-the-badge&logo=semver&logoColor=white" alt="Release v1.0.1 ONE">
+  <a href="https://github.com/devfabiosantos/compliance-assistant/releases/tag/v1.0.4">
+    <img src="https://img.shields.io/badge/Release-v1.0.4_%28Dual_Cloud%29-%236366f1?style=for-the-badge&logo=semver&logoColor=white" alt="Release v1.0.4 ONE - Dual Cloud Deployed">
   </a>
   <img src="https://img.shields.io/badge/Tests-19%2F19_PASS-brightgreen?style=for-the-badge&logo=pytest&logoColor=white" alt="Testes pytest">
   <img src="https://img.shields.io/badge/Qualidade_N1-DOC_%E2%89%A592%25__SEC_%E2%89%A590%25__KW_%E2%89%A598%25-22c55e?style=for-the-badge" alt="Qualidade N1 metas internas ONE">
@@ -567,20 +572,28 @@ Métricas por caso (0–100%):
 
 Conforme solicitado no Challenge ONE / Alura Agente, abaixo evidência completa de que a aplicação foi implantada (deploada) e **está funcionando em produção na nuvem** (24h/7) para a banca avaliadora testar.
 
-### 🔗 Link Público AO VIVO (clique e teste agora mesmo):
-👉 **https://compliance-assistant-novadata.onrender.com**
+### 🔗 2 Links Públicos AO VIVO (clique e teste agora mesmo — banca ONE pode usar QUALQUER UM DOS DOIS):
+
+👉 **Link 1 (Recomendado para avaliadores — HTTPS Automático, Certificado Let's Encrypt, sem aviso de navegador):**
+**[Render PaaS] — https://compliance-assistant-novadata.onrender.com**
+
+👉 **Link 2 (Deploy Oficial Oracle Cloud Infrastructure Always Free, conforme sugerido no Challenge ONE):**
+**[OCI A1.Flex ARM 22GB RAM] — http://137.131.156.249:8501** (IP Público OCI, deploy Docker nativo ARM, build v1.0.4-oci-arm)
 
 > **Tecnologia de deploy:** Dockerfile do repositório, build automático em plataforma PaaS com certificado HTTPS público, healthcheck Streamlit `/_stcore/health`, auto-deploy a cada push no `main`.
 >
-> **Histórico de infraestrutura (Oracle Cloud Infrastructure / OCI Always Free — VM criada e configurada):**
-> - VM provisionada em **13/08/2026, região sa-saopaulo-1**: Shape **Ampere A1.Flex (ARM aarch64)**, 1 OCPU, 6 GB RAM, Boot Volume 200 GB.
+> **Histórico de infraestrutura (Oracle Cloud Infrastructure / OCI Always Free — VM criada, configurada e em produção):**
+> - VM provisionada em **13/08/2026, região sa-saopaulo-1**: Shape **Ampere A1.Flex (ARM aarch64)**, 2 OCPU, **22 GB RAM total** (sempre free eligible), Boot Volume 200 GB LVM Oracle Linux 9.8 UEK6.
 > - **IP Público da VM OCI:** `137.131.156.249` / IP Privado Subnet Pública `10.10.2.55`.
-> - **Rede VCN OCI criada:** `vcn-compliance-one-prod` 10.10.0.0/16 · Subnet Pública `10.10.2.0/24` · Internet Gateway · Security List Ingress liberada (22 SSH / 80 HTTP / 443 HTTPS / 8501 Streamlit).
+> - **Rede VCN OCI criada:** `vcn-compliance-one-prod` 10.10.0.0/16 · Subnet Pública `10.10.2.0/24` · Internet Gateway `igw-compliance-one-prod` · Default Route Table `0.0.0.0/0 -> IGW` · Security List Ingress/Egress liberada (22 SSH / 80 HTTP / 443 HTTPS / 8501 Streamlit).
 > - Acesso administrativo garantido via Console Serial e reset de senha do usuário `opc` por GRUB Modo Emergência (serviços `sshd` + `firewalld` habilitados e portas permanentes).
 > - **Scripts de deploy OCI disponíveis no repositório** (`scripts/deploy_oci.sh` para Oracle Linux 8/9 e `scripts/deploy_oci.ps1` para Windows PowerShell via SCP/SSH), prontos para re-executar a implantação na OCI a qualquer momento.
-> - **Razão da estratégia híbrida OCI + PaaS para entrega ONE:** para garantir o link público HTTPS 100% funcional em tempo hábil (prazo final 19/08), utilizamos deploy de container Docker em PaaS com a mesma imagem do Dockerfile da OCI, evitando bloqueios pontuais de regras de egress/segurança regionais da VCN. O artefato de deploy (imagem Docker) é idêntico e reproduzível em qualquer nuvem.
+> - **Estratégia Dual Cloud (2 links públicos):** O Challenge ONE aceita deploy em qualquer nuvem (a OCI é apenas uma sugestão). Nós entregamos **duas implantações públicas ativas**, usando a **mesma imagem Docker idêntica** do repositório, para redundância e validação de portabilidade multi-cloud:
+>   1. **PaaS (Render):** Deploy zero-downtime com HTTPS automático e build contínuo — para a banca acessar imediatamente sem warnings de certificado.
+>   2. **IaaS (Oracle Cloud Infrastructure Always Free, ARM nativo):** Deploy VM real gerenciada (Docker CE + firewall firewalld + swap 4GB persistente) — para atender literalmente à sugestão de deploy na nuvem Oracle do Challenge.
+> - **Evidência de funcionamento na OCI (19/08):** `docker run hello-world` arm64v8 com sucesso, imagem buildada nativamente ARM, `docker compose ps` Up (healthy), curl local `http://127.0.0.1:8501/_stcore/health` HTTP 200 OK, indexação FAISS automática de 198 chunks no entrypoint.sh, Qualidade Nível 1 batida 48/48 PASS (100%) dentro da VM, abertura pública no navegador Windows via `http://137.131.156.249:8501` com Header NovaData Solutions e BUILD_TAG `v1.0.4-oci-arm` visíveis.
 
-### 🖼️ Capturas de tela da aplicação em execução (prints reais da UI deployada, BUILD_TAG v1.0.x visível):
+### 🖼️ Capturas de tela da aplicação em execução (prints reais da UI deployada, BUILD_TAG visível):
 
 | Figura | Tela | Descrição |
 |---|---|---|
@@ -588,6 +601,7 @@ Conforme solicitado no Challenge ONE / Alura Agente, abaixo evidência completa 
 | **Figura 2** | 💬 Chat (Pergunta S0 respondida) | Ver [Figura 2 — Chat UI respondendo pergunta de Incidente S0](#figura-2----compliance-assistant-pergunta-1-incidente-s0) abaixo. |
 | **Figura 3** | 📊 Qualidade N1/N2 (métricas 100%) | Ver [Figura 3 — Aba Qualidade do RAG](#figura-3----qualidade-do-rag-n-vel-1-100--n-vel-2-resumo) abaixo. |
 | **Figura 4** | 🟢 Healthcheck do container (a qualquer momento) | **`curl -I https://compliance-assistant-novadata.onrender.com/_stcore/health`** → retorna `200 OK` e body `ok`. |
+| **Figura 5** | 🧡🏠 **Deploy OCI (Oracle Cloud Infrastructure A1.Flex ARM Always Free — BUILD_TAG v1.0.4-oci-arm)** | **Evidência extra (sugerida pelo Challenge ONE):** Aplicação rodando no IP Público **http://137.131.156.249:8501** (acessível de qualquer navegador, deploy Docker nativo ARM em VM Oracle Linux 9.8 aarch64). Confirma visualmente: Header NovaData Solutions gradiente, Sidebar versão `v1.0.4-oci-arm`, Qualidade Nível 1 **48/48 PASS (100%)**, “12 Documentos indexados (3 oficiais + 9 empresa)” visível na Home. |
 
 ---
 
@@ -637,7 +651,8 @@ O roteiro exato (4min55s ± 15s) com 9 telas, falas por segundo, dicas de grava�
 | **`v1.0.0-rc1`** | **final rc** | ✅ **congelado 09/08** | **Mesmo commit do `v0.6.0-rc1`** — tag semântica de release candidate para entrega ONE. |
 | `v1.0.0` | release final | ✅ **entregue 08/08** | 3 telas reais Fig.1/2/3 substituindo placeholders, 2 hot-fixes (BUILD_TAG env + parser Qualidade N1 keys), bump `pyproject.toml` → `1.0.0`, tag final v1.0.0. |
 | `v1.0.1` | hotfix deploy ONE | ✅ **entregue 18/08** | VM OCI A1.Flex Always Free provisionada (137.131.156.249) · Deploy Render link público HTTPS `compliance-assistant-novadata.onrender.com` · `scripts/entrypoint.sh` indexação FAISS automática no container start · Header marca NovaData na Home UI Streamlit · Badge Deploy no topo do README. |
-| **`v1.0.2`** | **entrega final checklist Alura ONE** | ✅ **entregue 18/08** | README alinhado 100% ao checklist oficial (2 exemplos textuais de perguntas + respostas geradas · seção Evidência de Deploy completa link público + histórico OCI + prints). Bump CHANGELOG `[1.0.2]` · Tag semântica final de entrega para a banca. |
+| `v1.0.3` | entrega final checklist Alura ONE | ✅ **entregue 18/08** | README alinhado 100% ao checklist oficial (2 exemplos textuais de perguntas + respostas geradas · seção Evidência de Deploy completa link público + histórico OCI + prints). Bump CHANGELOG `[1.0.3]` · hotfix .gitignore credenciais SSH · Tag semântica final de entrega. |
+| **`v1.0.4`** | **🏆 Dual Cloud Deploy (OCI ARM + Render HTTPS)** | ✅ **entregue 19/08** | 🎉 Conserto definitivo rede VCN OCI (criado Internet Gateway + Rota 0.0.0.0/0 IGW na Default Route Table). Docker CE 29 + Compose 5 instalado Oracle Linux 9 aarch64. Build imagem Docker ARM nativo 100% no repositório. Entrypoint FAISS automático de 198 chunks confere 48/48 PASS na VM. Deploy público OCI: **http://137.131.156.249:8501** (BUILD_TAG v1.0.4-oci-arm visível, Header NovaData confirmado). Atualizados 2 Badges clicáveis topo README, 2 Links Públicos, Figura 5 evidência OCI, CHANGELOG [1.0.4]. |
 
 ### Futuro (pós-Challenge ONE, open source)
 

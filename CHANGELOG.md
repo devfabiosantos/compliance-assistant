@@ -7,7 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/lang/pt-BR/
 
 ## [Unreleased]
 
-## [1.0.2] - 2026-08-18
+## [1.0.4] - 2026-08-19
+
+### Release ONE - Dual Cloud Deployed (Render HTTPS + Oracle Cloud Infrastructure A1.Flex ARM Always Free)
+
+Implantação pública oficial em **2 nuvens simultâneas**, para atender tanto a recomendação do Challenge ONE de deploy na Oracle Cloud quanto a praticidade de um HTTPS automático em PaaS para a banca avaliadora testar sem warnings.
+
+### Adicionado em `1.0.4`
+
+- **[README Topo] 2 badges clicáveis no header:** Badge verde Render (link 1 recomendado HTTPS) + Badge laranja Oracle Cloud (link 2 deploy OCI IP Público).
+- **[README Topo] Release badge atualizado:** `v1.0.4 (Dual Cloud)`.
+- **[README Seção Evidência Deploy] 2 Links Públicos AO VIVO:** explicita qual usar (Render HTTPS para avaliadores leigos / OCI IP oficial para atender literalmente a sugestão do Challenge).
+- **[README Evidência OCI detalhada]** (antes era apenas VM provisionada, agora em PRODUÇÃO): IGW criado + Route Table `0.0.0.0/0 -> IGW` consertados (causa raiz dos timeouts 17/08). VM com Docker CE 29.7.2 oficial + docker compose v5.5.0, Swap 4GB persistente (22GB RAM total). Build de imagem nativo ARM aarch64 (hello-world arm64v8). Entrypoint `scripts/entrypoint.sh` indexa FAISS automaticamente os 198 chunks na inicialização. Acesso público confirmado navegador Windows `http://137.131.156.249:8501` com BUILD_TAG `v1.0.4-oci-arm` visível no sidebar + Qualidade N1 48/48 PASS.
+- **[README Figura 5 nova:]** Evidência visual extra Deploy OCI (print tela navegador IP público).
+- **[README Roadmap Sprint]** linha `v1.0.4` marcada como concluída 19/08.
+
+## [1.0.3] - 2026-08-18
 
 ### Hot-fix final de entrega (Checklist Oficial Alura ONE)
 
